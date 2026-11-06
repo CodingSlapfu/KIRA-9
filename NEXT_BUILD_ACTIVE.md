@@ -10,3 +10,5 @@ All 23 IDs remain in requirements/manifest.json. No approved deferrals. This is 
 Owner-only physical verification remains UNVERIFIED: flashing/recovery, speaker/headphone quality, LCD delivered FPS/lip-sync, DMA/CPU/battery, real flash power cycles, BLE latency/pairing and iPad/CoreMIDI hub routing. AQUORA was not modified.
 
 Production DSP remains at verified 1641726b / checkpoint 3a407ec. The isolated English6 architecture prototype is NOT PROMOTED: recognition did not improve, extended MIDI 84 violates the .90 headroom margin, host median CPU rises ~2.27x, human/device acceptance absent. Source, measurements and blinded listening kit are preserved. See validation/english6-2026-11-06/README.md and validation/RESUME_PRIORITY.md. No further blind parameter tuning, repeated successful acceptance or publication.
+
+Immediate P0 next step: human evaluation of the accessible frozen 48-stimulus kit, then confusion grading. Access/grading tooling completed; human results NOT PERFORMED. See validation/RESUME_PRIORITY.md.
