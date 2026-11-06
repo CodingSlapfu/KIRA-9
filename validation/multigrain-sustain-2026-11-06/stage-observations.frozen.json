@@ -1,0 +1,21 @@
+{
+  "protocol": "kira-artifact-stages-v1",
+  "responses": [
+    {
+      "vowel": "iy",
+      "observations": "\nE Recorded grain at source pitch, 400ms (0.400s)"
+    },
+    {
+      "vowel": "ih",
+      "observations": "E Recorded grain at source pitch, 400ms (0.400s)"
+    },
+    {
+      "vowel": "eh",
+      "observations": "E Recorded grain at source pitch, 400ms (0.400s)"
+    },
+    {
+      "vowel": "ae",
+      "observations": "E Recorded grain at source pitch, 400ms (0.400s)"
+    }
+  ]
+}

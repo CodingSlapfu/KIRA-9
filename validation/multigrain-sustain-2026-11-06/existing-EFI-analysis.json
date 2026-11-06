@@ -1,0 +1,67 @@
+{
+  "scope": "Existing frozen stage WAVs only; no regenerated old audio or human rerun. Listening gains preserved, transient excluded.",
+  "human": "First artificial stage E for all four; no specific F/I subjective ratings supplied.",
+  "measurements": [
+    {
+      "vowel": "iy",
+      "E_vs_F": {
+        "correlation": 0.9999865668493566,
+        "rms_delta_relative_db": -45.6925296687657
+      },
+      "E_vs_I": {
+        "correlation": 0.9985605936011588,
+        "rms_delta_relative_db": -25.364983954368494
+      },
+      "period_samples": 69,
+      "E_cycle_delta_ratio": 0.0,
+      "F_cycle_delta_ratio": 0.0,
+      "I_cycle_delta_ratio": 0.0
+    },
+    {
+      "vowel": "ih",
+      "E_vs_F": {
+        "correlation": 0.9999579621490161,
+        "rms_delta_relative_db": -40.71848423383388
+      },
+      "E_vs_I": {
+        "correlation": 0.9999353963061677,
+        "rms_delta_relative_db": -38.578080229143616
+      },
+      "period_samples": 86,
+      "E_cycle_delta_ratio": 0.0,
+      "F_cycle_delta_ratio": 0.0,
+      "I_cycle_delta_ratio": 0.0
+    },
+    {
+      "vowel": "eh",
+      "E_vs_F": {
+        "correlation": 0.999985989399764,
+        "rms_delta_relative_db": -45.48573931615907
+      },
+      "E_vs_I": {
+        "correlation": 0.9988598341576045,
+        "rms_delta_relative_db": -26.420445076620915
+      },
+      "period_samples": 76,
+      "E_cycle_delta_ratio": 0.0,
+      "F_cycle_delta_ratio": 0.0,
+      "I_cycle_delta_ratio": 0.0
+    },
+    {
+      "vowel": "ae",
+      "E_vs_F": {
+        "correlation": 0.9999863066149788,
+        "rms_delta_relative_db": -45.064452000264204
+      },
+      "E_vs_I": {
+        "correlation": 0.999680170603444,
+        "rms_delta_relative_db": -31.929048843063402
+      },
+      "period_samples": 84,
+      "E_cycle_delta_ratio": 0.0,
+      "F_cycle_delta_ratio": 0.0,
+      "I_cycle_delta_ratio": 0.0
+    }
+  ],
+  "interpretation": "Low E/F difference weakens quantization as dominant explanation but cannot prove inaudibility. E/F/I all exactly periodic at source pitch: bypassing LPC or removing quantization leaves frozen-cycle recurrence. Repetition common to all; LPC-specific perceptual contribution remains unresolved. New multigrain intervention tests recurrence only, retaining LPC and8-bit residual."
+}

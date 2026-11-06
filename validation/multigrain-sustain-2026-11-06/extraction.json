@@ -1,0 +1,85 @@
+{
+  "change": "Five neighboring recorded residual grains, original center unchanged",
+  "records": [
+    {
+      "vowel": "iy",
+      "utterance": "arctic_a0009",
+      "source_wav_sha256": "198d856649b370c483609bdc61558e515c6349210e6dd755e975ab1d2e468936",
+      "centers_sample": [
+        3775,
+        3845,
+        3914,
+        3984,
+        4054
+      ],
+      "source_phone_samples": [
+        3392,
+        4392
+      ],
+      "period_samples": 69,
+      "grains": 5,
+      "frozen_center_reused": true
+    },
+    {
+      "vowel": "ih",
+      "utterance": "arctic_a0043",
+      "source_wav_sha256": "bacf811c0f769869819414c0cb3888f84313980c3afa636880aaa5d29286a008",
+      "centers_sample": [
+        19483,
+        19569,
+        19656,
+        19742,
+        19827
+      ],
+      "source_phone_samples": [
+        19192,
+        20092
+      ],
+      "period_samples": 86,
+      "grains": 5,
+      "frozen_center_reused": true
+    },
+    {
+      "vowel": "eh",
+      "utterance": "arctic_a0013",
+      "source_wav_sha256": "8b82f94be931652b176e3befe47b3a25276fd2d6b0a6e93a6275d75ab1330546",
+      "centers_sample": [
+        9536,
+        9612,
+        9688,
+        9764,
+        9840
+      ],
+      "source_phone_samples": [
+        9092,
+        10292
+      ],
+      "period_samples": 76,
+      "grains": 5,
+      "frozen_center_reused": true
+    },
+    {
+      "vowel": "ae",
+      "utterance": "arctic_a0026",
+      "source_wav_sha256": "7df7dc978f247199cf87de695ce129dfb375aff981ce07c1f555eb00f41bea2a",
+      "centers_sample": [
+        24395,
+        24483,
+        24567,
+        24653,
+        24718
+      ],
+      "source_phone_samples": [
+        23892,
+        25292
+      ],
+      "period_samples": 84,
+      "grains": 5,
+      "frozen_center_reused": true
+    }
+  ],
+  "extra_data_budget": 2716,
+  "consonant_header_sha256": "844f18c7e2adb79cb4ad01d0f86bd4df6741740a77162da3dd6c7f1add9ecef6",
+  "total_data_budget": 31891,
+  "source_notice": "CMU ARCTIC SLT0.95; modified data, original COPYING retained"
+}
