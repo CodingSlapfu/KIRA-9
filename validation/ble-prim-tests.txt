@@ -1,0 +1,33 @@
+AES-128: FIPS-197 C.1                                            ok
+AES-128: Core Vol 6 Part C 1 session key                         ok
+AES-128: S-box = affine map of the GF(2^8) inverse               ok
+CCM: sample START_ENC_RSP (0F 05 9F CD A7 F4 48) decrypts, MIC ok ok
+CCM: sample data packet (06 1B ... -> 06 1F F3 88 ... 60 88)     ok
+CCM: one bit changed -> MIC fails, text left as it came          ok
+CCM: the header's NESN / SN / MD bits are not authenticated      ok
+CCM: 1..247-octet payloads round trip, the counter carries into bit 32 ok
+c1: the Core spec's sample (Vol 3 Part H 2.2.3) = 1e1e3fef...bef13b86 ok
+c1: the Pairing Request / Response as sent (opcode 01 / 02 first) ok
+s1: the Core spec's sample (Vol 3 Part H 2.2.4) = 9a1fe1f0...796da062 ok
+passkey TK: 123456 = 0x01E240, least significant octet first, the rest 0 ok
+c1 with the passkey 123456 as TK = e291fa93...484e7acf           ok
+s1 with the passkey 123456 as TK = 6e22999f...f0829e80           ok
+c1 with the passkey 999999 (the largest) as TK = 9764e409...117e0cfc ok
+CCM cost: AES blocks per PDU: 0 octets 0 (empty PDUs are not encrypted), 3 octets 5, 20 7, 27 7, 251 35; this host: 313 ns per block (x35 = 35, 11.0 us for a 251-octet PDU)
+CCM cost: 251 octets = 35 AES blocks, a 20-octet MIDI notification = 7 ok
+CRC24: ADV_IND with AdvA 0 -> 5A 39 60 (scapy)                   ok
+CRC24: 236-octet PDU -> 49 FC CF (scapy)                         ok
+CRC24: data followed by its CRC (as sent) leaves the register at 0 ok
+whitening: channel 37's sequence (the published table)           ok
+whitening: twice is the identity on channels 0..39               ok
+chmap: all 37 valid; one channel invalid                         ok
+CSA #1: (last + hop) mod 37, every channel once in 37 events     ok
+CSA #1: remapping onto channels 0, 2, 36                         ok
+AA: the advertising AA is not valid                              ok
+AA: nor any one bit from it                                      ok
+AA: four equal octets                                            ok
+AA: seven equal bits in a row                                    ok
+AA: more than 24 transitions                                     ok
+AA: under two transitions in the top six bits                    ok
+AA: valid ones                                                   ok
+BLE primitives: all passed

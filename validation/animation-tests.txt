@@ -1,0 +1,1 @@
+host: 10220 ms simulated, 954 blits, render 0.2% of real time (host CPU)

@@ -4,3 +4,10 @@ __pycache__/
 app/build/
 
 *.log
+
+studio/dictionary.json
+
+studio/kira.wasm
+studio/emulator/
+.openai/
+validation/host/*.wav

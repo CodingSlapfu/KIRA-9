@@ -1,0 +1,24 @@
+FAIL: K9-001: P0 task not completed
+FAIL: K9-002: P0 task not completed
+FAIL: K9-003: P0 task not completed
+FAIL: K9-004: P0 task not completed
+FAIL: K9-005: P0 task not completed
+FAIL: K9-006: P0 task not completed
+FAIL: K9-007: P0 task not completed
+FAIL: K9-008: P0 task not completed
+FAIL: K9-009: P0 task not completed
+FAIL: K9-010: P0 task not completed
+FAIL: K9-011: P0 task not completed
+FAIL: K9-012: P0 task not completed
+FAIL: K9-013: P0 task not completed
+FAIL: K9-014: P0 task not completed
+FAIL: K9-015: P0 task not completed
+FAIL: K9-016: P0 task not completed
+FAIL: K9-017: P0 task not completed
+FAIL: K9-018: P0 task not completed
+FAIL: K9-019: P0 task not completed
+FAIL: K9-020: P0 task not completed
+FAIL: K9-021: P0 task not completed
+FAIL: K9-022: P0 task not completed
+FAIL: K9-023: P0 task not completed
+REJECTED: 23 errors

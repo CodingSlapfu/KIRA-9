@@ -1,4 +1,3 @@
-warning: /workspace/scratch/160cc0e6fa30/KIRA-9/app/fm1.toml screenshot: preview/face.png: no such file in /workspace/scratch/160cc0e6fa30/KIRA-9: firmware.json goes without it, and a release build refuses (docs/FIRMWARE-JSON.md)
 font T: BarlowSemiCondensed-SemiBold.ttf 10px h 12, digit adv 5, 1468 B
 font XS: BarlowSemiCondensed-SemiBold.ttf 12px h 15, digit adv 6, 2554 B
 font S: BarlowSemiCondensed-Medium.ttf 15px h 16, digit adv 7, 3603 B
@@ -13,11 +12,11 @@ loader: ota.bin 11782 B
   ok    no 64-bit multiply inlined beside a load
   ok    own Bluetooth stack: nothing of JieLi's linked, the radio's ramp in RAM
   ok    no soft-double routines (single-precision FPU only)
-  ok    image 177000 B; RAM code .ram_text 5444 B of 32768; RAM .data+.bss 52472 B of 98304; pool 19204 B of 344064
+  ok    image 197424 B; RAM code .ram_text 5444 B of 32768; RAM .data+.bss 65624 B of 98304; pool 121476 B of 344064
   ok    register access: felucca-bsp only (device/, include/ and the app clean)
-parts    Bluetooth MIDI, Bluetooth MIDI devices, USB audio in, USB audio out, the screen reader  (not built in: Bluetooth audio, USB MIDI host, USB disk mode, WiFi, the second core, velocity, pressure, screen mirroring, backup and restore, a resource region)
-app      /workspace/scratch/160cc0e6fa30/KIRA-9/app/build/kira-9.bin  177000 B
+parts    Bluetooth MIDI, Bluetooth MIDI devices, USB audio in, USB audio out, the screen reader, backup and restore  (not built in: Bluetooth audio, USB MIDI host, USB disk mode, WiFi, the second core, velocity, pressure, screen mirroring, a resource region)
+app      /workspace/scratch/160cc0e6fa30/KIRA-9/app/build/kira-9.bin  197424 B
 loader   /workspace/scratch/160cc0e6fa30/KIRA-9/app/build/loader/ota.bin  11782 B
 package  /workspace/scratch/160cc0e6fa30/KIRA-9/app/build/kira-9.fwsc  614938 B, identity FM-1_7400
-build    E02FDCE4  (FM1B_BUILD: the build a crash record names, fm1_remote.py crashes)
+build    B532FD38  (FM1B_BUILD: the build a crash record names, fm1_remote.py crashes)
 about    /workspace/scratch/160cc0e6fa30/KIRA-9/app/build/firmware.json  (for firmware hubs)

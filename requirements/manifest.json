@@ -24,7 +24,9 @@
         "app/app.h"
       ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/core-tests.txt"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -46,7 +48,9 @@
         "validation/PLATFORM.md"
       ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/core-tests.txt"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -69,7 +73,11 @@
         "core/tables.c"
       ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/core-tests.txt",
+        "validation/audio-metrics.json",
+        "validation/wasm-parity.txt"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -91,7 +99,11 @@
         "core/engine.c"
       ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/core-tests.txt",
+        "validation/audio-metrics.json",
+        "validation/wasm-parity.txt"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -113,7 +125,10 @@
         "app/app.c"
       ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/animation.gif",
+        "validation/animation-tests.txt"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -135,7 +150,10 @@
         "core/engine.c"
       ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/animation.gif",
+        "validation/animation-tests.txt"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -157,7 +175,9 @@
         "core/engine.c"
       ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/core-tests.txt"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -179,7 +199,9 @@
         "app/app.c"
       ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/core-tests.txt"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -201,7 +223,9 @@
         "factory/songs.json"
       ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/core-tests.txt"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -224,7 +248,9 @@
         "core/codec.c"
       ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/app-storage-tests.txt"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -240,11 +266,19 @@
       "title": "Web idea-to-complete-original-song lyric generator",
       "area": "website",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "Idea/mood/genre to structured editable full lyrics with source-awareness",
-      "implementation_files": [],
+      "implementation_files": [
+        "studio/index.html",
+        "studio/app.mjs",
+        "studio/model.mjs",
+        "studio/bridge.c"
+      ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/web-model-tests.txt",
+        "validation/BROWSER_QA.md"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -260,11 +294,19 @@
       "title": "Import and preserve user's own existing lyrics",
       "area": "website",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "Text preservation, editable sections and phoneme corrections",
-      "implementation_files": [],
+      "implementation_files": [
+        "studio/index.html",
+        "studio/app.mjs",
+        "studio/model.mjs",
+        "studio/bridge.c"
+      ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/web-model-tests.txt",
+        "validation/BROWSER_QA.md"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -280,11 +322,19 @@
       "title": "Web editor phoneme/melody timing, voice and actual face/audio preview",
       "area": "website",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "Syllable-to-note performance ready for standalone or host sync, real preview",
-      "implementation_files": [],
+      "implementation_files": [
+        "studio/index.html",
+        "studio/app.mjs",
+        "studio/model.mjs",
+        "studio/bridge.c"
+      ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/web-model-tests.txt",
+        "validation/BROWSER_QA.md"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -307,7 +357,11 @@
         "app/fm1.toml"
       ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/panel-tests.txt",
+        "validation/ble-central-tests.txt",
+        "validation/ble-time-tests.txt"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -330,7 +384,11 @@
         "app/fm1.toml"
       ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/panel-tests.txt",
+        "validation/ble-central-tests.txt",
+        "validation/ble-time-tests.txt"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -352,7 +410,11 @@
         "core/engine.c"
       ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/panel-tests.txt",
+        "validation/ble-central-tests.txt",
+        "validation/ble-time-tests.txt"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -374,7 +436,11 @@
         "core/engine.c"
       ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/panel-tests.txt",
+        "validation/ble-central-tests.txt",
+        "validation/ble-time-tests.txt"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -390,11 +456,19 @@
       "title": "Original branded site, actual browser emulator and verified installer",
       "area": "website",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "Live version-matched site, emulator, update/recovery and source/package checksums",
-      "implementation_files": [],
+      "implementation_files": [
+        "studio/index.html",
+        "studio/app.mjs",
+        "studio/model.mjs",
+        "studio/bridge.c"
+      ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/web-model-tests.txt",
+        "validation/BROWSER_QA.md"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -416,7 +490,9 @@
         "app/app.c"
       ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/core-tests.txt"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -438,7 +514,9 @@
         "app/app.c"
       ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/core-tests.txt"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -460,7 +538,9 @@
         "core/codec.c"
       ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/core-tests.txt"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -476,11 +556,16 @@
       "title": "Portable backups, website/device song transfer and restore",
       "area": "library",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "Verified export/import roundtrip, reliable protocol and user-controlled archive",
-      "implementation_files": [],
+      "implementation_files": [
+        "app/app.c",
+        "studio/transfer.mjs"
+      ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/app-storage-tests.txt"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -499,10 +584,14 @@
       "status": "partial",
       "acceptance": "23 granular IDs tracked; negative tests reject omitted tasks and false completion",
       "implementation_files": [
-        "tools/requirement_gate.py"
+        "tools/requirement_gate.py",
+        "tools/test_requirement_gate.py",
+        ".github/workflows/development.yml"
       ],
       "source_commit": "",
-      "test_refs": [],
+      "test_refs": [
+        "validation/core-tests.txt"
+      ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",

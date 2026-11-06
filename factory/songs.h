@@ -298,3 +298,6 @@ static const k9_song factory_songs[] = {
 }},
 };
 static const char *const factory_names[] = {"Neon Awakening","Glass Heart","Ghost Frequency","After the Rain","Circuit Bloom","Electric Lullaby","No Gravity","Machine Dreams"};
+static const uint16_t factory_word_starts[8][32] = {{0,4,8,10,14,16,17,20,22,24,27,29,32,36},{0,4,9,13,15,18,22,27,30,34},{0,4,10,13,15,18,21,23,28,30,33},{0,4,6,9,13,16,19,21,25,27},{0,5,9,12,15,18,21,24,26,30,33,37,39,42},{0,8,14,18,21,23,27,29,31,34,38,40,43},{0,2,9,11,13,16,19,23,25,27},{0,5,10,17,19,22,26,28,31,33,38}};
+static const uint8_t factory_phrase_starts[8][5] = {{0,2,7,10,13},{0,2,5,7,9},{0,2,5,7,10},{0,3,5,8,9},{0,2,6,10,13},{0,2,5,9,12},{0,2,5,7,9},{0,2,5,8,10}};
+static const uint8_t factory_word_counts[8] = {13,9,10,9,13,12,9,10};

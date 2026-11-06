@@ -3,6 +3,7 @@ shot face.png
 expect playing 0
 tap PLAY
 wait 500
+expect clocks_out >10
 expect playing 1
 wav song.wav
 wait 1000
@@ -31,4 +32,30 @@ wait 20
 expect playing 1
 midi BLE FC 00 00
 wait 100
+expect playing 0
+reboot
+turn SELECT 1
+turn K2 1
+expect mode 1
+key 2 down
+wait 40
+expect note 55
+key 2 up
+wait 200
+expect note -1
+turn K2 1
+expect mode 2
+tapkey 1
+wait 50
+expect playing 1
+tap PLAY
+wait 200
+expect playing 0
+turn K2 1
+expect mode 3
+tapkey 2
+wait 50
+expect playing 1
+tap PLAY
+wait 200
 expect playing 0

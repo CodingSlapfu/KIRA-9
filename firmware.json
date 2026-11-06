@@ -10,9 +10,10 @@
   "install": "https://codingslapfu.github.io/KIRA-9/install/",
   "site": "https://codingslapfu.github.io/KIRA-9/",
   "source": "https://github.com/CodingSlapfu/KIRA-9",
+  "screenshot": "validation/face.png",
   "hardware": {
     "models": ["FM-1"],
     "flash": ["856014", "B36014"],
-    "features": ["bluetooth-midi", "bluetooth-midi-devices", "usb-audio-in", "usb-audio-out", "screen-reader"]
+    "features": ["bluetooth-midi", "bluetooth-midi-devices", "usb-audio-in", "usb-audio-out", "screen-reader", "backup"]
   }
 }

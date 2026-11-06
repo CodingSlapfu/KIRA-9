@@ -1,0 +1,8 @@
+ble_time: bunching: offset 425 us, worst change 1457 us
+ble_time: bunching: never a time after the arrival                                         ok
+ble_time: bunching: the sent spacing kept within 1.5 ms (connection events 30 ms apart)    ok
+ble_time: one late message: its time where it was sent (the offset kept)                   ok
+ble_time: 24 late in a row: the offset taken from them                                     ok
+ble_time: a sender whose stamps stay 0: the times its arrivals (within an event)           ok
+ble_time: the stamps wrapping at 8.192 s: spaced as sent                                   ok
+ble_time: 0 failed

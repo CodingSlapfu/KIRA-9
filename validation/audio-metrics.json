@@ -1,0 +1,47 @@
+{
+  "note": "Host DSP evidence; hashes and spectra cannot certify English intelligibility or musical quality.",
+  "voices": [
+    {
+      "voice": 0,
+      "peak": 0.2455204576253891,
+      "rms": 0.07857794126249382,
+      "pcm_sha256": "f5c463c3557e1e8e43bffcc79c00968e7089cb3a376c7b575c8df5fd3fbdfbe6"
+    },
+    {
+      "voice": 1,
+      "peak": 0.5544123649597168,
+      "rms": 0.12397304805759882,
+      "pcm_sha256": "cedade0d9cde010054604912b67b7d54a5c59b3cef0c35ce21470a550021f725"
+    },
+    {
+      "voice": 2,
+      "peak": 0.30287429690361023,
+      "rms": 0.08908080366212531,
+      "pcm_sha256": "9ec814777be5c9467f285a8c6d99421419448cfb42919ccdcebcdceed0570999"
+    },
+    {
+      "voice": 3,
+      "peak": 0.408834308385849,
+      "rms": 0.09746854745866841,
+      "pcm_sha256": "607b1e81d8efd262b3f9c733170fef00fd9ba35a02550e20f867433904071104"
+    },
+    {
+      "voice": 4,
+      "peak": 0.17594362795352936,
+      "rms": 0.04981980496453927,
+      "pcm_sha256": "c607cb4ae64f440ec934483305f8b7bb40c06ddfef7bad9f8d90769604a7ccaf"
+    },
+    {
+      "voice": 5,
+      "peak": 0.4609341323375702,
+      "rms": 0.11115519586567062,
+      "pcm_sha256": "9c82bb0722bc2603021336da32c4ad110303922e9c9621dec5248f174d817a05"
+    },
+    {
+      "voice": 6,
+      "peak": 0.6374673843383789,
+      "rms": 0.18749398367551426,
+      "pcm_sha256": "fe0f7f65b88dec73e5f006121699752f9bf54b81fc3b1c60f8dd5ac7709fd188"
+    }
+  ]
+}

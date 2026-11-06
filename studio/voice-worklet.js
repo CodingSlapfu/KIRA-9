@@ -1,0 +1,5 @@
+// SPDX-License-Identifier: MIT
+class KiraVoice extends AudioWorkletProcessor{
+ constructor(options){super();this.engine=new WebAssembly.Instance(options.processorOptions.module,{}).exports;this.engine._initialize?.();this.engine.web_init();this.rate=44100/sampleRate;this.phase=1;this.l=0;this.r=0;this.tick=0;this.count=0;this.port.onmessage=({data:d})=>{if(d.command==='load'){new Uint8Array(this.engine.memory.buffer,this.engine.web_input(),d.bytes.length).set(d.bytes);this.engine.web_load(d.bytes.length);}else if(d.command==='stop')this.engine.web_stop();else if(d.command==='voice')this.engine.web_voice(d.voice,d.style);};}
+ process(_,out){const channels=out[0];if(!channels?.length)return true;for(let i=0;i<channels[0].length;i++){this.phase+=this.rate;while(this.phase>=1){this.phase--;const p=this.engine.web_render(1);const a=new Float32Array(this.engine.memory.buffer,p,2);this.l=a[0];this.r=a[1];}channels[0][i]=this.l;if(channels[1])channels[1][i]=this.r;}if(++this.count%10===0)this.port.postMessage({viseme:this.engine.web_viseme(),tick:this.engine.web_tick(),playing:this.engine.web_playing()});return true;}}
+registerProcessor('kira-voice',KiraVoice);

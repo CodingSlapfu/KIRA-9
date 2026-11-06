@@ -12,6 +12,7 @@ typedef struct {uint32_t tick; uint16_t duration; uint8_t phone,note,velocity,st
 typedef struct {uint16_t count,bpm; uint32_t ticks; k9_event events[K9_MAX_EVENTS];} k9_song;
 typedef struct {float a[3],r[3],gain[3],noise; uint8_t viseme,voiced;} k9_phone;
 extern const k9_phone k9_phones[K9_NPHONE];
+extern const k9_phone k9_voice_phones[7][K9_NPHONE];
 extern const char *const k9_phone_names[K9_NPHONE];
 extern const float k9_pitch[128];
 /* One owner (audio thread) mutates engine. UI uses bounded command handoff. */

@@ -76,14 +76,17 @@ lex['are']=['AA','R']
 phones='SIL AA AE AH AO AW AY B CH D DH EH ER EY F G HH IH IY JH K L M N NG OW OY P R S SH T TH UH UW V W Y Z ZH'.split();vowels=set('AA AE AH AO AW AY EH ER EY IH IY OW OY UH UW'.split())
 compiled=[]
 for idx,(name,style,bpm,lyrics) in enumerate(songs):
- events=[];tick=0
+ events=[];tick=0;word_starts=[];phrase_starts=[];word_index=0
+ for line in lyrics.splitlines():
+  phrase_starts.append(word_index);word_index+=len(line.split())
+ phrase_starts.append(word_index)
  for j,w in enumerate(lyrics.split()):
-  ps=lex[w];dur=144 if j%4==3 else 96;cons=8;nv=sum(p in vowels for p in ps);vtime=(dur-cons*(len(ps)-nv))//max(1,nv)
+  word_starts.append(len(events));ps=lex[w];dur=144 if j%4==3 else 96;cons=8;nv=sum(p in vowels for p in ps);vtime=(dur-cons*(len(ps)-nv))//max(1,nv)
   for p in ps:
    d=vtime if p in vowels else cons
    events.append(dict(tick=tick,duration=d,phone=phones.index(p),note=[60,64,67,69,67,64,62,60][j%8]+(12 if idx%3==0 else 0),velocity=90,stress=1 if p in vowels else 0));tick+=d
   tick+=24
- compiled.append(dict(name=name,style=style,bpm=bpm,lyrics=lyrics,ticks=tick,events=events))
+ word_starts.append(len(events));compiled.append(dict(name=name,style=style,bpm=bpm,lyrics=lyrics,ticks=tick,events=events,words=word_starts,phrases=phrase_starts))
 pathlib.Path('factory').mkdir(exist_ok=True);pathlib.Path('factory/songs.json').write_text(json.dumps(compiled,indent=2)+'\n');pathlib.Path('factory/lexicon.json').write_text(json.dumps(lex,indent=2)+'\n')
 lines=['/* SPDX-License-Identifier: MIT; generated original factory songs */','static const k9_song factory_songs[] = {']
 for s in compiled:
@@ -91,4 +94,5 @@ for s in compiled:
  for e in s['events']:lines.append('{'+','.join(str(e[k]) for k in ['tick','duration','phone','note','velocity','stress'])+',0},')
  lines.append('}},')
 lines+=['};','static const char *const factory_names[] = {'+','.join(json.dumps(s['name']) for s in compiled)+'};']
+lines+=['static const uint16_t factory_word_starts[8][32] = {'+','.join('{'+','.join(map(str,s['words']))+'}' for s in compiled)+'};','static const uint8_t factory_phrase_starts[8][5] = {'+','.join('{'+','.join(map(str,s['phrases']))+'}' for s in compiled)+'};','static const uint8_t factory_word_counts[8] = {'+','.join(str(len(s['words'])-1) for s in compiled)+'};']
 pathlib.Path('factory/songs.h').write_text('\n'.join(lines)+'\n')

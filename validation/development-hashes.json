@@ -1,0 +1,11 @@
+{
+  "release_accepted": false,
+  "identity": "FM-1_7400",
+  "app_bytes": 197424,
+  "hashes": {
+    "app/build/kira-9.bin": "51b86680f3191c75a6f51505af1836ad31d50823f86afd053aa686e3321ad6bb",
+    "app/build/kira-9.fwsc": "7c0ded6d7f6a4481a89069155805c344de3079101976e6bbf759c2365439d6ec",
+    "app/build/loader/ota.bin": "ee908462c79c11794ebb1992cdc2f6e5079edd99435826e768374ad7fc52661b",
+    "studio/kira.wasm": "6c7d3825665f584c643bfbec99944a9f60ee276a370e9f6893e0b0c9d5dbfcd5"
+  }
+}

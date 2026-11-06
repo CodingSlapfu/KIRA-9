@@ -1,0 +1,1 @@
+cmusphinx/cmudict commit 74790861f652b15e4ac49015a90074ad62a27690; pronunciations reduced to first entry; stress digits removed; retains BSD notice. Unknown words require explicit override.
