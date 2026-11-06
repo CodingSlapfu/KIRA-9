@@ -1,0 +1,483 @@
+{
+  "project": "KIRA-9",
+  "version": 1,
+  "scope_date": "2026-11-05",
+  "scope_sources": [
+    "ACTIVE_SCOPE.md",
+    "NEXT_BUILD_ACTIVE.md",
+    "TASK_ACCOUNTABILITY.md",
+    "docs/VOCAL_AND_FACE.md",
+    "docs/WEB_EDITOR_AND_LIBRARY.md",
+    "docs/MIDI_SPEC.md",
+    "docs/ACCEPTANCE.md"
+  ],
+  "requirements": [
+    {
+      "id": "K9-001",
+      "title": "Standalone KIRA-9 repository and reproducible platform",
+      "area": "platform",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "Verified source checkpoint, legal SDK, linker map, safe firmware identity and native package",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "not_applicable",
+      "deferred_to": "",
+      "deferral_approval": ""
+    },
+    {
+      "id": "K9-002",
+      "title": "Document and enforce actual FM-1 RAM/flash/audio/LCD budgets",
+      "area": "platform",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "Actual build map and bounded 44.1 kHz audio callback, fallback and benchmarking",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "not_applicable",
+      "deferred_to": "",
+      "deferral_approval": ""
+    },
+    {
+      "id": "K9-003",
+      "title": "Real-time English phoneme and articulatory vocal synthesis",
+      "area": "vocal",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "Intelligible diverse words/phrases and exact phoneme-note alignment in rendered PCM",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "not_applicable",
+      "deferred_to": "",
+      "deferral_approval": ""
+    },
+    {
+      "id": "K9-004",
+      "title": "Multiple original voice identities, genres, styles, expressive controls",
+      "area": "vocal",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "Distinct audibly validated PCM performances and configurable controls",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "not_applicable",
+      "deferred_to": "",
+      "deferral_approval": ""
+    },
+    {
+      "id": "K9-005",
+      "title": "Highly expressive anime cyborg face synced to real visemes",
+      "area": "face",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "Actual 240x240 dynamic animation with eyes, lids, brows, mouth, jaws and actuators",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "owner_unverified",
+      "deferred_to": "",
+      "deferral_approval": ""
+    },
+    {
+      "id": "K9-006",
+      "title": "Rare physical servo twitches isolated from voice and MIDI",
+      "area": "face",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "Physical-neural-looking events only; no screen glitches or changed audio buffers",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "owner_unverified",
+      "deferred_to": "",
+      "deferral_approval": ""
+    },
+    {
+      "id": "K9-007",
+      "title": "Full offline standalone song and transport sequencer",
+      "area": "standalone",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "Standalone boot and full-song playback without BLE, USB or network",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "owner_unverified",
+      "deferred_to": "",
+      "deferral_approval": ""
+    },
+    {
+      "id": "K9-008",
+      "title": "Live keyboard, phrase, word, adlib and solo singing modes",
+      "area": "standalone",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "Playable keys, phrase cues, note-off and Stop for each mode",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "owner_unverified",
+      "deferred_to": "",
+      "deferral_approval": ""
+    },
+    {
+      "id": "K9-009",
+      "title": "Diverse factory demo songs",
+      "area": "standalone",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "Original demos, factory restore, meaningful genre range within verified capacity",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "owner_unverified",
+      "deferred_to": "",
+      "deferral_approval": ""
+    },
+    {
+      "id": "K9-010",
+      "title": "Persistent custom songs, phrases, words, pronunciation and capacity",
+      "area": "library",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "CRC/versioned library, safe writes, reboot, corruption recovery and capacity UI",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "not_applicable",
+      "deferred_to": "",
+      "deferral_approval": ""
+    },
+    {
+      "id": "K9-011",
+      "title": "Web idea-to-complete-original-song lyric generator",
+      "area": "website",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "Idea/mood/genre to structured editable full lyrics with source-awareness",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "not_applicable",
+      "deferred_to": "",
+      "deferral_approval": ""
+    },
+    {
+      "id": "K9-012",
+      "title": "Import and preserve user's own existing lyrics",
+      "area": "website",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "Text preservation, editable sections and phoneme corrections",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "not_applicable",
+      "deferred_to": "",
+      "deferral_approval": ""
+    },
+    {
+      "id": "K9-013",
+      "title": "Web editor phoneme/melody timing, voice and actual face/audio preview",
+      "area": "website",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "Syllable-to-note performance ready for standalone or host sync, real preview",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "not_applicable",
+      "deferred_to": "",
+      "deferral_approval": ""
+    },
+    {
+      "id": "K9-014",
+      "title": "Universal BLE MIDI pairing and bidirectional performance",
+      "area": "midi",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "Standards peer and two-node fixtures incl GATT/timestamps, central/peripheral as supported",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "owner_unverified",
+      "deferred_to": "",
+      "deferral_approval": ""
+    },
+    {
+      "id": "K9-015",
+      "title": "Class-compliant USB MIDI IN/OUT via iPad powered hub",
+      "area": "midi",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "Two independent FM-1 USB devices identifiable and routed through CoreMIDI/midimittr",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "owner_unverified",
+      "deferred_to": "",
+      "deferral_approval": ""
+    },
+    {
+      "id": "K9-016",
+      "title": "Transport-neutral versioned MIDI core and optional lyric phrase profile",
+      "area": "midi",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "24 PPQN, clock/transport, notes/velocity/CC/bend/program, generic compatible peers",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "owner_unverified",
+      "deferred_to": "",
+      "deferral_approval": ""
+    },
+    {
+      "id": "K9-017",
+      "title": "Solo/Follow/Auto transition and clock/disconnect recovery",
+      "area": "midi",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "One clock master, no stuck notes, panic, no feedback loops or interrupted standalone songs",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "owner_unverified",
+      "deferred_to": "",
+      "deferral_approval": ""
+    },
+    {
+      "id": "K9-018",
+      "title": "Original branded site, actual browser emulator and verified installer",
+      "area": "website",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "Live version-matched site, emulator, update/recovery and source/package checksums",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "not_applicable",
+      "deferred_to": "",
+      "deferral_approval": ""
+    },
+    {
+      "id": "K9-019",
+      "title": "Discoverable FM-1 controls, labels, bank/save semantics",
+      "area": "ui",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "Every setting reachable with truthful knob values, SEL/SAVE and 240x240 legibility",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "not_applicable",
+      "deferred_to": "",
+      "deferral_approval": ""
+    },
+    {
+      "id": "K9-020",
+      "title": "Audio-first performance and resource-bounded animation/radio",
+      "area": "quality",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "Host/native/single-core/pressure benchmark with no unbounded ISR or rendering",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "owner_unverified",
+      "deferred_to": "",
+      "deferral_approval": ""
+    },
+    {
+      "id": "K9-021",
+      "title": "Flash-safe library migration, updater and long-session reliability",
+      "area": "quality",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "Powercut/fault/CRC tests, long transport stress and direct update acceptance",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "owner_unverified",
+      "deferred_to": "",
+      "deferral_approval": ""
+    },
+    {
+      "id": "K9-022",
+      "title": "Portable backups, website/device song transfer and restore",
+      "area": "library",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "Verified export/import roundtrip, reliable protocol and user-controlled archive",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "not_applicable",
+      "deferred_to": "",
+      "deferral_approval": ""
+    },
+    {
+      "id": "K9-023",
+      "title": "No missing scope: requirements and comment-to-release evidence gate",
+      "area": "process",
+      "priority": "P0",
+      "status": "new",
+      "acceptance": "23 granular IDs tracked; negative tests reject omitted tasks and false completion",
+      "implementation_files": [],
+      "source_commit": "",
+      "test_refs": [],
+      "artifact_refs": [],
+      "source_refs": [
+        "ACTIVE_SCOPE.md",
+        "NEXT_BUILD_ACTIVE.md",
+        "docs/PROJECT_BUILD_NOTES.md"
+      ],
+      "hardware_status": "not_applicable",
+      "deferred_to": "",
+      "deferral_approval": ""
+    }
+  ],
+  "review": {
+    "source_comments_reviewed": false,
+    "issue_snapshot_date": "",
+    "unmapped_owner_requests": [],
+    "approved_deferrals": [],
+    "review_evidence": ""
+  }
+}
