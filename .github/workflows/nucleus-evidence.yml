@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   evidence:
-    if: startsWith(github.event.head_commit.message, 'checkpoint: nucleus experiment')
+    if: "startsWith(github.event.head_commit.message, 'checkpoint: nucleus experiment')"
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
