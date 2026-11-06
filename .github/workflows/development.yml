@@ -37,6 +37,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          python3 tools/test_backup.py
           ./tools/verify_checkpoint.sh 2>&1 | tee verification.log
           test -s build/checkpoint/KIRA-9-development-checkpoint.zip
           (cd build/checkpoint && sha256sum -c SHA256SUMS)

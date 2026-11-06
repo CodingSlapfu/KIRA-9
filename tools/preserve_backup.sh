@@ -17,7 +17,6 @@ backup_dir="$RUNNER_TEMP/kira9-backup"
 if git ls-remote --exit-code origin refs/heads/kira-9-development-backups >/dev/null 2>&1; then
  git fetch origin kira-9-development-backups
  git worktree add --detach "$backup_dir" FETCH_HEAD
- git -C "$backup_dir" switch -c kira9-backup-write
 else
  git worktree add --detach "$backup_dir" HEAD
  git -C "$backup_dir" checkout --orphan kira9-backup-write
