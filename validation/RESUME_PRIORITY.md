@@ -11,5 +11,9 @@ Owner work-244e7d42fd6f; acquire build/verify.lock and inspect BUILD_OWNERSHIP.j
 
 NEW stage archive: backup72c670ae path experiments/residual-artifact-stages-2026-11-06/checkpoint.zip,667765B SHA256261373e0ecd57ecd174a6b5000f0c32d5560c8a1fbcc4d386a4871806de32d21. Full independent download and53 manifest members verified; receipt in stage validation folder. Do not redo.
 
-## Next evidence-based action
-Listen-stage observations are pending. Do not claim perceptual cause or successful fix from SNR/poles/band errors. Compare source vs decode, q8 vs float, source-pitch vs shifted grain, LPC vs direct waveform bypass, then assembled word. Source ih/eh fixed-envelope poles are close; original labels unverified. Preserve successful consonant units. Only implement one isolated correction justified by these observations; then new held-out phrase, headroom/pitch/CPU/native-map checks and human acceptance. All23 requirements remain mandatory; native physical timing/release acceptance unverified.
+## Current immediate vocal gate
+Owner stage export now frozen: validation/multigrain-sustain-2026-11-06/stage-observations.frozen.json (494B SHA256c0f7d3021fbc10b5833ce9d3b2ee1b35a74731d6792bc2e9f8e2a1bdb9831222). E first for all4 vowels. Existing E/F/I comparison and ONE isolated five-grain blend correction complete; read that folder's FINDINGS.md once. Do not rerun completed stages/old listening/extraction/host/native/ASR/CI/backup checks.
+
+Original pilot/consonants/product unchanged. New experiment experiments/multigrain_sustain passes limited host/native-size gates:31891B estimated data,2192B state,R3code+rodata30820B,host ratio1.016,all48 transition comparisons byte-identical,worst pitch5.23cents,raw peak.227011. Native physical CPU and whole-firmware integration remain unverified. No naturalness/intelligibility acceptance inferred.
+
+Four NEW blinded sustain pairs ready at build/multigrain-sustain/KIRA9-multigrain-comparison.html; key listening-key.frozen.json and preparation receipt in validation folder. Wait for actual human pair judgments; do not request previous24word/40stage tests again. If human evidence supports the correction, proceed to held-out phrases, vowel-source review, expressive sustain, actual integrated map/device budget and remaining23 requirements. No unaccepted promotion or publication; AQUORA untouched.

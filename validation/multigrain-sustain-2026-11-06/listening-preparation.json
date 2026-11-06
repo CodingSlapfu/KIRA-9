@@ -1,0 +1,10 @@
+{
+  "protocol": "kira-multigrain-pairs-v1",
+  "new_pairs": 4,
+  "human_results": "NOT PERFORMED",
+  "frozen_control_audio_reused": true,
+  "html_sha256": "5636dd2c18927ae8eba14af65a724d4017f88cf5a11db7a038a9731fc0029d94",
+  "key_sha256": "92f4adf343739afa219f463fbf39eeab448265a2689b621afcc436022034056a",
+  "method": "Both16kHz/6400frames, RMS target.08 and peak ceiling.7,32sample outer fades; frozen E controls reused byte-identically. No resampling confound; native16 diagnostic accessor only. Hidden pair order; vowel names absent from listener page.",
+  "prior_stage_export_sha256": "c0f7d3021fbc10b5833ce9d3b2ee1b35a74731d6792bc2e9f8e2a1bdb9831222"
+}

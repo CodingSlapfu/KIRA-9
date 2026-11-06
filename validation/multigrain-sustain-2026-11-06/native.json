@@ -1,0 +1,8 @@
+{
+  "size_sections": "/workspace/scratch/160cc0e6fa30/KIRA-9/build/multigrain-sustain/multi-r3.o  :\nsection    size   addr\n.text      1278      0\n.rodata   29542      0\nTotal     30820\n\n\n",
+  "size_total": "   text\t   data\t    bss\t    dec\t    hex\tfilename\n  30820\t      0\t      0\t  30820\t   7864\t/workspace/scratch/160cc0e6fa30/KIRA-9/build/multigrain-sustain/multi-r3.o\n",
+  "undefined": "         U memcpy\n         U memset\n",
+  "state": "00000890 00000890 C multigrain_state\n",
+  "device_cpu": "UNVERIFIED; new isolated object, not full firmware",
+  "whole_firmware_map": "NOT INTEGRATED/UNVERIFIED"
+}

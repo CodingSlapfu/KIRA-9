@@ -1,16 +1,16 @@
 {
   "project": "KIRA-9",
   "owner": "work-244e7d42fd6f",
-  "state": "active-isolated-multigrain-sustain",
+  "state": "awaiting-multigrain-human-comparison",
   "baseline": "ac65254f2fd76b4ed8f251f2a141f63f3508c3cf",
   "build_running": false,
   "publisher_running": false,
   "latest_verified": "1641726b2ea3aabfde8afbf3c04f76dbdf074fc9",
   "resume": "validation/RESUME_PRIORITY.md",
-  "latest_experiment": "experiments/residual_pilot",
-  "experiment_outcome": "Genuine human grade11/24 exact13/24 homophone; artificial-tone complaint, not confirmed clicks. Forty measured stage controls ready; no promoted change.",
+  "latest_experiment": "experiments/multigrain_sustain",
+  "experiment_outcome": "New five-grain correction has limited technical passes; original transitions byte-identical;4new blinded pairs human verdict pending. NOT PROMOTED",
   "resumed_from": "3391612856fe302d579db44d94570734965d4d10",
-  "latest_verified_remote": "f1d59264d10e9ebd8fb21b762a364c3587a756b2",
+  "latest_verified_remote": "14eda8709586caa3f89d37ce13c29011ea232d8d",
   "local_checkpoint_before_record_update": "ae2b953",
-  "remote_checkpoint_status": "Human feedback and40-stage audio archive independently downloaded and53 member hashes verified; backup72c670ae. No active build/publisher."
+  "remote_checkpoint_status": "Original stage observations preserved unchanged; new final checkpoint/independent artifact backup to follow."
 }

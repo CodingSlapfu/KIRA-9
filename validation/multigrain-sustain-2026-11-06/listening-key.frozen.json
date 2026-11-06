@@ -1,0 +1,50 @@
+{
+  "protocol": "kira-multigrain-pairs-v1",
+  "note": "Do not view before genuine judgments; engine order hidden. Source-pitch sustain pairs only, not a new English recognition acceptance.",
+  "pairs": {
+    "m0": {
+      "vowel": "ih",
+      "engines": [
+        "frozen_single",
+        "multigrain"
+      ],
+      "duration_s": 0.4,
+      "new_listening_gain": 1.9461430802600048,
+      "old_control_sha256": "10a8db294166ad2af33240263c38328ec25e784631a9ce3a07073fbb9eb865e1",
+      "new_sha256": "321df518089302a521fb6ba3cacd155e04c6dcd07b8e2561ff3f6dfbf03bcdb5"
+    },
+    "m1": {
+      "vowel": "iy",
+      "engines": [
+        "frozen_single",
+        "multigrain"
+      ],
+      "duration_s": 0.4,
+      "new_listening_gain": 1.201158159083437,
+      "old_control_sha256": "8914b1b8dec2fae15589cd6a46260a96762ca06349cb668dce42d5957fa0234d",
+      "new_sha256": "466f586c71ec9185afd601eeabbe65abf163d1dc338574e6cb3b6db12e3f6876"
+    },
+    "m2": {
+      "vowel": "ae",
+      "engines": [
+        "frozen_single",
+        "multigrain"
+      ],
+      "duration_s": 0.4,
+      "new_listening_gain": 1.4429455638173825,
+      "old_control_sha256": "d9be101a9206cfa88bbf0c6d335930ad2d161a9ae02e7bbccfe628cb9e8defd1",
+      "new_sha256": "684c60f50a25b760c17222ca93db33fff498e1933a77c4ef42892f784830dab8"
+    },
+    "m3": {
+      "vowel": "eh",
+      "engines": [
+        "multigrain",
+        "frozen_single"
+      ],
+      "duration_s": 0.4,
+      "new_listening_gain": 1.0948940827853297,
+      "old_control_sha256": "21101c4d6a035a5208ce3df6392e5165838bbe73dd5128aa6b665227677656b9",
+      "new_sha256": "16d64116c57459f368f9c69e98bef6c431137631ea84fda4d0e7ef6d4fa52668"
+    }
+  }
+}

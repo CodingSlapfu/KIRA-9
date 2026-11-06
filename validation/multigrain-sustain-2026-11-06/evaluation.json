@@ -1,0 +1,202 @@
+{
+  "scope": "New isolated correction only. Frozen source/units/product unchanged. All velocity-equivalent tests use unchanged fixed gain.35, no limiter/clamp/effects.",
+  "headroom_peak": 0.2270112931728363,
+  "nonfinite": 0,
+  "stop_failures": 0,
+  "headroom_pass": true,
+  "pitch_pass": true,
+  "state_bytes": 2192,
+  "data_budget_bytes": 31891,
+  "host_timing": {
+    "frozen": {
+      "median_us": 3.144,
+      "p95_us": 3.265
+    },
+    "multi": {
+      "median_us": 3.1944999999999997,
+      "p95_us": 3.295
+    }
+  },
+  "host_ratio_vs_frozen_pilot": 1.016062340966921,
+  "host_budget_pass": true,
+  "all48_transition_outputs_byte_identical": true,
+  "rows": [
+    {
+      "vowel": "iy",
+      "note": 48,
+      "raw_peak": 0.14395475387573242,
+      "f0_hz": 130.80025671963722,
+      "cents": -0.165781627148753,
+      "periodicity": 0.9601338424811933,
+      "pitch_pass": true
+    },
+    {
+      "vowel": "ih",
+      "note": 48,
+      "raw_peak": 0.10235583782196045,
+      "f0_hz": 130.84682182798974,
+      "cents": 0.45043088611115073,
+      "periodicity": 0.9606859516428651,
+      "pitch_pass": true
+    },
+    {
+      "vowel": "eh",
+      "note": 48,
+      "raw_peak": 0.191552072763443,
+      "f0_hz": 130.80841063573786,
+      "cents": -0.05786213553596884,
+      "periodicity": 0.9607742446562854,
+      "pitch_pass": true
+    },
+    {
+      "vowel": "ae",
+      "note": 48,
+      "raw_peak": 0.10932554304599762,
+      "f0_hz": 130.9004616400154,
+      "cents": 1.1599937058964178,
+      "periodicity": 0.9586504376591518,
+      "pitch_pass": true
+    },
+    {
+      "vowel": "iy",
+      "note": 60,
+      "raw_peak": 0.1426592767238617,
+      "f0_hz": 261.6810546239447,
+      "cents": 0.3671461534741783,
+      "periodicity": 0.977814368044104,
+      "pitch_pass": true
+    },
+    {
+      "vowel": "ih",
+      "note": 60,
+      "raw_peak": 0.08765069395303726,
+      "f0_hz": 261.6626343663301,
+      "cents": 0.2452768050556433,
+      "periodicity": 0.9785389306171733,
+      "pitch_pass": true
+    },
+    {
+      "vowel": "eh",
+      "note": 60,
+      "raw_peak": 0.18935330212116241,
+      "f0_hz": 261.6839695283142,
+      "cents": 0.3864305208333225,
+      "periodicity": 0.979511977825942,
+      "pitch_pass": true
+    },
+    {
+      "vowel": "ae",
+      "note": 60,
+      "raw_peak": 0.11977376788854599,
+      "f0_hz": 261.6468235541772,
+      "cents": 0.14066483622329629,
+      "periodicity": 0.9754305873416549,
+      "pitch_pass": true
+    },
+    {
+      "vowel": "iy",
+      "note": 72,
+      "raw_peak": 0.12078075110912323,
+      "f0_hz": 523.1696004474123,
+      "cents": -0.26977251951472364,
+      "periodicity": 0.9888312334089873,
+      "pitch_pass": true
+    },
+    {
+      "vowel": "ih",
+      "note": 72,
+      "raw_peak": 0.09154443442821503,
+      "f0_hz": 523.2722605818092,
+      "cents": 0.06990945869855707,
+      "periodicity": 0.9874695425783497,
+      "pitch_pass": true
+    },
+    {
+      "vowel": "eh",
+      "note": 72,
+      "raw_peak": 0.17341576516628265,
+      "f0_hz": 523.2403792665783,
+      "cents": -0.03557234127633364,
+      "periodicity": 0.9891318408708953,
+      "pitch_pass": true
+    },
+    {
+      "vowel": "ae",
+      "note": 72,
+      "raw_peak": 0.06883328408002853,
+      "f0_hz": 524.2049604231208,
+      "cents": 3.15297822087473,
+      "periodicity": 0.9722179490013092,
+      "pitch_pass": true
+    },
+    {
+      "vowel": "iy",
+      "note": 84,
+      "raw_peak": 0.12352198362350464,
+      "f0_hz": 1047.377172212747,
+      "cents": 1.4467650763494622,
+      "periodicity": 0.9815196765514538,
+      "pitch_pass": true
+    },
+    {
+      "vowel": "ih",
+      "note": 84,
+      "raw_peak": 0.10550656169652939,
+      "f0_hz": 1047.4188556962802,
+      "cents": 1.5156633032167421,
+      "periodicity": 0.9878823387789942,
+      "pitch_pass": true
+    },
+    {
+      "vowel": "eh",
+      "note": 84,
+      "raw_peak": 0.1726781725883484,
+      "f0_hz": 1046.8625699340325,
+      "cents": 0.5959579919081395,
+      "periodicity": 0.9924645074832903,
+      "pitch_pass": true
+    },
+    {
+      "vowel": "ae",
+      "note": 84,
+      "raw_peak": 0.11744999885559082,
+      "f0_hz": 1043.3457469911123,
+      "cents": -5.229728681764699,
+      "periodicity": 0.9489863893724115,
+      "pitch_pass": true
+    }
+  ],
+  "source_pitch_variation": [
+    {
+      "vowel": "iy",
+      "native_period": 69,
+      "cycle_delta_ratio": 0.013465695083141327,
+      "file": "iy-multigrain-source.wav",
+      "sha256": "b4933e1b06999e621f86a0b13f87be237752f6e674007cce0889d5bb893ed18a"
+    },
+    {
+      "vowel": "ih",
+      "native_period": 86,
+      "cycle_delta_ratio": 0.018690215423703194,
+      "file": "ih-multigrain-source.wav",
+      "sha256": "25245a4b648056f00e0b7d24d4fe3cc0cec0c90b1eefbca412b500dddb6a4abb"
+    },
+    {
+      "vowel": "eh",
+      "native_period": 76,
+      "cycle_delta_ratio": 0.015626603737473488,
+      "file": "eh-multigrain-source.wav",
+      "sha256": "b9713d58bdb2318822ee22f9fd9fb047764ab17b6688dfa7be7dd3b52b302aa1"
+    },
+    {
+      "vowel": "ae",
+      "native_period": 84,
+      "cycle_delta_ratio": 0.1059453934431076,
+      "file": "ae-multigrain-source.wav",
+      "sha256": "2d4a5ed4ab1d487c459a11b547748e7c62d9ee1930a95c00089e04ebf1b76b10"
+    }
+  ],
+  "human_acceptance": "NOT PERFORMED; variation does not establish human naturalness or word intelligibility.",
+  "device_cpu": "UNVERIFIED",
+  "promotion": false
+}
