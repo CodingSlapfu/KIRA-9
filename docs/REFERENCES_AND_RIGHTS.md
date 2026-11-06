@@ -1,0 +1,10 @@
+# KIRA-9 Technical References and Usage Rights
+- MIKU-FM1: https://github.com/MichaelAPerry/MIKU-FM1 — demonstrated live formant-based Japanese morae, consonants, on-screen face mouth movements, emulator and installer on FM-1. Its code GPL-3.0-only with some MIT host portions, and its Hatsune Miku art separately covered by Crypton PCL; **never reuse Miku art or assume an existing ready-made English vocal or BLE engine**.
+- MIKU-FM1 validation: https://github.com/MichaelAPerry/MIKU-FM1/blob/main/docs/VALIDATION.md — distinguish native/host/emulator/hardware proof.
+- SLOOP: https://github.com/isod89/sloop-fm1 — MIDI clock/transport rigor; do not assume SLOOP supports BLE.
+- Baud Girl FM-1+VA: https://baudgirl.com/work/FM-1%2BVA/announcements/version-97 and https://baudgirl.com/work/FM-1%2BVA/manual/102 — BLE central/peripheral and peer MIDI conceptual reference; audit actual version and license before reuse.
+- AQUORA: https://github.com/CodingSlapfu/AQUORA and https://github.com/CodingSlapfu/AQUORA/issues/31 — shared generic BLE/USB MIDI requirements and AIR radio exclusion. Only two active projects: AQUORA and KIRA-9.
+- FM-1 hardware optimization: https://github.com/CodingSlapfu/AQUORA/blob/main/FM1_HARDWARE_OPTIMIZATION_STANDARD.md — performance, dual-core, flash, SRAM, display, update and evidence rules.
+- Vendor platform: https://github.com/m-vave/fm1_open — confirm current legal toolchain, compiler, device IO, BLE role and USB descriptors.
+- iPad MIDI router: https://apps.apple.com/us/app/midimittr/id925495245 — verify simultaneous two-device USB/CoreMIDI routing with owner's hardware.
+**Rights:** Create original KIRA-9 character and vocalist. Genre-inspired performance techniques are allowed; do not copy copyrighted character likenesses or unlicensed recordings, and do not create unauthorized recognizable celebrity voice clones. Include actual adopted code/asset licenses, attributions and source hashes.
