@@ -1,0 +1,102 @@
+{
+  "baseline": "13aca33db7491a67df6de3fbc912c48da3462c92",
+  "order": "For each phrase: before, one second silence, after, one second silence.",
+  "phrases": [
+    "my heart is a light we rise again",
+    "the night is soft the stars are near",
+    "we carry dreams into the night"
+  ],
+  "note": "Host callback times are not FM-1 timings. Metrics alone do not establish intelligibility.",
+  "metrics": [
+    {
+      "phrase": 0,
+      "version": "before",
+      "file": "0-before.wav",
+      "sha256": "b3dbe9f73a6d730ef24f521d3bf90a0a4bd9bf8225f165c27f37f61888a71263",
+      "peak": 0.2730712890625,
+      "rms": 0.0808614518856084,
+      "max_adjacent_step": 0.042083740234375,
+      "host_callback": {
+        "p50_us": 10.862,
+        "p95_us": 11.337,
+        "p99_us": 60.303,
+        "max_us": 117.529
+      }
+    },
+    {
+      "phrase": 1,
+      "version": "before",
+      "file": "1-before.wav",
+      "sha256": "d649d6684ef7864d94e940691aa1879c23316e3bf62ae56c71b60ac2ee513b2e",
+      "peak": 0.25970458984375,
+      "rms": 0.06922572186628143,
+      "max_adjacent_step": 0.03118896484375,
+      "host_callback": {
+        "p50_us": 10.862,
+        "p95_us": 11.337,
+        "p99_us": 60.303,
+        "max_us": 117.529
+      }
+    },
+    {
+      "phrase": 2,
+      "version": "before",
+      "file": "2-before.wav",
+      "sha256": "a9b8871f8c95f181932b41320caa7351e04c3af7cac5028e5885b00ef3eb10dd",
+      "peak": 0.309814453125,
+      "rms": 0.08552119876820502,
+      "max_adjacent_step": 0.033233642578125,
+      "host_callback": {
+        "p50_us": 10.862,
+        "p95_us": 11.337,
+        "p99_us": 60.303,
+        "max_us": 117.529
+      }
+    },
+    {
+      "phrase": 0,
+      "version": "after",
+      "file": "0-after.wav",
+      "sha256": "eab234c40121960ca3e819d5e3669fcc78cf2ef1b8b5619a0b10702d0f94a1f7",
+      "peak": 0.273223876953125,
+      "rms": 0.07923200463565784,
+      "max_adjacent_step": 0.043212890625,
+      "host_callback": {
+        "p50_us": 11.687999999999999,
+        "p95_us": 12.747,
+        "p99_us": 101.285,
+        "max_us": 444.171
+      }
+    },
+    {
+      "phrase": 1,
+      "version": "after",
+      "file": "1-after.wav",
+      "sha256": "f4dac6003cfaa38b1f20b832878ed5d52dc3c41e5298bdfb53a08c92d6900f3f",
+      "peak": 0.26495361328125,
+      "rms": 0.06554074432914418,
+      "max_adjacent_step": 0.03082275390625,
+      "host_callback": {
+        "p50_us": 11.687999999999999,
+        "p95_us": 12.747,
+        "p99_us": 101.285,
+        "max_us": 444.171
+      }
+    },
+    {
+      "phrase": 2,
+      "version": "after",
+      "file": "2-after.wav",
+      "sha256": "81b3000e930542ada76882fd6f2ea545a6513e9cbaa5bbd4a0b519df261bd7c1",
+      "peak": 0.2628173828125,
+      "rms": 0.08289551240509116,
+      "max_adjacent_step": 0.037384033203125,
+      "host_callback": {
+        "p50_us": 11.687999999999999,
+        "p95_us": 12.747,
+        "p99_us": 101.285,
+        "max_us": 444.171
+      }
+    }
+  ]
+}

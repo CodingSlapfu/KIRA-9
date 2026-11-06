@@ -34,12 +34,16 @@ jobs:
           python3 tools/setup_native.py > build-native-environment.json
           python3 -c "import json,os; d=json.load(open('build-native-environment.json')); open(os.environ['GITHUB_ENV'],'a').write(''.join(k+'='+v+'\n' for k,v in d.items()))"
       - name: Verify and archive development checkpoint
+        env:
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
         shell: bash
         run: |
           set -euo pipefail
           python3 tools/test_backup.py
-          if [[ "${{ github.event.head_commit.message }}" == fix\(ci\):* ]]; then
+          if [[ "$COMMIT_MESSAGE" == fix\(ci\):* ]]; then
             ./tools/resume_checkpoint.sh 2>&1 | tee verification.log
+          elif [[ "$COMMIT_MESSAGE" == fix\(vocal\):* ]]; then
+            ./tools/verify_checkpoint.sh --vocal 2>&1 | tee verification.log
           else
             ./tools/verify_checkpoint.sh 2>&1 | tee verification.log
           fi

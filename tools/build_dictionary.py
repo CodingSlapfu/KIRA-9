@@ -8,7 +8,7 @@ lex={}
 for line in (dep/'cmudict.dict').read_text().splitlines():
  if not line or line.startswith(';;;'):continue
  word,*phones=line.split(' #')[0].split();word=re.sub(r'\(\d+\)$','',word)
- if word not in lex:lex[word]=[re.sub('[012]$','',p) for p in phones]
+ if word not in lex:lex[word]=phones
 (root/'studio/dictionary.json').write_text(json.dumps(lex,separators=(',',':')))
 shutil.copyfile(dep/'LICENSE',root/'studio/CMUDICT-LICENSE.txt')
 print('Built dictionary from verified CMU revision',pin)

@@ -1,6 +1,7 @@
 /* SPDX-License-Identifier: MIT */
 #include "kira.h"
 #include "memory.h"
+#include "articulation.h"
 
 typedef struct {
   float attack, release, breath, vibrato, glide, rasp, articulation, open;
@@ -331,11 +332,8 @@ void k9_render(k9_engine *e, float *out, uint32_t frames) {
       e->r[b] += (r - e->r[b]) * .003f;
       e->gain[b] += (g - e->gain[b]) * .003f;
     }
-    if (plosive(e->phone))
-      gate = progress < .48f   ? (phone->voiced ? .07f : 0.0f)
-             : progress < .68f ? 1.0f
-                               : bounded((1.0f - progress) / .32f, 0, 1);
-    else if (vowel(e->phone) && e->playing && progress > style->articulation)
+    k9_articulation articulation=k9_articulate(e->phone,e->sample-e->phone_sample,e->phone_frames);
+    if (vowel(e->phone) && e->playing && progress > style->articulation)
       gate = bounded((1.0f - progress) / (1.001f - style->articulation), 0, 1);
     level_target =
         (float)e->velocity * (1.0f / 127.0f) * bounded(e->expression, 0, 1.2f);
@@ -369,8 +367,8 @@ void k9_render(k9_engine *e, float *out, uint32_t frames) {
         glottis(e->phase, style->open + .015f * (float)e->voice, &e->flow_last);
     if (style->rasp)
       excitation *= 1.0f - style->rasp + style->rasp * noise;
-    excitation = excitation * (phone->voiced ? 1.0f - phone->noise : 0) +
-                 aspiration * (phone->noise + style->breath +
+    excitation = excitation * articulation.voiced * (phone->voiced ? 1.0f - phone->noise : 0) +
+                 aspiration * articulation.noise * (phone->noise + style->breath +
                                bounded(e->breath, 0, .7f));
     excitation *= gate;
     for (b = 0; b < 3; b++) {
@@ -430,7 +428,7 @@ k9_face k9_face_at(const k9_engine *e, uint32_t ms, uint8_t emotion,
   if (e->phone == K9_SIL)
     f.open = 0;
   if (plosive(e->phone) && e->phone_frames &&
-      e->sample - e->phone_sample > e->phone_frames / 2u) {
+      !k9_articulate(e->phone,e->sample-e->phone_sample,e->phone_frames).closure) {
     f.mouth = 1;
     f.open = (uint16_t)(bounded(e->level, 0, 1) * 10.0f);
   }

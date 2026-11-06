@@ -1,0 +1,36 @@
+{
+  "model": "Systran faster-whisper tiny.en",
+  "note": "Diagnostic only: recognition of synthetic singing is not reliable enough for release acceptance. No expected-text prompt supplied.",
+  "results": [
+    {
+      "phrase": 0,
+      "version": "before",
+      "transcript": ""
+    },
+    {
+      "phrase": 0,
+      "version": "after",
+      "transcript": ""
+    },
+    {
+      "phrase": 1,
+      "version": "before",
+      "transcript": ""
+    },
+    {
+      "phrase": 1,
+      "version": "after",
+      "transcript": ""
+    },
+    {
+      "phrase": 2,
+      "version": "before",
+      "transcript": ""
+    },
+    {
+      "phrase": 2,
+      "version": "after",
+      "transcript": ""
+    }
+  ]
+}

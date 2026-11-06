@@ -8,5 +8,8 @@ cc -std=c99 -g -fsanitize=undefined,address -fno-omit-frame-pointer -Icore core/
 ASAN_OPTIONS=detect_leaks=0 ./build/test-sanitized
 cc -std=c99 -O2 -Icore tests/test_features.c core/engine.c core/tables.c core/codec.c core/library.c core/face.c -o build/test-features
 ./build/test-features
+cc -std=c99 -O2 -Icore tests/test_articulation.c core/engine.c core/tables.c core/codec.c core/library.c -o build/test-articulation
+./build/test-articulation
+node tests/vocal_timing.mjs
 python3 tools/test_requirement_gate.py
 python3 tools/requirement_gate.py --phase plan
