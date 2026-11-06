@@ -10,7 +10,7 @@
   "latest_experiment": "experiments/multigrain_sustain",
   "experiment_outcome": "New five-grain correction has limited technical passes; original transitions byte-identical;4new blinded pairs human verdict pending. NOT PROMOTED",
   "resumed_from": "3391612856fe302d579db44d94570734965d4d10",
-  "latest_verified_remote": "14eda8709586caa3f89d37ce13c29011ea232d8d",
+  "latest_verified_remote": "7d695a4c8394b913d1f0b4e68eba7adc3d08733d",
   "local_checkpoint_before_record_update": "ae2b953",
-  "remote_checkpoint_status": "Original stage observations preserved unchanged; new final checkpoint/independent artifact backup to follow."
+  "remote_checkpoint_status": "New multigrain backupcd6e71dc independently downloaded/all38members/original494byte export verified. No active build/publisher."
 }
