@@ -19,6 +19,6 @@ Next bounded work: establish a credible English phonetic reference/listening con
 ## Existing verified evidence (do not replay)
 Previous 36-recording experiment: source 0177d914, workflow 42205571438; permanent backup commit a999d415609c3d458b0b4a3c39016c6718d5198c; experiments/0177d9142c70d323da451785067fab8082f0a7ac.zip; SHA256 de9ec59fa471af6507ba2a505e50eeec10cd9b620543a7e1be3fa68bcb836a31. Old native/WASM/797-member and earlier CI repair receipts stay valid and untouched.
 
-New output-weight-only source/evidence backup receipt: pending preservation below. It contains only new candidate/code/metrics/audio, references the established baseline and does not replace old firmware archives.
+New output-weight-only source/evidence backup receipt: Source: 889f674514e0bd0ad594f003bf48b50b85fe89c0. Permanent backup commit: 61ca84fe38dbf3b27bbfa9cab4f1fd720121d0b5. Archive: experiments/889f674514e0bd0ad594f003bf48b50b85fe89c0-output-weights.zip. ZIP SHA256: 167b589a9d8dd7680fa593fabcfce695225644c99896dfb904b5696794238c3c. Independently downloaded this NEW archive and checked source identity and all 17 members; no previous archives were reverified. Recognition was not run, candidate not promoted, production DSP unchanged. It contains only new candidate/code/metrics/audio and references the established baseline; it does not replace old firmware archives.
 
 Intelligibility and all original 23 release gates remain OPEN. Physical FM-1 quality/CPU remain owner-unverified. No firmware/website/installer publication.

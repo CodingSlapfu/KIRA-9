@@ -23,3 +23,7 @@ Before another vocal-backend change:
 4. Predefine how phoneme/word recovery and transition safety will be judged, then decide whether this backend can meet the existing requirements. No claim of success from plots, hashes or nonzero PCM.
 
 Next work is this synthesis reassessment and reference validation—not another smoothing constant, gain multiplier or rejected-glide rerun. Intelligibility and all original release gates remain OPEN. Physical FM-1 quality/CPU remain owner-unverified.
+
+## Verified checkpoint preservation
+Source: 889f674514e0bd0ad594f003bf48b50b85fe89c0. Permanent backup commit: 61ca84fe38dbf3b27bbfa9cab4f1fd720121d0b5. Archive: experiments/889f674514e0bd0ad594f003bf48b50b85fe89c0-output-weights.zip. ZIP SHA256: 167b589a9d8dd7680fa593fabcfce695225644c99896dfb904b5696794238c3c. Independently downloaded this NEW archive and checked source identity and all 17 members; no previous archives were reverified. Recognition was not run, candidate not promoted, production DSP unchanged.
+No old CI, full acceptance or successful backup tests were rerun; new experiment archive only.

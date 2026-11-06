@@ -7,5 +7,6 @@
   "publisher_running": false,
   "latest_verified": "1641726b2ea3aabfde8afbf3c04f76dbdf074fc9",
   "resume": "validation/RESUME_PRIORITY.md",
-  "latest_experiment": "0177d9142c70d323da451785067fab8082f0a7ac"
+  "latest_experiment": "889f674514e0bd0ad594f003bf48b50b85fe89c0",
+  "experiment_outcome": "headroom_failed; recognition_not_run; candidate_unpromoted"
 }
