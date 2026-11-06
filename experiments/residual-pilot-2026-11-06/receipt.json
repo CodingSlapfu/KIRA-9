@@ -1,6 +1,8 @@
 {
   "sha256": "a6926da635200021ce8d8ded77a7ea9968b2581acc7edc06b1fe489f7f5548c2",
+  "git_blob_sha": "61daf6245e6e64b33d8751626758a01c85a4962b",
   "bytes": 2047296,
   "members": 88,
-  "scope": "NEW residual-pilot original source subset, exact voice license, extraction data and generated comparison audio. Isolated development only, no release or promotion."
+  "supersedes": "Previous 7c2ac957 upload was truncated; verification rejected it. Do not use that version. This upload uses bounded chunk reads and verified full Git blob hash.",
+  "scope": "Development source/artifact backup only, not release or promotion."
 }
