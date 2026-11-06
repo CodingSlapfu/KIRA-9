@@ -22,9 +22,11 @@ WER includes insertions and may exceed 1. These results are failed English recog
 - tools/nucleus_study.py [--variant smooth] renders new experiment recordings. --recognize uses only an existing cached model.
 - tools/nucleus_analysis.py [--variant smooth] measures nuclei, glides and boundaries and summarizes recorded recognition.
 - tests/nucleus_transition.c is a diagnostic guard currently failing in BOTH baseline/candidate; it is not wired into previously passed acceptance scripts.
-- tools/nucleus_pack.py verifies all 36 WAV hashes and creates lossless baseline/candidate paired FLACs. tools/nucleus_archive.py creates an experiment-only archive; existing firmware archives remain untouched.
+- tools/nucleus_pack.py verifies all 36 WAV hashes and creates lossless baseline/candidate paired WAV.gz files. tools/nucleus_archive.py creates an experiment-only archive; existing firmware archives remain untouched.
 
 The new evidence-preservation workflow reproduces only these new audio artifacts, checks them against recorded WAV hashes and backs up the experiment. It does not execute old CI/repair tests or install/use recognition models. Recognition JSONs are observed local results, not falsely labelled CI model runs.
 
 ## Exact next experiment
 Test smoothing the **output band weights themselves**, keeping unweighted resonator states, instead of storing weighted energy inside resonators. Isolate that single change against the same transition cases and guard, then examine recognition only if it improves the acoustic boundary without failing headroom. This is a hypothesis, not an implemented fix. Do not rerun the rejected late-glide experiment or unrelated acceptance. Native/WASM/firmware publication remains blocked by intelligibility and original release gates.
+
+Artifact preservation note: the independent job reproduced all 36 expected WAV hashes before packaging failed because the runner lacks ffmpeg. Packaging now uses Python's lossless gzip support for WAVs, avoiding an extra runner install. No recognition or old acceptance checks are repeated for packaging.

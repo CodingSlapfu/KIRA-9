@@ -6,7 +6,7 @@ for name in subprocess.check_output(['git','ls-files'],cwd=root,text=True).split
  p=root/name
  if p.is_file():paths['source/'+name]=p
 for p in (root/'build/nucleus-study').glob('*'):
- if p.suffix in ['.json','.flac']:paths['evidence/'+p.name]=p
+ if p.suffix in ['.json','.gz']:paths['evidence/'+p.name]=p
 manifest={name:hashlib.sha256(p.read_bytes()).hexdigest() for name,p in paths.items()}
 with zipfile.ZipFile(out/'nucleus-evidence.zip','w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
  for name,p in sorted(paths.items()):z.write(p,name)
