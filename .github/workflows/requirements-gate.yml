@@ -1,0 +1,29 @@
+name: KIRA-9 requirement accountability
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      phase:
+        description: "Scope gate (release should fail until firmware/software acceptance)"
+        type: choice
+        required: true
+        default: plan
+        options: [plan, release]
+permissions:
+  contents: read
+jobs:
+  requirements:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout versioned planning source
+        uses: actions/checkout@v4
+      - name: Negative regression tests — missing tasks must fail
+        run: python3 tools/test_requirement_gate.py
+      - name: Verify plan register
+        run: python3 tools/requirement_gate.py --phase plan
+      - name: Mandatory release gate (only when explicitly requested)
+        if: github.event_name == 'workflow_dispatch' && inputs.phase == 'release'
+        run: python3 tools/requirement_gate.py --phase release
