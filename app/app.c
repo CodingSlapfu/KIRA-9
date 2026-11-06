@@ -1,13 +1,22 @@
 /* SPDX-License-Identifier: MIT; original KIRA-9 app */
 #include "../core/kira.h"
 #include "../factory/songs.h"
+#include "../core/transfer.h"
+#include "../core/library.h"
 static int k9_text_equal(const char *a,const char *b){unsigned i;for(i=0;i<21u;i++){if(a[i]!=b[i])return 0;if(!a[i])return 1;}return 0;}
 static void text_cat(char *d,const char *s){unsigned n=0;while(d[n]&&n<38)n++;while(*s&&n<38)d[n++]=*s++;d[n]=0;}
 static void int_text(int v,char *d){char b[12];unsigned n=0,j=0;uint32_t u=v<0?0u-(uint32_t)v:(uint32_t)v;if(v<0)d[j++]='-';do{b[n++]=(char)('0'+u%10);u/=10;}while(u);while(n)d[j++]=b[--n];d[j]=0;}
 static k9_engine engine;
 static k9_song custom,cues[2];
+static k9_song validation_song PLAT_POOL;
 static k9_song phrase_cache[8] PLAT_POOL,word_cache[8] PLAT_POOL;
 static uint8_t library_busy;
+static k9_transfer transfer_state;
+static k9_preset presets[8];
+static uint8_t voice_wire[3840],custom_wire[3840];
+static uint16_t voice_length,custom_length;
+static uint8_t tx_reply[160];static uint16_t tx_length,tx_position;
+static uint8_t preset_pick,delete_confirm;static uint32_t delete_until;
 static uint8_t cue_ready,cue_active;
 static uint8_t song_wire[K9_WIRE_MAX];
 static float audio_lr[512];
@@ -19,10 +28,18 @@ static char message[40];
 static const char *const pages[]={"PLAY","SONG","VOICE","MIDI","LIBRARY","PERFORMANCE"};
 static const char *const modes[]={"SOLO SONG","LIVE","PHRASE","WORD"};
 static const char *const voices[]={"BRIGHT","DEEP","AIRY","SMOKY","YOUTH","MATURE","SYNTH"};
-static uint32_t library_object(uint8_t kind,uint8_t slot){if(kind==1)return OBJ_PHRASE0+slot;if(kind==2)return OBJ_WORD0+slot;return slot<4?OBJ_SONG0+slot:OBJ_SONG4+slot-4;}
+static uint32_t library_object(uint8_t kind,uint8_t slot){if(kind==3)return OBJ_PRONUNCIATION;if(kind==4)return OBJ_VOICES;if(kind==1)return OBJ_PHRASE0+slot;if(kind==2)return OBJ_WORD0+slot;return slot<4?OBJ_SONG0+slot:OBJ_SONG4+slot-4;}
 static void library_cache_load(void){unsigned i;for(i=0;i<8;i++){int n;phrase_cache[i].count=word_cache[i].count=0;n=plat_store_load(OBJ_PHRASE0+i,song_wire,sizeof song_wire);if(n>0)k9_decode(&phrase_cache[i],song_wire,(size_t)n);n=plat_store_load(OBJ_WORD0+i,song_wire,sizeof song_wire);if(n>0)k9_decode(&word_cache[i],song_wire,(size_t)n);}}
+static void presets_load(void){unsigned i;int n;memset(presets,0,sizeof presets);for(i=0;i<8;i++){presets[i].voice=i%7;presets[i].style=i;presets[i].breath=6;presets[i].vibrato=20;presets[i].glide=50;presets[i].expression=110;}n=plat_store_load(OBJ_VOICES,voice_wire,sizeof voice_wire);if(n>0&&k9_voicebank_read(voice_wire,(uint16_t)n,presets))voice_length=(uint16_t)n;else voice_length=k9_voicebank_write(voice_wire,0,presets);}
+static int xbusy(void *ctx){(void)ctx;return backup_hold||engine.playing||engine.velocity||engine.level>.0001f;}
+static int xload(void *ctx,uint8_t kind,uint8_t slot,uint8_t *p,uint16_t cap){(void)ctx;return plat_store_load(library_object(kind,slot),p,cap);}
+static int xvalid(void *ctx,uint8_t kind,const uint8_t *p,uint16_t n){(void)ctx;if(kind<3)return k9_decode(&validation_song,p,n);if(kind==4)return k9_voicebank_read(p,n,0);return k9_document_valid(p,n,kind);}
+static int xsave(void *ctx,uint8_t kind,uint8_t slot,const uint8_t *p,uint16_t n){int rc;(void)ctx;rc=plat_store_save(library_object(kind,slot),p,n);if(!rc){if(kind<3){memcpy(&custom,&validation_song,sizeof custom);memcpy(custom_wire,p,n);custom_length=n;load_pending=1;}if(kind==4)presets_load();library_cache_load();app_say("TRANSFER SAVED","");}return rc;}
+static const k9_transfer_io xio={0,xbusy,xload,xvalid,xsave};
+static void transfer_send(const uint8_t *body,uint16_t n){uint8_t raw[120];unsigned i,bits=0,acc=0;uint8_t sum=0;raw[0]=0;raw[1]=0x59;raw[2]=0x67;raw[3]=(uint8_t)n;raw[4]=(uint8_t)(n>>8);raw[5]=0;memcpy(raw+6,body,n);for(i=0;i<n;i++)sum=(uint8_t)(sum+body[i]);raw[6+n]=(uint8_t)~sum;tx_position=0;tx_length=0;tx_reply[tx_length++]=0xf0;for(i=0;i<n+7u;i++){acc|=(unsigned)raw[i]<<bits;bits+=8;while(bits>=7){tx_reply[tx_length++]=(uint8_t)(acc&127);acc>>=7;bits-=7;}}if(bits)tx_reply[tx_length++]=(uint8_t)acc;tx_reply[tx_length++]=0xf7;}
+static void transfer_poll(void){k9_transfer_poll(&transfer_state,plat_ms());while(tx_position<tx_length&&plat_midi_out_room(TO_USB)){uint32_t p;unsigned left=tx_length-tx_position,take=left>=3?3:left,cin=left>3?4:4+take;p=cin;for(unsigned i=0;i<take;i++)p|=(uint32_t)tx_reply[tx_position+i]<<(8u+8u*i);plat_midi_send(p,TO_USB);tx_position=(uint16_t)(tx_position+take);}}
 static void restart_song(void){engine.voice=prefs.voice;engine.external=(prefs.sync==1||prefs.sync==3)?2:prefs.sync!=0;engine.source=(prefs.sync==1||prefs.sync==3)?255:TO_USB;k9_start(&engine,load_pending?&custom:&factory_songs[prefs.song]);}
-void app_init(void){memset(&prefs,0,sizeof prefs);prefs.magic=0x4b395031u;prefs.twitch=1;if(plat_store_load(OBJ_SETTINGS,&prefs,sizeof prefs)!=(int)sizeof prefs||prefs.magic!=0x4b395031u||prefs.song>=8||prefs.voice>=7||prefs.mode>=4||prefs.sync>=4||prefs.slot>=8||prefs.emotion>=4||prefs.twitch>=3||prefs.ble>=2||prefs.channel>16||prefs.style>=8||prefs.kind>=3||prefs.reconnect>=2){memset(&prefs,0,sizeof prefs);prefs.magic=0x4b395031u;prefs.twitch=1;}prefs.peer[20]=0;k9_init(&engine);engine.voice=prefs.voice;engine.song=&factory_songs[prefs.song];engine.external=(prefs.sync==1||prefs.sync==3)?2:prefs.sync!=0;engine.source=(prefs.sync==1||prefs.sync==3)?255:TO_USB;plat_ble_enable(prefs.ble);btn_last=keys_last=draw_at=0;message[0]=0;save_pending=playing_cmd=stop_cmd=load_pending=note_vel=0;page=dirty=0;cue_ready=cue_active=0;blocks=block_max=overruns=0;library_cache_load();}
+void app_init(void){memset(&prefs,0,sizeof prefs);prefs.magic=0x4b395031u;prefs.twitch=1;if(plat_store_load(OBJ_SETTINGS,&prefs,sizeof prefs)!=(int)sizeof prefs||prefs.magic!=0x4b395031u||prefs.song>=8||prefs.voice>=7||prefs.mode>=4||prefs.sync>=4||prefs.slot>=8||prefs.emotion>=4||prefs.twitch>=3||prefs.ble>=2||prefs.channel>16||prefs.style>=8||prefs.kind>=5||prefs.reconnect>=2){memset(&prefs,0,sizeof prefs);prefs.magic=0x4b395031u;prefs.twitch=1;}prefs.peer[20]=0;k9_init(&engine);engine.voice=prefs.voice;engine.song=&factory_songs[prefs.song];engine.external=(prefs.sync==1||prefs.sync==3)?2:prefs.sync!=0;engine.source=(prefs.sync==1||prefs.sync==3)?255:TO_USB;plat_ble_enable(prefs.ble);btn_last=keys_last=draw_at=0;message[0]=0;save_pending=playing_cmd=stop_cmd=load_pending=note_vel=0;page=dirty=0;cue_ready=cue_active=0;blocks=block_max=overruns=0;library_cache_load();presets_load();k9_transfer_init(&transfer_state);custom_length=0;}
 void app_panic(void){k9_stop(&engine);engine.level=0;}
 void app_render(int32_t *lr,uint32_t n,uint32_t master){uint32_t t=plat_ticks24(),i,pkt;int port;unsigned budget=32;
  if(stop_cmd){k9_stop(&engine);if(engine.external==2)engine.source=255;stop_cmd=0;note_cmd=0;cue_ready=0;}
@@ -31,7 +48,7 @@ void app_render(int32_t *lr,uint32_t n,uint32_t master){uint32_t t=plat_ticks24(
  if(note_cmd){k9_note(&engine,K9_AH,note_cmd-2,note_vel);note_cmd=0;}
  while(budget--&&plat_midi_in(&pkt,&port)){
  uint8_t source=(uint8_t)plat_midi_in_from(),st=(uint8_t)(pkt>>8),d1=(uint8_t)(pkt>>16)&127u,d2=(uint8_t)(pkt>>24)&127u;
- if(prefs.sync==1&&port!=PORT_BLE)continue;if(library_busy)continue;if(st<0xf0u&&prefs.channel&&((st&15u)+1u)!=prefs.channel)continue;
+ if(prefs.sync==1&&port!=PORT_BLE)continue;if(library_busy||transfer_state.active)continue;if(st<0xf0u&&prefs.channel&&((st&15u)+1u)!=prefs.channel)continue;
  if(prefs.sync==1&&engine.source==255&&st<0xf0u)engine.source=source;
  if((st&0xf0u)==0xc0u&&(!engine.external||engine.source==source))prefs.voice=d1%7u;
  if((st&0xf0u)==0xb0u&&(!engine.external||engine.source==255||engine.source==source)){
@@ -52,21 +69,21 @@ static void input(void){uint32_t f,buttons=plat_buttons(),press=buttons&~btn_las
  if(press&(1u<<B_HOME))page=0;
  d=plat_enc(EN_SELECT);if(d)page=(uint8_t)((page+6+d%6)%6);
  if(press&(1u<<B_EDIT))page=(page+1)%6;
- if(press&(1u<<B_PLAY)){if(engine.playing||engine.velocity)stop_cmd=1;else playing_cmd=1;}
+ if(press&(1u<<B_PLAY)){if(transfer_state.active){app_say("FINISH TRANSFER FIRST","");}else if(engine.playing||engine.velocity)stop_cmd=1;else playing_cmd=1;}
  if(press&(1u<<B_SAVE))save_pending=1;
- if(press&(1u<<B_SEL)){if(page==4){int len=plat_store_load(library_object(prefs.kind,prefs.slot),song_wire,sizeof song_wire);if(len>0&&k9_decode(&custom,song_wire,(size_t)len)){load_pending=1;app_say("LOADED","");}else app_say("EMPTY OR INVALID","");}else if(page==3){if(plat_ble_device()>=BLE_DEV_CONNECTING)plat_ble_disconnect();else{int rssi;if(plat_ble_found(peer_pick,prefs.peer,&rssi)){plat_ble_connect(peer_pick);dirty=1;}}}}
+ if(press&(1u<<B_SEL)){if(page==4&&prefs.kind<3){int len=plat_store_load(library_object(prefs.kind,prefs.slot),song_wire,sizeof song_wire);if(len>0&&k9_decode(&custom,song_wire,(size_t)len)){load_pending=1;custom_length=(uint16_t)len;memcpy(custom_wire,song_wire,(uint32_t)len);app_say("LOADED","");}else app_say("EMPTY OR INVALID","");}else if(page==2){prefs.voice=presets[preset_pick].voice;prefs.style=presets[preset_pick].style;prefs.emotion=presets[preset_pick].emotion;dirty=1;app_say("PRESET LOADED","");}else if(page==3){if(plat_ble_device()>=BLE_DEV_CONNECTING)plat_ble_disconnect();else{int rssi;if(plat_ble_found(peer_pick,prefs.peer,&rssi)){plat_ble_connect(peer_pick);dirty=1;}}}}
  for(i=EN_ALGO;i<NE;i++){d=plat_enc(i);if(!d)continue;dirty=1;
  if(page==1){if(i==EN_K1){stop_cmd=1;prefs.song=(uint8_t)((prefs.song+8+d%8)%8);load_pending=0;}if(i==EN_K2){stop_cmd=1;prefs.mode=(uint8_t)((prefs.mode+4+d%4)%4);}}
- if(page==2){if(i==EN_K4)prefs.style=(uint8_t)((prefs.style+8+d%8)%8);if(i==EN_K1)prefs.voice=(uint8_t)((prefs.voice+7+d%7)%7);if(i==EN_K2)prefs.emotion=(uint8_t)((prefs.emotion+4+d%4)%4);if(i==EN_K3)prefs.twitch=(uint8_t)((prefs.twitch+3+d%3)%3);}
+ if(page==2){if(i==EN_PRESET)preset_pick=(uint8_t)((preset_pick+8+d%8)%8);if(i==EN_K4)prefs.style=(uint8_t)((prefs.style+8+d%8)%8);if(i==EN_K1)prefs.voice=(uint8_t)((prefs.voice+7+d%7)%7);if(i==EN_K2)prefs.emotion=(uint8_t)((prefs.emotion+4+d%4)%4);if(i==EN_K3)prefs.twitch=(uint8_t)((prefs.twitch+3+d%3)%3);}
  if(page==3&&i==EN_K1){f=plat_lock();k9_stop(&engine);prefs.sync=(uint8_t)((prefs.sync+4+d%4)%4);engine.external=(prefs.sync==1||prefs.sync==3)?2:prefs.sync!=0;engine.source=(prefs.sync==1||prefs.sync==3)?255:TO_USB;plat_unlock(f);}
  if(page==3&&i==EN_PRESET)prefs.channel=(uint8_t)((prefs.channel+17+d%17)%17);
  if(page==3&&i==EN_K2)peer_pick=(uint8_t)((peer_pick+8+d%8)%8);
  if(page==3&&i==EN_K3)prefs.reconnect=!prefs.reconnect;
  if(page==3&&i==EN_K4){prefs.ble=!prefs.ble;plat_ble_enable(prefs.ble);}
- if(page==4&&i==EN_K2)prefs.kind=(uint8_t)((prefs.kind+3+d%3)%3);
- if(page==4&&i==EN_K1)prefs.slot=(uint8_t)((prefs.slot+8+d%8)%8);
+ if(page==4&&i==EN_K2)prefs.kind=(uint8_t)((prefs.kind+5+d%5)%5);
+ if(page==4&&i==EN_K1&&prefs.kind<3)prefs.slot=(uint8_t)((prefs.slot+8+d%8)%8);
  }
- if(prefs.mode){for(i=0;i<27;i++){
+ if(prefs.mode&&!transfer_state.active){for(i=0;i<27;i++){
   if(down&(1u<<i)){
    if(prefs.mode==1){f=plat_lock();note_cmd=(uint8_t)(55+i);note_vel=100;plat_unlock(f);}
    else if((prefs.mode==2?phrase_cache[i%8].count:word_cache[i%8].count)){f=plat_lock();k9_start(&engine,prefs.mode==2?&phrase_cache[i%8]:&word_cache[i%8]);plat_unlock(f);}
@@ -82,7 +99,7 @@ static void input(void){uint32_t f,buttons=plat_buttons(),press=buttons&~btn_las
   }
   if(up&(1u<<i)){if(prefs.mode==1&&engine.note==53+i){f=plat_lock();note_cmd=(uint8_t)(55+i);note_vel=0;plat_unlock(f);}plat_midi_send(0x08u|0x80u<<8|(53u+i)<<16,TO_USB|TO_BLE);}
  }}
- if(save_pending){if(backup_hold){app_say("BACKUP IN PROGRESS","");save_pending=0;return;}if(engine.playing||engine.level>.0001f)app_say("STOP BEFORE SAVE","");else{int rc;if(page==4){size_t n=k9_encode(prefs.mode&&engine.song?engine.song:load_pending?&custom:&factory_songs[prefs.song],song_wire,sizeof song_wire);rc=n&&n<=PLAT_STORE_MAX?plat_store_save(library_object(prefs.kind,prefs.slot),song_wire,(uint32_t)n):-1;}else rc=plat_store_save(OBJ_SETTINGS,&prefs,sizeof prefs);if(!rc){if(page==4){library_busy=1;library_cache_load();library_busy=0;}dirty=0;app_say("SAVED","");}else app_say("SAVE FAILED","");}save_pending=0;}
+ if(save_pending){if(backup_hold||transfer_state.active){app_say("BACKUP IN PROGRESS","");save_pending=0;return;}if(engine.playing||engine.level>.0001f)app_say("STOP BEFORE SAVE","");else{int rc;if(page==4&&prefs.kind<3){size_t n=k9_encode(prefs.mode&&engine.song?engine.song:load_pending?&custom:&factory_songs[prefs.song],song_wire,sizeof song_wire);if(load_pending&&custom_length&&prefs.mode==0){n=custom_length;memcpy(song_wire,custom_wire,n);}rc=n&&n<=PLAT_STORE_MAX?plat_store_save(library_object(prefs.kind,prefs.slot),song_wire,(uint32_t)n):-1;}else if(page==2){presets[preset_pick].voice=prefs.voice;presets[preset_pick].style=prefs.style;presets[preset_pick].emotion=prefs.emotion;voice_length=k9_voicebank_write(voice_wire,voice_length,presets);rc=voice_length?plat_store_save(OBJ_VOICES,voice_wire,voice_length):-1;if(!rc)rc=plat_store_save(OBJ_SETTINGS,&prefs,sizeof prefs);}else rc=plat_store_save(OBJ_SETTINGS,&prefs,sizeof prefs);if(!rc){if(page==4){library_busy=1;library_cache_load();library_busy=0;}dirty=0;app_say("SAVED","");}else app_say("SAVE FAILED","");}save_pending=0;}
  plat_leds((engine.playing?(1u<<B_PLAY):0)|(dirty?(1u<<B_SAVE):0),keys);
 }
 /* Analytic original face rig, drawn as six 40-row strips (19.2 KB canvas). */
@@ -103,8 +120,8 @@ static void draw_face(k9_face f){uint16_t skin=RGB(221,175,163),hair=RGB(44,33,6
  cv_blit(0,(uint32_t)face_y);}}
 static void draw_menu(void){char t[32];unsigned row;for(row=0;row<6;row++){cv_begin(240,40,RGB(13,16,30));if(!row){cv_text(8,5,&FONT_M,pages[page],RGB(255,157,81));}else if(row==1&&page==5){int_text((int)plat_cpu_pct(),t);cv_text(8,0,&FONT_XS,"AUDIO CPU %",C_WHITE);cv_text(130,0,&FONT_XS,t,C_WHITE);int_text((int)plat_xruns(),t);cv_text(8,17,&FONT_XS,"DMA XRUNS",C_WHITE);cv_text(130,17,&FONT_XS,t,C_WHITE);}else if(row==1){cv_text(8,0,&FONT_XS,factory_names[prefs.song],C_WHITE);cv_text(8,17,&FONT_XS,modes[prefs.mode],C_WHITE);}else if(row==2&&page==3){int_text(prefs.channel,t);cv_text(8,0,&FONT_XS,"PRESET: MIDI CHANNEL",C_WHITE);cv_text(150,0,&FONT_XS,prefs.channel?t:"OMNI",C_WHITE);cv_text(8,17,&FONT_XS,prefs.reconnect?"K3 RECONNECT: ON":"K3 RECONNECT: OFF",C_WHITE);}else if(row==2){cv_text(8,0,&FONT_XS,voices[prefs.voice],RGB(255,157,81));int_text((int)engine.tick,t);cv_text(8,17,&FONT_XS,t,C_WHITE);}else if(row==3){if(page==3){cv_text(8,0,&FONT_XS,prefs.sync==0?"K1 CLOCK: INTERNAL":prefs.sync==1?"K1 CLOCK: BLE":prefs.sync==2?"K1 CLOCK: USB":"K1 CLOCK: AUTO",C_WHITE);cv_text(8,17,&FONT_XS,prefs.sync==3?"AUTO: START ARMS SOURCE":prefs.ble?"K4 BLE: ON":"K4 BLE: OFF",C_WHITE);}else if(page==2){cv_text(8,0,&FONT_XS,"K1 VOICE  K2 EMOTION",C_WHITE);int_text(prefs.twitch,t);cv_text(8,17,&FONT_XS,"K3 TWITCH",C_WHITE);cv_text(90,17,&FONT_XS,t,C_WHITE);}else if(page==4){int_text(prefs.slot+1,t);cv_text(8,0,&FONT_XS,prefs.kind==0?"K1 SONG SLOT":prefs.kind==1?"K1 PHRASE SLOT":"K1 WORD SLOT",C_WHITE);cv_text(110,0,&FONT_XS,t,C_WHITE);cv_text(8,17,&FONT_XS,"SAVE: WRITE   SEL: LOAD",C_WHITE);}else if(page==5){int_text((int)(block_max/24u),t);cv_text(8,0,&FONT_XS,"MAX AUDIO US",C_WHITE);cv_text(122,0,&FONT_XS,t,C_WHITE);int_text((int)overruns,t);cv_text(8,17,&FONT_XS,"OVERRUNS",C_WHITE);cv_text(122,17,&FONT_XS,t,C_WHITE);}else{cv_text(8,0,&FONT_XS,"K1 SONG   K2 MODE",C_WHITE);cv_text(8,17,&FONT_XS,"PLAY: START / STOP",C_WHITE);}}else if(row==4){if(page==2){static const char *const style_names[]={"POP","HOUSE","IDM","TRIP-HOP","AMBIENT","SOUL","EXPERIMENTAL","ROBOTIC"};cv_text(8,0,&FONT_XS,"K4 STYLE",C_WHITE);cv_text(90,0,&FONT_XS,style_names[prefs.style],C_WHITE);int_text(prefs.emotion,t);cv_text(8,17,&FONT_XS,"EMOTION",C_WHITE);cv_text(90,17,&FONT_XS,t,C_WHITE);}else if(page==4){cv_text(8,0,&FONT_XS,"K2 TYPE: SONG/PHRASE/WORD",C_WHITE);cv_text(8,17,&FONT_XS,"8 SLOTS EACH / 3840 BYTES",C_WHITE);}else if(page==3){char name[21];int rssi;if(plat_ble_found(peer_pick,name,&rssi))cv_text(8,0,&FONT_XS,name,C_WHITE);else cv_text(8,0,&FONT_XS,"K2: CHOOSE MIDI PEER",C_WHITE);cv_text(8,17,&FONT_XS,"SEL: CONNECT / DISCONNECT",C_WHITE);}else cv_text(8,5,&FONT_XS,message,C_WHITE);}else{cv_text(8,0,&FONT_XS,"EDIT / SELECT: PAGES",C_WHITE);cv_text(8,17,&FONT_XS,"HOME: FACE   SAVE: STORE",C_WHITE);}cv_blit(0,row*40);}}
 void app_ui_init(void){palette_set(1);lcd_fill(0,0,240,240,C_BLACK);}
-void app_input_only(void){input();}
-void app_frame(void){uint32_t now=plat_ms();input();
+void app_input_only(void){transfer_poll();input();}
+void app_frame(void){uint32_t now=plat_ms();transfer_poll();input();if(plat_usb_lost()&&prefs.sync!=0){stop_cmd=1;k9_transfer_init(&transfer_state);} 
  {uint8_t linked=(uint8_t)(plat_ble_connected()||plat_ble_device()==BLE_DEV_READY);if(ble_was&&!linked&&prefs.sync!=2&&prefs.sync!=0)stop_cmd=1;ble_was=linked;
  plat_ble_scan(prefs.ble&&!linked&&(page==3||prefs.reconnect));
  if(prefs.ble&&prefs.reconnect&&prefs.peer[0]&&!linked&&now-retry_at>5000u){int j,rssi;char name[21];retry_at=now;for(j=0;j<8;j++)if(plat_ble_found(j,name,&rssi)&&k9_text_equal(name,prefs.peer)){plat_ble_connect(j);break;}}
@@ -118,6 +135,7 @@ int app_expect(const char *what,int *got){if(!strcmp(what,"playing"))*got=engine
  * checks before writing an inactive A/B store sector; ACK address C2000000|result. */
 void app_usb_cmd(const uint8_t *d,uint32_t n){
  uint32_t len,crc,off;uint8_t ack=0,result=1;
+ if(n>=9u&&d[2]>=0x62u&&d[2]<=0x66u){uint8_t response[109];uint16_t rn=k9_transfer_command(&transfer_state,&xio,plat_ms(),d[2],d+6,(uint16_t)(n-7u),response,sizeof response);if(rn)transfer_send(response,rn);return;}
  if(n!=15u||d[2]!=0x61u)return;
  len=(uint32_t)d[7]|(uint32_t)d[8]<<8;
  crc=(uint32_t)d[9]|(uint32_t)d[10]<<8|(uint32_t)d[11]<<16|(uint32_t)d[12]<<24;
@@ -133,7 +151,7 @@ void app_usb_cmd(const uint8_t *d,uint32_t n){
  plat_host_read(0xC2000000u|result,&ack,1u);
 }
 
-int app_backup_playing(void){return engine.playing||engine.velocity||engine.level>.0001f;}
+int app_backup_playing(void){return transfer_state.active||engine.playing||engine.velocity||engine.level>.0001f;}
 void app_backup_flush(void){if(dirty&&!app_backup_playing()&&!plat_store_save(OBJ_SETTINGS,&prefs,sizeof prefs))dirty=0;}
 void app_backup_hold(int on){backup_hold=on!=0;}
 void app_backup_restored(void){app_init();app_ui_init();}

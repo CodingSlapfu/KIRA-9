@@ -1,0 +1,1 @@
+PASS browser↔actual C device protocol: editable project and score, pronunciation and eight voice presets roundtrip; loss/retry/duplicate/corruption/busy/save-failure preserve committed state

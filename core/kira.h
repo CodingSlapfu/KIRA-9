@@ -27,6 +27,7 @@ uint32_t k9_crc(const uint8_t *p,size_t n);
 int k9_song_validate(const k9_song *s);
 size_t k9_encode(const k9_song *s,uint8_t *out,size_t cap);
 int k9_decode(k9_song *dst,const uint8_t *in,size_t len);
+int k9_document_valid(const uint8_t *p,size_t n,uint8_t kind);
 void k9_init(k9_engine *e);
 void k9_start(k9_engine *e,const k9_song *s);
 void k9_stop(k9_engine *e);
