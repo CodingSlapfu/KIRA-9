@@ -1,0 +1,22 @@
+{
+  "samples_each": 53673984,
+  "velocity": 127,
+  "voices": 7,
+  "styles": 8,
+  "notes": [
+    48,
+    60,
+    72,
+    84
+  ],
+  "baseline": {
+    "limiter_hits": 746,
+    "exit_code": 1
+  },
+  "smoothed_weight_candidate": {
+    "limiter_hits": 506,
+    "exit_code": 1
+  },
+  "stop_tails": "pass in both",
+  "decision": "Do not promote candidate; guard fails in both. No firmware change accepted."
+}

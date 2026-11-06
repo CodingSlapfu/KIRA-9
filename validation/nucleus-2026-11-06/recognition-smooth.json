@@ -1,0 +1,173 @@
+{
+  "baseline": "3a407ec",
+  "change": "Band weights moved from instantaneous resonator output to existing smoothed input-gain targets; original glide unchanged",
+  "model": "same cached tiny.en; offline, no lyric prompts",
+  "results": [
+    {
+      "id": "vowels-48",
+      "group": "vowels",
+      "note": 48,
+      "variant": "smooth",
+      "expected": "beat bit bet bat boot bought",
+      "sha256": "bce26cd75e5ba363a8740258c8b71dcf074e22bce40601baf83f765d3da960db",
+      "peak": 0.1267854869365692,
+      "rms": 0.024724261835217476,
+      "text": "",
+      "wer": 1.0,
+      "no_speech": []
+    },
+    {
+      "id": "glides-48",
+      "group": "glides",
+      "note": 48,
+      "variant": "smooth",
+      "expected": "bait bet bite bat boat bought",
+      "sha256": "3025105e9168714b34abf10d1fb7d31e14cbf7381fd96615fe702e21e1e028c7",
+      "peak": 0.15965642035007477,
+      "rms": 0.023117952048778534,
+      "text": " Beep, beep, beep, beep, boop, boop.",
+      "wer": 1.0,
+      "no_speech": [
+        0.5392204523086548
+      ]
+    },
+    {
+      "id": "transitions-48",
+      "group": "transitions",
+      "note": 48,
+      "variant": "smooth",
+      "expected": "pea tea key see she me",
+      "sha256": "c0c1d6a6535b3178c80fd257af32adc5ccedc997e0e9ca8408849246530adfd1",
+      "peak": 0.19411350786685944,
+      "rms": 0.028219740837812424,
+      "text": " Beep, beep, beep, beep, beep, beep.",
+      "wer": 1.0,
+      "no_speech": [
+        0.7412088513374329
+      ]
+    },
+    {
+      "id": "contexts-48",
+      "group": "contexts",
+      "note": 48,
+      "variant": "smooth",
+      "expected": "my high light night right",
+      "sha256": "7baebebd3d678828976fcc2b85b7a6e943aba55b0b2b679a6e91675df9fe0982",
+      "peak": 0.15791600942611694,
+      "rms": 0.019767865538597107,
+      "text": " Wait, wait, wait, wait, wait.",
+      "wer": 1.0,
+      "no_speech": [
+        0.487954705953598
+      ]
+    },
+    {
+      "id": "vowels-60",
+      "group": "vowels",
+      "note": 60,
+      "variant": "smooth",
+      "expected": "beat bit bet bat boot bought",
+      "sha256": "ff3aa8e0d219eb6857fd6f7f30c43a6b3116ac89da1a104bd20dedb0641405d6",
+      "peak": 0.23223784565925598,
+      "rms": 0.05196226015686989,
+      "text": "",
+      "wer": 1.0,
+      "no_speech": []
+    },
+    {
+      "id": "glides-60",
+      "group": "glides",
+      "note": 60,
+      "variant": "smooth",
+      "expected": "bait bet bite bat boat bought",
+      "sha256": "28e20e95f188b01bdc8be1179e7e2c27718a29741c38128ccae183ce0f173e0a",
+      "peak": 0.2765406370162964,
+      "rms": 0.05457058548927307,
+      "text": " Beep, beep, beep, beep, beep, beep.",
+      "wer": 1.0,
+      "no_speech": [
+        0.7539644241333008
+      ]
+    },
+    {
+      "id": "transitions-60",
+      "group": "transitions",
+      "note": 60,
+      "variant": "smooth",
+      "expected": "pea tea key see she me",
+      "sha256": "3b1b92fea26d71cde326a723c21d6c1db3af6a2c3c01bfac0fb58d14a9e662b6",
+      "peak": 0.2253725826740265,
+      "rms": 0.03347374498844147,
+      "text": "",
+      "wer": 1.0,
+      "no_speech": []
+    },
+    {
+      "id": "contexts-60",
+      "group": "contexts",
+      "note": 60,
+      "variant": "smooth",
+      "expected": "my high light night right",
+      "sha256": "05d61da691a80af146ae553dd6ee0874142a2460997643a7582c7e383a36fe62",
+      "peak": 0.22434033453464508,
+      "rms": 0.03485895320773125,
+      "text": " Wait, wait, wait, wait, wait, wait.",
+      "wer": 1.2,
+      "no_speech": [
+        0.5800562500953674
+      ]
+    },
+    {
+      "id": "vowels-72",
+      "group": "vowels",
+      "note": 72,
+      "variant": "smooth",
+      "expected": "beat bit bet bat boot bought",
+      "sha256": "2b9438d6cb5b329029c73fe70750fd07cfbe01ebcb1d0fec5470c338f89f85eb",
+      "peak": 0.31579235196113586,
+      "rms": 0.07873702794313431,
+      "text": "",
+      "wer": 1.0,
+      "no_speech": []
+    },
+    {
+      "id": "glides-72",
+      "group": "glides",
+      "note": 72,
+      "variant": "smooth",
+      "expected": "bait bet bite bat boat bought",
+      "sha256": "f30a595273e756964e1700646d819bedcf58ca58e7dadf743e2374eb67f0d616",
+      "peak": 0.3183789551258087,
+      "rms": 0.0837676078081131,
+      "text": "",
+      "wer": 1.0,
+      "no_speech": []
+    },
+    {
+      "id": "transitions-72",
+      "group": "transitions",
+      "note": 72,
+      "variant": "smooth",
+      "expected": "pea tea key see she me",
+      "sha256": "b8f58d15bf777dd52479cabd346c8e0581dc96ee77b3d22a931037aac4b25208",
+      "peak": 0.22166994214057922,
+      "rms": 0.03851695731282234,
+      "text": "",
+      "wer": 1.0,
+      "no_speech": []
+    },
+    {
+      "id": "contexts-72",
+      "group": "contexts",
+      "note": 72,
+      "variant": "smooth",
+      "expected": "my high light night right",
+      "sha256": "213e9a4c35f8b6ac747bed5d055be5ffac1d6d07c335427bc9b04bd69030bac7",
+      "peak": 0.3194699287414551,
+      "rms": 0.07438940554857254,
+      "text": "",
+      "wer": 1.0,
+      "no_speech": []
+    }
+  ]
+}

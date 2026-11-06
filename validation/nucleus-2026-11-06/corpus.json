@@ -1,0 +1,1610 @@
+[
+  {
+    "id": "vowels-48",
+    "group": "vowels",
+    "note": 48,
+    "lyrics": "beat bit bet bat boot bought",
+    "score": {
+      "bpm": 120,
+      "ticks": 720,
+      "events": [
+        {
+          "tick": 0,
+          "duration": 7,
+          "phone": 7,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 7,
+          "duration": 81,
+          "phone": 18,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 88,
+          "duration": 8,
+          "phone": 31,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 120,
+          "duration": 7,
+          "phone": 7,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 127,
+          "duration": 81,
+          "phone": 17,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 208,
+          "duration": 8,
+          "phone": 31,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 240,
+          "duration": 7,
+          "phone": 7,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 247,
+          "duration": 81,
+          "phone": 11,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 328,
+          "duration": 8,
+          "phone": 31,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 360,
+          "duration": 7,
+          "phone": 7,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 367,
+          "duration": 81,
+          "phone": 2,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 448,
+          "duration": 8,
+          "phone": 31,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 480,
+          "duration": 7,
+          "phone": 7,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 487,
+          "duration": 81,
+          "phone": 34,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 568,
+          "duration": 8,
+          "phone": 31,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 600,
+          "duration": 7,
+          "phone": 7,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 607,
+          "duration": 81,
+          "phone": 1,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 688,
+          "duration": 8,
+          "phone": 31,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "glides-48",
+    "group": "glides",
+    "note": 48,
+    "lyrics": "bait bet bite bat boat bought",
+    "score": {
+      "bpm": 120,
+      "ticks": 720,
+      "events": [
+        {
+          "tick": 0,
+          "duration": 7,
+          "phone": 7,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 7,
+          "duration": 81,
+          "phone": 13,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 88,
+          "duration": 8,
+          "phone": 31,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 120,
+          "duration": 7,
+          "phone": 7,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 127,
+          "duration": 81,
+          "phone": 11,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 208,
+          "duration": 8,
+          "phone": 31,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 240,
+          "duration": 7,
+          "phone": 7,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 247,
+          "duration": 81,
+          "phone": 6,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 328,
+          "duration": 8,
+          "phone": 31,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 360,
+          "duration": 7,
+          "phone": 7,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 367,
+          "duration": 81,
+          "phone": 2,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 448,
+          "duration": 8,
+          "phone": 31,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 480,
+          "duration": 7,
+          "phone": 7,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 487,
+          "duration": 81,
+          "phone": 25,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 568,
+          "duration": 8,
+          "phone": 31,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 600,
+          "duration": 7,
+          "phone": 7,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 607,
+          "duration": 81,
+          "phone": 1,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 688,
+          "duration": 8,
+          "phone": 31,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "transitions-48",
+    "group": "transitions",
+    "note": 48,
+    "lyrics": "pea tea key see she me",
+    "score": {
+      "bpm": 120,
+      "ticks": 720,
+      "events": [
+        {
+          "tick": 0,
+          "duration": 10,
+          "phone": 27,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 10,
+          "duration": 86,
+          "phone": 18,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 120,
+          "duration": 8,
+          "phone": 31,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 128,
+          "duration": 88,
+          "phone": 18,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 240,
+          "duration": 12,
+          "phone": 20,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 252,
+          "duration": 84,
+          "phone": 18,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 360,
+          "duration": 13,
+          "phone": 29,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 373,
+          "duration": 83,
+          "phone": 18,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 480,
+          "duration": 13,
+          "phone": 30,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 493,
+          "duration": 83,
+          "phone": 18,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 600,
+          "duration": 10,
+          "phone": 22,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 610,
+          "duration": 86,
+          "phone": 18,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "contexts-48",
+    "group": "contexts",
+    "note": 48,
+    "lyrics": "my high light night right",
+    "score": {
+      "bpm": 120,
+      "ticks": 600,
+      "events": [
+        {
+          "tick": 0,
+          "duration": 10,
+          "phone": 22,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 10,
+          "duration": 86,
+          "phone": 6,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 120,
+          "duration": 9,
+          "phone": 16,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 129,
+          "duration": 87,
+          "phone": 6,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 240,
+          "duration": 9,
+          "phone": 21,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 249,
+          "duration": 79,
+          "phone": 6,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 328,
+          "duration": 8,
+          "phone": 31,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 360,
+          "duration": 9,
+          "phone": 23,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 369,
+          "duration": 79,
+          "phone": 6,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 448,
+          "duration": 8,
+          "phone": 31,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 480,
+          "duration": 9,
+          "phone": 28,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 489,
+          "duration": 79,
+          "phone": 6,
+          "note": 48,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 568,
+          "duration": 8,
+          "phone": 31,
+          "note": 48,
+          "velocity": 90,
+          "stress": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "vowels-60",
+    "group": "vowels",
+    "note": 60,
+    "lyrics": "beat bit bet bat boot bought",
+    "score": {
+      "bpm": 120,
+      "ticks": 720,
+      "events": [
+        {
+          "tick": 0,
+          "duration": 7,
+          "phone": 7,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 7,
+          "duration": 81,
+          "phone": 18,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 88,
+          "duration": 8,
+          "phone": 31,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 120,
+          "duration": 7,
+          "phone": 7,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 127,
+          "duration": 81,
+          "phone": 17,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 208,
+          "duration": 8,
+          "phone": 31,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 240,
+          "duration": 7,
+          "phone": 7,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 247,
+          "duration": 81,
+          "phone": 11,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 328,
+          "duration": 8,
+          "phone": 31,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 360,
+          "duration": 7,
+          "phone": 7,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 367,
+          "duration": 81,
+          "phone": 2,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 448,
+          "duration": 8,
+          "phone": 31,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 480,
+          "duration": 7,
+          "phone": 7,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 487,
+          "duration": 81,
+          "phone": 34,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 568,
+          "duration": 8,
+          "phone": 31,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 600,
+          "duration": 7,
+          "phone": 7,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 607,
+          "duration": 81,
+          "phone": 1,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 688,
+          "duration": 8,
+          "phone": 31,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "glides-60",
+    "group": "glides",
+    "note": 60,
+    "lyrics": "bait bet bite bat boat bought",
+    "score": {
+      "bpm": 120,
+      "ticks": 720,
+      "events": [
+        {
+          "tick": 0,
+          "duration": 7,
+          "phone": 7,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 7,
+          "duration": 81,
+          "phone": 13,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 88,
+          "duration": 8,
+          "phone": 31,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 120,
+          "duration": 7,
+          "phone": 7,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 127,
+          "duration": 81,
+          "phone": 11,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 208,
+          "duration": 8,
+          "phone": 31,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 240,
+          "duration": 7,
+          "phone": 7,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 247,
+          "duration": 81,
+          "phone": 6,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 328,
+          "duration": 8,
+          "phone": 31,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 360,
+          "duration": 7,
+          "phone": 7,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 367,
+          "duration": 81,
+          "phone": 2,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 448,
+          "duration": 8,
+          "phone": 31,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 480,
+          "duration": 7,
+          "phone": 7,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 487,
+          "duration": 81,
+          "phone": 25,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 568,
+          "duration": 8,
+          "phone": 31,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 600,
+          "duration": 7,
+          "phone": 7,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 607,
+          "duration": 81,
+          "phone": 1,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 688,
+          "duration": 8,
+          "phone": 31,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "transitions-60",
+    "group": "transitions",
+    "note": 60,
+    "lyrics": "pea tea key see she me",
+    "score": {
+      "bpm": 120,
+      "ticks": 720,
+      "events": [
+        {
+          "tick": 0,
+          "duration": 10,
+          "phone": 27,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 10,
+          "duration": 86,
+          "phone": 18,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 120,
+          "duration": 8,
+          "phone": 31,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 128,
+          "duration": 88,
+          "phone": 18,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 240,
+          "duration": 12,
+          "phone": 20,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 252,
+          "duration": 84,
+          "phone": 18,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 360,
+          "duration": 13,
+          "phone": 29,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 373,
+          "duration": 83,
+          "phone": 18,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 480,
+          "duration": 13,
+          "phone": 30,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 493,
+          "duration": 83,
+          "phone": 18,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 600,
+          "duration": 10,
+          "phone": 22,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 610,
+          "duration": 86,
+          "phone": 18,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "contexts-60",
+    "group": "contexts",
+    "note": 60,
+    "lyrics": "my high light night right",
+    "score": {
+      "bpm": 120,
+      "ticks": 600,
+      "events": [
+        {
+          "tick": 0,
+          "duration": 10,
+          "phone": 22,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 10,
+          "duration": 86,
+          "phone": 6,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 120,
+          "duration": 9,
+          "phone": 16,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 129,
+          "duration": 87,
+          "phone": 6,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 240,
+          "duration": 9,
+          "phone": 21,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 249,
+          "duration": 79,
+          "phone": 6,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 328,
+          "duration": 8,
+          "phone": 31,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 360,
+          "duration": 9,
+          "phone": 23,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 369,
+          "duration": 79,
+          "phone": 6,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 448,
+          "duration": 8,
+          "phone": 31,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 480,
+          "duration": 9,
+          "phone": 28,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 489,
+          "duration": 79,
+          "phone": 6,
+          "note": 60,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 568,
+          "duration": 8,
+          "phone": 31,
+          "note": 60,
+          "velocity": 90,
+          "stress": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "vowels-72",
+    "group": "vowels",
+    "note": 72,
+    "lyrics": "beat bit bet bat boot bought",
+    "score": {
+      "bpm": 120,
+      "ticks": 720,
+      "events": [
+        {
+          "tick": 0,
+          "duration": 7,
+          "phone": 7,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 7,
+          "duration": 81,
+          "phone": 18,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 88,
+          "duration": 8,
+          "phone": 31,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 120,
+          "duration": 7,
+          "phone": 7,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 127,
+          "duration": 81,
+          "phone": 17,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 208,
+          "duration": 8,
+          "phone": 31,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 240,
+          "duration": 7,
+          "phone": 7,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 247,
+          "duration": 81,
+          "phone": 11,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 328,
+          "duration": 8,
+          "phone": 31,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 360,
+          "duration": 7,
+          "phone": 7,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 367,
+          "duration": 81,
+          "phone": 2,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 448,
+          "duration": 8,
+          "phone": 31,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 480,
+          "duration": 7,
+          "phone": 7,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 487,
+          "duration": 81,
+          "phone": 34,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 568,
+          "duration": 8,
+          "phone": 31,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 600,
+          "duration": 7,
+          "phone": 7,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 607,
+          "duration": 81,
+          "phone": 1,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 688,
+          "duration": 8,
+          "phone": 31,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "glides-72",
+    "group": "glides",
+    "note": 72,
+    "lyrics": "bait bet bite bat boat bought",
+    "score": {
+      "bpm": 120,
+      "ticks": 720,
+      "events": [
+        {
+          "tick": 0,
+          "duration": 7,
+          "phone": 7,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 7,
+          "duration": 81,
+          "phone": 13,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 88,
+          "duration": 8,
+          "phone": 31,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 120,
+          "duration": 7,
+          "phone": 7,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 127,
+          "duration": 81,
+          "phone": 11,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 208,
+          "duration": 8,
+          "phone": 31,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 240,
+          "duration": 7,
+          "phone": 7,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 247,
+          "duration": 81,
+          "phone": 6,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 328,
+          "duration": 8,
+          "phone": 31,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 360,
+          "duration": 7,
+          "phone": 7,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 367,
+          "duration": 81,
+          "phone": 2,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 448,
+          "duration": 8,
+          "phone": 31,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 480,
+          "duration": 7,
+          "phone": 7,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 487,
+          "duration": 81,
+          "phone": 25,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 568,
+          "duration": 8,
+          "phone": 31,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 600,
+          "duration": 7,
+          "phone": 7,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 607,
+          "duration": 81,
+          "phone": 1,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 688,
+          "duration": 8,
+          "phone": 31,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "transitions-72",
+    "group": "transitions",
+    "note": 72,
+    "lyrics": "pea tea key see she me",
+    "score": {
+      "bpm": 120,
+      "ticks": 720,
+      "events": [
+        {
+          "tick": 0,
+          "duration": 10,
+          "phone": 27,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 10,
+          "duration": 86,
+          "phone": 18,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 120,
+          "duration": 8,
+          "phone": 31,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 128,
+          "duration": 88,
+          "phone": 18,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 240,
+          "duration": 12,
+          "phone": 20,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 252,
+          "duration": 84,
+          "phone": 18,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 360,
+          "duration": 13,
+          "phone": 29,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 373,
+          "duration": 83,
+          "phone": 18,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 480,
+          "duration": 13,
+          "phone": 30,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 493,
+          "duration": 83,
+          "phone": 18,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 600,
+          "duration": 10,
+          "phone": 22,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 610,
+          "duration": 86,
+          "phone": 18,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "contexts-72",
+    "group": "contexts",
+    "note": 72,
+    "lyrics": "my high light night right",
+    "score": {
+      "bpm": 120,
+      "ticks": 600,
+      "events": [
+        {
+          "tick": 0,
+          "duration": 10,
+          "phone": 22,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 10,
+          "duration": 86,
+          "phone": 6,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 120,
+          "duration": 9,
+          "phone": 16,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 129,
+          "duration": 87,
+          "phone": 6,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 240,
+          "duration": 9,
+          "phone": 21,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 249,
+          "duration": 79,
+          "phone": 6,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 328,
+          "duration": 8,
+          "phone": 31,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 360,
+          "duration": 9,
+          "phone": 23,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 369,
+          "duration": 79,
+          "phone": 6,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 448,
+          "duration": 8,
+          "phone": 31,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 480,
+          "duration": 9,
+          "phone": 28,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        },
+        {
+          "tick": 489,
+          "duration": 79,
+          "phone": 6,
+          "note": 72,
+          "velocity": 90,
+          "stress": 1
+        },
+        {
+          "tick": 568,
+          "duration": 8,
+          "phone": 31,
+          "note": 72,
+          "velocity": 90,
+          "stress": 0
+        }
+      ]
+    }
+  }
+]

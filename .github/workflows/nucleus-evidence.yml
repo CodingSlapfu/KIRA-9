@@ -1,0 +1,46 @@
+name: Preserve isolated nucleus experiment
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/nucleus_*'
+      - 'tools/preserve_nucleus.sh'
+      - 'validation/nucleus-2026-11-06/**'
+      - '.github/workflows/nucleus-evidence.yml'
+permissions:
+  contents: write
+concurrency:
+  group: kira-9-development-checkpoint
+  cancel-in-progress: false
+jobs:
+  evidence:
+    if: startsWith(github.event.head_commit.message, 'checkpoint: nucleus experiment')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python3 -m pip install numpy==2.5.4
+      - name: Reproduce only the new experiment audio (no recognition model or old gates)
+        run: |
+          set -euo pipefail
+          python3 tools/nucleus_build.py
+          node tools/nucleus_scores.mjs --from-corpus
+          python3 tools/nucleus_study.py
+          python3 tools/nucleus_study.py --variant smooth
+          cp validation/nucleus-2026-11-06/*.json build/nucleus-study/
+          python3 tools/nucleus_pack.py
+          python3 tools/nucleus_archive.py
+      - name: Preserve new experiment in permanent GitHub backup branch
+        run: ./tools/preserve_nucleus.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: KIRA9-nucleus-experiment-${{ github.sha }}
+          path: build/checkpoint/*
+          if-no-files-found: error
+          retention-days: 90

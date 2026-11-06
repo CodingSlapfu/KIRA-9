@@ -1,0 +1,901 @@
+{
+  "note": "No listening pass; centroid/transition measures cannot certify intelligibility. WER includes insertions and may exceed 1.",
+  "recognition_summary": [
+    {
+      "note": 48,
+      "variant": "baseline",
+      "mean_wer": 0.9916666666666667,
+      "empty_clips": 2,
+      "clip_count": 4
+    },
+    {
+      "note": 48,
+      "variant": "smooth",
+      "mean_wer": 1.0,
+      "empty_clips": 1,
+      "clip_count": 4
+    },
+    {
+      "note": 60,
+      "variant": "baseline",
+      "mean_wer": 1.0916666666666668,
+      "empty_clips": 1,
+      "clip_count": 4
+    },
+    {
+      "note": 60,
+      "variant": "smooth",
+      "mean_wer": 1.05,
+      "empty_clips": 2,
+      "clip_count": 4
+    },
+    {
+      "note": 72,
+      "variant": "baseline",
+      "mean_wer": 1.0,
+      "empty_clips": 4,
+      "clip_count": 4
+    },
+    {
+      "note": 72,
+      "variant": "smooth",
+      "mean_wer": 1.0,
+      "empty_clips": 4,
+      "clip_count": 4
+    }
+  ],
+  "measurements": [
+    {
+      "id": "glides-48",
+      "phone": "EY",
+      "event": 1,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 586.8619262089292,
+        "rms": 0.019534696571158073
+      },
+      "smooth": {
+        "centroid_hz": 586.8619262089292,
+        "rms": 0.019534696571158073
+      }
+    },
+    {
+      "id": "glides-48",
+      "phone": "EY",
+      "event": 1,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 397.75712191267974,
+        "rms": 0.023486079051879858
+      },
+      "smooth": {
+        "centroid_hz": 397.75712191267974,
+        "rms": 0.023486079051879858
+      }
+    },
+    {
+      "id": "glides-48",
+      "phone": "AY",
+      "event": 7,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 694.8015514421637,
+        "rms": 0.018995392101666488
+      },
+      "smooth": {
+        "centroid_hz": 694.8009676192163,
+        "rms": 0.018995341814398835
+      }
+    },
+    {
+      "id": "glides-48",
+      "phone": "AY",
+      "event": 7,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 444.7736741826073,
+        "rms": 0.023987140178553808
+      },
+      "smooth": {
+        "centroid_hz": 444.7723504076113,
+        "rms": 0.023987123921958762
+      }
+    },
+    {
+      "id": "glides-48",
+      "phone": "OW",
+      "event": 13,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 590.4509248614208,
+        "rms": 0.04851920190072971
+      },
+      "smooth": {
+        "centroid_hz": 590.4497521393948,
+        "rms": 0.048519081667907166
+      }
+    },
+    {
+      "id": "glides-48",
+      "phone": "OW",
+      "event": 13,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 568.8088839473126,
+        "rms": 0.04632028111148888
+      },
+      "smooth": {
+        "centroid_hz": 568.8085185913123,
+        "rms": 0.04632021801292927
+      }
+    },
+    {
+      "id": "transitions-48",
+      "transition": "P\u2192IY",
+      "before_8ms_rms": 7.274919242912364e-05,
+      "after_8ms_rms": 0.045747924930862806,
+      "boundary_step": 0.0347900390625,
+      "exact_edge_step": 0.009613037109375,
+      "candidate_boundary_step": 0.01531982421875,
+      "candidate_exact_edge_step": 0.0040283203125
+    },
+    {
+      "id": "transitions-48",
+      "transition": "T\u2192IY",
+      "before_8ms_rms": 7.320111125187936e-05,
+      "after_8ms_rms": 0.01866514433957446,
+      "boundary_step": 0.0045166015625,
+      "exact_edge_step": 0.0045166015625,
+      "candidate_boundary_step": 0.001434326171875,
+      "candidate_exact_edge_step": 0.001434326171875
+    },
+    {
+      "id": "transitions-48",
+      "transition": "K\u2192IY",
+      "before_8ms_rms": 3.441802001843888e-05,
+      "after_8ms_rms": 0.03377193810209346,
+      "boundary_step": 0.0284423828125,
+      "exact_edge_step": 0.005828857421875,
+      "candidate_boundary_step": 0.014373779296875,
+      "candidate_exact_edge_step": 0.001922607421875
+    },
+    {
+      "id": "transitions-48",
+      "transition": "S\u2192IY",
+      "before_8ms_rms": 0.01086942500856333,
+      "after_8ms_rms": 0.01087755491470519,
+      "boundary_step": 0.013397216796875,
+      "exact_edge_step": 0.002410888671875,
+      "candidate_boundary_step": 0.013397216796875,
+      "candidate_exact_edge_step": 0.001312255859375
+    },
+    {
+      "id": "transitions-48",
+      "transition": "SH\u2192IY",
+      "before_8ms_rms": 0.009036997164888393,
+      "after_8ms_rms": 0.02331325589388927,
+      "boundary_step": 0.0174560546875,
+      "exact_edge_step": 0.0174560546875,
+      "candidate_boundary_step": 0.010498046875,
+      "candidate_exact_edge_step": 0.009185791015625
+    },
+    {
+      "id": "transitions-48",
+      "transition": "M\u2192IY",
+      "before_8ms_rms": 0.08485186254944577,
+      "after_8ms_rms": 0.029642552691871122,
+      "boundary_step": 0.0384521484375,
+      "exact_edge_step": 0.0384521484375,
+      "candidate_boundary_step": 0.008758544921875,
+      "candidate_exact_edge_step": 0.000579833984375
+    },
+    {
+      "id": "contexts-48",
+      "phone": "AY",
+      "event": 1,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 685.0763214386433,
+        "rms": 0.01926979914018607
+      },
+      "smooth": {
+        "centroid_hz": 685.0730460732981,
+        "rms": 0.019270092248261327
+      }
+    },
+    {
+      "id": "contexts-48",
+      "phone": "AY",
+      "event": 1,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 453.8122400463263,
+        "rms": 0.02423786689136345
+      },
+      "smooth": {
+        "centroid_hz": 453.803276392152,
+        "rms": 0.02423858344494799
+      }
+    },
+    {
+      "id": "contexts-48",
+      "phone": "AY",
+      "event": 3,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 699.7482788916977,
+        "rms": 0.019200749496080027
+      },
+      "smooth": {
+        "centroid_hz": 699.7471157494475,
+        "rms": 0.019200691438690246
+      }
+    },
+    {
+      "id": "contexts-48",
+      "phone": "AY",
+      "event": 3,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 445.0752522739991,
+        "rms": 0.024079575449828184
+      },
+      "smooth": {
+        "centroid_hz": 445.0754587607662,
+        "rms": 0.024079607914378232
+      }
+    },
+    {
+      "id": "contexts-48",
+      "phone": "AY",
+      "event": 5,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 693.7318955108097,
+        "rms": 0.01919401176244213
+      },
+      "smooth": {
+        "centroid_hz": 693.7321121580275,
+        "rms": 0.01919399467494509
+      }
+    },
+    {
+      "id": "contexts-48",
+      "phone": "AY",
+      "event": 5,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 445.2993854329043,
+        "rms": 0.0237213755735086
+      },
+      "smooth": {
+        "centroid_hz": 445.30069247337934,
+        "rms": 0.023721326786731393
+      }
+    },
+    {
+      "id": "contexts-48",
+      "phone": "AY",
+      "event": 8,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 687.5006044343077,
+        "rms": 0.018925691899613527
+      },
+      "smooth": {
+        "centroid_hz": 687.4966664044349,
+        "rms": 0.01892542028979722
+      }
+    },
+    {
+      "id": "contexts-48",
+      "phone": "AY",
+      "event": 8,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 447.5742884283809,
+        "rms": 0.024131057677445347
+      },
+      "smooth": {
+        "centroid_hz": 447.5730686719299,
+        "rms": 0.024130981100128016
+      }
+    },
+    {
+      "id": "contexts-48",
+      "phone": "AY",
+      "event": 11,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 684.9516861348421,
+        "rms": 0.018537251608410528
+      },
+      "smooth": {
+        "centroid_hz": 684.9526429075564,
+        "rms": 0.01853726692008773
+      }
+    },
+    {
+      "id": "contexts-48",
+      "phone": "AY",
+      "event": 11,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 447.35394676246483,
+        "rms": 0.024179516232443125
+      },
+      "smooth": {
+        "centroid_hz": 447.35150721214325,
+        "rms": 0.02417945255564994
+      }
+    },
+    {
+      "id": "glides-60",
+      "phone": "EY",
+      "event": 1,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 1161.7792390492375,
+        "rms": 0.027711548991689646
+      },
+      "smooth": {
+        "centroid_hz": 1161.7755893880978,
+        "rms": 0.02771154826010483
+      }
+    },
+    {
+      "id": "glides-60",
+      "phone": "EY",
+      "event": 1,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 877.6998217820313,
+        "rms": 0.026344365184107602
+      },
+      "smooth": {
+        "centroid_hz": 877.6994194246897,
+        "rms": 0.02634435229649044
+      }
+    },
+    {
+      "id": "glides-60",
+      "phone": "AY",
+      "event": 7,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 1233.060131246942,
+        "rms": 0.04164637895020588
+      },
+      "smooth": {
+        "centroid_hz": 1233.0561002863137,
+        "rms": 0.041646173364948025
+      }
+    },
+    {
+      "id": "glides-60",
+      "phone": "AY",
+      "event": 7,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 1469.976255647488,
+        "rms": 0.0250650038729525
+      },
+      "smooth": {
+        "centroid_hz": 1469.970053093203,
+        "rms": 0.025064917617485475
+      }
+    },
+    {
+      "id": "glides-60",
+      "phone": "OW",
+      "event": 13,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 781.1422543027279,
+        "rms": 0.12399537915426476
+      },
+      "smooth": {
+        "centroid_hz": 781.1410778523506,
+        "rms": 0.12399522235686376
+      }
+    },
+    {
+      "id": "glides-60",
+      "phone": "OW",
+      "event": 13,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 791.0265136582998,
+        "rms": 0.10920347556590848
+      },
+      "smooth": {
+        "centroid_hz": 791.0259009103252,
+        "rms": 0.10920341261764878
+      }
+    },
+    {
+      "id": "transitions-60",
+      "transition": "P\u2192IY",
+      "before_8ms_rms": 7.274919242912364e-05,
+      "after_8ms_rms": 0.08133663054458638,
+      "boundary_step": 0.066009521484375,
+      "exact_edge_step": 0.0008544921875,
+      "candidate_boundary_step": 0.030059814453125,
+      "candidate_exact_edge_step": 0.000274658203125
+    },
+    {
+      "id": "transitions-60",
+      "transition": "T\u2192IY",
+      "before_8ms_rms": 7.320111125187936e-05,
+      "after_8ms_rms": 0.031329430602202946,
+      "boundary_step": 0.033843994140625,
+      "exact_edge_step": 0.0045166015625,
+      "candidate_boundary_step": 0.0218505859375,
+      "candidate_exact_edge_step": 0.001434326171875
+    },
+    {
+      "id": "transitions-60",
+      "transition": "K\u2192IY",
+      "before_8ms_rms": 3.441802001843888e-05,
+      "after_8ms_rms": 0.05424767306483662,
+      "boundary_step": 0.049346923828125,
+      "exact_edge_step": 0.00262451171875,
+      "candidate_boundary_step": 0.027099609375,
+      "candidate_exact_edge_step": 0.0008544921875
+    },
+    {
+      "id": "transitions-60",
+      "transition": "S\u2192IY",
+      "before_8ms_rms": 0.01086942500856333,
+      "after_8ms_rms": 0.022585500765464873,
+      "boundary_step": 0.029266357421875,
+      "exact_edge_step": 0.002410888671875,
+      "candidate_boundary_step": 0.0157470703125,
+      "candidate_exact_edge_step": 0.001312255859375
+    },
+    {
+      "id": "transitions-60",
+      "transition": "SH\u2192IY",
+      "before_8ms_rms": 0.009036997164888393,
+      "after_8ms_rms": 0.04357858024375739,
+      "boundary_step": 0.049163818359375,
+      "exact_edge_step": 0.018585205078125,
+      "candidate_boundary_step": 0.026031494140625,
+      "candidate_exact_edge_step": 0.00958251953125
+    },
+    {
+      "id": "transitions-60",
+      "transition": "M\u2192IY",
+      "before_8ms_rms": 0.09505061541026119,
+      "after_8ms_rms": 0.045551083432628245,
+      "boundary_step": 0.015533447265625,
+      "exact_edge_step": 0.00823974609375,
+      "candidate_boundary_step": 0.0059814453125,
+      "candidate_exact_edge_step": 0.0037841796875
+    },
+    {
+      "id": "contexts-60",
+      "phone": "AY",
+      "event": 1,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 1230.458819368449,
+        "rms": 0.04152032466925768
+      },
+      "smooth": {
+        "centroid_hz": 1230.4535219266254,
+        "rms": 0.041520461739398745
+      }
+    },
+    {
+      "id": "contexts-60",
+      "phone": "AY",
+      "event": 1,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 1458.1538970479817,
+        "rms": 0.025013250349966168
+      },
+      "smooth": {
+        "centroid_hz": 1458.132975422103,
+        "rms": 0.025013588443706936
+      }
+    },
+    {
+      "id": "contexts-60",
+      "phone": "AY",
+      "event": 3,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 1234.5342112153764,
+        "rms": 0.041739835493706134
+      },
+      "smooth": {
+        "centroid_hz": 1234.5328751132886,
+        "rms": 0.041739751254774006
+      }
+    },
+    {
+      "id": "contexts-60",
+      "phone": "AY",
+      "event": 3,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 1460.2722760091656,
+        "rms": 0.02526156578726384
+      },
+      "smooth": {
+        "centroid_hz": 1460.267050138192,
+        "rms": 0.02526145869974504
+      }
+    },
+    {
+      "id": "contexts-60",
+      "phone": "AY",
+      "event": 5,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 1231.4789632021805,
+        "rms": 0.04185177798034856
+      },
+      "smooth": {
+        "centroid_hz": 1231.4776335538734,
+        "rms": 0.04185167913305121
+      }
+    },
+    {
+      "id": "contexts-60",
+      "phone": "AY",
+      "event": 5,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 1470.8767361898526,
+        "rms": 0.025106220901540303
+      },
+      "smooth": {
+        "centroid_hz": 1470.8660741302247,
+        "rms": 0.025106145652878078
+      }
+    },
+    {
+      "id": "contexts-60",
+      "phone": "AY",
+      "event": 8,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 1233.3727392543578,
+        "rms": 0.04173721102196505
+      },
+      "smooth": {
+        "centroid_hz": 1233.369266384257,
+        "rms": 0.04173608170742025
+      }
+    },
+    {
+      "id": "contexts-60",
+      "phone": "AY",
+      "event": 8,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 1491.2146793978488,
+        "rms": 0.025123265288264824
+      },
+      "smooth": {
+        "centroid_hz": 1491.2036466783895,
+        "rms": 0.025122793960039774
+      }
+    },
+    {
+      "id": "contexts-60",
+      "phone": "AY",
+      "event": 11,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 1232.0214003549577,
+        "rms": 0.04224618193471386
+      },
+      "smooth": {
+        "centroid_hz": 1232.021747050319,
+        "rms": 0.042246003559529885
+      }
+    },
+    {
+      "id": "contexts-60",
+      "phone": "AY",
+      "event": 11,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 1477.6793453251817,
+        "rms": 0.025003793777317932
+      },
+      "smooth": {
+        "centroid_hz": 1477.6716381410174,
+        "rms": 0.025003747939242982
+      }
+    },
+    {
+      "id": "glides-72",
+      "phone": "EY",
+      "event": 1,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 2097.1877083395616,
+        "rms": 0.0756114817570491
+      },
+      "smooth": {
+        "centroid_hz": 2097.1874262866336,
+        "rms": 0.07561142306407598
+      }
+    },
+    {
+      "id": "glides-72",
+      "phone": "EY",
+      "event": 1,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 2086.1198973058526,
+        "rms": 0.05976745715202518
+      },
+      "smooth": {
+        "centroid_hz": 2086.11992365714,
+        "rms": 0.059767437601739165
+      }
+    },
+    {
+      "id": "glides-72",
+      "phone": "AY",
+      "event": 7,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 1668.4735600445204,
+        "rms": 0.1286015400615588
+      },
+      "smooth": {
+        "centroid_hz": 1668.4685496440575,
+        "rms": 0.1286011633174775
+      }
+    },
+    {
+      "id": "glides-72",
+      "phone": "AY",
+      "event": 7,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 2080.579894841247,
+        "rms": 0.08959405360904267
+      },
+      "smooth": {
+        "centroid_hz": 2080.578109603248,
+        "rms": 0.08959379479735387
+      }
+    },
+    {
+      "id": "glides-72",
+      "phone": "OW",
+      "event": 13,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 1019.5738124583407,
+        "rms": 0.08982173262962426
+      },
+      "smooth": {
+        "centroid_hz": 1019.5671231110206,
+        "rms": 0.089821557477036
+      }
+    },
+    {
+      "id": "glides-72",
+      "phone": "OW",
+      "event": 13,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 1198.4627790628049,
+        "rms": 0.08540663054579688
+      },
+      "smooth": {
+        "centroid_hz": 1198.4515822162884,
+        "rms": 0.08540644380226857
+      }
+    },
+    {
+      "id": "transitions-72",
+      "transition": "P\u2192IY",
+      "before_8ms_rms": 7.274919242912364e-05,
+      "after_8ms_rms": 0.1420959491379299,
+      "boundary_step": 0.123565673828125,
+      "exact_edge_step": 0.0008544921875,
+      "candidate_boundary_step": 0.039642333984375,
+      "candidate_exact_edge_step": 0.000274658203125
+    },
+    {
+      "id": "transitions-72",
+      "transition": "T\u2192IY",
+      "before_8ms_rms": 7.320111125187936e-05,
+      "after_8ms_rms": 0.06379967098525988,
+      "boundary_step": 0.069549560546875,
+      "exact_edge_step": 0.0592041015625,
+      "candidate_boundary_step": 0.024871826171875,
+      "candidate_exact_edge_step": 0.024566650390625
+    },
+    {
+      "id": "transitions-72",
+      "transition": "K\u2192IY",
+      "before_8ms_rms": 3.441802001843888e-05,
+      "after_8ms_rms": 0.13029517605386814,
+      "boundary_step": 0.119659423828125,
+      "exact_edge_step": 0.039794921875,
+      "candidate_boundary_step": 0.0362548828125,
+      "candidate_exact_edge_step": 0.01483154296875
+    },
+    {
+      "id": "transitions-72",
+      "transition": "S\u2192IY",
+      "before_8ms_rms": 0.01086942500856333,
+      "after_8ms_rms": 0.039515819552324846,
+      "boundary_step": 0.052490234375,
+      "exact_edge_step": 0.002410888671875,
+      "candidate_boundary_step": 0.028228759765625,
+      "candidate_exact_edge_step": 0.001312255859375
+    },
+    {
+      "id": "transitions-72",
+      "transition": "SH\u2192IY",
+      "before_8ms_rms": 0.009036997164888393,
+      "after_8ms_rms": 0.0906249956989399,
+      "boundary_step": 0.092529296875,
+      "exact_edge_step": 0.00225830078125,
+      "candidate_boundary_step": 0.049774169921875,
+      "candidate_exact_edge_step": 0.00103759765625
+    },
+    {
+      "id": "transitions-72",
+      "transition": "M\u2192IY",
+      "before_8ms_rms": 0.023905992415433168,
+      "after_8ms_rms": 0.09476067823932377,
+      "boundary_step": 0.1702880859375,
+      "exact_edge_step": 0.1702880859375,
+      "candidate_boundary_step": 0.00982666015625,
+      "candidate_exact_edge_step": 0.002288818359375
+    },
+    {
+      "id": "contexts-72",
+      "phone": "AY",
+      "event": 1,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 1668.378324905796,
+        "rms": 0.12865276137599346
+      },
+      "smooth": {
+        "centroid_hz": 1668.3773904995394,
+        "rms": 0.12865277113403667
+      }
+    },
+    {
+      "id": "contexts-72",
+      "phone": "AY",
+      "event": 1,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 2079.326840508368,
+        "rms": 0.08934119845924267
+      },
+      "smooth": {
+        "centroid_hz": 2079.3255878742502,
+        "rms": 0.08934117654834361
+      }
+    },
+    {
+      "id": "contexts-72",
+      "phone": "AY",
+      "event": 3,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 1666.206029596043,
+        "rms": 0.1288109310322442
+      },
+      "smooth": {
+        "centroid_hz": 1666.1995610684712,
+        "rms": 0.12881045308956016
+      }
+    },
+    {
+      "id": "contexts-72",
+      "phone": "AY",
+      "event": 3,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 2081.3252453165587,
+        "rms": 0.08956675147168272
+      },
+      "smooth": {
+        "centroid_hz": 2081.3244994581337,
+        "rms": 0.08956653726882209
+      }
+    },
+    {
+      "id": "contexts-72",
+      "phone": "AY",
+      "event": 5,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 1669.1240815472436,
+        "rms": 0.1283060546866374
+      },
+      "smooth": {
+        "centroid_hz": 1669.1186024350588,
+        "rms": 0.12830557927933367
+      }
+    },
+    {
+      "id": "contexts-72",
+      "phone": "AY",
+      "event": 5,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 2080.87324415573,
+        "rms": 0.08982103508166965
+      },
+      "smooth": {
+        "centroid_hz": 2080.873345224025,
+        "rms": 0.08982079400959722
+      }
+    },
+    {
+      "id": "contexts-72",
+      "phone": "AY",
+      "event": 8,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 1668.787257968151,
+        "rms": 0.12798662048060966
+      },
+      "smooth": {
+        "centroid_hz": 1668.7879358811258,
+        "rms": 0.12798283281051212
+      }
+    },
+    {
+      "id": "contexts-72",
+      "phone": "AY",
+      "event": 8,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 2082.307910462903,
+        "rms": 0.08989397963301717
+      },
+      "smooth": {
+        "centroid_hz": 2082.306690862896,
+        "rms": 0.08989099370517979
+      }
+    },
+    {
+      "id": "contexts-72",
+      "phone": "AY",
+      "event": 11,
+      "phase": "nucleus",
+      "baseline": {
+        "centroid_hz": 1669.1435052025843,
+        "rms": 0.12814459390456268
+      },
+      "smooth": {
+        "centroid_hz": 1669.1361435986196,
+        "rms": 0.12814407748088374
+      }
+    },
+    {
+      "id": "contexts-72",
+      "phone": "AY",
+      "event": 11,
+      "phase": "glide",
+      "baseline": {
+        "centroid_hz": 2083.7484524987403,
+        "rms": 0.08979799073268241
+      },
+      "smooth": {
+        "centroid_hz": 2083.74698807319,
+        "rms": 0.08979792319483976
+      }
+    }
+  ]
+}
