@@ -1,0 +1,469 @@
+{
+  "purpose": "Owner-reported artificial/synthetic sound; not confirmed click events. New isolated stage ablations, no product or frozen candidate changes.",
+  "metrics": [
+    {
+      "vowel": "iy",
+      "transition_float_snr_db": 295.77996774446933,
+      "transition_q8_snr_db": 36.351470886238005,
+      "transition_q16_snr_db": 85.12013671936211,
+      "sustain_q8_vs_float_snr_db": 44.84544040427542,
+      "source_f0_hz": 231.8840579710145,
+      "fixed_envelope_pole_hz": [
+        329.336890594945,
+        2869.109067469463,
+        3726.8760017563473
+      ],
+      "native_grain_vs_source_band_error_db": 0.8730281320394326,
+      "shifted_grain_vs_source_band_error_db": 3.491981222481795
+    },
+    {
+      "vowel": "ih",
+      "transition_float_snr_db": 296.60510762003156,
+      "transition_q8_snr_db": 30.730582706087507,
+      "transition_q16_snr_db": 77.42804078758121,
+      "sustain_q8_vs_float_snr_db": 40.4125531207018,
+      "source_f0_hz": 186.04651162790697,
+      "fixed_envelope_pole_hz": [
+        675.6659692145539,
+        2787.462638423805
+      ],
+      "native_grain_vs_source_band_error_db": 0.5335830334645528,
+      "shifted_grain_vs_source_band_error_db": 2.5072398885954454
+    },
+    {
+      "vowel": "eh",
+      "transition_float_snr_db": 296.5778460772108,
+      "transition_q8_snr_db": 41.686117378276535,
+      "transition_q16_snr_db": 91.0723559300784,
+      "sustain_q8_vs_float_snr_db": 44.14163330818817,
+      "source_f0_hz": 210.52631578947367,
+      "fixed_envelope_pole_hz": [
+        687.430428424927,
+        2100.196400940616,
+        3533.3675070021964
+      ],
+      "native_grain_vs_source_band_error_db": 1.4094527734168791,
+      "shifted_grain_vs_source_band_error_db": 2.7249325892762775
+    },
+    {
+      "vowel": "ae",
+      "transition_float_snr_db": 297.34883933301745,
+      "transition_q8_snr_db": 40.54658233382578,
+      "transition_q16_snr_db": 88.7595211118721,
+      "sustain_q8_vs_float_snr_db": 45.01878298061356,
+      "source_f0_hz": 190.47619047619048,
+      "fixed_envelope_pole_hz": [
+        890.1563162558901,
+        1833.4397123131703,
+        3637.219968280666
+      ],
+      "native_grain_vs_source_band_error_db": 1.077614775768766,
+      "shifted_grain_vs_source_band_error_db": 1.918321816694335
+    }
+  ],
+  "clips": [
+    {
+      "label": "A Original human transition",
+      "file": "stage00.wav",
+      "rate": 16000,
+      "duration_s": 0.11,
+      "raw_peak": 0.367523193359375,
+      "listening_gain": 0.8848301912234531,
+      "listening_rms": 0.07678935431008646,
+      "sha256": "4f199afe926919b7d76a7acbfe0af075f7df838d0fc5456b28aa1b6477bffe4a"
+    },
+    {
+      "label": "B Same transition, frozen 8-bit LPC decode",
+      "file": "stage01.wav",
+      "rate": 16000,
+      "duration_s": 0.11,
+      "raw_peak": 0.3632421389426463,
+      "listening_gain": 0.8828975167879788,
+      "listening_rms": 0.07681205741473351,
+      "sha256": "f86c6c89927af03c03622ee2568398202d601fa7ef1d2b067e240526ecf39f30"
+    },
+    {
+      "label": "C Same transition, 16-bit residual control",
+      "file": "stage02.wav",
+      "rate": 16000,
+      "duration_s": 0.11,
+      "raw_peak": 0.3675166516081187,
+      "listening_gain": 0.8848222228763999,
+      "listening_rms": 0.07678955863776168,
+      "sha256": "7c4838fdd6de69873840aa19d32e6c05485145818fe2cf521b10d2f4b7306b0d"
+    },
+    {
+      "label": "D Source vowel, 40ms \u2014 short unlooped control",
+      "file": "stage03.wav",
+      "rate": 16000,
+      "duration_s": 0.04,
+      "raw_peak": 0.367523193359375,
+      "listening_gain": 0.4076089245297027,
+      "listening_rms": 0.07676394302594317,
+      "sha256": "d5242c30509eba541b51609cf3c7d2e119313f72ef2f868cc8ebe65d816ecbb1"
+    },
+    {
+      "label": "E Recorded grain at source pitch, 400ms",
+      "file": "stage04.wav",
+      "rate": 16000,
+      "duration_s": 0.4,
+      "raw_peak": 0.41223174192491135,
+      "listening_gain": 0.41525379008820046,
+      "listening_rms": 0.07994431294060518,
+      "sha256": "8914b1b8dec2fae15589cd6a46260a96762ca06349cb668dce42d5957fa0234d"
+    },
+    {
+      "label": "F Same grain at source pitch, unquantized residual",
+      "file": "stage05.wav",
+      "rate": 16000,
+      "duration_s": 0.4,
+      "raw_peak": 0.41246709788753105,
+      "listening_gain": 0.4161825356820202,
+      "listening_rms": 0.07994477612805757,
+      "sha256": "fbfe15678f351875dea016ae59071855eb460a0fe4a2629fbbaa159cd5fbe337"
+    },
+    {
+      "label": "G Same 8-bit grain shifted to MIDI60, 400ms",
+      "file": "stage06.wav",
+      "rate": 16000,
+      "duration_s": 0.4,
+      "raw_peak": 0.4086560086250907,
+      "listening_gain": 0.3371430736178474,
+      "listening_rms": 0.07982410227614689,
+      "sha256": "a7b827ef41b7a4c72223ba3e723ce778cd219d99a546f58437a0a8560de09c13"
+    },
+    {
+      "label": "H Frozen assembled word, MIDI60",
+      "file": "stage07.wav",
+      "rate": 44100,
+      "duration_s": 0.5262358276643991,
+      "raw_peak": 0.16851806640625,
+      "listening_gain": 1.1672782404337678,
+      "listening_rms": 0.07997154705822421,
+      "sha256": "8815a47ef51e54a6dc0b5e8dccd0f864ed0e7f115dddb663a9417fbc88c48e15"
+    },
+    {
+      "label": "I Direct human waveform grain, source pitch \u2014 LPC bypass",
+      "file": "stage08.wav",
+      "rate": 16000,
+      "duration_s": 0.4,
+      "raw_peak": 0.366630374388655,
+      "listening_gain": 0.4185626509002937,
+      "listening_rms": 0.07994446693504641,
+      "sha256": "85589f99977fe2ebceae513c91a695f21e3eb11f4e52f218c046ea0d532d5e84"
+    },
+    {
+      "label": "J Same direct waveform grain, MIDI60 \u2014 LPC bypass",
+      "file": "stage09.wav",
+      "rate": 16000,
+      "duration_s": 0.4,
+      "raw_peak": 0.363553510287125,
+      "listening_gain": 0.3980547923129665,
+      "listening_rms": 0.07980970736928018,
+      "sha256": "7014f873a27a7cff904f42b5876bb2287f0c3116356d3da6c7bebf2e83cb4938"
+    },
+    {
+      "label": "A Original human transition",
+      "file": "stage10.wav",
+      "rate": 16000,
+      "duration_s": 0.14125,
+      "raw_peak": 0.2979736328125,
+      "listening_gain": 0.7649969663688545,
+      "listening_rms": 0.07801195262151923,
+      "sha256": "76361aafe81510b426f330dc45a4bc1c02cd75f5cf6d37407fd05585014da4b9"
+    },
+    {
+      "label": "B Same transition, frozen 8-bit LPC decode",
+      "file": "stage11.wav",
+      "rate": 16000,
+      "duration_s": 0.14125,
+      "raw_peak": 0.2984595026081699,
+      "listening_gain": 0.7616989858999805,
+      "listening_rms": 0.07804364506086521,
+      "sha256": "0c7bba0cd0ec541eb42f5fd1e7e2f22c5889107ccd7ced19c481d85be1715765"
+    },
+    {
+      "label": "C Same transition, 16-bit residual control",
+      "file": "stage12.wav",
+      "rate": 16000,
+      "duration_s": 0.14125,
+      "raw_peak": 0.29799031659357084,
+      "listening_gain": 0.7650081649089346,
+      "listening_rms": 0.07801185163350008,
+      "sha256": "ab1224751a07db340d7c3bd1ce0d1eddf0cc5cc21449a81c6146843b4c21f7cf"
+    },
+    {
+      "label": "D Source vowel, 40ms \u2014 short unlooped control",
+      "file": "stage13.wav",
+      "rate": 16000,
+      "duration_s": 0.04,
+      "raw_peak": 0.2979736328125,
+      "listening_gain": 0.6674426817619502,
+      "listening_rms": 0.07669649325577135,
+      "sha256": "fe6bd232197e7bd59300135cf93632f77abd71493ce8be6ca31e9c51929b29a4"
+    },
+    {
+      "label": "E Recorded grain at source pitch, 400ms",
+      "file": "stage14.wav",
+      "rate": 16000,
+      "duration_s": 0.4,
+      "raw_peak": 0.28354469973200225,
+      "listening_gain": 0.6856946642542718,
+      "listening_rms": 0.07990813494798632,
+      "sha256": "10a8db294166ad2af33240263c38328ec25e784631a9ce3a07073fbb9eb865e1"
+    },
+    {
+      "label": "F Same grain at source pitch, unquantized residual",
+      "file": "stage15.wav",
+      "rate": 16000,
+      "duration_s": 0.4,
+      "raw_peak": 0.28252513227545856,
+      "listening_gain": 0.68393274472706,
+      "listening_rms": 0.07990761589735892,
+      "sha256": "1ffccbbf5604ab16da4ac0eefa0ae38f2848908f9b50f4db5549de82a80c6887"
+    },
+    {
+      "label": "G Same 8-bit grain shifted to MIDI60, 400ms",
+      "file": "stage16.wav",
+      "rate": 16000,
+      "duration_s": 0.4,
+      "raw_peak": 0.24929465479274496,
+      "listening_gain": 0.8101884193866656,
+      "listening_rms": 0.07975660320207874,
+      "sha256": "6e73c9ae4bec95507ce4b56fa4ee8f1c85beb1417b6a5f2deae4e397c5534364"
+    },
+    {
+      "label": "H Frozen assembled word, MIDI60",
+      "file": "stage17.wav",
+      "rate": 44100,
+      "duration_s": 0.5387301587301587,
+      "raw_peak": 0.14544677734375,
+      "listening_gain": 2.1206151791896772,
+      "listening_rms": 0.07973712767659147,
+      "sha256": "488b849d60a3616ebf28def2c4dd9117501c6da977d9bf8c894e6b46322313c2"
+    },
+    {
+      "label": "I Direct human waveform grain, source pitch \u2014 LPC bypass",
+      "file": "stage18.wav",
+      "rate": 16000,
+      "duration_s": 0.4,
+      "raw_peak": 0.281175293792623,
+      "listening_gain": 0.6836238641907013,
+      "listening_rms": 0.07990746830082478,
+      "sha256": "cd49441d812ee89dff8f63327e79d7da4a2b18209f6caa21d61a600c3ccf8891"
+    },
+    {
+      "label": "J Same direct waveform grain, MIDI60 \u2014 LPC bypass",
+      "file": "stage19.wav",
+      "rate": 16000,
+      "duration_s": 0.4,
+      "raw_peak": 0.2612812411696202,
+      "listening_gain": 0.7263106548546311,
+      "listening_rms": 0.0797550554036264,
+      "sha256": "ce788583a1ac4271e502e42061df6296faa6226e20fbaceac6fd89755fb1bcad"
+    },
+    {
+      "label": "A Original human transition",
+      "file": "stage20.wav",
+      "rate": 16000,
+      "duration_s": 0.11625,
+      "raw_peak": 0.492401123046875,
+      "listening_gain": 0.6861307589717087,
+      "listening_rms": 0.07858968528357178,
+      "sha256": "9e2a3fc3db376bbc7f71414c0fe6a1ad8120b488880788d15732846ed2890a1f"
+    },
+    {
+      "label": "B Same transition, frozen 8-bit LPC decode",
+      "file": "stage21.wav",
+      "rate": 16000,
+      "duration_s": 0.11625,
+      "raw_peak": 0.49271051525397713,
+      "listening_gain": 0.6870382748412766,
+      "listening_rms": 0.0786009063917472,
+      "sha256": "51c6d9ae84c46914a5e72afaebe8659c66b85f473ad7deb01659cf9cf4956bc7"
+    },
+    {
+      "label": "C Same transition, 16-bit residual control",
+      "file": "stage22.wav",
+      "rate": 16000,
+      "duration_s": 0.11625,
+      "raw_peak": 0.4924039519752097,
+      "listening_gain": 0.6861309902857774,
+      "listening_rms": 0.07858971216365354,
+      "sha256": "d9de21c74e0fd82d8c8627c8f2547cbfa658b7a348d26576db2032bd2725a83f"
+    },
+    {
+      "label": "D Source vowel, 40ms \u2014 short unlooped control",
+      "file": "stage23.wav",
+      "rate": 16000,
+      "duration_s": 0.04,
+      "raw_peak": 0.588897705078125,
+      "listening_gain": 0.3790610845112004,
+      "listening_rms": 0.07541426658136335,
+      "sha256": "2c76674e307b75cec879e3916491f515f271800244b3e27870272ba8b97b379d"
+    },
+    {
+      "label": "E Recorded grain at source pitch, 400ms",
+      "file": "stage24.wav",
+      "rate": 16000,
+      "duration_s": 0.4,
+      "raw_peak": 0.5405546301619089,
+      "listening_gain": 0.38832514945455426,
+      "listening_rms": 0.07977591526290118,
+      "sha256": "21101c4d6a035a5208ce3df6392e5165838bbe73dd5128aa6b665227677656b9"
+    },
+    {
+      "label": "F Same grain at source pitch, unquantized residual",
+      "file": "stage25.wav",
+      "rate": 16000,
+      "duration_s": 0.4,
+      "raw_peak": 0.5394934965708424,
+      "listening_gain": 0.3870875165520576,
+      "listening_rms": 0.0797753719518033,
+      "sha256": "126e703aa80309b2fcd03149d5003acea61400b55fa759feadf3606318342c4e"
+    },
+    {
+      "label": "G Same 8-bit grain shifted to MIDI60, 400ms",
+      "file": "stage26.wav",
+      "rate": 16000,
+      "duration_s": 0.4,
+      "raw_peak": 0.5474075658146856,
+      "listening_gain": 0.36326050827580897,
+      "listening_rms": 0.07987067369876108,
+      "sha256": "01e887933cb4c2c68bcdcb3e2fadbeecaa403a9754d9f59384ba423e3d55d8f2"
+    },
+    {
+      "label": "H Frozen assembled word, MIDI60",
+      "file": "stage27.wav",
+      "rate": 44100,
+      "duration_s": 0.5262585034013605,
+      "raw_peak": 0.22698974609375,
+      "listening_gain": 1.1951171216549004,
+      "listening_rms": 0.07997716768386201,
+      "sha256": "f688b12a83ff5c62c8d4b2218d64186109b3a9e5a08e17e45f13441b386acdeb"
+    },
+    {
+      "label": "I Direct human waveform grain, source pitch \u2014 LPC bypass",
+      "file": "stage28.wav",
+      "rate": 16000,
+      "duration_s": 0.4,
+      "raw_peak": 0.5050098686256937,
+      "listening_gain": 0.39288305386355493,
+      "listening_rms": 0.07977585429349543,
+      "sha256": "273b2c100425367f65e21349f6a70fc26b04cd23d07919bff91740b1e0687f9a"
+    },
+    {
+      "label": "J Same direct waveform grain, MIDI60 \u2014 LPC bypass",
+      "file": "stage29.wav",
+      "rate": 16000,
+      "duration_s": 0.4,
+      "raw_peak": 0.5061816276072836,
+      "listening_gain": 0.3912644288057431,
+      "listening_rms": 0.07987612542408132,
+      "sha256": "c4e31f4a91739d246886940413457c5a67386bc5824852609946d738ec0c1312"
+    },
+    {
+      "label": "A Original human transition",
+      "file": "stage30.wav",
+      "rate": 16000,
+      "duration_s": 0.0975,
+      "raw_peak": 0.419647216796875,
+      "listening_gain": 0.7062472551036617,
+      "listening_rms": 0.07738192410256615,
+      "sha256": "580594c4a3fe36d40e4d1a81b6aa3456813cd19df714bf9a050cfab24a56a5e0"
+    },
+    {
+      "label": "B Same transition, frozen 8-bit LPC decode",
+      "file": "stage31.wav",
+      "rate": 16000,
+      "duration_s": 0.0975,
+      "raw_peak": 0.41948808855957126,
+      "listening_gain": 0.7073892402832611,
+      "listening_rms": 0.07737756955868828,
+      "sha256": "4ea314c68785e0f41c493250f1993e42e3cba0ca4f664f108080fb5f8ae17b69"
+    },
+    {
+      "label": "C Same transition, 16-bit residual control",
+      "file": "stage32.wav",
+      "rate": 16000,
+      "duration_s": 0.0975,
+      "raw_peak": 0.41965456737034523,
+      "listening_gain": 0.7062480699355397,
+      "listening_rms": 0.07738187424308894,
+      "sha256": "267010bc10f808551c4b1bb1a484b736f5081efcc1812d1c864154cd385f5b6f"
+    },
+    {
+      "label": "D Source vowel, 40ms \u2014 short unlooped control",
+      "file": "stage33.wav",
+      "rate": 16000,
+      "duration_s": 0.04,
+      "raw_peak": 0.443939208984375,
+      "listening_gain": 0.462098025321228,
+      "listening_rms": 0.07640966480869295,
+      "sha256": "e363e7154ce3ffcd451bc1369f7ef00440dd803bc4237292995a3389dc8fea8c"
+    },
+    {
+      "label": "E Recorded grain at source pitch, 400ms",
+      "file": "stage34.wav",
+      "rate": 16000,
+      "duration_s": 0.4,
+      "raw_peak": 0.40958042150760465,
+      "listening_gain": 0.4765820307445719,
+      "listening_rms": 0.07996383365275833,
+      "sha256": "d9be101a9206cfa88bbf0c6d335930ad2d161a9ae02e7bbccfe628cb9e8defd1"
+    },
+    {
+      "label": "F Same grain at source pitch, unquantized residual",
+      "file": "stage35.wav",
+      "rate": 16000,
+      "duration_s": 0.4,
+      "raw_peak": 0.4098650757900007,
+      "listening_gain": 0.4767016131526751,
+      "listening_rms": 0.07996381227647417,
+      "sha256": "d029c1892b8c9774121f19f9187714c7161e63461b9febb2e13bf8e27f046ec6"
+    },
+    {
+      "label": "G Same 8-bit grain shifted to MIDI60, 400ms",
+      "file": "stage36.wav",
+      "rate": 16000,
+      "duration_s": 0.4,
+      "raw_peak": 0.29411546641011205,
+      "listening_gain": 0.5459033625400795,
+      "listening_rms": 0.07990378562129602,
+      "sha256": "446affed0b6602095d3c2abbc8812b1df193a2d265aa1e8597289388bc47f756"
+    },
+    {
+      "label": "H Frozen assembled word, MIDI60",
+      "file": "stage37.wav",
+      "rate": 44100,
+      "duration_s": 0.5137414965986394,
+      "raw_peak": 0.18212890625,
+      "listening_gain": 1.684565142079696,
+      "listening_rms": 0.07999095187661184,
+      "sha256": "25404fa123029409ea606e35fd267ffcb620d6f284ca85b2895d75851eea60de"
+    },
+    {
+      "label": "I Direct human waveform grain, source pitch \u2014 LPC bypass",
+      "file": "stage38.wav",
+      "rate": 16000,
+      "duration_s": 0.4,
+      "raw_peak": 0.4092895192508629,
+      "listening_gain": 0.47340194070932257,
+      "listening_rms": 0.07996425813729872,
+      "sha256": "3a6c5bff34c0cd8c25a09c7b480f9db7862e147d617c3a9cc79264773b754944"
+    },
+    {
+      "label": "J Same direct waveform grain, MIDI60 \u2014 LPC bypass",
+      "file": "stage39.wav",
+      "rate": 16000,
+      "duration_s": 0.4,
+      "raw_peak": 0.31086383521759103,
+      "listening_gain": 0.558308841977163,
+      "listening_rms": 0.07992846224859367,
+      "sha256": "6bb5e6c2af403763464e870e5e84f15892bd26850ed41b9aafc6195a25b2e774"
+    }
+  ],
+  "limitations": "Matched listening RMS.08 with peak ceiling.7, outer2ms fades only, no effects. Durations differ for sustain and original short source; no human ratings inferred. Float diagnostics are not native timing/headroom acceptance. Pole estimates and band errors are diagnostic, not vowel recognition.",
+  "source_license": "Modified CMU ARCTIC SLT0.95. COPYING-SLT retained; original source URLs/hashes in residual-pilot sources.json.",
+  "human_results": "NOT PERFORMED"
+}
