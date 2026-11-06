@@ -53,59 +53,59 @@
       }
     },
     "final": {
-      "grid": "samples=22364160 clips=0 peak=0.777676",
+      "grid": "samples=22364160 clips=0 peak=0.706978",
       "phones": {
         "IY": {
-          "centroid_hz": 564.8401868553369,
-          "f2_fraction": 0.1351641396169464,
-          "low_fraction": 0.8417866470897315,
-          "rms": 0.04656146466732025
+          "centroid_hz": 564.8401845042457,
+          "f2_fraction": 0.13516413863261897,
+          "low_fraction": 0.8417866479621308,
+          "rms": 0.0423286035656929
         },
         "IH": {
-          "centroid_hz": 1305.6901935533335,
-          "f2_fraction": 0.4854273586654384,
-          "low_fraction": 0.37517156791897355,
-          "rms": 0.029335275292396545
+          "centroid_hz": 1305.6901915389744,
+          "f2_fraction": 0.4854273580883728,
+          "low_fraction": 0.3751715695257737,
+          "rms": 0.026668433099985123
         },
         "S": {
-          "centroid_hz": 6847.879857567794,
-          "f2_fraction": 0.029238996390545943,
-          "low_fraction": 0.0005590762456260044,
-          "rms": 0.02134036272764206
+          "centroid_hz": 6847.879853103615,
+          "f2_fraction": 0.02923899615843177,
+          "low_fraction": 0.0005590763272561633,
+          "rms": 0.019400330260396004
         },
         "SH": {
-          "centroid_hz": 4677.908720164135,
-          "f2_fraction": 0.3834490152740594,
-          "low_fraction": 0.002740252951307775,
-          "rms": 0.021539101377129555
+          "centroid_hz": 4677.908706616669,
+          "f2_fraction": 0.3834490179612434,
+          "low_fraction": 0.002740252844268626,
+          "rms": 0.01958100125193596
         },
         "Z": {
-          "centroid_hz": 2551.059372000823,
-          "f2_fraction": 0.006985806804386196,
-          "low_fraction": 0.5582173595808477,
-          "rms": 0.009678435511887074
+          "centroid_hz": 2551.0593784767025,
+          "f2_fraction": 0.006985806758197666,
+          "low_fraction": 0.5582173590678359,
+          "rms": 0.008798577822744846
         },
         "M": {
-          "centroid_hz": 276.21425430023095,
-          "f2_fraction": 0.0001473220109344411,
-          "low_fraction": 0.9947261472613308,
-          "rms": 0.14222534000873566
+          "centroid_hz": 276.2142540796196,
+          "f2_fraction": 0.00014732198313033737,
+          "low_fraction": 0.9947261475747036,
+          "rms": 0.12929576635360718
         }
       }
     }
   },
   "host_callback": {
     "baseline": {
-      "p50_us": 11.689,
-      "p95_us": 15.842,
-      "p99_us": 50.204,
-      "max_us": 2386.213
+      "p50_us": 14.477,
+      "p95_us": 14.918,
+      "p99_us": 23.834,
+      "max_us": 34.985
     },
     "final": {
-      "p50_us": 11.964,
-      "p95_us": 18.005,
-      "p99_us": 94.089,
-      "max_us": 542.669
+      "p50_us": 14.908,
+      "p95_us": 15.519,
+      "p99_us": 23.394,
+      "max_us": 28.293
     }
   },
   "wav_sha256": {
@@ -115,12 +115,12 @@
     "3-baseline.wav": "1b7606dea7587af71aa9e602811dad91a2c9d162221071f21fbc9ba358243424",
     "4-baseline.wav": "a5a03fd50980900bf2b0ea0e76f4a3c557b4b24c0a24b3ac9a6eea10b30edcbd",
     "5-baseline.wav": "1cff83921306504ca517d95f5cd48834d5b583ce6c0055728e0c341dc72a2d78",
-    "0-final.wav": "b0b017138c46a3adf2aa178107d21565bd8bb0bccec0eeac753c46bee4423a1e",
-    "1-final.wav": "4b6492822ba07d68a33df873440d6906baa455e93abb44ac29735f71e2754228",
-    "2-final.wav": "1d1a891faa1e8992a5a5c74e7f057adbcb4cd9c747b0c8d720fe2da1ab38cf8f",
-    "3-final.wav": "6faa2272eef7561fc05df475758a606dea8e9eba0ad929863c31d652ad8bfbaa",
-    "4-final.wav": "bb23ac781ff06cba5b6195250def479ed7bfecfb48743b26fa466e0c1e650200",
-    "5-final.wav": "3b496a7df05ce56c74bfbb27a481e5803122b225610ad48ff6e949e3ad89a697",
-    "comparison.wav": "a665a40d852596819a2d25ce2603ab48043aca84a61e763f27122a6cbecef7af"
+    "0-final.wav": "4fc0618e7194f73d0504c877ecae9413cfc5e3f08de6f80e725c01943c94f7d8",
+    "1-final.wav": "415addbdcac7d9b65f9b753ac24de1a3e9c04701af46fddf1bd1bd9418f3cbf9",
+    "2-final.wav": "3499a42289f4a7e11b2779ca076d1584a2932e970a4e25e3cddf1662e864ce98",
+    "3-final.wav": "11a053a3039c448668122c5874c0c8b76979570aa818976248b0fff53d44e9cd",
+    "4-final.wav": "f6c1eeb9358f8ba280d330272fe082b2938875ebb41b2eb707c3bc85c3a36190",
+    "5-final.wav": "f75e21f6d7138e7973448122889e6b54aa81a1de3eca812268cb7b9398d66444",
+    "comparison.wav": "2d721e409d2755a1367d4520a094ce49d81d75874a24a8a065452665a4344dbe"
   }
 }

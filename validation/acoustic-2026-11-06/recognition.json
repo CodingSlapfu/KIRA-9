@@ -1,0 +1,50 @@
+{
+  "note": "Cached same tiny.en model, default no-speech threshold, no expected-text prompt. Empty text is not a pass.",
+  "results": [
+    {
+      "phrase": 0,
+      "version": "baseline",
+      "text": ""
+    },
+    {
+      "phrase": 0,
+      "version": "final",
+      "text": " Wait for me to play, to play, to play, to play, to play, to play."
+    },
+    {
+      "phrase": 3,
+      "version": "baseline",
+      "text": ""
+    },
+    {
+      "phrase": 3,
+      "version": "final",
+      "text": ""
+    },
+    {
+      "phrase": 4,
+      "version": "baseline",
+      "text": " Bang, bang, bang, bang."
+    },
+    {
+      "phrase": 4,
+      "expected": "light night right",
+      "version": "final",
+      "text": " Hey, hey, hey, hey, hey."
+    },
+    {
+      "phrase": 5,
+      "expected": "we sing a new song",
+      "version": "baseline",
+      "text": ""
+    },
+    {
+      "phrase": 5,
+      "expected": "we sing a new song",
+      "version": "final",
+      "text": ""
+    }
+  ],
+  "source": "01f6e5f (before the 0.8dB headroom-only follow-up)",
+  "result": "FAIL: no reliable English word recovery; empty/unrelated repetitions are not improvements."
+}

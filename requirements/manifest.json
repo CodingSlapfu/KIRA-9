@@ -71,18 +71,22 @@
       "implementation_files": [
         "core/engine.c",
         "core/tables.c",
-        "core/articulation.h"
+        "core/articulation.h",
+        "core/clarity.h"
       ],
-      "source_commit": "f17d09f92d123c3a8cde1859c2b948c2fe855c3a",
+      "source_commit": "1641726b2ea3aabfde8afbf3c04f76dbdf074fc9",
       "test_refs": [
         "validation/core-tests.txt",
         "validation/audio-metrics.json",
         "validation/wasm-parity.txt",
         "tests/test_articulation.c",
-        "tests/vocal_timing.mjs"
+        "tests/vocal_timing.mjs",
+        "tests/acoustic_probe.c",
+        "tests/acoustic_headroom.c"
       ],
       "artifact_refs": [
-        "validation/vocal-issue-2/README.md"
+        "validation/vocal-issue-2/README.md",
+        "validation/acoustic-2026-11-06/README.md"
       ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -103,18 +107,22 @@
       "acceptance": "Distinct audibly validated PCM performances and configurable controls",
       "implementation_files": [
         "core/engine.c",
-        "core/articulation.h"
+        "core/articulation.h",
+        "core/clarity.h"
       ],
-      "source_commit": "f17d09f92d123c3a8cde1859c2b948c2fe855c3a",
+      "source_commit": "1641726b2ea3aabfde8afbf3c04f76dbdf074fc9",
       "test_refs": [
         "validation/core-tests.txt",
         "validation/audio-metrics.json",
         "validation/wasm-parity.txt",
         "tests/test_articulation.c",
-        "tests/vocal_timing.mjs"
+        "tests/vocal_timing.mjs",
+        "tests/acoustic_probe.c",
+        "tests/acoustic_headroom.c"
       ],
       "artifact_refs": [
-        "validation/vocal-issue-2/README.md"
+        "validation/vocal-issue-2/README.md",
+        "validation/acoustic-2026-11-06/README.md"
       ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
