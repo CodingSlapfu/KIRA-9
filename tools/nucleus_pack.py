@@ -18,7 +18,7 @@ for variant in ['late','smooth']:
 
 metadata=['corpus.json','recognition.json','recognition-smooth.json','analysis.json','analysis-smooth.json','environment.json','transition-guard.json']
 for name in metadata:hashes[name]=hashlib.sha256((out/name).read_bytes()).hexdigest()
-(out/'MANIFEST.json').write_text(json.dumps({'baseline':'3a407ec870481833f7b13fbdf98b3122f7fc4bc2','firmware_changed':False,'release_accepted':False,'order':'For each case in corpus.json: baseline then candidate, each followed by one second silence. Same cases/order for each lossless FLAC.','files':hashes},indent=2)+'\n')
+(out/'MANIFEST.json').write_text(json.dumps({'baseline':'3a407ec870481833f7b13fbdf98b3122f7fc4bc2','firmware_changed':False,'release_accepted':False,'order':'For each case in corpus.json: baseline then candidate, each followed by one second silence. Same cases/order for each lossless WAV.gz.','files':hashes},indent=2)+'\n')
 with zipfile.ZipFile(out/'nucleus-evidence.zip','w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
  for name in list(hashes)+['MANIFEST.json']:z.write(out/name,name)
 archive=out/'nucleus-evidence.zip';(out/'SHA256SUMS').write_text(hashlib.sha256(archive.read_bytes()).hexdigest()+'  nucleus-evidence.zip\n')

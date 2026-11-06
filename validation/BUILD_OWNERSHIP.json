@@ -6,5 +6,6 @@
   "build_running": false,
   "publisher_running": false,
   "latest_verified": "1641726b2ea3aabfde8afbf3c04f76dbdf074fc9",
-  "resume": "validation/RESUME_PRIORITY.md"
+  "resume": "validation/RESUME_PRIORITY.md",
+  "latest_experiment": "0177d9142c70d323da451785067fab8082f0a7ac"
 }
