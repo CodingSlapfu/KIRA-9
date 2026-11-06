@@ -1,0 +1,192 @@
+{
+  "units": [
+    {
+      "pair": [
+        "hh",
+        "iy"
+      ],
+      "utterance": "arctic_a0009",
+      "start": 0.137,
+      "end": 0.247,
+      "rms_error": 0.0013761206440592048,
+      "snr_db": 36.35147088443868,
+      "original_peak": 0.367523193359375,
+      "reconstructed_peak": 0.36324213895020097
+    },
+    {
+      "pair": [
+        "hh",
+        "ih"
+      ],
+      "utterance": "arctic_a0043",
+      "start": 1.09325,
+      "end": 1.2345,
+      "rms_error": 0.0030401928885329535,
+      "snr_db": 30.73058270508691,
+      "original_peak": 0.2979736328125,
+      "reconstructed_peak": 0.29845950261427306
+    },
+    {
+      "pair": [
+        "hh",
+        "eh"
+      ],
+      "utterance": "arctic_a0013",
+      "start": 0.487,
+      "end": 0.6032500000000001,
+      "rms_error": 0.0009602343306301754,
+      "snr_db": 41.686117380423326,
+      "original_peak": 0.492401123046875,
+      "reconstructed_peak": 0.4927105152604002
+    },
+    {
+      "pair": [
+        "hh",
+        "ae"
+      ],
+      "utterance": "arctic_a0026",
+      "start": 1.43075,
+      "end": 1.5282499999999999,
+      "rms_error": 0.0010636631089817282,
+      "snr_db": 40.546582344335334,
+      "original_peak": 0.419647216796875,
+      "reconstructed_peak": 0.41948808858809583
+    },
+    {
+      "pair": [
+        "iy",
+        "d"
+      ],
+      "utterance": "arctic_a0081",
+      "start": 0.6395,
+      "end": 0.74325,
+      "rms_error": 0.002029482360477991,
+      "snr_db": 36.28035878619936,
+      "original_peak": 0.4879150390625,
+      "reconstructed_peak": 0.4867340115511663
+    },
+    {
+      "pair": [
+        "ih",
+        "d"
+      ],
+      "utterance": "arctic_a0237",
+      "start": 1.1895,
+      "end": 1.2745,
+      "rms_error": 0.0018158815811855904,
+      "snr_db": 37.859213076179095,
+      "original_peak": 0.41827392578125,
+      "reconstructed_peak": 0.41708993510491305
+    },
+    {
+      "pair": [
+        "eh",
+        "d"
+      ],
+      "utterance": "arctic_a0013",
+      "start": 0.60825,
+      "end": 0.70575,
+      "rms_error": 0.0018170419001864203,
+      "snr_db": 39.413211240565346,
+      "original_peak": 0.649932861328125,
+      "reconstructed_peak": 0.6511973239731744
+    },
+    {
+      "pair": [
+        "ae",
+        "d"
+      ],
+      "utterance": "arctic_a0030",
+      "start": 0.377,
+      "end": 0.48075,
+      "rms_error": 0.004190889553894559,
+      "snr_db": 29.620714853621987,
+      "original_peak": 0.5252685546875,
+      "reconstructed_peak": 0.5326837787412819
+    },
+    {
+      "pair": [
+        "s",
+        "iy"
+      ],
+      "utterance": "arctic_a0004",
+      "start": 1.23075,
+      "end": 1.3844999999999998,
+      "rms_error": 0.0004796526790126979,
+      "snr_db": 41.49918503551399,
+      "original_peak": 0.3192138671875,
+      "reconstructed_peak": 0.3209603432104807
+    },
+    {
+      "pair": [
+        "sh",
+        "iy"
+      ],
+      "utterance": "arctic_a0036",
+      "start": 0.18075,
+      "end": 0.34075,
+      "rms_error": 0.0006690679619324625,
+      "snr_db": 44.29931708817581,
+      "original_peak": 0.473114013671875,
+      "reconstructed_peak": 0.471968715926697
+    },
+    {
+      "pair": [
+        "p",
+        "iy"
+      ],
+      "utterance": "arctic_a0024",
+      "start": 2.9245,
+      "end": 3.0345,
+      "rms_error": 0.0005976207851780303,
+      "snr_db": 41.46011568176973,
+      "original_peak": 0.30224609375,
+      "reconstructed_peak": 0.3024002143409874
+    },
+    {
+      "pair": [
+        "b",
+        "iy"
+      ],
+      "utterance": "arctic_a0020",
+      "start": 2.00575,
+      "end": 2.0907500000000003,
+      "rms_error": 0.0005789569063282265,
+      "snr_db": 40.93191039581603,
+      "original_peak": 0.2135009765625,
+      "reconstructed_peak": 0.21314423567620094
+    },
+    {
+      "sustain": "iy",
+      "utterance": "arctic_a0009",
+      "center_sample": 3914,
+      "source_period": 69,
+      "source_f0": 231.8840579710145
+    },
+    {
+      "sustain": "ih",
+      "utterance": "arctic_a0043",
+      "center_sample": 19656,
+      "source_period": 86,
+      "source_f0": 186.04651162790697
+    },
+    {
+      "sustain": "eh",
+      "utterance": "arctic_a0013",
+      "center_sample": 9688,
+      "source_period": 76,
+      "source_f0": 210.52631578947367
+    },
+    {
+      "sustain": "ae",
+      "utterance": "arctic_a0026",
+      "center_sample": 24567,
+      "source_period": 84,
+      "source_f0": 190.47619047619048
+    }
+  ],
+  "data_bytes_including_notice_index_pitch_table": 29175,
+  "unit_count": 16,
+  "modifications": "Original LPC12 analysis,8bit residual quantization,16bit reflection quantization; sustained two-period Hann-windowed grains. Original code; not Festival coefficients/runtime.",
+  "limits": "Automatic boundaries unverified; duration truncation may remove cues; no human quality evidence."
+}

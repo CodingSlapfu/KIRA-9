@@ -1,0 +1,310 @@
+{
+  "source_base": "http://www.festvox.org/cmu_arctic/cmu_arctic/cmu_us_slt_arctic/",
+  "version": "CMU ARCTIC SLT 0.95",
+  "license": "Exact bank COPYING verified before waveform download; all original copyright/conditions retained; derivative modifications must be marked.",
+  "alignment": "Original automatic phone labels, NOT manually verified; boundaries may be wrong.",
+  "selection": "First lexical filename/index satisfying prespecified pair and min phone durations; no synthesis-output tuning.",
+  "chosen": [
+    {
+      "pair": [
+        "hh",
+        "iy"
+      ],
+      "utterance": "arctic_a0009",
+      "phone_index": 1,
+      "first": {
+        "phone": "hh",
+        "start": 0.137,
+        "end": 0.212
+      },
+      "second": {
+        "phone": "iy",
+        "start": 0.212,
+        "end": 0.2745
+      },
+      "text": "He turned sharply, and faced Gregson across the table."
+    },
+    {
+      "pair": [
+        "hh",
+        "ih"
+      ],
+      "utterance": "arctic_a0043",
+      "phone_index": 13,
+      "first": {
+        "phone": "hh",
+        "start": 1.09325,
+        "end": 1.1995
+      },
+      "second": {
+        "phone": "ih",
+        "start": 1.1995,
+        "end": 1.25575
+      },
+      "text": "It seemed nearer to him since he had seen and talked with Gregson."
+    },
+    {
+      "pair": [
+        "hh",
+        "eh"
+      ],
+      "utterance": "arctic_a0013",
+      "phone_index": 7,
+      "first": {
+        "phone": "hh",
+        "start": 0.487,
+        "end": 0.56825
+      },
+      "second": {
+        "phone": "eh",
+        "start": 0.56825,
+        "end": 0.64325
+      },
+      "text": "He was a head shorter than his companion, of almost delicate physique."
+    },
+    {
+      "pair": [
+        "hh",
+        "ae"
+      ],
+      "utterance": "arctic_a0026",
+      "phone_index": 20,
+      "first": {
+        "phone": "hh",
+        "start": 1.43075,
+        "end": 1.49325
+      },
+      "second": {
+        "phone": "ae",
+        "start": 1.49325,
+        "end": 1.58075
+      },
+      "text": "It occurred to me that there would have to be an accounting."
+    },
+    {
+      "pair": [
+        "iy",
+        "d"
+      ],
+      "utterance": "arctic_a0081",
+      "phone_index": 8,
+      "first": {
+        "phone": "iy",
+        "start": 0.5995,
+        "end": 0.6745
+      },
+      "second": {
+        "phone": "d",
+        "start": 0.6745,
+        "end": 0.74325
+      },
+      "text": "What if she did not come to the rock."
+    },
+    {
+      "pair": [
+        "ih",
+        "d"
+      ],
+      "utterance": "arctic_a0237",
+      "phone_index": 12,
+      "first": {
+        "phone": "ih",
+        "start": 1.1745,
+        "end": 1.2245
+      },
+      "second": {
+        "phone": "d",
+        "start": 1.2245,
+        "end": 1.2745
+      },
+      "text": "So Hughie and I did the managing ourselves."
+    },
+    {
+      "pair": [
+        "eh",
+        "d"
+      ],
+      "utterance": "arctic_a0013",
+      "phone_index": 8,
+      "first": {
+        "phone": "eh",
+        "start": 0.56825,
+        "end": 0.64325
+      },
+      "second": {
+        "phone": "d",
+        "start": 0.64325,
+        "end": 0.70575
+      },
+      "text": "He was a head shorter than his companion, of almost delicate physique."
+    },
+    {
+      "pair": [
+        "ae",
+        "d"
+      ],
+      "utterance": "arctic_a0030",
+      "phone_index": 4,
+      "first": {
+        "phone": "ae",
+        "start": 0.34325,
+        "end": 0.412
+      },
+      "second": {
+        "phone": "d",
+        "start": 0.412,
+        "end": 0.48075
+      },
+      "text": "I had faith in them."
+    },
+    {
+      "pair": [
+        "s",
+        "iy"
+      ],
+      "utterance": "arctic_a0004",
+      "phone_index": 16,
+      "first": {
+        "phone": "s",
+        "start": 1.23075,
+        "end": 1.3495
+      },
+      "second": {
+        "phone": "iy",
+        "start": 1.3495,
+        "end": 1.44325
+      },
+      "text": "Lord, but I'm glad to see you again, Phil."
+    },
+    {
+      "pair": [
+        "sh",
+        "iy"
+      ],
+      "utterance": "arctic_a0036",
+      "phone_index": 1,
+      "first": {
+        "phone": "sh",
+        "start": 0.1495,
+        "end": 0.30575
+      },
+      "second": {
+        "phone": "iy",
+        "start": 0.30575,
+        "end": 0.36825
+      },
+      "text": "She turned in at the hotel."
+    },
+    {
+      "pair": [
+        "p",
+        "iy"
+      ],
+      "utterance": "arctic_a0024",
+      "phone_index": 39,
+      "first": {
+        "phone": "p",
+        "start": 2.9245,
+        "end": 2.9995
+      },
+      "second": {
+        "phone": "iy",
+        "start": 2.9995,
+        "end": 3.0495
+      },
+      "text": "It was my reports from the north which chiefly induced people to buy."
+    },
+    {
+      "pair": [
+        "b",
+        "iy"
+      ],
+      "utterance": "arctic_a0020",
+      "phone_index": 26,
+      "first": {
+        "phone": "b",
+        "start": 2.00575,
+        "end": 2.05575
+      },
+      "second": {
+        "phone": "iy",
+        "start": 2.05575,
+        "end": 2.162
+      },
+      "text": "Clubs and balls and cities grew to be only memories."
+    }
+  ],
+  "source_sha256": {
+    "README": "cd8271c0825090776bf73b6d91ea8bec6c5bf0c88c0dbb3ec3f6ff3aee46a942",
+    "COPYING": "469adc0262e10d84fb9658fa6181c883586415b5692f6bfbc2fde65dfc63f5c5",
+    "etc/txt.done.data": "60e3d9a4dc33732c9100baadd747312bdc1a200fc891766507397289753a25c7",
+    "lab/arctic_a0182.lab": "e72d99ccf09b918289abbac7066341385c657a1f5af4b87af6cd75da1a087409",
+    "lab/arctic_a0045.lab": "54e11f826ad001beb18168fe6b88c58631cb49f878c022974c4ce36de71d9b4a",
+    "lab/arctic_a0027.lab": "bbe35f521f7143a0a9fea55fa9dd992cdbed340261a92d974d47e735b9dcdf8d",
+    "lab/arctic_b0469.lab": "f80113ead77ab77c6b3bcb4dc8c181f42ecc6aff7d8b91f64088edae95b2dcd9",
+    "lab/arctic_a0039.lab": "c0b9a96b05a2cd3dd42a980ddedb3939a0bcd25a4f28437d7c3f896e0036cecf",
+    "lab/arctic_a0043.lab": "f980d2d2a43691e4d3eb12303f0e071b0fa9cdf7fa108a6d52cb270d35e832e7",
+    "lab/arctic_a0087.lab": "2bfd4dee12146b120514d3289f37fc240539a2b1ff7dc6237a6036a5edc70ed5",
+    "lab/arctic_a0160.lab": "374df73a4ccc121f08d6d2e5c2ee74ccaa842369af6c1f8584b2e240650b4094",
+    "lab/arctic_a0017.lab": "fb065f448c74dd0654e2aecf17c8fe2f569bc89221b3e1c0c543780a1fa94d95",
+    "lab/arctic_a0026.lab": "019bb990f4aa06039864261e46d758765298b5dad692e065c771fbf29b2a1aa6",
+    "lab/arctic_a0035.lab": "e3746c2d93b70bb904185c365703e57074fd8163c682dedd5831ae4bab6455f1",
+    "lab/arctic_a0280.lab": "f35181e5a0a1be50831559277f886ae6ab88a9816a233c47f7a0e113beef663c",
+    "lab/arctic_a0014.lab": "75e2038b844a4b67f49b476f6ec658dc14d320dcd23023acafffd14e75210373",
+    "lab/arctic_a0024.lab": "5c65803b930bde2486d4e78ceac7eb8f70f91af1bf52bd8024676e8de1397ed2",
+    "lab/arctic_a0214.lab": "36f9b66ec8381debbf6e6917571500ddb8326fffc8910454c4ba5ae142b16cf3",
+    "lab/arctic_a0081.lab": "8bb009d04a9e2e7534b05696363c688f1487b1afa3ba5f78701df2e7a960cb40",
+    "lab/arctic_a0033.lab": "2799f4aeefab7bfec1cd670a553782b2108d9ab69f112dd785f3585467abacfb",
+    "lab/arctic_a0148.lab": "a8b5148e272c2424d4b3707de585a2a9853a9f5986ef278d93eb88d56fb7d02b",
+    "lab/arctic_b0373.lab": "aa9f6bb300b573f533be44ba854cf1548c3042e3c7d596d0b40fae2a43a992a8",
+    "lab/arctic_a0328.lab": "4ac621c85e8c47d7abd053eb20b417a68a1bd938188328060d236936698077cd",
+    "lab/arctic_a0075.lab": "34216c0e9be6d5a824f28cfdb82b810596f7ca54e40986a00ecf76d9a4613d2d",
+    "lab/arctic_a0361.lab": "ee8464d77413b9bba555038d76644f78617d3da85134aa4ae2b0533b9d5e7a4b",
+    "lab/arctic_b0455.lab": "d53e63019e8d022267f1fad2ad36eae9901134bd3f08780c8e561e332f9ebe90",
+    "lab/arctic_a0007.lab": "8aa781d0b9c18398900dacec61097e3f1de8da251af7d732e6b1e9e46623e072",
+    "lab/arctic_a0020.lab": "8371baa2444b11a339c2b8063f6067d9f1f9a4e70a3494781ae382d2213bc7ca",
+    "lab/arctic_a0084.lab": "ef3c45aacb23411c765df4b8e64d2ff284d620b2c188c0d166dafc87b3ff0ce2",
+    "lab/arctic_a0302.lab": "3daf947b4c7533f7e5d2852f13f1c4efc47cb37a338cbe602829840834702b61",
+    "lab/arctic_a0161.lab": "510803a9b54880fea0c175689b2ef322e9fd8ca181ab95f43808f27608b25696",
+    "lab/arctic_a0013.lab": "a30db52faf826ff6d4c1aa785e37407c35d02ee92c83c0b4a3d069c127abee23",
+    "lab/arctic_a0237.lab": "476f86b8f77784c00e8a3649b1a26495b402019e7022127286119c92ebd0cff5",
+    "lab/arctic_a0009.lab": "15b792f57e96946c1986bbbe8a0464affed942541310819ff45aa742b3f865b9",
+    "lab/arctic_a0042.lab": "1299c789b9b1b0e0612d521553004fb2938056f86e567397a966dbd72c25c327",
+    "lab/arctic_a0392.lab": "65afb249e2e9cfb73f58d3cff164a623c2581c3176b6b0c4dd0306c944447000",
+    "lab/arctic_a0179.lab": "4ae208e6a38379815ad4ea8dd7fece7fcfcc66d93f6c0f91f3487db57ea75564",
+    "lab/arctic_a0011.lab": "de5c9ec39591af0f42386895595e09aecbf95aed3067ebd1ec891784888f63d0",
+    "lab/arctic_a0012.lab": "4bddd1651c42c4d8101e5dcd18bffa82ddfef9d531f2d11528491631e9d21c17",
+    "lab/arctic_a0559.lab": "46202ed26500c650fd247b44ee69a43bb947f1bbee69901e6d0a3299c496d5e0",
+    "lab/arctic_a0233.lab": "986fa28e47f007145d9d7e501f528eacf0171d3745842482b80515398937bd60",
+    "lab/arctic_a0040.lab": "459e7fe17f32918c44fb220a97036a5cfbe1ddd8de17d146ce3731559f5f0b1c",
+    "lab/arctic_a0377.lab": "f8b05ab35aad888c3fc7077b944a24a168e1ce6c02e14c5e7d0306b06d288603",
+    "lab/arctic_b0132.lab": "d764d571ebb52d5af923436ee8b1fbdc48d792a4f52ff772f13d558568775f78",
+    "lab/arctic_a0432.lab": "8bc80daa0c1c2ba305cbb2c159ed8d9bc1833b2ca31e893a6a43faf47be3f600",
+    "lab/arctic_a0030.lab": "0cb348379b6cd1c719cc4b94a3d3f66986d2ba0da0fcb4745c9f282742bc55a3",
+    "lab/arctic_a0404.lab": "1fca73f97dc1d317606197cf7eb46d36838d855aac044f7a5a290a3e9d9fb1a2",
+    "lab/arctic_a0220.lab": "4d8844db168aed59e6817e45805143279bcf4b9520ee89f7136728a75edc3f90",
+    "lab/arctic_a0232.lab": "57cecc52357c827d99fa0ba5c2db0be0b32ddb8d89b629221ad665ae8a88e1f2",
+    "lab/arctic_a0067.lab": "7bd24e39b530973579e0865e1a69cbb4a45829578bf06b48990b77107a1d7292",
+    "lab/arctic_a0145.lab": "9d315228337559cc6958759b1f0090cfbd43d75f38cd92b3812c4fd96ce723dd",
+    "lab/arctic_a0094.lab": "fdfa8d50cd8ba4943da53bbb11d60e99d4d91ca54b14d9c14026f3cdb92f1666",
+    "lab/arctic_a0192.lab": "85c150c65bc20ab4064dc8fe93638e92facf491909124d6db9caaa973c173938",
+    "lab/arctic_a0184.lab": "d7fb3323ae9a4ad576782ee96afaaa8fd4dfeae7c94cf752cf81a906cdf363da",
+    "lab/arctic_a0202.lab": "0f2a9f0f7bcc6db931001bebe13b911988940be95236aea678f1759870cd6698",
+    "lab/arctic_a0036.lab": "91d251f1562b7877b675a8bc605b63a10854230395de70961289f686b2cf8c62",
+    "lab/arctic_a0077.lab": "1033992fc1244d8dc487eee70c7ef6cae4061ac52948c337770be1fcde3f94b2",
+    "lab/arctic_a0004.lab": "330c510c290fdd0a91895a1be0184b803fa305db081d26f6d649e691f1d674ab",
+    "lab/arctic_a0236.lab": "66e987a2bf75a2b2eea9418dc27089f2559b097c9e8b002837f9ada73b07ea5b",
+    "lab/arctic_a0086.lab": "795bcaaca58d48c32357a42778f83776e11a56e6f3efca7eb685beb60fbacf47",
+    "wav/arctic_a0024.wav": "392cc50a7eb939955e4b45f8cb6fdea4511c1badfd4014c6db91c700ea3a5088",
+    "wav/arctic_a0020.wav": "3751aa6e7ba3e3219b507e77e326770206546e63c73b0fc64dc92e16cbee1036",
+    "wav/arctic_a0026.wav": "7df7dc978f247199cf87de695ce129dfb375aff981ce07c1f555eb00f41bea2a",
+    "wav/arctic_a0004.wav": "2a653cf74346ff24690f8a2abcff5091b81463f277b0062c851031a293f25167",
+    "wav/arctic_a0237.wav": "d53f9d0ca00a12b902c81da0130344f875a5bf62bc19b576738fb100ee0472cf",
+    "wav/arctic_a0013.wav": "8b82f94be931652b176e3befe47b3a25276fd2d6b0a6e93a6275d75ab1330546",
+    "wav/arctic_a0081.wav": "75026496e43a6fa7e2f124a52020372c67578f005d79e9801b36f66c76645bcf",
+    "wav/arctic_a0030.wav": "b7dced6cdcbfc286f8424014dfc857d0c27d2ef269f0172b078d8818333bd55d",
+    "wav/arctic_a0036.wav": "1d08306b7b26131d150a55f0ca5c584712c1da573979499450e60c86927e5b8a",
+    "wav/arctic_a0009.wav": "198d856649b370c483609bdc61558e515c6349210e6dd755e975ab1d2e468936",
+    "wav/arctic_a0043.wav": "bacf811c0f769869819414c0cb3888f84313980c3afa636880aaa5d29286a008"
+  }
+}

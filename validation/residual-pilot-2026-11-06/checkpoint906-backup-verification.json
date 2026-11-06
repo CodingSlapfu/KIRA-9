@@ -1,0 +1,8 @@
+{
+  "remote_url": "https://raw.githubusercontent.com/CodingSlapfu/KIRA-9/4b4fc084e247a71bd872831a6b97f8fddec24516/checkpoints/906feaf/KIRA9-unsynced.bundle",
+  "sha256": "a755113ccf4cfb388226988ed1ceb9314ebbf3b520f94542810341142f4375de",
+  "bytes": 31198,
+  "byte_identical": true,
+  "bundle_verify": "build/checkpoint906-remote.bundle is okay\n",
+  "heads": "906feaf26f286ad102df5294328097d9faf4ffcf HEAD\n"
+}

@@ -1,0 +1,760 @@
+{
+  "scope": "Single recorded SLT identity, fixed velocity127/gain.35. No seven-timbre/style/expressive compatibility accepted. New units only. No clamp/limiter anywhere. Hard-reset unit joins can click; measured below.",
+  "frames": 1693440,
+  "raw_peak": 0.2270112931728363,
+  "nonfinite": 0,
+  "stop_failures": 0,
+  "headroom_pass": true,
+  "pitch_pass": true,
+  "data_bytes": 29175,
+  "state_bytes_host": 2188,
+  "callback_host": {
+    "baseline": {
+      "median_us": 11.707,
+      "p95_us": 12.41945
+    },
+    "residual": {
+      "median_us": 4.376,
+      "p95_us": 4.56605
+    }
+  },
+  "host_ratio": 0.37379345690612453,
+  "host_budget_pass": true,
+  "device_cpu": "UNVERIFIED",
+  "cases": [
+    {
+      "unit": 0,
+      "note": 48,
+      "raw_peak": 0.12692487239837646,
+      "finite": true
+    },
+    {
+      "unit": 1,
+      "note": 48,
+      "raw_peak": 0.1036192998290062,
+      "finite": true
+    },
+    {
+      "unit": 2,
+      "note": 48,
+      "raw_peak": 0.1715807467699051,
+      "finite": true
+    },
+    {
+      "unit": 3,
+      "note": 48,
+      "raw_peak": 0.14612239599227905,
+      "finite": true
+    },
+    {
+      "unit": 4,
+      "note": 48,
+      "raw_peak": 0.16851156949996948,
+      "finite": true
+    },
+    {
+      "unit": 5,
+      "note": 48,
+      "raw_peak": 0.14546602964401245,
+      "finite": true
+    },
+    {
+      "unit": 6,
+      "note": 48,
+      "raw_peak": 0.2270112931728363,
+      "finite": true
+    },
+    {
+      "unit": 7,
+      "note": 48,
+      "raw_peak": 0.1821497082710266,
+      "finite": true
+    },
+    {
+      "unit": 8,
+      "note": 48,
+      "raw_peak": 0.11226052790880203,
+      "finite": true
+    },
+    {
+      "unit": 9,
+      "note": 48,
+      "raw_peak": 0.16450588405132294,
+      "finite": true
+    },
+    {
+      "unit": 10,
+      "note": 48,
+      "raw_peak": 0.10560689121484756,
+      "finite": true
+    },
+    {
+      "unit": 11,
+      "note": 48,
+      "raw_peak": 0.07453833520412445,
+      "finite": true
+    },
+    {
+      "unit": 12,
+      "note": 48,
+      "raw_peak": 0.14395475387573242,
+      "finite": true,
+      "f0_hz": 130.8457462068564,
+      "target_hz": 130.8127826502993,
+      "cents": 0.4361992864605117,
+      "periodicity": 0.9620846207259501,
+      "pitch_pass": true
+    },
+    {
+      "unit": 13,
+      "note": 48,
+      "raw_peak": 0.09894198179244995,
+      "finite": true,
+      "f0_hz": 130.82096191930762,
+      "target_hz": 130.8127826502993,
+      "cents": 0.10824466875695596,
+      "periodicity": 0.9623765799555885,
+      "pitch_pass": true
+    },
+    {
+      "unit": 14,
+      "note": 48,
+      "raw_peak": 0.18723158538341522,
+      "finite": true,
+      "f0_hz": 130.8181739735581,
+      "target_hz": 130.8127826502993,
+      "cents": 0.07134967908132984,
+      "periodicity": 0.9619191218918528,
+      "pitch_pass": true
+    },
+    {
+      "unit": 15,
+      "note": 48,
+      "raw_peak": 0.10053890943527222,
+      "finite": true,
+      "f0_hz": 130.81556701555436,
+      "target_hz": 130.8127826502993,
+      "cents": 0.03684912541721224,
+      "periodicity": 0.961678040761716,
+      "pitch_pass": true
+    },
+    {
+      "unit": 0,
+      "note": 60,
+      "raw_peak": 0.12692487239837646,
+      "finite": true
+    },
+    {
+      "unit": 1,
+      "note": 60,
+      "raw_peak": 0.1036192998290062,
+      "finite": true
+    },
+    {
+      "unit": 2,
+      "note": 60,
+      "raw_peak": 0.1715807467699051,
+      "finite": true
+    },
+    {
+      "unit": 3,
+      "note": 60,
+      "raw_peak": 0.14612239599227905,
+      "finite": true
+    },
+    {
+      "unit": 4,
+      "note": 60,
+      "raw_peak": 0.16851156949996948,
+      "finite": true
+    },
+    {
+      "unit": 5,
+      "note": 60,
+      "raw_peak": 0.14546602964401245,
+      "finite": true
+    },
+    {
+      "unit": 6,
+      "note": 60,
+      "raw_peak": 0.2270112931728363,
+      "finite": true
+    },
+    {
+      "unit": 7,
+      "note": 60,
+      "raw_peak": 0.1821497082710266,
+      "finite": true
+    },
+    {
+      "unit": 8,
+      "note": 60,
+      "raw_peak": 0.11226052790880203,
+      "finite": true
+    },
+    {
+      "unit": 9,
+      "note": 60,
+      "raw_peak": 0.16450588405132294,
+      "finite": true
+    },
+    {
+      "unit": 10,
+      "note": 60,
+      "raw_peak": 0.10560689121484756,
+      "finite": true
+    },
+    {
+      "unit": 11,
+      "note": 60,
+      "raw_peak": 0.07453833520412445,
+      "finite": true
+    },
+    {
+      "unit": 12,
+      "note": 60,
+      "raw_peak": 0.14270122349262238,
+      "finite": true,
+      "f0_hz": 261.6992512430225,
+      "target_hz": 261.6255653005986,
+      "cents": 0.4875274753733731,
+      "periodicity": 0.9805866559829173,
+      "pitch_pass": true
+    },
+    {
+      "unit": 13,
+      "note": 60,
+      "raw_peak": 0.0872282087802887,
+      "finite": true,
+      "f0_hz": 261.64659164222513,
+      "target_hz": 261.6255653005986,
+      "cents": 0.1391303477081672,
+      "periodicity": 0.9802797881692644,
+      "pitch_pass": true
+    },
+    {
+      "unit": 14,
+      "note": 60,
+      "raw_peak": 0.1894858330488205,
+      "finite": true,
+      "f0_hz": 261.6442617874593,
+      "target_hz": 261.6255653005986,
+      "cents": 0.12371435534522134,
+      "periodicity": 0.9799204566521904,
+      "pitch_pass": true
+    },
+    {
+      "unit": 15,
+      "note": 60,
+      "raw_peak": 0.10291928052902222,
+      "finite": true,
+      "f0_hz": 261.6428320595143,
+      "target_hz": 261.6255653005986,
+      "cents": 0.11425418050681625,
+      "periodicity": 0.9797409379373796,
+      "pitch_pass": true
+    },
+    {
+      "unit": 0,
+      "note": 72,
+      "raw_peak": 0.12692487239837646,
+      "finite": true
+    },
+    {
+      "unit": 1,
+      "note": 72,
+      "raw_peak": 0.1036192998290062,
+      "finite": true
+    },
+    {
+      "unit": 2,
+      "note": 72,
+      "raw_peak": 0.1715807467699051,
+      "finite": true
+    },
+    {
+      "unit": 3,
+      "note": 72,
+      "raw_peak": 0.14612239599227905,
+      "finite": true
+    },
+    {
+      "unit": 4,
+      "note": 72,
+      "raw_peak": 0.16851156949996948,
+      "finite": true
+    },
+    {
+      "unit": 5,
+      "note": 72,
+      "raw_peak": 0.14546602964401245,
+      "finite": true
+    },
+    {
+      "unit": 6,
+      "note": 72,
+      "raw_peak": 0.2270112931728363,
+      "finite": true
+    },
+    {
+      "unit": 7,
+      "note": 72,
+      "raw_peak": 0.1821497082710266,
+      "finite": true
+    },
+    {
+      "unit": 8,
+      "note": 72,
+      "raw_peak": 0.11226052790880203,
+      "finite": true
+    },
+    {
+      "unit": 9,
+      "note": 72,
+      "raw_peak": 0.16450588405132294,
+      "finite": true
+    },
+    {
+      "unit": 10,
+      "note": 72,
+      "raw_peak": 0.10560689121484756,
+      "finite": true
+    },
+    {
+      "unit": 11,
+      "note": 72,
+      "raw_peak": 0.07453833520412445,
+      "finite": true
+    },
+    {
+      "unit": 12,
+      "note": 72,
+      "raw_peak": 0.12094538658857346,
+      "finite": true,
+      "f0_hz": 523.2219348021233,
+      "target_hz": 523.2511306011972,
+      "cents": -0.09660021481798824,
+      "periodicity": 0.988825797705863,
+      "pitch_pass": true
+    },
+    {
+      "unit": 13,
+      "note": 72,
+      "raw_peak": 0.09172646701335907,
+      "finite": true,
+      "f0_hz": 523.1924889171304,
+      "target_hz": 523.2511306011972,
+      "cents": -0.19403334945869707,
+      "periodicity": 0.9885508781622712,
+      "pitch_pass": true
+    },
+    {
+      "unit": 14,
+      "note": 72,
+      "raw_peak": 0.17475001513957977,
+      "finite": true,
+      "f0_hz": 523.2777739007983,
+      "target_hz": 523.2511306011972,
+      "cents": 0.08815004967427019,
+      "periodicity": 0.9896897158397402,
+      "pitch_pass": true
+    },
+    {
+      "unit": 15,
+      "note": 72,
+      "raw_peak": 0.07421720772981644,
+      "finite": true,
+      "f0_hz": 523.2309263581192,
+      "target_hz": 523.2511306011972,
+      "cents": -0.06684925618007591,
+      "periodicity": 0.9882630574568209,
+      "pitch_pass": true
+    },
+    {
+      "unit": 0,
+      "note": 84,
+      "raw_peak": 0.12692487239837646,
+      "finite": true
+    },
+    {
+      "unit": 1,
+      "note": 84,
+      "raw_peak": 0.1036192998290062,
+      "finite": true
+    },
+    {
+      "unit": 2,
+      "note": 84,
+      "raw_peak": 0.1715807467699051,
+      "finite": true
+    },
+    {
+      "unit": 3,
+      "note": 84,
+      "raw_peak": 0.14612239599227905,
+      "finite": true
+    },
+    {
+      "unit": 4,
+      "note": 84,
+      "raw_peak": 0.16851156949996948,
+      "finite": true
+    },
+    {
+      "unit": 5,
+      "note": 84,
+      "raw_peak": 0.14546602964401245,
+      "finite": true
+    },
+    {
+      "unit": 6,
+      "note": 84,
+      "raw_peak": 0.2270112931728363,
+      "finite": true
+    },
+    {
+      "unit": 7,
+      "note": 84,
+      "raw_peak": 0.1821497082710266,
+      "finite": true
+    },
+    {
+      "unit": 8,
+      "note": 84,
+      "raw_peak": 0.11226052790880203,
+      "finite": true
+    },
+    {
+      "unit": 9,
+      "note": 84,
+      "raw_peak": 0.16450588405132294,
+      "finite": true
+    },
+    {
+      "unit": 10,
+      "note": 84,
+      "raw_peak": 0.10560689121484756,
+      "finite": true
+    },
+    {
+      "unit": 11,
+      "note": 84,
+      "raw_peak": 0.07453833520412445,
+      "finite": true
+    },
+    {
+      "unit": 12,
+      "note": 84,
+      "raw_peak": 0.12313124537467957,
+      "finite": true,
+      "f0_hz": 1047.1829154694021,
+      "target_hz": 1046.5022612023945,
+      "cents": 1.1256438143896226,
+      "periodicity": 0.9832298217856741,
+      "pitch_pass": true
+    },
+    {
+      "unit": 13,
+      "note": 84,
+      "raw_peak": 0.10488211363554001,
+      "finite": true,
+      "f0_hz": 1047.151528429382,
+      "target_hz": 1046.5022612023945,
+      "cents": 1.073753045420582,
+      "periodicity": 0.9917966255161946,
+      "pitch_pass": true
+    },
+    {
+      "unit": 14,
+      "note": 84,
+      "raw_peak": 0.17702986299991608,
+      "finite": true,
+      "f0_hz": 1046.8477435934376,
+      "target_hz": 1046.5022612023945,
+      "cents": 0.5714389689127894,
+      "periodicity": 0.9933218941464464,
+      "pitch_pass": true
+    },
+    {
+      "unit": 15,
+      "note": 84,
+      "raw_peak": 0.1183222308754921,
+      "finite": true,
+      "f0_hz": 1047.7010975806543,
+      "target_hz": 1046.5022612023945,
+      "cents": 1.982106059864684,
+      "periodicity": 0.9923299423244233,
+      "pitch_pass": true
+    }
+  ],
+  "joins": [
+    {
+      "note": 48,
+      "max_adjacent_step": 0.09984801709651947
+    },
+    {
+      "note": 48,
+      "max_adjacent_step": 0.09984801709651947
+    },
+    {
+      "note": 60,
+      "max_adjacent_step": 0.10724693536758423
+    },
+    {
+      "note": 60,
+      "max_adjacent_step": 0.10724693536758423
+    },
+    {
+      "note": 72,
+      "max_adjacent_step": 0.09984801709651947
+    },
+    {
+      "note": 72,
+      "max_adjacent_step": 0.09984801709651947
+    },
+    {
+      "note": 84,
+      "max_adjacent_step": 0.09984801709651947
+    },
+    {
+      "note": 84,
+      "max_adjacent_step": 0.09984801709651947
+    }
+  ],
+  "files": [
+    {
+      "file": "vowels-48-residual.wav",
+      "note": 48,
+      "group": "vowels",
+      "peak": 0.2270112931728363,
+      "segments": [
+        {
+          "word": "heed",
+          "start_sample": 0,
+          "end_sample": 23207
+        },
+        {
+          "word": "hid",
+          "start_sample": 28720,
+          "end_sample": 52478
+        },
+        {
+          "word": "head",
+          "start_sample": 57991,
+          "end_sample": 81199
+        },
+        {
+          "word": "had",
+          "start_sample": 86712,
+          "end_sample": 109368
+        }
+      ],
+      "sha256": "4d8c0f8dc51fa1a054c3a7e147e2a721a73809c706fc7ea0f2cd8b64bbc8778e"
+    },
+    {
+      "file": "consonants-48-residual.wav",
+      "note": 48,
+      "group": "consonants",
+      "peak": 0.16450588405132294,
+      "segments": [
+        {
+          "word": "see",
+          "start_sample": 0,
+          "end_sample": 20561
+        },
+        {
+          "word": "she",
+          "start_sample": 26074,
+          "end_sample": 46911
+        },
+        {
+          "word": "pea",
+          "start_sample": 52424,
+          "end_sample": 71056
+        },
+        {
+          "word": "bee",
+          "start_sample": 76569,
+          "end_sample": 94099
+        }
+      ],
+      "sha256": "bedd169b7e5fd252fed14300e4bc4180e4e30dcae9d12586686f6f1c940dbb6c"
+    },
+    {
+      "file": "vowels-60-residual.wav",
+      "note": 60,
+      "group": "vowels",
+      "peak": 0.2270112931728363,
+      "segments": [
+        {
+          "word": "heed",
+          "start_sample": 0,
+          "end_sample": 23207
+        },
+        {
+          "word": "hid",
+          "start_sample": 28720,
+          "end_sample": 52478
+        },
+        {
+          "word": "head",
+          "start_sample": 57991,
+          "end_sample": 81199
+        },
+        {
+          "word": "had",
+          "start_sample": 86712,
+          "end_sample": 109368
+        }
+      ],
+      "sha256": "d2c219dda6c6682393833f66b8eaa8f0b20709da317ca6c8c79d820c01931b83"
+    },
+    {
+      "file": "consonants-60-residual.wav",
+      "note": 60,
+      "group": "consonants",
+      "peak": 0.16450588405132294,
+      "segments": [
+        {
+          "word": "see",
+          "start_sample": 0,
+          "end_sample": 20561
+        },
+        {
+          "word": "she",
+          "start_sample": 26074,
+          "end_sample": 46911
+        },
+        {
+          "word": "pea",
+          "start_sample": 52424,
+          "end_sample": 71056
+        },
+        {
+          "word": "bee",
+          "start_sample": 76569,
+          "end_sample": 94099
+        }
+      ],
+      "sha256": "371d84bd3ae06dbd51c21904af9655384b12ad9671bbf75a6646f01994855b4f"
+    },
+    {
+      "file": "vowels-72-residual.wav",
+      "note": 72,
+      "group": "vowels",
+      "peak": 0.2270112931728363,
+      "segments": [
+        {
+          "word": "heed",
+          "start_sample": 0,
+          "end_sample": 23207
+        },
+        {
+          "word": "hid",
+          "start_sample": 28720,
+          "end_sample": 52478
+        },
+        {
+          "word": "head",
+          "start_sample": 57991,
+          "end_sample": 81199
+        },
+        {
+          "word": "had",
+          "start_sample": 86712,
+          "end_sample": 109368
+        }
+      ],
+      "sha256": "8fad69d01868ea7198f49446c0c13abd32251b6a1604d7b828fb17f35a0b0792"
+    },
+    {
+      "file": "consonants-72-residual.wav",
+      "note": 72,
+      "group": "consonants",
+      "peak": 0.16450588405132294,
+      "segments": [
+        {
+          "word": "see",
+          "start_sample": 0,
+          "end_sample": 20561
+        },
+        {
+          "word": "she",
+          "start_sample": 26074,
+          "end_sample": 46911
+        },
+        {
+          "word": "pea",
+          "start_sample": 52424,
+          "end_sample": 71056
+        },
+        {
+          "word": "bee",
+          "start_sample": 76569,
+          "end_sample": 94099
+        }
+      ],
+      "sha256": "90439d0268d433bf27d27ea2c8c025fe62f357d0627d9ed4a96541bf99ea099a"
+    },
+    {
+      "file": "vowels-84-residual.wav",
+      "note": 84,
+      "group": "vowels",
+      "peak": 0.2270112931728363,
+      "segments": [
+        {
+          "word": "heed",
+          "start_sample": 0,
+          "end_sample": 23207
+        },
+        {
+          "word": "hid",
+          "start_sample": 28720,
+          "end_sample": 52478
+        },
+        {
+          "word": "head",
+          "start_sample": 57991,
+          "end_sample": 81199
+        },
+        {
+          "word": "had",
+          "start_sample": 86712,
+          "end_sample": 109368
+        }
+      ],
+      "sha256": "3c41da25f1455dd2243c9dba45e3da5e02c474db3a88698015d61275464b25f5"
+    },
+    {
+      "file": "consonants-84-residual.wav",
+      "note": 84,
+      "group": "consonants",
+      "peak": 0.16450588405132294,
+      "segments": [
+        {
+          "word": "see",
+          "start_sample": 0,
+          "end_sample": 20561
+        },
+        {
+          "word": "she",
+          "start_sample": 26074,
+          "end_sample": 46911
+        },
+        {
+          "word": "pea",
+          "start_sample": 52424,
+          "end_sample": 71056
+        },
+        {
+          "word": "bee",
+          "start_sample": 76569,
+          "end_sample": 94099
+        }
+      ],
+      "sha256": "c315d8f5fb0ee23833b104a89930d44501dcc1a7b1874db01c63962bfd8608ac"
+    }
+  ],
+  "human_results_new": "NOT PERFORMED",
+  "recognition": "GATED until headroom, pitch, reconstruction, native size and runtime budget assessed"
+}

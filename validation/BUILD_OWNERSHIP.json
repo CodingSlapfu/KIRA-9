@@ -1,16 +1,16 @@
 {
   "project": "KIRA-9",
   "owner": "work-49ff57de3e05",
-  "state": "active-residual-pilot",
+  "state": "paused-by-owner",
   "baseline": "ac65254f2fd76b4ed8f251f2a141f63f3508c3cf",
   "build_running": false,
   "publisher_running": false,
   "latest_verified": "1641726b2ea3aabfde8afbf3c04f76dbdf074fc9",
   "resume": "validation/RESUME_PRIORITY.md",
-  "latest_experiment": "experiments/consonant_cues",
-  "experiment_outcome": "Acoustic cue separation increased; full headroom fails identically in preserved baseline; NOT_PROMOTED",
+  "latest_experiment": "experiments/residual_pilot",
+  "experiment_outcome": "New fractional-pitchmark residual pilot technical gates pass in limited single-identity host test; native size, recognition and human tests NOT PERFORMED; NOT PROMOTED",
   "resumed_from": "3391612856fe302d579db44d94570734965d4d10",
-  "latest_verified_remote": "3391612856fe302d579db44d94570734965d4d10",
+  "latest_verified_remote": "ab13b95ed7cb3ae737e48752ff241f73dd2b8bc4",
   "local_checkpoint_before_record_update": "ae2b953",
-  "remote_checkpoint_status": "Owner explicitly authorizes development checkpoints including main; firmware/installer/site publication and engine promotion remain forbidden."
+  "remote_checkpoint_status": "Original906feaf backup downloaded byte-identical and git bundle verified; owner requested pause."
 }
