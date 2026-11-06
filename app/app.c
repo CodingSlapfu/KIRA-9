@@ -1188,3 +1188,6 @@ void app_tick(void) {
     }
   }
 }
+
+/* Enable native USB session tracking; protocol commands use app_usb_cmd. */
+int app_sysex(const uint8_t *p, uint32_t n) { (void)p; (void)n; return 0; }

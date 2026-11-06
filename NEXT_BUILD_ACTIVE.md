@@ -10,3 +10,5 @@ All 23 IDs remain in requirements/manifest.json. No approved deferrals. This is 
 Owner-only physical verification remains UNVERIFIED: flashing/recovery, speaker/headphone quality, LCD delivered FPS/lip-sync, DMA/CPU/battery, real flash power cycles, BLE latency/pairing and iPad/CoreMIDI hub routing. AQUORA was not modified.
 
 Resume checkpoint: existing owner `work-160cc0e6fa30-resume-2`. CI run 42168544653 was NOT full acceptance: missing face.c left a shared-library symbol unresolved and absent pipefail hid it. See validation/CI_BACKUP_FAILURE.md. Corrected backup preservation is now a separate retryable job. Next: verify current expanded native/browser source, then vocal-quality work and final installer gates. Do not publish this development checkpoint.
+
+Priority resume: CI 42171390044 failed native linking because APP_SYSEX was missing for plat_usb_session. See validation/CI_42171390044.md. After native/backup recovery, address Issue #2 with original fixed-time consonant phases and before/after English audio; do not copy Miku GPL code/tables/art. Existing owner work-160cc0e6fa30-resume-2 is retained.

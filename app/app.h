@@ -7,6 +7,7 @@
 #define APP_BLOCK 256u
 #define APP_CANVAS_PX (240u * 40u)
 #define APP_TICK
+#define APP_SYSEX
 #define APP_USB_CMD
 #define APP_HOST_EXPECT
 #define APP_BLE_AT_BOOT 0
