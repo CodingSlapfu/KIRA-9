@@ -7,7 +7,7 @@ paths=[]
 for line in subprocess.check_output(['git','ls-files','--recurse-submodules'],cwd=root,text=True).splitlines():
  p=root/line
  if p.is_file():paths.append((p,'source/'+line))
-for folder in [root/'app/build',root/'build/panel',root/'build/vocal-comparison']:
+for folder in [root/'app/build',root/'build/panel',root/'build/vocal-comparison',root/'build/acoustic-ab']:
  for p in folder.rglob('*'):
   if p.is_file() and p.suffix in {'.fwsc','.bin','.elf','.dis','.wasm','.png','.wav','.json','.js','.html','.css'}:paths.append((p,'artifacts/'+str(p.relative_to(root))))
 for p in [root/'studio/kira.wasm',root/'studio/dictionary.json',root/'build/golden.f32']:

@@ -1,0 +1,126 @@
+{
+  "baseline": "d8bff4dcb34c043c128c43bc76b5688c9adcacb7",
+  "note": "Identical timed inputs; spectral corrections are not a word intelligibility pass. Host timings are not FM-1 timings.",
+  "order": "Each phrase: baseline, silence, final, silence. First three are prior fixtures; last three are held-out contrasts.",
+  "phrases": [
+    "my heart is a light we rise again",
+    "the night is soft the stars are near",
+    "we carry dreams into the night",
+    "see she sue shoe",
+    "light night right",
+    "we sing a new song"
+  ],
+  "spectra": {
+    "baseline": {
+      "grid": "samples=22364160 clips=0 peak=0.410364",
+      "phones": {
+        "IY": {
+          "centroid_hz": 276.4083899458742,
+          "f2_fraction": 0.0005583705302597107,
+          "low_fraction": 0.9983179214864901,
+          "rms": 0.169599249958992
+        },
+        "IH": {
+          "centroid_hz": 434.59697766041813,
+          "f2_fraction": 0.00369584646343091,
+          "low_fraction": 0.9904643792963144,
+          "rms": 0.07168073952198029
+        },
+        "S": {
+          "centroid_hz": 3961.136383927687,
+          "f2_fraction": 0.1106651956461817,
+          "low_fraction": 0.03444286679711343,
+          "rms": 0.012706538662314415
+        },
+        "SH": {
+          "centroid_hz": 3244.727755758653,
+          "f2_fraction": 0.29485527647080684,
+          "low_fraction": 0.3676711072075309,
+          "rms": 0.013061410747468472
+        },
+        "Z": {
+          "centroid_hz": 1084.496309029736,
+          "f2_fraction": 0.0027246149383119674,
+          "low_fraction": 0.17905361534194766,
+          "rms": 0.0192823838442564
+        },
+        "M": {
+          "centroid_hz": 293.3698989271506,
+          "f2_fraction": 0.00046836562189696296,
+          "low_fraction": 0.968323149200086,
+          "rms": 0.1430768072605133
+        }
+      }
+    },
+    "final": {
+      "grid": "samples=22364160 clips=0 peak=0.777676",
+      "phones": {
+        "IY": {
+          "centroid_hz": 564.8401868553369,
+          "f2_fraction": 0.1351641396169464,
+          "low_fraction": 0.8417866470897315,
+          "rms": 0.04656146466732025
+        },
+        "IH": {
+          "centroid_hz": 1305.6901935533335,
+          "f2_fraction": 0.4854273586654384,
+          "low_fraction": 0.37517156791897355,
+          "rms": 0.029335275292396545
+        },
+        "S": {
+          "centroid_hz": 6847.879857567794,
+          "f2_fraction": 0.029238996390545943,
+          "low_fraction": 0.0005590762456260044,
+          "rms": 0.02134036272764206
+        },
+        "SH": {
+          "centroid_hz": 4677.908720164135,
+          "f2_fraction": 0.3834490152740594,
+          "low_fraction": 0.002740252951307775,
+          "rms": 0.021539101377129555
+        },
+        "Z": {
+          "centroid_hz": 2551.059372000823,
+          "f2_fraction": 0.006985806804386196,
+          "low_fraction": 0.5582173595808477,
+          "rms": 0.009678435511887074
+        },
+        "M": {
+          "centroid_hz": 276.21425430023095,
+          "f2_fraction": 0.0001473220109344411,
+          "low_fraction": 0.9947261472613308,
+          "rms": 0.14222534000873566
+        }
+      }
+    }
+  },
+  "host_callback": {
+    "baseline": {
+      "p50_us": 11.689,
+      "p95_us": 15.842,
+      "p99_us": 50.204,
+      "max_us": 2386.213
+    },
+    "final": {
+      "p50_us": 11.964,
+      "p95_us": 18.005,
+      "p99_us": 94.089,
+      "max_us": 542.669
+    }
+  },
+  "wav_sha256": {
+    "0-baseline.wav": "eab234c40121960ca3e819d5e3669fcc78cf2ef1b8b5619a0b10702d0f94a1f7",
+    "1-baseline.wav": "f4dac6003cfaa38b1f20b832878ed5d52dc3c41e5298bdfb53a08c92d6900f3f",
+    "2-baseline.wav": "81b3000e930542ada76882fd6f2ea545a6513e9cbaa5bbd4a0b519df261bd7c1",
+    "3-baseline.wav": "1b7606dea7587af71aa9e602811dad91a2c9d162221071f21fbc9ba358243424",
+    "4-baseline.wav": "a5a03fd50980900bf2b0ea0e76f4a3c557b4b24c0a24b3ac9a6eea10b30edcbd",
+    "5-baseline.wav": "1cff83921306504ca517d95f5cd48834d5b583ce6c0055728e0c341dc72a2d78",
+    "0-final.wav": "b0b017138c46a3adf2aa178107d21565bd8bb0bccec0eeac753c46bee4423a1e",
+    "1-final.wav": "4b6492822ba07d68a33df873440d6906baa455e93abb44ac29735f71e2754228",
+    "2-final.wav": "1d1a891faa1e8992a5a5c74e7f057adbcb4cd9c747b0c8d720fe2da1ab38cf8f",
+    "3-final.wav": "6faa2272eef7561fc05df475758a606dea8e9eba0ad929863c31d652ad8bfbaa",
+    "4-final.wav": "bb23ac781ff06cba5b6195250def479ed7bfecfb48743b26fa466e0c1e650200",
+    "5-final.wav": "3b496a7df05ce56c74bfbb27a481e5803122b225610ad48ff6e949e3ad89a697",
+    "comparison.wav": "a665a40d852596819a2d25ce2603ab48043aca84a61e763f27122a6cbecef7af"
+  }
+}

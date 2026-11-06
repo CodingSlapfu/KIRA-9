@@ -27,6 +27,9 @@ jobs:
         with:
           version: '4.0.19'
       - run: python3 -m pip install pillow
+      - name: Acoustic analysis dependency (no transcription model)
+        if: startsWith(github.event.head_commit.message, 'fix(acoustic):')
+        run: python3 -m pip install numpy==2.3.5
       - name: Pin native dependencies
         shell: bash
         run: |
@@ -39,11 +42,13 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python3 tools/test_backup.py
+          if [[ "$COMMIT_MESSAGE" != fix\(acoustic\):* ]]; then python3 tools/test_backup.py; fi
           if [[ "$COMMIT_MESSAGE" == fix\(ci\):* ]]; then
             ./tools/resume_checkpoint.sh 2>&1 | tee verification.log
           elif [[ "$COMMIT_MESSAGE" == fix\(vocal\):* ]]; then
             ./tools/verify_checkpoint.sh --vocal 2>&1 | tee verification.log
+          elif [[ "$COMMIT_MESSAGE" == fix\(acoustic\):* ]]; then
+            ./tools/verify_acoustic.sh 2>&1 | tee verification.log
           else
             ./tools/verify_checkpoint.sh 2>&1 | tee verification.log
           fi

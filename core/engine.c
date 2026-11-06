@@ -2,6 +2,7 @@
 #include "kira.h"
 #include "memory.h"
 #include "articulation.h"
+#include "clarity.h"
 
 typedef struct {
   float attack, release, breath, vibrato, glide, rasp, articulation, open;
@@ -378,8 +379,12 @@ void k9_render(k9_engine *e, float *out, uint32_t frames) {
         y = 0;
       e->z2[b] = e->z1[b];
       e->z1[b] = y;
-      sample += y;
+      sample += y * k9_spectral_weights[e->phone][b];
     }
+    /* Retain a periodic voicing bar under voiced frication. Its low band is
+     * independent of the upper-band noise balance (/z/ must not become /s/). */
+    if(e->phone==K9_Z||e->phone==K9_ZH||e->phone==K9_V||e->phone==K9_DH)
+      sample += .035f * articulation.voiced * (1.0f-4.0f*absolute(e->phase-.5f));
     if (e->harmony && vowel(e->phone)) {
       int note = (int)e->note + e->harmony;
       float hx;
@@ -397,7 +402,7 @@ void k9_render(k9_engine *e, float *out, uint32_t frames) {
           y = 0;
         e->hz2[b] = e->hz1[b];
         e->hz1[b] = y;
-        harmonic += y;
+        harmonic += y * k9_spectral_weights[e->phone][b];
       }
     }
     sample *= e->level * .44f;
