@@ -1,0 +1,609 @@
+{
+  "human_participants_new": 0,
+  "decision": "NOT PROMOTED; acoustic evidence only",
+  "safety": {
+    "frames": 4702208,
+    "raw_peak": 0.9459474682807922,
+    "nonfinite": 0,
+    "clamp_hits": 2,
+    "stop_failures": 0,
+    "pass": false
+  },
+  "fricative_contrasts": [
+    {
+      "note": 48,
+      "engine": "baseline",
+      "s_centroid_hz": 7041.289065539402,
+      "sh_centroid_hz": 4922.467421082231,
+      "difference_hz": 2118.821644457171
+    },
+    {
+      "note": 48,
+      "engine": "candidate",
+      "s_centroid_hz": 12928.993570131815,
+      "sh_centroid_hz": 7119.83484113301,
+      "difference_hz": 5809.158728998806
+    },
+    {
+      "note": 60,
+      "engine": "baseline",
+      "s_centroid_hz": 7041.289065539402,
+      "sh_centroid_hz": 4922.467421082231,
+      "difference_hz": 2118.821644457171
+    },
+    {
+      "note": 60,
+      "engine": "candidate",
+      "s_centroid_hz": 12928.993570131815,
+      "sh_centroid_hz": 7119.83484113301,
+      "difference_hz": 5809.158728998806
+    },
+    {
+      "note": 72,
+      "engine": "baseline",
+      "s_centroid_hz": 7041.289065539402,
+      "sh_centroid_hz": 4922.467421082231,
+      "difference_hz": 2118.821644457171
+    },
+    {
+      "note": 72,
+      "engine": "candidate",
+      "s_centroid_hz": 12928.993570131815,
+      "sh_centroid_hz": 7119.83484113301,
+      "difference_hz": 5809.158728998806
+    }
+  ],
+  "centroid_gate_pass": true,
+  "callback_host": {
+    "baseline": {
+      "median_us": 11.688,
+      "p95_us": 12.979499999999998
+    },
+    "candidate": {
+      "median_us": 12.769,
+      "p95_us": 13.42
+    }
+  },
+  "host_ratio": 1.0924880219028064,
+  "host_budget_pass": true,
+  "device_timing": "UNVERIFIED",
+  "state_bytes": 28,
+  "files": [
+    {
+      "file": "vowels-48-candidate.wav",
+      "raw_peak": 0.2558158338069916,
+      "sha256": "d286a4958a6ec0fd9b3340cc0c03fc0adf332b23e40ba26b238e0f94ccd2d146"
+    },
+    {
+      "file": "consonants-48-candidate.wav",
+      "raw_peak": 0.10064731538295746,
+      "sha256": "c136d627e6165d2f6614ec3c157fcbc2991ce6683f40391ef66711942f236743"
+    },
+    {
+      "file": "vowels-60-candidate.wav",
+      "raw_peak": 0.41655752062797546,
+      "sha256": "174614818f9cdfd97e1273c0377fad1c09a2d770811b2a9211d846af5681e93d"
+    },
+    {
+      "file": "consonants-60-candidate.wav",
+      "raw_peak": 0.1430346816778183,
+      "sha256": "5bab796c57182e6b9ccf1bf48731ab3744cc3f8969081778f2c1319b2b78a133"
+    },
+    {
+      "file": "vowels-72-candidate.wav",
+      "raw_peak": 0.545096218585968,
+      "sha256": "a69430065466e9fc88a1f149afa7d1ba1bbc7186891c9a3f85e526b18dd7bbb8"
+    },
+    {
+      "file": "consonants-72-candidate.wav",
+      "raw_peak": 0.3059278428554535,
+      "sha256": "e27ad515a2aa5fc195b26561493c4770416e0f8eefc406cc7dce0dfe95d202c3"
+    }
+  ],
+  "safety_cases": [
+    {
+      "voice": 0,
+      "note": 48,
+      "consonant_frames": 353,
+      "raw_peak": 0.3331741988658905
+    },
+    {
+      "voice": 0,
+      "note": 48,
+      "consonant_frames": 2117,
+      "raw_peak": 0.2165619283914566
+    },
+    {
+      "voice": 0,
+      "note": 48,
+      "consonant_frames": 5292,
+      "raw_peak": 0.3048318922519684
+    },
+    {
+      "voice": 0,
+      "note": 60,
+      "consonant_frames": 353,
+      "raw_peak": 0.1480102688074112
+    },
+    {
+      "voice": 0,
+      "note": 60,
+      "consonant_frames": 2117,
+      "raw_peak": 0.23736152052879333
+    },
+    {
+      "voice": 0,
+      "note": 60,
+      "consonant_frames": 5292,
+      "raw_peak": 0.4377925395965576
+    },
+    {
+      "voice": 0,
+      "note": 72,
+      "consonant_frames": 353,
+      "raw_peak": 0.31484171748161316
+    },
+    {
+      "voice": 0,
+      "note": 72,
+      "consonant_frames": 2117,
+      "raw_peak": 0.46285614371299744
+    },
+    {
+      "voice": 0,
+      "note": 72,
+      "consonant_frames": 5292,
+      "raw_peak": 0.7802435755729675
+    },
+    {
+      "voice": 0,
+      "note": 84,
+      "consonant_frames": 353,
+      "raw_peak": 0.5331658124923706
+    },
+    {
+      "voice": 0,
+      "note": 84,
+      "consonant_frames": 2117,
+      "raw_peak": 0.6750420928001404
+    },
+    {
+      "voice": 0,
+      "note": 84,
+      "consonant_frames": 5292,
+      "raw_peak": 0.8228005170822144
+    },
+    {
+      "voice": 1,
+      "note": 48,
+      "consonant_frames": 353,
+      "raw_peak": 0.1981351524591446
+    },
+    {
+      "voice": 1,
+      "note": 48,
+      "consonant_frames": 2117,
+      "raw_peak": 0.3063252568244934
+    },
+    {
+      "voice": 1,
+      "note": 48,
+      "consonant_frames": 5292,
+      "raw_peak": 0.3532398045063019
+    },
+    {
+      "voice": 1,
+      "note": 60,
+      "consonant_frames": 353,
+      "raw_peak": 0.17997334897518158
+    },
+    {
+      "voice": 1,
+      "note": 60,
+      "consonant_frames": 2117,
+      "raw_peak": 0.25305479764938354
+    },
+    {
+      "voice": 1,
+      "note": 60,
+      "consonant_frames": 5292,
+      "raw_peak": 0.552169144153595
+    },
+    {
+      "voice": 1,
+      "note": 72,
+      "consonant_frames": 353,
+      "raw_peak": 0.4005632698535919
+    },
+    {
+      "voice": 1,
+      "note": 72,
+      "consonant_frames": 2117,
+      "raw_peak": 0.5573315620422363
+    },
+    {
+      "voice": 1,
+      "note": 72,
+      "consonant_frames": 5292,
+      "raw_peak": 0.8838171362876892
+    },
+    {
+      "voice": 1,
+      "note": 84,
+      "consonant_frames": 353,
+      "raw_peak": 0.7481577396392822
+    },
+    {
+      "voice": 1,
+      "note": 84,
+      "consonant_frames": 2117,
+      "raw_peak": 0.7375279068946838
+    },
+    {
+      "voice": 1,
+      "note": 84,
+      "consonant_frames": 5292,
+      "raw_peak": 0.9459474682807922
+    },
+    {
+      "voice": 2,
+      "note": 48,
+      "consonant_frames": 353,
+      "raw_peak": 0.3215424418449402
+    },
+    {
+      "voice": 2,
+      "note": 48,
+      "consonant_frames": 2117,
+      "raw_peak": 0.21495550870895386
+    },
+    {
+      "voice": 2,
+      "note": 48,
+      "consonant_frames": 5292,
+      "raw_peak": 0.2483902871608734
+    },
+    {
+      "voice": 2,
+      "note": 60,
+      "consonant_frames": 353,
+      "raw_peak": 0.1279590129852295
+    },
+    {
+      "voice": 2,
+      "note": 60,
+      "consonant_frames": 2117,
+      "raw_peak": 0.21463586390018463
+    },
+    {
+      "voice": 2,
+      "note": 60,
+      "consonant_frames": 5292,
+      "raw_peak": 0.3807784616947174
+    },
+    {
+      "voice": 2,
+      "note": 72,
+      "consonant_frames": 353,
+      "raw_peak": 0.2621214687824249
+    },
+    {
+      "voice": 2,
+      "note": 72,
+      "consonant_frames": 2117,
+      "raw_peak": 0.42438822984695435
+    },
+    {
+      "voice": 2,
+      "note": 72,
+      "consonant_frames": 5292,
+      "raw_peak": 0.7029559016227722
+    },
+    {
+      "voice": 2,
+      "note": 84,
+      "consonant_frames": 353,
+      "raw_peak": 0.5609521269798279
+    },
+    {
+      "voice": 2,
+      "note": 84,
+      "consonant_frames": 2117,
+      "raw_peak": 0.595623254776001
+    },
+    {
+      "voice": 2,
+      "note": 84,
+      "consonant_frames": 5292,
+      "raw_peak": 0.7986273169517517
+    },
+    {
+      "voice": 3,
+      "note": 48,
+      "consonant_frames": 353,
+      "raw_peak": 0.22297045588493347
+    },
+    {
+      "voice": 3,
+      "note": 48,
+      "consonant_frames": 2117,
+      "raw_peak": 0.3190169036388397
+    },
+    {
+      "voice": 3,
+      "note": 48,
+      "consonant_frames": 5292,
+      "raw_peak": 0.28920435905456543
+    },
+    {
+      "voice": 3,
+      "note": 60,
+      "consonant_frames": 353,
+      "raw_peak": 0.14179353415966034
+    },
+    {
+      "voice": 3,
+      "note": 60,
+      "consonant_frames": 2117,
+      "raw_peak": 0.27500489354133606
+    },
+    {
+      "voice": 3,
+      "note": 60,
+      "consonant_frames": 5292,
+      "raw_peak": 0.4340931475162506
+    },
+    {
+      "voice": 3,
+      "note": 72,
+      "consonant_frames": 353,
+      "raw_peak": 0.32970476150512695
+    },
+    {
+      "voice": 3,
+      "note": 72,
+      "consonant_frames": 2117,
+      "raw_peak": 0.48134326934814453
+    },
+    {
+      "voice": 3,
+      "note": 72,
+      "consonant_frames": 5292,
+      "raw_peak": 0.7658811211585999
+    },
+    {
+      "voice": 3,
+      "note": 84,
+      "consonant_frames": 353,
+      "raw_peak": 0.5968987345695496
+    },
+    {
+      "voice": 3,
+      "note": 84,
+      "consonant_frames": 2117,
+      "raw_peak": 0.7741937041282654
+    },
+    {
+      "voice": 3,
+      "note": 84,
+      "consonant_frames": 5292,
+      "raw_peak": 0.9016361832618713
+    },
+    {
+      "voice": 4,
+      "note": 48,
+      "consonant_frames": 353,
+      "raw_peak": 0.26079806685447693
+    },
+    {
+      "voice": 4,
+      "note": 48,
+      "consonant_frames": 2117,
+      "raw_peak": 0.14275313913822174
+    },
+    {
+      "voice": 4,
+      "note": 48,
+      "consonant_frames": 5292,
+      "raw_peak": 0.20309020578861237
+    },
+    {
+      "voice": 4,
+      "note": 60,
+      "consonant_frames": 353,
+      "raw_peak": 0.13056236505508423
+    },
+    {
+      "voice": 4,
+      "note": 60,
+      "consonant_frames": 2117,
+      "raw_peak": 0.2021028846502304
+    },
+    {
+      "voice": 4,
+      "note": 60,
+      "consonant_frames": 5292,
+      "raw_peak": 0.3056753873825073
+    },
+    {
+      "voice": 4,
+      "note": 72,
+      "consonant_frames": 353,
+      "raw_peak": 0.2148716002702713
+    },
+    {
+      "voice": 4,
+      "note": 72,
+      "consonant_frames": 2117,
+      "raw_peak": 0.35645121335983276
+    },
+    {
+      "voice": 4,
+      "note": 72,
+      "consonant_frames": 5292,
+      "raw_peak": 0.6264508962631226
+    },
+    {
+      "voice": 4,
+      "note": 84,
+      "consonant_frames": 353,
+      "raw_peak": 0.619066059589386
+    },
+    {
+      "voice": 4,
+      "note": 84,
+      "consonant_frames": 2117,
+      "raw_peak": 0.6067436337471008
+    },
+    {
+      "voice": 4,
+      "note": 84,
+      "consonant_frames": 5292,
+      "raw_peak": 0.7086347937583923
+    },
+    {
+      "voice": 5,
+      "note": 48,
+      "consonant_frames": 353,
+      "raw_peak": 0.14872443675994873
+    },
+    {
+      "voice": 5,
+      "note": 48,
+      "consonant_frames": 2117,
+      "raw_peak": 0.3075984716415405
+    },
+    {
+      "voice": 5,
+      "note": 48,
+      "consonant_frames": 5292,
+      "raw_peak": 0.2651585042476654
+    },
+    {
+      "voice": 5,
+      "note": 60,
+      "consonant_frames": 353,
+      "raw_peak": 0.2066550850868225
+    },
+    {
+      "voice": 5,
+      "note": 60,
+      "consonant_frames": 2117,
+      "raw_peak": 0.27361342310905457
+    },
+    {
+      "voice": 5,
+      "note": 60,
+      "consonant_frames": 5292,
+      "raw_peak": 0.4021194577217102
+    },
+    {
+      "voice": 5,
+      "note": 72,
+      "consonant_frames": 353,
+      "raw_peak": 0.3102698028087616
+    },
+    {
+      "voice": 5,
+      "note": 72,
+      "consonant_frames": 2117,
+      "raw_peak": 0.4666738212108612
+    },
+    {
+      "voice": 5,
+      "note": 72,
+      "consonant_frames": 5292,
+      "raw_peak": 0.7452256679534912
+    },
+    {
+      "voice": 5,
+      "note": 84,
+      "consonant_frames": 353,
+      "raw_peak": 0.6163064241409302
+    },
+    {
+      "voice": 5,
+      "note": 84,
+      "consonant_frames": 2117,
+      "raw_peak": 0.8007997274398804
+    },
+    {
+      "voice": 5,
+      "note": 84,
+      "consonant_frames": 5292,
+      "raw_peak": 0.8640539646148682
+    },
+    {
+      "voice": 6,
+      "note": 48,
+      "consonant_frames": 353,
+      "raw_peak": 0.1974409520626068
+    },
+    {
+      "voice": 6,
+      "note": 48,
+      "consonant_frames": 2117,
+      "raw_peak": 0.26774027943611145
+    },
+    {
+      "voice": 6,
+      "note": 48,
+      "consonant_frames": 5292,
+      "raw_peak": 0.2231873869895935
+    },
+    {
+      "voice": 6,
+      "note": 60,
+      "consonant_frames": 353,
+      "raw_peak": 0.12988877296447754
+    },
+    {
+      "voice": 6,
+      "note": 60,
+      "consonant_frames": 2117,
+      "raw_peak": 0.2651795446872711
+    },
+    {
+      "voice": 6,
+      "note": 60,
+      "consonant_frames": 5292,
+      "raw_peak": 0.342756986618042
+    },
+    {
+      "voice": 6,
+      "note": 72,
+      "consonant_frames": 353,
+      "raw_peak": 0.23297108709812164
+    },
+    {
+      "voice": 6,
+      "note": 72,
+      "consonant_frames": 2117,
+      "raw_peak": 0.4199660122394562
+    },
+    {
+      "voice": 6,
+      "note": 72,
+      "consonant_frames": 5292,
+      "raw_peak": 0.6924315094947815
+    },
+    {
+      "voice": 6,
+      "note": 84,
+      "consonant_frames": 353,
+      "raw_peak": 0.5675351023674011
+    },
+    {
+      "voice": 6,
+      "note": 84,
+      "consonant_frames": 2117,
+      "raw_peak": 0.6269420385360718
+    },
+    {
+      "voice": 6,
+      "note": 84,
+      "consonant_frames": 5292,
+      "raw_peak": 0.7943929433822632
+    }
+  ]
+}

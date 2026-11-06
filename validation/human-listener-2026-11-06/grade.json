@@ -1,0 +1,237 @@
+{
+  "status": "complete",
+  "answered": 48,
+  "expected": 48,
+  "missing_ids": [],
+  "by_engine_register_group": {
+    "prototype-72-vowels": {
+      "correct": 2,
+      "total": 4,
+      "confusions": {
+        "heed": {
+          "heed": 1
+        },
+        "head": {
+          "had": 1
+        },
+        "had": {
+          "head": 1
+        },
+        "hid": {
+          "hid": 1
+        }
+      },
+      "accuracy": 0.5
+    },
+    "baseline-60-consonants": {
+      "correct": 2,
+      "total": 4,
+      "confusions": {
+        "she": {
+          "she": 1
+        },
+        "pea": {
+          "bee": 1
+        },
+        "see": {
+          "she": 1
+        },
+        "bee": {
+          "bee": 1
+        }
+      },
+      "accuracy": 0.5
+    },
+    "baseline-72-vowels": {
+      "correct": 0,
+      "total": 4,
+      "confusions": {
+        "had": {
+          "hid": 1
+        },
+        "hid": {
+          "Unclear": 1
+        },
+        "heed": {
+          "Unclear": 1
+        },
+        "head": {
+          "had": 1
+        }
+      },
+      "accuracy": 0.0
+    },
+    "baseline-48-vowels": {
+      "correct": 1,
+      "total": 4,
+      "confusions": {
+        "had": {
+          "head": 1
+        },
+        "hid": {
+          "heed": 1
+        },
+        "heed": {
+          "heed": 1
+        },
+        "head": {
+          "had": 1
+        }
+      },
+      "accuracy": 0.25
+    },
+    "prototype-60-vowels": {
+      "correct": 2,
+      "total": 4,
+      "confusions": {
+        "had": {
+          "hid": 1
+        },
+        "heed": {
+          "heed": 1
+        },
+        "hid": {
+          "heed": 1
+        },
+        "head": {
+          "head": 1
+        }
+      },
+      "accuracy": 0.5
+    },
+    "prototype-48-consonants": {
+      "correct": 2,
+      "total": 4,
+      "confusions": {
+        "see": {
+          "she": 1
+        },
+        "pea": {
+          "pea": 1
+        },
+        "bee": {
+          "pea": 1
+        },
+        "she": {
+          "she": 1
+        }
+      },
+      "accuracy": 0.5
+    },
+    "prototype-48-vowels": {
+      "correct": 0,
+      "total": 4,
+      "confusions": {
+        "head": {
+          "Unclear": 1
+        },
+        "hid": {
+          "heed": 1
+        },
+        "heed": {
+          "head": 1
+        },
+        "had": {
+          "hid": 1
+        }
+      },
+      "accuracy": 0.0
+    },
+    "baseline-72-consonants": {
+      "correct": 0,
+      "total": 4,
+      "confusions": {
+        "see": {
+          "Unclear": 1
+        },
+        "bee": {
+          "Unclear": 1
+        },
+        "she": {
+          "see": 1
+        },
+        "pea": {
+          "bee": 1
+        }
+      },
+      "accuracy": 0.0
+    },
+    "prototype-60-consonants": {
+      "correct": 0,
+      "total": 4,
+      "confusions": {
+        "she": {
+          "see": 1
+        },
+        "pea": {
+          "Unclear": 1
+        },
+        "see": {
+          "she": 1
+        },
+        "bee": {
+          "she": 1
+        }
+      },
+      "accuracy": 0.0
+    },
+    "baseline-48-consonants": {
+      "correct": 3,
+      "total": 4,
+      "confusions": {
+        "she": {
+          "she": 1
+        },
+        "bee": {
+          "bee": 1
+        },
+        "see": {
+          "see": 1
+        },
+        "pea": {
+          "bee": 1
+        }
+      },
+      "accuracy": 0.75
+    },
+    "baseline-60-vowels": {
+      "correct": 2,
+      "total": 4,
+      "confusions": {
+        "had": {
+          "hid": 1
+        },
+        "heed": {
+          "heed": 1
+        },
+        "hid": {
+          "Unclear": 1
+        },
+        "head": {
+          "head": 1
+        }
+      },
+      "accuracy": 0.5
+    },
+    "prototype-72-consonants": {
+      "correct": 1,
+      "total": 4,
+      "confusions": {
+        "see": {
+          "she": 1
+        },
+        "she": {
+          "she": 1
+        },
+        "bee": {
+          "pea": 1
+        },
+        "pea": {
+          "Unclear": 1
+        }
+      },
+      "accuracy": 0.25
+    }
+  },
+  "interpretation": "Single response file; descriptive forced-choice identification, not release acceptance or an independent participant count."
+}

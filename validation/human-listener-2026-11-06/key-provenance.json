@@ -1,0 +1,6 @@
+{
+  "frozen_key_matches_preserved_verified_archive_member": "build/english6/listening/answers.json",
+  "key_sha256": "5406a51f29f5ade49d21d6cc2453bf9b75ec3d1130a44c5a39e20c95388234d1",
+  "archive_receipt": "validation/english6-2026-11-06/archive-receipt.json",
+  "scope": "Only the required frozen key compared; no previous backup verification replay."
+}

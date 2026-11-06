@@ -1,12 +1,16 @@
 {
   "project": "KIRA-9",
-  "owner": "work-160cc0e6fa30-resume-2",
-  "state": "checkpointed",
+  "owner": "work-49ff57de3e05",
+  "state": "active-residual-pilot",
   "baseline": "ac65254f2fd76b4ed8f251f2a141f63f3508c3cf",
   "build_running": false,
   "publisher_running": false,
   "latest_verified": "1641726b2ea3aabfde8afbf3c04f76dbdf074fc9",
   "resume": "validation/RESUME_PRIORITY.md",
-  "latest_experiment": "889f674514e0bd0ad594f003bf48b50b85fe89c0",
-  "experiment_outcome": "headroom_failed; recognition_not_run; candidate_unpromoted"
+  "latest_experiment": "experiments/consonant_cues",
+  "experiment_outcome": "Acoustic cue separation increased; full headroom fails identically in preserved baseline; NOT_PROMOTED",
+  "resumed_from": "3391612856fe302d579db44d94570734965d4d10",
+  "latest_verified_remote": "3391612856fe302d579db44d94570734965d4d10",
+  "local_checkpoint_before_record_update": "ae2b953",
+  "remote_checkpoint_status": "Owner explicitly authorizes development checkpoints including main; firmware/installer/site publication and engine promotion remain forbidden."
 }

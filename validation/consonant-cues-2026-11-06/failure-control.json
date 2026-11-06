@@ -1,0 +1,21 @@
+{
+  "scope": "Only NEW failing cells, preserved baseline with include paths adapted; no existing acceptance rerun",
+  "cases": [
+    {
+      "voice": 1,
+      "note": 84,
+      "consonant_frames": 5292,
+      "raw_peak": 0.9459474682807922,
+      "baseline_raw_peak": 0.9459474682807922,
+      "baseline_clamp_hits": 2
+    },
+    {
+      "voice": 3,
+      "note": 84,
+      "consonant_frames": 5292,
+      "raw_peak": 0.9016361832618713,
+      "baseline_raw_peak": 0.9016361832618713,
+      "baseline_clamp_hits": 0
+    }
+  ]
+}

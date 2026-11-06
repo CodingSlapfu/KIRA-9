@@ -1,0 +1,7 @@
+{
+  "kernel_size": "   text\t   data\t    bss\t    dec\t    hex\tfilename\n    714\t      0\t      0\t    714\t    2ca\tbuild/consonant-cues/cues-r3.o\n",
+  "undefined_symbols": "",
+  "state_bytes": 28,
+  "heap": false,
+  "device_cpu": "UNVERIFIED; kernel object only, not firmware build or timing evidence"
+}

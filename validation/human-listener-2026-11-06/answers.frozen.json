@@ -1,0 +1,389 @@
+{
+  "note": "Do not view before completing the blinded test. Audio level matched for listening only; not DSP/headroom data.",
+  "answers": {
+    "s00": {
+      "engine": "prototype",
+      "note": 72,
+      "group": "vowels",
+      "word": "heed",
+      "sha256": "d9498e9837f942f6630cec4c27b10de427c089567b4f58d18a4a36ecf0dfcc89",
+      "listening_gain": 1.1164039726718489
+    },
+    "s01": {
+      "engine": "prototype",
+      "note": 72,
+      "group": "vowels",
+      "word": "head",
+      "sha256": "df73a3241fbcbebab1efefcfbb639233bd7fb5a510cf1a63a2ed86311e8c437f",
+      "listening_gain": 1.1331385688368438
+    },
+    "s02": {
+      "engine": "prototype",
+      "note": 72,
+      "group": "vowels",
+      "word": "had",
+      "sha256": "c7c622ea819338cf6b3f551bc365bdea9dcdfa8ea7bc85938d948dc07eaed956",
+      "listening_gain": 1.2100756297947992
+    },
+    "s03": {
+      "engine": "baseline",
+      "note": 60,
+      "group": "consonants",
+      "word": "she",
+      "sha256": "518d631bddbc0a8b8f5710b4b80085b2b6a0439f1fc7db752757d5aee66c1c16",
+      "listening_gain": 2.1122587517249447
+    },
+    "s04": {
+      "engine": "baseline",
+      "note": 72,
+      "group": "vowels",
+      "word": "had",
+      "sha256": "1e842694165aae8a792b1975b56c51aa6923cffce0981373750c074b1370d9d3",
+      "listening_gain": 0.9474869705999008
+    },
+    "s05": {
+      "engine": "baseline",
+      "note": 48,
+      "group": "vowels",
+      "word": "had",
+      "sha256": "cee41c70cdcf51e2beb92c6325355a1f3d97cb578c8bcd395107531d1b2fde61",
+      "listening_gain": 2.7365306609401094
+    },
+    "s06": {
+      "engine": "baseline",
+      "note": 48,
+      "group": "vowels",
+      "word": "hid",
+      "sha256": "e0a0a7b6800ae8b6bf494a931c51b4e6ea08ea6147389402f02780f848360b1a",
+      "listening_gain": 2.885595672411624
+    },
+    "s07": {
+      "engine": "prototype",
+      "note": 60,
+      "group": "vowels",
+      "word": "had",
+      "sha256": "ed5afaedfd8ecb64c959d341cd7fc84ec0033dcc406671d2cf309e3d35e1d152",
+      "listening_gain": 1.1386472146327897
+    },
+    "s08": {
+      "engine": "prototype",
+      "note": 48,
+      "group": "consonants",
+      "word": "see",
+      "sha256": "dd3f6d8bddd69198435c937e00d04fbc3772f1c6e8f0b8bf87cdf23c53ab018c",
+      "listening_gain": 1.0779341151597506
+    },
+    "s09": {
+      "engine": "baseline",
+      "note": 60,
+      "group": "consonants",
+      "word": "pea",
+      "sha256": "998db381a50cb7b2114f00a33c7fdb0a3018093b1d479085a94dd8d1e72577b9",
+      "listening_gain": 2.0139655297585417
+    },
+    "s10": {
+      "engine": "baseline",
+      "note": 72,
+      "group": "vowels",
+      "word": "hid",
+      "sha256": "d5339c428126571e783096ccdb397c76cf979bcb9ed695f4fd2f0ebea8c863a4",
+      "listening_gain": 1.0402973498317551
+    },
+    "s11": {
+      "engine": "prototype",
+      "note": 48,
+      "group": "vowels",
+      "word": "head",
+      "sha256": "6d11f867088d247ffbd933ab876e73672121259fe61a1292796831f7362643bd",
+      "listening_gain": 1.2081725385570634
+    },
+    "s12": {
+      "engine": "baseline",
+      "note": 72,
+      "group": "consonants",
+      "word": "see",
+      "sha256": "93b1abbf69aa1407781665d076f192643de498fce8fb391062da823000c43dd7",
+      "listening_gain": 1.7340609185927123
+    },
+    "s13": {
+      "engine": "prototype",
+      "note": 48,
+      "group": "vowels",
+      "word": "hid",
+      "sha256": "e4d797002421304be7f15963149fa5764d76410383a15623cb707891b5dc14ab",
+      "listening_gain": 1.1274337458817012
+    },
+    "s14": {
+      "engine": "prototype",
+      "note": 60,
+      "group": "consonants",
+      "word": "she",
+      "sha256": "02322ebf3cd1129918776074e60bd8547bb990f23a7a8f737a8040c107d2dadf",
+      "listening_gain": 1.0800125740590862
+    },
+    "s15": {
+      "engine": "baseline",
+      "note": 48,
+      "group": "consonants",
+      "word": "she",
+      "sha256": "b96bdfe614a8df6333750ea7ddada91d45d453937e3e71dcd9ddeda26e00e869",
+      "listening_gain": 2.5223933540359376
+    },
+    "s16": {
+      "engine": "baseline",
+      "note": 48,
+      "group": "consonants",
+      "word": "bee",
+      "sha256": "5644fa19dcbc6acb468ee1a2eb84160dc948022d9534b05d3bc42dbfd2ed2535",
+      "listening_gain": 2.439961874416038
+    },
+    "s17": {
+      "engine": "prototype",
+      "note": 60,
+      "group": "consonants",
+      "word": "pea",
+      "sha256": "035ccba43a67be4ae907425d35ffdc0824bc29e87555a0a5eaa9a886a351dc77",
+      "listening_gain": 1.0716943347020078
+    },
+    "s18": {
+      "engine": "baseline",
+      "note": 60,
+      "group": "consonants",
+      "word": "see",
+      "sha256": "3c73aeb6bedb2da83e8853af47f2ab02810d5ac88a6ee75c2e1d67d0aa240053",
+      "listening_gain": 2.175177413148424
+    },
+    "s19": {
+      "engine": "baseline",
+      "note": 60,
+      "group": "vowels",
+      "word": "had",
+      "sha256": "81f21d4302cbd879c59357edefaa5a9a958c202b21e9465a62e1ef51e350556f",
+      "listening_gain": 1.680533372408235
+    },
+    "s20": {
+      "engine": "prototype",
+      "note": 60,
+      "group": "vowels",
+      "word": "heed",
+      "sha256": "3ada275f0fac3e7a8b358a60df3af13dd1373b02a795a1d393ee80f23f16f518",
+      "listening_gain": 1.1269427839512256
+    },
+    "s21": {
+      "engine": "prototype",
+      "note": 72,
+      "group": "consonants",
+      "word": "see",
+      "sha256": "9f4d30e1182a49c6eaafb5ff7019c01613194abfb1da0a00f0ce829f7ae299a1",
+      "listening_gain": 1.0736579664752346
+    },
+    "s22": {
+      "engine": "prototype",
+      "note": 48,
+      "group": "consonants",
+      "word": "pea",
+      "sha256": "56f314c675b5928057d97c3934f6f7ed205cbfb69ecdbcabb1766d1fad1535b7",
+      "listening_gain": 1.070141866253135
+    },
+    "s23": {
+      "engine": "baseline",
+      "note": 72,
+      "group": "consonants",
+      "word": "bee",
+      "sha256": "2802a4440c531bbdf23c522f91df1ebc3143240e5e846bb4efd8c0dc4dac6d1d",
+      "listening_gain": 1.5734763636000801
+    },
+    "s24": {
+      "engine": "baseline",
+      "note": 48,
+      "group": "consonants",
+      "word": "see",
+      "sha256": "5bf230db9d3cc232806a167424baf09bafa21e52d2729af1cbfbddcc5aabcf2a",
+      "listening_gain": 2.5898517680694098
+    },
+    "s25": {
+      "engine": "baseline",
+      "note": 60,
+      "group": "vowels",
+      "word": "heed",
+      "sha256": "06b02a0145fc3bda6c8994e6b2d7c9ab3dd5ed037bf39759b5d8347369a7c86d",
+      "listening_gain": 2.130559167750325
+    },
+    "s26": {
+      "engine": "prototype",
+      "note": 72,
+      "group": "consonants",
+      "word": "she",
+      "sha256": "e26edfd3d4a52a10a50d370e282e28b9ab80e94b376834fd9512c71c247a7369",
+      "listening_gain": 1.0792612488221842
+    },
+    "s27": {
+      "engine": "baseline",
+      "note": 72,
+      "group": "vowels",
+      "word": "heed",
+      "sha256": "de645766a8912f859d5757522e533c9e25c8a652d961a491d6e5534c0c9f25e0",
+      "listening_gain": 1.2842282067073512
+    },
+    "s28": {
+      "engine": "prototype",
+      "note": 48,
+      "group": "vowels",
+      "word": "heed",
+      "sha256": "75b7629de54800aac1804ca5fee427ed9a5aba785c0e276e601028dad180e693",
+      "listening_gain": 1.1303051896321938
+    },
+    "s29": {
+      "engine": "prototype",
+      "note": 48,
+      "group": "consonants",
+      "word": "bee",
+      "sha256": "db9fefcfb0cd4b61d61ea5c800703af35d9494f1a48b78eb096f6afbd0619f63",
+      "listening_gain": 1.0871970881837005
+    },
+    "s30": {
+      "engine": "prototype",
+      "note": 60,
+      "group": "consonants",
+      "word": "see",
+      "sha256": "2e5be7cf94760c3f10fe5809b8acc2784e4d1197c522fe0ea6b5492ea0e1abb3",
+      "listening_gain": 1.0735390062567673
+    },
+    "s31": {
+      "engine": "baseline",
+      "note": 72,
+      "group": "consonants",
+      "word": "she",
+      "sha256": "12e58ac15021bcd3fe19cb6fba049a802512918de99173c519fd20c426e2a6f5",
+      "listening_gain": 1.6514967301053762
+    },
+    "s32": {
+      "engine": "baseline",
+      "note": 72,
+      "group": "consonants",
+      "word": "pea",
+      "sha256": "41abf9ee3a0b4b1bb1cb48f06a8ffba61985700ea85fbd69a7798264c8dc9710",
+      "listening_gain": 1.4213643698504939
+    },
+    "s33": {
+      "engine": "baseline",
+      "note": 60,
+      "group": "vowels",
+      "word": "hid",
+      "sha256": "52dfe6a37cbf54ff7094f680fae40752c5ef3f166e13621cdbb5ccd1040265c1",
+      "listening_gain": 1.8741400441212517
+    },
+    "s34": {
+      "engine": "baseline",
+      "note": 48,
+      "group": "consonants",
+      "word": "pea",
+      "sha256": "bfb52ab840120085128e0eef8ac24b529a5b9d2fef28c3a88bbe8385dc46aca6",
+      "listening_gain": 2.4179855292224985
+    },
+    "s35": {
+      "engine": "baseline",
+      "note": 72,
+      "group": "vowels",
+      "word": "head",
+      "sha256": "f07d43781e4e62003b1ffa13d02f4bb1359feb909865d49ff84e1eef601418ce",
+      "listening_gain": 1.0678225772521173
+    },
+    "s36": {
+      "engine": "prototype",
+      "note": 72,
+      "group": "consonants",
+      "word": "bee",
+      "sha256": "a7638b6aa6c48fffe8be6033025b7cb261d93c6f83100cdc34fdfb3f368b263d",
+      "listening_gain": 1.068311111124409
+    },
+    "s37": {
+      "engine": "prototype",
+      "note": 48,
+      "group": "consonants",
+      "word": "she",
+      "sha256": "7f71b5eab6c0b5a4956523a97d93a61d620e3c0e501d6f5d4016ca98dd263f3b",
+      "listening_gain": 1.0832564198247414
+    },
+    "s38": {
+      "engine": "prototype",
+      "note": 60,
+      "group": "vowels",
+      "word": "hid",
+      "sha256": "c9eef8f93bf01829727b8e25cd86302b9193c9587d70d5c4e69c55fb768b0670",
+      "listening_gain": 1.1177007451263963
+    },
+    "s39": {
+      "engine": "prototype",
+      "note": 60,
+      "group": "vowels",
+      "word": "head",
+      "sha256": "7d359401fdcb109a22d03420ae0eef81c692e4f2b56c0807b45f154d3cea5167",
+      "listening_gain": 1.1171257749744612
+    },
+    "s40": {
+      "engine": "prototype",
+      "note": 48,
+      "group": "vowels",
+      "word": "had",
+      "sha256": "819bb11dff2f6315282092ddf5dccd0c66b029f482496c2c5db9015a0b26afca",
+      "listening_gain": 1.1356939753518687
+    },
+    "s41": {
+      "engine": "prototype",
+      "note": 60,
+      "group": "consonants",
+      "word": "bee",
+      "sha256": "d92f32fa8754f66742c4829a1fb72601491723da0004b10728820c98432f3cd3",
+      "listening_gain": 1.0732710082435863
+    },
+    "s42": {
+      "engine": "prototype",
+      "note": 72,
+      "group": "vowels",
+      "word": "hid",
+      "sha256": "377582fdf288fdd4f0576386012f6e2705f9f0e1a1a6658a2d287aa22febf39e",
+      "listening_gain": 1.1257481698920218
+    },
+    "s43": {
+      "engine": "baseline",
+      "note": 48,
+      "group": "vowels",
+      "word": "heed",
+      "sha256": "31db8bcdf59326a5b70ab1e33b5e2445ef216cfc788393da1e133830d19aea0e",
+      "listening_gain": 2.633490205658207
+    },
+    "s44": {
+      "engine": "baseline",
+      "note": 60,
+      "group": "vowels",
+      "word": "head",
+      "sha256": "2a0a368f83250501d86d38ccb1f6bd4de848a18dc45280b1937257a0cf7116d5",
+      "listening_gain": 1.7794879751745538
+    },
+    "s45": {
+      "engine": "baseline",
+      "note": 48,
+      "group": "vowels",
+      "word": "head",
+      "sha256": "a0fbc8f33a77b6e1ff79d3aebe390153cde6ff46adf903bf1605a47a1813f4f8",
+      "listening_gain": 3.682636384821147
+    },
+    "s46": {
+      "engine": "baseline",
+      "note": 60,
+      "group": "consonants",
+      "word": "bee",
+      "sha256": "ba696bc87a82094ce063b7ea76eaf49133cc8303e89d2899dcabe8c575dd6905",
+      "listening_gain": 2.0253900634494717
+    },
+    "s47": {
+      "engine": "prototype",
+      "note": 72,
+      "group": "consonants",
+      "word": "pea",
+      "sha256": "ec42cf0f031fd846d4f546cbdb003248fb06bbe31e8fb9d38c415e7d12891565",
+      "listening_gain": 1.066948128534072
+    }
+  }
+}
