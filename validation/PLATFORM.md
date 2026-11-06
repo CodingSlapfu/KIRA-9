@@ -1,0 +1,7 @@
+# Platform checkpoint — 2026-11-05
+Selected fm1-base 698e2cba46b33bf14d9bf756675036053535638e / felucca-bsp f878800967e66e721dfbc9a4f5fe1835772ae8fc (MPL-2.0), pinned recursively. Its own BLE stack supports standard central/peripheral without vendor BLE libraries. Original KIRA engine is MIT; no Miku art, samples, or voice engine imported. Platform notices retained in submodules.
+
+Compiler: JieLi Linux 20260730.1, clang 4.0.1, pi32v2 r3. Archive SHA256 a1545cddbc451a06bac43eb5cd96d831470c42a97c5c0b1f98879a20fc7647bd. Download https://jl-update.oss-cn-shenzhen.aliyuncs.com/jieli-linux-toolchains-20260730.1.tar.xz ; extract with `tar --no-same-owner -xJf`.
+SDK: only three Apache-2.0 packaging files from Gitee Jieli-Tech/fw-AC79_AIoT_SDK tag AC79NN_SDK_V1.2.1_2023-12-13. All three hashes match platform/tools/build.py SDK_SHA256 exactly. GitHub vendor SDK mirror unavailable; Gitee raw downloads worked. Native map/resource budgets still UNVERIFIED until build.
+
+Executed `tools/test.sh`: optimized core and AddressSanitizer+UBSan pass; six requirement negative regressions pass; plan gate pass. LeakSanitizer disabled because this execution environment blocks its /proc task inspection; core allocates no heap. Tests cover wire corruption at every byte, truncation at every length, failed decode preserving destination, overlap rejection, stop release, source-authoritative clock, panic, render/animation parity and finite output across all phonemes. These tests do not establish English intelligibility or device timing.

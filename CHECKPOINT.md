@@ -1,8 +1,6 @@
-# KIRA-9 Checkpoint — 2026-11-05
-**Planning handoff only**.
-- Active projects confirmed: AQUORA and KIRA-9 exclusively.
-- KIRA-9 GitHub remote **created and verified 2026-11-05**: https://github.com/CodingSlapfu/KIRA-9. This checkpoint is part of the first source/docs upload; verify the final remote commit SHA after publishing.
-- These project files were prepared offline as a repository starter; no remote source commit, flashable firmware, app, website, domain, installer, battery/hardware test, or audio rendering exists by virtue of this plan.
-- AQUORA generic USB/BLE MIDI and exclusive AIR/BT requirement recorded in GitHub Issue #31; AIR issue #13 updated.
-- Work Mode next action: verify KIRA-9 remote planning files, ensure exclusive lock, then complete `NEXT_BUILD_ACTIVE.md` end-to-end following `WORK_MODE_START_HERE.md`.
-- If stopped: update only this checkpoint and outstanding queue with latest verified remote SHA, branch, lock status, completed test receipts, artifacts and exact resume instruction.
+# KIRA-9 implementation checkpoint
+Baseline 3d7c4c2; ownership established at 162065b. No other branch, issue, PR or active local build was found at entry. Current owner work-160cc0e6fa30; see validation/BUILD_OWNERSHIP.json.
+
+Implemented initial bounded phoneme synth/sequencer, shared viseme snapshots, source-authoritative MIDI core, transactional CRC song codec and sanitizer tests. All remain partial product features. Native app, full editor and release acceptance are pending. No published release or flashable acceptance claim.
+
+Resume: inspect owner state; run `git submodule update --init --recursive && ./tools/test.sh`, then continue NEXT_BUILD_ACTIVE.md. Platform pins/setup evidence: validation/PLATFORM.md. Preserve all 23 requirements; release gate must still reject incomplete scope.
