@@ -17,4 +17,4 @@ int main(void){uint8_t old[3840],next[3840],out[3840];unsigned obj,j;memset(flas
  for(obj=0;obj<OBJ_NOBJ;obj++){uint32_t a=st_sector(obj,0),b=st_sector(obj,1)+4096;unsigned other;assert((a>=0x97000&&b<=0xe0000)||(a>=0xfc000&&b<=0xff000));for(other=0;other<obj;other++)assert(b<=st_sector(other,0)||a>=st_sector(other,1)+4096);
   for(j=0;j<25;j++){memcpy(flash,baseline,sizeof flash);cut=(int)j;(void)st_save(obj,next,sizeof next);cut=-1;assert(st_load(obj,out,sizeof out)==sizeof out);assert(!memcmp(out,old,sizeof out)||!memcmp(out,next,sizeof out));}
  }
- puts("PASS all 29 actual app objects, full-size saves, disjoint partitions and 725 erase/program power-cut injections preserve old or new record");return 0;}
+ printf("PASS all %u app objects, full-size saves, disjoint partitions and %u erase/program power cuts\n",(unsigned)OBJ_NOBJ,(unsigned)OBJ_NOBJ*25u);return 0;}

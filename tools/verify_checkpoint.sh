@@ -11,8 +11,10 @@ mkdir -p build/panel
 app/build/host/kira-9_host tests/panel.txt build/panel
 cc -O2 -std=c99 -Wno-unused-function -Iplatform/include tests/storage.c -o build/storage-app
 build/storage-app
-cc -shared -fPIC -O2 -ffp-contract=off -Icore core/engine.c core/codec.c core/tables.c studio/bridge.c -o build/libkira.so
+cc -shared -fPIC -Wl,--no-undefined -O2 -ffp-contract=off -Icore core/engine.c core/codec.c core/library.c core/tables.c core/face.c studio/bridge.c -o build/libkira.so
 python3 tools/audio_fixture.py
+cc -std=c99 -Wall -Wextra -Werror -Wno-misleading-indentation -O2 -Icore tests/transfer_device.c core/transfer.c core/library.c core/codec.c -o build/transfer-device
+node tests/transfer.mjs
 ./tools/build_web.sh
 node tests/parity.mjs
 python3 tools/build_dictionary.py

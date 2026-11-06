@@ -81,6 +81,7 @@ typedef struct {
   int8_t harmony;
   uint8_t emotion, external_melody, live_note, live_velocity, sense_armed,
       sense_source;
+  const k9_song *playlist[8]; uint8_t playlist_count,playlist_index;
   uint16_t tempo_override;
   uint8_t loop;
   uint16_t next;
@@ -98,6 +99,7 @@ int k9_document_valid(const uint8_t *p, size_t n, uint8_t kind);
 void k9_init(k9_engine *e);
 void k9_start(k9_engine *e, const k9_song *s);
 void k9_stop(k9_engine *e);
+int k9_playlist(k9_engine *,const k9_song *const *,unsigned);
 void k9_note(k9_engine *e, uint8_t phone, uint8_t note, uint8_t velocity);
 void k9_render(k9_engine *e, float *stereo, uint32_t n);
 void k9_midi(k9_engine *e, uint8_t source, uint8_t status, uint8_t d1,

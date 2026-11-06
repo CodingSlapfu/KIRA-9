@@ -33,7 +33,7 @@ uint16_t k9_transfer_command(k9_transfer *t, const k9_transfer_io *io,
     uint8_t kind = p[2], slot = p[3];
     uint16_t len = x16(p + 4);
     uint32_t sum = x32(p + 6);
-    if (kind > 4 || slot > 7 || (kind >= 3 && slot) || !len ||
+    if (kind > 5 || slot > 7 || (kind >= 3 && slot) || !len ||
         len > K9_XFER_MAX)
       result = K9_X_BOUNDS;
     else if (io->busy(io->ctx))
@@ -112,7 +112,7 @@ uint16_t k9_transfer_command(k9_transfer *t, const k9_transfer_io *io,
     uint8_t kind = p[2], slot = p[3];
     int got;
     offset = x16(p + 4);
-    if (kind > 4 || slot > 7 || (kind >= 3 && slot))
+    if (kind > 5 || slot > 7 || (kind >= 3 && slot))
       result = K9_X_BOUNDS;
     else if (t->active || io->busy(io->ctx))
       result = K9_X_BUSY;

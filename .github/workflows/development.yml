@@ -4,7 +4,7 @@ on:
     branches: [main]
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
 concurrency:
   group: kira-9-development-checkpoint
   cancel-in-progress: false
@@ -28,13 +28,22 @@ jobs:
           version: '4.0.19'
       - run: python3 -m pip install pillow
       - name: Pin native dependencies
+        shell: bash
         run: |
+          set -euo pipefail
           python3 tools/setup_native.py > build-native-environment.json
           python3 -c "import json,os; d=json.load(open('build-native-environment.json')); open(os.environ['GITHUB_ENV'],'a').write(''.join(k+'='+v+'\n' for k,v in d.items()))"
       - name: Verify and archive development checkpoint
-        run: ./tools/verify_checkpoint.sh 2>&1 | tee verification.log
-      - name: Keep release gate closed on incomplete scope
+        shell: bash
         run: |
+          set -euo pipefail
+          ./tools/verify_checkpoint.sh 2>&1 | tee verification.log
+          test -s build/checkpoint/KIRA-9-development-checkpoint.zip
+          (cd build/checkpoint && sha256sum -c SHA256SUMS)
+      - name: Record release gate separately from development checks
+        shell: bash
+        run: |
+          set -euo pipefail
           if python3 tools/requirement_gate.py --phase release > release-gate.txt; then
             echo 'All required release evidence supplied.'
           else
@@ -51,31 +60,19 @@ jobs:
             release-gate.txt
           if-no-files-found: error
           retention-days: 90
-
-      - name: Preserve independent versioned backup in GitHub
-        if: success()
+  preserve_backup:
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: KIRA-9-development-${{ github.sha }}
+          path: .
+      - name: Verify and preserve existing acceptance artifact
         env:
           CHECKPOINT_SHA: ${{ github.sha }}
-        run: |
-          backup_dir="$RUNNER_TEMP/kira9-backup"
-          if git ls-remote --exit-code origin refs/heads/kira-9-development-backups >/dev/null 2>&1; then
-            git fetch origin kira-9-development-backups
-            git worktree add "$backup_dir" FETCH_HEAD
-            git -C "$backup_dir" switch -c kira9-backup-write
-          else
-            git worktree add --detach "$backup_dir" HEAD
-            git -C "$backup_dir" checkout --orphan kira9-backup-write
-            git -C "$backup_dir" rm -rf .
-          fi
-          mkdir -p "$backup_dir/checkpoints"
-          cp build/checkpoint/KIRA-9-development-checkpoint.zip "$backup_dir/checkpoints/$CHECKPOINT_SHA.zip"
-          sha256sum "$backup_dir/checkpoints/$CHECKPOINT_SHA.zip" | sed "s|$backup_dir/||" > "$backup_dir/checkpoints/$CHECKPOINT_SHA.sha256"
-          printf 'Development backups only. No archive here is a release acceptance claim. Each ZIP contains the source, dependency source, native artifacts, website, and a checksum manifest.\n' > "$backup_dir/README.md"
-          git -C "$backup_dir" config user.name 'github-actions[bot]'
-          git -C "$backup_dir" config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git -C "$backup_dir" add .
-          git -C "$backup_dir" commit -m "backup: verified development checkpoint $CHECKPOINT_SHA"
-          git -C "$backup_dir" push origin HEAD:refs/heads/kira-9-development-backups
-          expected=$(git -C "$backup_dir" rev-parse HEAD)
-          actual=$(git ls-remote origin refs/heads/kira-9-development-backups | cut -f1)
-          test "$actual" = "$expected"
+        run: ./tools/preserve_backup.sh

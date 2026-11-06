@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Independent development backup, explicitly not a release certification."""
-import pathlib,subprocess,zipfile,hashlib,json
+import pathlib,subprocess,zipfile,hashlib,json,datetime
 root=pathlib.Path(__file__).resolve().parents[1];out=root/'build/checkpoint';out.mkdir(parents=True,exist_ok=True)
 sha=subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip()
 paths=[]
@@ -19,7 +19,9 @@ for p in (root/'app/build/emu').rglob('*'):
 manifest={name:hashlib.sha256(p.read_bytes()).hexdigest() for p,name in paths}
 archive=out/'KIRA-9-development-checkpoint.zip'
 with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
- for p,name in paths:z.write(p,name)
- z.writestr('CHECKPOINT.json',json.dumps({'source_commit':sha,'release_accepted':False,'identity':'FM-1_7400','files':manifest},indent=2))
+ for p,name in sorted(paths,key=lambda item:item[1]):
+  info=zipfile.ZipInfo(name,date_time=(2026,11,6,0,0,0));info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=(p.stat().st_mode&0xffff)<<16;z.writestr(info,p.read_bytes())
+ info=zipfile.ZipInfo('CHECKPOINT.json',date_time=(2026,11,6,0,0,0));info.compress_type=zipfile.ZIP_DEFLATED
+ z.writestr(info,json.dumps({'source_commit':sha,'release_accepted':False,'identity':'FM-1_7400','files':manifest},indent=2))
 digest=hashlib.sha256(archive.read_bytes()).hexdigest();(out/'SHA256SUMS').write_text(digest+'  '+archive.name+'\n')
 print('Development backup',sha,digest,archive)

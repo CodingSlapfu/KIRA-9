@@ -1,5 +1,6 @@
 /* SPDX-License-Identifier: MIT */
 #include "kira.h"
+#include "library.h"
 #include "memory.h"
 
 uint32_t k9_crc(const uint8_t *p, size_t n) {
@@ -76,12 +77,13 @@ size_t k9_encode(const k9_song *s, uint8_t *out, size_t cap) {
  * S2 uses delta ticks and retains editable UTF-8 project metadata after the
  * score. */
 int k9_decode(k9_song *dst, const uint8_t *in, size_t n) {
-  unsigned i, stride, compact;
+  unsigned i, stride, compact, profile;
   uint16_t count, metadata;
   uint32_t tick = 0, end = 0, duration, total_ticks;
   if (n < 24 || n > K9_WIRE_MAX || get32(in + 16) != n)
     return 0;
-  compact = !memcmp(in, "K9S2", 4) && get16(in + 4) == 2;
+  profile = !memcmp(in, "K9S3", 4) && get16(in + 4) == 3;
+  compact = profile || (!memcmp(in, "K9S2", 4) && get16(in + 4) == 2);
   if (!compact && (memcmp(in, "K9S1", 4) || get16(in + 4) != 1))
     return 0;
   count = get16(in + 6);
@@ -92,6 +94,9 @@ int k9_decode(k9_song *dst, const uint8_t *in, size_t n) {
       n != 24u + stride * count + metadata || get16(in + 8) < 30 ||
       get16(in + 8) > 300 || !total_ticks || total_ticks > 96u * 60u * 30u ||
       get32(in + 20) != (k9_crc(in + 24, n - 24) ^ k9_crc(in, 20)))
+    return 0;
+  if (profile && (metadata < 18u ||
+                  !k9_preset_valid((const k9_preset *)(in + 24u + 8u * count))))
     return 0;
   for (i = 0; i < count; ++i) {
     const uint8_t *p = in + 24 + stride * i;

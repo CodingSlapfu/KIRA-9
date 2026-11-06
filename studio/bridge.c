@@ -1,6 +1,7 @@
 /* SPDX-License-Identifier: MIT */
 #include "../core/face.h"
 #include "../core/kira.h"
+#include "../core/library.h"
 #include "../factory/songs.h"
 static k9_engine web_engine;
 static k9_song web_song;
@@ -15,7 +16,7 @@ __attribute__((visibility("default"))) uint8_t *web_input(void) {
 __attribute__((visibility("default"))) int web_load(unsigned n) {
   if (n > K9_WIRE_MAX || !k9_decode(&web_song, web_bytes, n))
     return 0;
-  k9_start(&web_engine, &web_song);
+  k9_start(&web_engine,&web_song);k9_preset p;if(k9_score_preset(web_bytes,(uint16_t)n,&p)){web_engine.voice=p.voice;web_engine.style=p.style;web_engine.emotion=p.emotion;web_engine.morph=(float)p.morph*.01f;web_engine.breath=(float)p.breath*.005f;web_engine.vibrato=(float)p.vibrato*.01f;web_engine.glide=.0002f+(float)p.glide*.00005f;web_engine.harmony=p.harmony;web_engine.expression=(float)p.expression/127.0f;}
   return 1;
 }
 __attribute__((visibility("default"))) void web_demo(unsigned n) {

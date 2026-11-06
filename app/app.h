@@ -41,6 +41,7 @@ enum {
   OBJ_WORD7,
   OBJ_PRONUNCIATION,
   OBJ_VOICES,
+  OBJ_ARRANGEMENT,
   OBJ_NOBJ
 };
 #define APP_STORE_MAP                                                          \
@@ -48,14 +49,14 @@ enum {
    0x9d000u, 0xa0000u, 0xa2000u, 0xa4000u, 0xa6000u, 0xa8000u,                 \
    0xaa000u, 0xac000u, 0xae000u, 0xb0000u, 0xb2000u, 0xb4000u,                 \
    0xb6000u, 0xb8000u, 0xba000u, 0xbc000u, 0xbe000u, 0xc0000u,                 \
-   0xc2000u, 0xc4000u, 0xc6000u, 0xc8000u, 0xca000u}
+   0xc2000u, 0xc4000u, 0xc6000u, 0xc8000u, 0xca000u, 0xcc000u}
 #define APP_BACKUP_OBJS                                                        \
-  {OBJ_SETTINGS,      OBJ_SONG0,   OBJ_SONG1,   OBJ_SONG2,   OBJ_SONG3,        \
-   OBJ_SONG4,         OBJ_SONG5,   OBJ_SONG6,   OBJ_SONG7,   OBJ_PHRASE0,      \
-   OBJ_PHRASE1,       OBJ_PHRASE2, OBJ_PHRASE3, OBJ_PHRASE4, OBJ_PHRASE5,      \
-   OBJ_PHRASE6,       OBJ_PHRASE7, OBJ_WORD0,   OBJ_WORD1,   OBJ_WORD2,        \
-   OBJ_WORD3,         OBJ_WORD4,   OBJ_WORD5,   OBJ_WORD6,   OBJ_WORD7,        \
-   OBJ_PRONUNCIATION, OBJ_VOICES}
+  {OBJ_SETTINGS,      OBJ_SONG0,   OBJ_SONG1,      OBJ_SONG2,   OBJ_SONG3,     \
+   OBJ_SONG4,         OBJ_SONG5,   OBJ_SONG6,      OBJ_SONG7,   OBJ_PHRASE0,   \
+   OBJ_PHRASE1,       OBJ_PHRASE2, OBJ_PHRASE3,    OBJ_PHRASE4, OBJ_PHRASE5,   \
+   OBJ_PHRASE6,       OBJ_PHRASE7, OBJ_WORD0,      OBJ_WORD1,   OBJ_WORD2,     \
+   OBJ_WORD3,         OBJ_WORD4,   OBJ_WORD5,      OBJ_WORD6,   OBJ_WORD7,     \
+   OBJ_PRONUNCIATION, OBJ_VOICES,  OBJ_ARRANGEMENT}
 #define APP_BACKUP_MAGIC 0x3142394Bu
 #define APP_BACKUP_VERSION 1
 #define APP_BACKUP_WHAT                                                        \

@@ -39,15 +39,18 @@ static void int_text(int v, char *d) {
 static k9_engine engine;
 static k9_song custom, cues[2];
 static k9_song validation_song PLAT_POOL;
-static k9_song phrase_cache[8] PLAT_POOL, word_cache[8] PLAT_POOL;
+static k9_song phrase_cache[8] PLAT_POOL, word_cache[8] PLAT_POOL,
+    song_cache[8] PLAT_POOL;
 static uint8_t library_busy;
 static k9_transfer transfer_state;
-static k9_preset presets[8];
+static k9_preset presets[8], phrase_profiles[8], word_profiles[8];
+static uint8_t phrase_profile_valid[8], word_profile_valid[8];
 static uint8_t voice_wire[3840], custom_wire[3840];
 static uint16_t voice_length, custom_length;
 static uint8_t tx_reply[160];
 static uint16_t tx_length, tx_position;
-static uint8_t preset_pick, delete_confirm, library_action, save_confirm;
+static uint8_t preset_pick, delete_confirm, library_action, save_confirm,
+    arrange_step;
 static uint32_t delete_until;
 static uint8_t cue_ready, cue_active;
 static uint8_t song_wire[K9_WIRE_MAX];
@@ -61,6 +64,7 @@ typedef struct {
   int8_t harmony;
   uint8_t loop;
   uint16_t tempo;
+  uint8_t order[8], parts, chain;
 } k9_settings;
 static k9_settings prefs;
 static uint32_t btn_last, keys_last, draw_at, block_max, blocks, overruns;
@@ -69,12 +73,42 @@ static uint32_t retry_at;
 static uint8_t page, dirty, save_pending, load_pending, playing_cmd, stop_cmd,
     note_cmd, note_vel;
 static char message[40];
-static const char *const pages[] = {
-    "PLAY", "SONG", "VOICE", "MIDI", "LIBRARY", "PERFORMANCE", "EXPRESSION"};
+static const char *const pages[] = {"PLAY",       "SONG",    "VOICE",
+                                    "MIDI",       "LIBRARY", "PERFORMANCE",
+                                    "EXPRESSION", "ARRANGER"};
 static const char *const modes[] = {"SOLO SONG", "LIVE", "PHRASE", "WORD"};
 static const char *const voices[] = {"BRIGHT", "DEEP",   "AIRY", "SMOKY",
                                      "YOUTH",  "MATURE", "SYNTH"};
+static void preset_to_prefs(const k9_preset *p) {
+  uint32_t f = plat_lock();
+  prefs.voice = p->voice;
+  prefs.style = p->style;
+  prefs.emotion = p->emotion;
+  prefs.morph = p->morph;
+  prefs.breath = p->breath;
+  prefs.vibrato = p->vibrato;
+  prefs.glide = p->glide;
+  prefs.harmony = p->harmony;
+  prefs.expression = p->expression;
+  plat_unlock(f);
+}
+static k9_preset prefs_to_preset(void) {
+  k9_preset p;
+  memset(&p, 0, sizeof p);
+  p.voice = prefs.voice;
+  p.style = prefs.style;
+  p.emotion = prefs.emotion;
+  p.morph = prefs.morph;
+  p.breath = prefs.breath;
+  p.vibrato = prefs.vibrato;
+  p.glide = prefs.glide;
+  p.harmony = prefs.harmony;
+  p.expression = prefs.expression;
+  return p;
+}
 static uint32_t library_object(uint8_t kind, uint8_t slot) {
+  if (kind == 5)
+    return OBJ_ARRANGEMENT;
   if (kind == 3)
     return OBJ_PRONUNCIATION;
   if (kind == 4)
@@ -89,13 +123,22 @@ static void library_cache_load(void) {
   unsigned i;
   for (i = 0; i < 8; i++) {
     int n;
+    song_cache[i].count = 0;
+    n = plat_store_load(library_object(0, (uint8_t)i), song_wire,
+                        sizeof song_wire);
+    if (n > 0)
+      k9_decode(&song_cache[i], song_wire, (size_t)n);
     phrase_cache[i].count = word_cache[i].count = 0;
     n = plat_store_load(OBJ_PHRASE0 + i, song_wire, sizeof song_wire);
-    if (n > 0)
-      k9_decode(&phrase_cache[i], song_wire, (size_t)n);
+    phrase_profile_valid[i] = 0;
+    if (n > 0 && k9_decode(&phrase_cache[i], song_wire, (size_t)n))
+      phrase_profile_valid[i] =
+          (uint8_t)k9_score_preset(song_wire, (uint16_t)n, &phrase_profiles[i]);
     n = plat_store_load(OBJ_WORD0 + i, song_wire, sizeof song_wire);
-    if (n > 0)
-      k9_decode(&word_cache[i], song_wire, (size_t)n);
+    word_profile_valid[i] = 0;
+    if (n > 0 && k9_decode(&word_cache[i], song_wire, (size_t)n))
+      word_profile_valid[i] =
+          (uint8_t)k9_score_preset(song_wire, (uint16_t)n, &word_profiles[i]);
   }
 }
 static void presets_load(void) {
@@ -128,6 +171,8 @@ static int xload(void *ctx, uint8_t kind, uint8_t slot, uint8_t *p,
 }
 static int xvalid(void *ctx, uint8_t kind, const uint8_t *p, uint16_t n) {
   (void)ctx;
+  if (kind == 5)
+    return k9_arrangement_read(p, n, 0);
   if (kind < 3)
     return k9_decode(&validation_song, p, n);
   if (kind == 4)
@@ -139,12 +184,26 @@ static int xsave(void *ctx, uint8_t kind, uint8_t slot, const uint8_t *p,
   int rc;
   (void)ctx;
   rc = plat_store_save(library_object(kind, slot), p, n);
+  if(!rc){int got=plat_store_load(library_object(kind,slot),song_wire,sizeof song_wire);if(got!=(int)n||memcmp(song_wire,p,n))return -1;}
   if (!rc) {
     if (kind < 3) {
       memcpy(&custom, &validation_song, sizeof custom);
       memcpy(custom_wire, p, n);
       custom_length = n;
       load_pending = 1;
+      k9_preset profile;
+      if (k9_score_preset(p, n, &profile))
+        preset_to_prefs(&profile);
+    }
+    if (kind == 5) {
+      k9_arrangement a;
+      if (k9_arrangement_read(p, n, &a)) {
+        prefs.tempo = a.tempo;
+        prefs.parts = a.count;
+        prefs.loop = a.loop;
+        prefs.chain = a.active;
+        memcpy(prefs.order, a.slots, 8);
+      }
     }
     if (kind == 4)
       presets_load();
@@ -201,7 +260,15 @@ static void restart_song(void) {
   engine.voice = prefs.voice;
   engine.external = (prefs.sync == 1 || prefs.sync == 3) ? 2 : prefs.sync != 0;
   engine.source = (prefs.sync == 1 || prefs.sync == 3) ? 255 : TO_USB;
-  k9_start(&engine, load_pending ? &custom : &factory_songs[prefs.song]);
+  if (prefs.chain) {
+    const k9_song *list[8];
+    unsigned i;
+    for (i = 0; i < prefs.parts; i++)
+      list[i] = &song_cache[prefs.order[i]];
+    if (!k9_playlist(&engine, list, prefs.parts))
+      app_say("ARRANGER HAS EMPTY PART", "");
+  } else
+    k9_start(&engine, load_pending ? &custom : &factory_songs[prefs.song]);
 }
 static void prefs_defaults(void) {
   memset(&prefs, 0, sizeof prefs);
@@ -211,6 +278,9 @@ static void prefs_defaults(void) {
   prefs.vibrato = 20;
   prefs.glide = 50;
   prefs.expression = 110;
+  prefs.parts = 1;
+  for (unsigned i = 0; i < 8; i++)
+    prefs.order[i] = (uint8_t)i;
 }
 static void prefs_apply(void) {
   engine.voice = prefs.voice;
@@ -244,8 +314,12 @@ void app_init(void) {
       prefs.reconnect >= 2 || prefs.morph > 100 || prefs.breath > 100 ||
       prefs.vibrato > 100 || prefs.glide > 100 || prefs.expression > 127 ||
       prefs.harmony < -12 || prefs.harmony > 12 || prefs.loop > 1 ||
+      prefs.parts < 1 || prefs.parts > 8 || prefs.chain > 1 ||
       (prefs.tempo && (prefs.tempo < 30 || prefs.tempo > 300)))
     prefs_defaults();
+  for (unsigned i = 0; i < 8; i++)
+    if (prefs.order[i] > 7)
+      prefs.order[i] = (uint8_t)i;
   prefs.peer[20] = 0;
   k9_init(&engine);
   prefs_apply();
@@ -261,6 +335,18 @@ void app_init(void) {
   blocks = block_max = overruns = 0;
   library_cache_load();
   presets_load();
+  {
+    uint8_t bytes[29];
+    k9_arrangement a;
+    int n = plat_store_load(OBJ_ARRANGEMENT, bytes, sizeof bytes);
+    if (n > 0 && k9_arrangement_read(bytes, (uint16_t)n, &a)) {
+      prefs.tempo = a.tempo;
+      prefs.parts = a.count;
+      prefs.loop = a.loop;
+      prefs.chain = a.active;
+      memcpy(prefs.order, a.slots, 8);
+    }
+  }
   k9_transfer_init(&transfer_state);
   custom_length = 0;
 }
@@ -309,10 +395,14 @@ void app_render(int32_t *lr, uint32_t n, uint32_t master) {
     if ((st & 0xf0u) == 0xb0u &&
         (!engine.external || engine.source == 255 || engine.source == source)) {
       if (d1 == 20u && d2 < 8u && phrase_cache[d2].count) {
+        if (phrase_profile_valid[d2])
+          preset_to_prefs(&phrase_profiles[d2]);
         k9_start(&engine, &phrase_cache[d2]);
         continue;
       }
       if (d1 == 21u && d2 < 8u && word_cache[d2].count) {
+        if (word_profile_valid[d2])
+          preset_to_prefs(&word_profiles[d2]);
         k9_start(&engine, &word_cache[d2]);
         continue;
       }
@@ -368,9 +458,9 @@ static void input(void) {
     page = 0;
   d = plat_enc(EN_SELECT);
   if (d)
-    page = (uint8_t)((page + 7 + d % 7) % 7);
+    page = (uint8_t)((page + 8 + d % 8) % 8);
   if (press & (1u << B_EDIT))
-    page = (page + 1) % 7;
+    page = (page + 1) % 8;
   if (press & (1u << B_PLAY)) {
     if (transfer_state.active) {
       app_say("FINISH TRANSFER FIRST", "");
@@ -465,6 +555,17 @@ static void input(void) {
           300);
     if (page == 1 && i == EN_K4)
       prefs.loop = !prefs.loop;
+    if (page == 7) {
+      if (i == EN_K1)
+        arrange_step = (uint8_t)((arrange_step + 8 + d % 8) % 8);
+      if (i == EN_K2)
+        prefs.order[arrange_step] =
+            (uint8_t)((prefs.order[arrange_step] + 8 + d % 8) % 8);
+      if (i == EN_K3)
+        prefs.parts = (uint8_t)clamp(prefs.parts + d, 1, 8);
+      if (i == EN_K4)
+        prefs.chain = !prefs.chain;
+    }
     if (page == 6) {
       if (i == EN_K1)
         prefs.breath = (uint8_t)clamp(prefs.breath + d, 0, 100);
@@ -531,6 +632,10 @@ static void input(void) {
         } else if ((prefs.mode == 2 ? phrase_cache[i % 8].count
                                     : word_cache[i % 8].count)) {
           f = plat_lock();
+          if (prefs.mode == 2 && phrase_profile_valid[i % 8])
+            preset_to_prefs(&phrase_profiles[i % 8]);
+          if (prefs.mode == 3 && word_profile_valid[i % 8])
+            preset_to_prefs(&word_profiles[i % 8]);
           k9_start(&engine,
                    prefs.mode == 2 ? &phrase_cache[i % 8] : &word_cache[i % 8]);
           plat_unlock(f);
@@ -615,6 +720,8 @@ static void input(void) {
                              song_wire, sizeof song_wire);
         if (load_pending && custom_length && prefs.mode == 0) {
           n = custom_length;
+          k9_preset profile = prefs_to_preset();
+          k9_score_update_preset(custom_wire, custom_length, &profile);
           memcpy(song_wire, custom_wire, n);
         }
         rc = n && n <= PLAT_STORE_MAX
@@ -639,6 +746,18 @@ static void input(void) {
           rc = plat_store_save(OBJ_SETTINGS, &prefs, sizeof prefs);
       } else
         rc = plat_store_save(OBJ_SETTINGS, &prefs, sizeof prefs);
+      if (!rc && page != 4) {
+        k9_arrangement a;
+        uint8_t bytes[29];
+        a.tempo = prefs.tempo;
+        a.count = prefs.parts;
+        a.loop = prefs.loop;
+        a.active = prefs.chain;
+        memcpy(a.slots, prefs.order, 8);
+        uint16_t n = k9_arrangement_write(bytes, &a);
+        if (!n || plat_store_save(OBJ_ARRANGEMENT, bytes, n))
+          rc = -1;
+      }
       if (!rc) {
         if (page == 4) {
           library_busy = 1;
@@ -684,7 +803,21 @@ static void draw_menu(void) {
   unsigned row;
   for (row = 0; row < 6; row++) {
     cv_begin(240, 40, RGB(13, 16, 30));
-    if (page == 6 && row > 0 && row < 5) {
+    if (page == 7 && row > 0 && row < 5) {
+      const char *label = row == 1   ? "K1 PART"
+                          : row == 2 ? "K2 SONG SLOT"
+                          : row == 3 ? "K3 PART COUNT"
+                                     : "K4 CHAIN";
+      int value = row == 1   ? arrange_step + 1
+                  : row == 2 ? prefs.order[arrange_step] + 1
+                  : row == 3 ? prefs.parts
+                             : prefs.chain;
+      cv_text(8, 0, &FONT_XS, label, C_WHITE);
+      int_text(value, t);
+      cv_text(160, 0, &FONT_XS, t, C_HI);
+      if (row == 4)
+        cv_text(8, 17, &FONT_XS, "SAVE: STORE / PLAY: CHAIN", C_WHITE);
+    } else if (page == 6 && row > 0 && row < 5) {
       const char *label = "";
       int value = 0;
       switch (row) {
@@ -742,6 +875,7 @@ static void draw_menu(void) {
       cv_text(8, 17, &FONT_XS,
               prefs.reconnect ? "K3 RECONNECT: ON" : "K3 RECONNECT: OFF",
               C_WHITE);
+    }else if(row==2&&page==5){cv_text(8,0,&FONT_XS,APP_NAME " " APP_VERSION,C_WHITE);cv_text(8,17,&FONT_XS,"AUDIO FIRST / 1 CORE",C_WHITE);
     } else if (row == 2 && page == 4) {
       cv_text(8, 0, &FONT_XS, message, C_WHITE);
       cv_text(8, 17, &FONT_XS,
@@ -849,16 +983,12 @@ void app_frame(void) {
   uint32_t now = plat_ms();
   transfer_poll();
   input();
-  if (plat_usb_lost() && prefs.sync != 0) {
-    stop_cmd = 1;
-    k9_transfer_init(&transfer_state);
-  }
+  if(plat_usb_lost()){k9_transfer_init(&transfer_state);if(engine.external&&engine.source==TO_USB)stop_cmd=1;}
   {
-    uint8_t linked =
-        (uint8_t)(plat_ble_connected() || plat_ble_device() == BLE_DEV_READY);
-    if (ble_was && !linked && prefs.sync != 2 && prefs.sync != 0)
-      stop_cmd = 1;
-    ble_was = linked;
+    static uint8_t host_was,device_was;uint8_t host=(uint8_t)plat_ble_connected(),device=(uint8_t)(plat_ble_device()==BLE_DEV_READY);
+    if((host_was&&!host&&engine.source==TO_BLE_HOST)||(device_was&&!device&&engine.source==TO_BLE_DEV))stop_cmd=1;
+    host_was=host;device_was=device;uint8_t linked=host||device;
+    ble_was=linked;
     plat_ble_scan(prefs.ble && !linked && (page == 3 || prefs.reconnect));
     if (prefs.ble && prefs.reconnect && prefs.peer[0] && !linked &&
         now - retry_at > 5000u) {
