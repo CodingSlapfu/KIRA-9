@@ -1,0 +1,23 @@
+warning: /workspace/scratch/160cc0e6fa30/KIRA-9/app/fm1.toml screenshot: preview/face.png: no such file in /workspace/scratch/160cc0e6fa30/KIRA-9: firmware.json goes without it, and a release build refuses (docs/FIRMWARE-JSON.md)
+font T: BarlowSemiCondensed-SemiBold.ttf 10px h 12, digit adv 5, 1468 B
+font XS: BarlowSemiCondensed-SemiBold.ttf 12px h 15, digit adv 6, 2554 B
+font S: BarlowSemiCondensed-Medium.ttf 15px h 16, digit adv 7, 3603 B
+font B: BarlowSemiCondensed-Bold.ttf 15px h 16, digit adv 8, 3747 B
+font M: BarlowSemiCondensed-SemiBold.ttf 23px h 24, digit adv 12, 4992 B
+font L: BarlowSemiCondensed-Bold.ttf 31px h 32, digit adv 16, 8950 B
+font set barlow: 25843 B (approx)
+words: 7 own + 51 common -> /workspace/scratch/160cc0e6fa30/KIRA-9/app/web/words/9bb9f78bc5.json (1118 B)
+loader: image 13740 B at 0x1c0a800, bss end 0x1c156a0
+loader: ota.bin 11782 B
+  ok    .ram_text: 1695 insns, no calls
+  ok    no 64-bit multiply inlined beside a load
+  ok    own Bluetooth stack: nothing of JieLi's linked, the radio's ramp in RAM
+  ok    no soft-double routines (single-precision FPU only)
+  ok    image 177000 B; RAM code .ram_text 5444 B of 32768; RAM .data+.bss 52472 B of 98304; pool 19204 B of 344064
+  ok    register access: felucca-bsp only (device/, include/ and the app clean)
+parts    Bluetooth MIDI, Bluetooth MIDI devices, USB audio in, USB audio out, the screen reader  (not built in: Bluetooth audio, USB MIDI host, USB disk mode, WiFi, the second core, velocity, pressure, screen mirroring, backup and restore, a resource region)
+app      /workspace/scratch/160cc0e6fa30/KIRA-9/app/build/kira-9.bin  177000 B
+loader   /workspace/scratch/160cc0e6fa30/KIRA-9/app/build/loader/ota.bin  11782 B
+package  /workspace/scratch/160cc0e6fa30/KIRA-9/app/build/kira-9.fwsc  614938 B, identity FM-1_7400
+build    E02FDCE4  (FM1B_BUILD: the build a crash record names, fm1_remote.py crashes)
+about    /workspace/scratch/160cc0e6fa30/KIRA-9/app/build/firmware.json  (for firmware hubs)

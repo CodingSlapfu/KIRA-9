@@ -1,5 +1,5 @@
-PASS codec corruption/truncation, transactional decode, stop tails, clock authority, panic, animation/audio parity, all-phoneme stability; host 4000 blocks 0.017s (not device timing)
-PASS codec corruption/truncation, transactional decode, stop tails, clock authority, panic, animation/audio parity, all-phoneme stability; host 4000 blocks 0.243s (not device timing)
+PASS codec corruption/truncation, transactional decode, stop tails, clock authority, panic, animation/audio parity, all-phoneme stability; host 4000 blocks 0.029s (not device timing)
+PASS codec corruption/truncation, transactional decode, stop tails, clock authority, panic, animation/audio parity, all-phoneme stability; host 4000 blocks 0.344s (not device timing)
 ......
 ----------------------------------------------------------------------
 Ran 6 tests in 0.002s

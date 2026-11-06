@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "id": "kira-9",
+  "name": "CodingSlapfu",
+  "author": "KIRA-9 contributors",
+  "license": "MIT; platform MPL-2.0",
+  "tagline": "A voice beyond the circuit",
+  "description": "Standalone cybernetic English vocal instrument. First version under development; not release accepted.",
+  "tags": ["synth"],
+  "install": "https://codingslapfu.github.io/KIRA-9/install/",
+  "site": "https://codingslapfu.github.io/KIRA-9/",
+  "source": "https://github.com/CodingSlapfu/KIRA-9",
+  "hardware": {
+    "models": ["FM-1"],
+    "flash": ["856014", "B36014"],
+    "features": ["bluetooth-midi", "bluetooth-midi-devices", "usb-audio-in", "usb-audio-out", "screen-reader"]
+  }
+}

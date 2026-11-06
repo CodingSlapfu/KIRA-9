@@ -1,0 +1,2314 @@
+[
+  {
+    "name": "Neon Awakening",
+    "style": "pop",
+    "bpm": 120,
+    "lyrics": "neon awake\nmy heart is a light\nin the rain\nwe rise again",
+    "ticks": 1704,
+    "events": [
+      {
+        "tick": 0,
+        "duration": 8,
+        "phone": 23,
+        "note": 72,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 8,
+        "duration": 40,
+        "phone": 18,
+        "note": 72,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 48,
+        "duration": 40,
+        "phone": 1,
+        "note": 72,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 88,
+        "duration": 8,
+        "phone": 23,
+        "note": 72,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 120,
+        "duration": 40,
+        "phone": 3,
+        "note": 76,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 160,
+        "duration": 8,
+        "phone": 36,
+        "note": 76,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 168,
+        "duration": 40,
+        "phone": 13,
+        "note": 76,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 208,
+        "duration": 8,
+        "phone": 20,
+        "note": 76,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 240,
+        "duration": 8,
+        "phone": 22,
+        "note": 79,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 248,
+        "duration": 88,
+        "phone": 6,
+        "note": 79,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 360,
+        "duration": 8,
+        "phone": 16,
+        "note": 81,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 368,
+        "duration": 120,
+        "phone": 1,
+        "note": 81,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 488,
+        "duration": 8,
+        "phone": 28,
+        "note": 81,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 496,
+        "duration": 8,
+        "phone": 31,
+        "note": 81,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 528,
+        "duration": 88,
+        "phone": 17,
+        "note": 79,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 616,
+        "duration": 8,
+        "phone": 38,
+        "note": 79,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 648,
+        "duration": 96,
+        "phone": 3,
+        "note": 76,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 768,
+        "duration": 8,
+        "phone": 21,
+        "note": 74,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 776,
+        "duration": 80,
+        "phone": 6,
+        "note": 74,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 856,
+        "duration": 8,
+        "phone": 31,
+        "note": 74,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 888,
+        "duration": 136,
+        "phone": 17,
+        "note": 72,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1024,
+        "duration": 8,
+        "phone": 23,
+        "note": 72,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1056,
+        "duration": 8,
+        "phone": 10,
+        "note": 72,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1064,
+        "duration": 88,
+        "phone": 3,
+        "note": 72,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1176,
+        "duration": 8,
+        "phone": 28,
+        "note": 76,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1184,
+        "duration": 80,
+        "phone": 13,
+        "note": 76,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1264,
+        "duration": 8,
+        "phone": 23,
+        "note": 76,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1296,
+        "duration": 8,
+        "phone": 36,
+        "note": 79,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1304,
+        "duration": 88,
+        "phone": 18,
+        "note": 79,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1416,
+        "duration": 8,
+        "phone": 28,
+        "note": 81,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1424,
+        "duration": 128,
+        "phone": 6,
+        "note": 81,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1552,
+        "duration": 8,
+        "phone": 38,
+        "note": 81,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1584,
+        "duration": 40,
+        "phone": 3,
+        "note": 79,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1624,
+        "duration": 8,
+        "phone": 15,
+        "note": 79,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1632,
+        "duration": 40,
+        "phone": 11,
+        "note": 79,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1672,
+        "duration": 8,
+        "phone": 23,
+        "note": 79,
+        "velocity": 90,
+        "stress": 0
+      }
+    ]
+  },
+  {
+    "name": "Glass Heart",
+    "style": "dream pop",
+    "bpm": 90,
+    "lyrics": "glass dreams\nhold me near\nsoft stars\nshine clear",
+    "ticks": 1176,
+    "events": [
+      {
+        "tick": 0,
+        "duration": 8,
+        "phone": 15,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 8,
+        "duration": 8,
+        "phone": 21,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 16,
+        "duration": 72,
+        "phone": 2,
+        "note": 60,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 88,
+        "duration": 8,
+        "phone": 29,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 120,
+        "duration": 8,
+        "phone": 9,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 128,
+        "duration": 8,
+        "phone": 28,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 136,
+        "duration": 64,
+        "phone": 18,
+        "note": 64,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 200,
+        "duration": 8,
+        "phone": 22,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 208,
+        "duration": 8,
+        "phone": 38,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 240,
+        "duration": 8,
+        "phone": 16,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 248,
+        "duration": 72,
+        "phone": 25,
+        "note": 67,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 320,
+        "duration": 8,
+        "phone": 21,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 328,
+        "duration": 8,
+        "phone": 9,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 360,
+        "duration": 8,
+        "phone": 22,
+        "note": 69,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 368,
+        "duration": 136,
+        "phone": 18,
+        "note": 69,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 528,
+        "duration": 8,
+        "phone": 23,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 536,
+        "duration": 80,
+        "phone": 17,
+        "note": 67,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 616,
+        "duration": 8,
+        "phone": 28,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 648,
+        "duration": 8,
+        "phone": 29,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 656,
+        "duration": 72,
+        "phone": 4,
+        "note": 64,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 728,
+        "duration": 8,
+        "phone": 14,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 736,
+        "duration": 8,
+        "phone": 31,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 768,
+        "duration": 8,
+        "phone": 29,
+        "note": 62,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 776,
+        "duration": 8,
+        "phone": 31,
+        "note": 62,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 784,
+        "duration": 64,
+        "phone": 1,
+        "note": 62,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 848,
+        "duration": 8,
+        "phone": 28,
+        "note": 62,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 856,
+        "duration": 8,
+        "phone": 38,
+        "note": 62,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 888,
+        "duration": 8,
+        "phone": 30,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 896,
+        "duration": 128,
+        "phone": 6,
+        "note": 60,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1024,
+        "duration": 8,
+        "phone": 23,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1056,
+        "duration": 8,
+        "phone": 20,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1064,
+        "duration": 8,
+        "phone": 21,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1072,
+        "duration": 72,
+        "phone": 17,
+        "note": 60,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1144,
+        "duration": 8,
+        "phone": 28,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      }
+    ]
+  },
+  {
+    "name": "Ghost Frequency",
+    "style": "IDM",
+    "bpm": 132,
+    "lyrics": "ghost signal\nthrough the night\nfind you\ninside the blue",
+    "ticks": 1296,
+    "events": [
+      {
+        "tick": 0,
+        "duration": 8,
+        "phone": 15,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 8,
+        "duration": 72,
+        "phone": 25,
+        "note": 60,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 80,
+        "duration": 8,
+        "phone": 29,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 88,
+        "duration": 8,
+        "phone": 31,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 120,
+        "duration": 8,
+        "phone": 29,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 128,
+        "duration": 32,
+        "phone": 17,
+        "note": 64,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 160,
+        "duration": 8,
+        "phone": 15,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 168,
+        "duration": 8,
+        "phone": 23,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 176,
+        "duration": 32,
+        "phone": 3,
+        "note": 64,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 208,
+        "duration": 8,
+        "phone": 21,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 240,
+        "duration": 8,
+        "phone": 32,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 248,
+        "duration": 8,
+        "phone": 28,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 256,
+        "duration": 80,
+        "phone": 34,
+        "note": 67,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 360,
+        "duration": 8,
+        "phone": 10,
+        "note": 69,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 368,
+        "duration": 136,
+        "phone": 3,
+        "note": 69,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 528,
+        "duration": 8,
+        "phone": 23,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 536,
+        "duration": 80,
+        "phone": 6,
+        "note": 67,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 616,
+        "duration": 8,
+        "phone": 31,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 648,
+        "duration": 8,
+        "phone": 14,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 656,
+        "duration": 80,
+        "phone": 6,
+        "note": 64,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 736,
+        "duration": 8,
+        "phone": 23,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 768,
+        "duration": 8,
+        "phone": 37,
+        "note": 62,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 776,
+        "duration": 88,
+        "phone": 34,
+        "note": 62,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 888,
+        "duration": 60,
+        "phone": 17,
+        "note": 60,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 948,
+        "duration": 8,
+        "phone": 23,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 956,
+        "duration": 8,
+        "phone": 29,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 964,
+        "duration": 60,
+        "phone": 6,
+        "note": 60,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1024,
+        "duration": 8,
+        "phone": 9,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1056,
+        "duration": 8,
+        "phone": 10,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1064,
+        "duration": 88,
+        "phone": 3,
+        "note": 60,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1176,
+        "duration": 8,
+        "phone": 7,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1184,
+        "duration": 8,
+        "phone": 21,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1192,
+        "duration": 80,
+        "phone": 34,
+        "note": 64,
+        "velocity": 90,
+        "stress": 1
+      }
+    ]
+  },
+  {
+    "name": "After the Rain",
+    "style": "trip hop",
+    "bpm": 76,
+    "lyrics": "after the rain\nbreathe slow\nlet all sorrow\ngo",
+    "ticks": 1176,
+    "events": [
+      {
+        "tick": 0,
+        "duration": 40,
+        "phone": 2,
+        "note": 72,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 40,
+        "duration": 8,
+        "phone": 14,
+        "note": 72,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 48,
+        "duration": 8,
+        "phone": 31,
+        "note": 72,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 56,
+        "duration": 40,
+        "phone": 12,
+        "note": 72,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 120,
+        "duration": 8,
+        "phone": 10,
+        "note": 76,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 128,
+        "duration": 88,
+        "phone": 3,
+        "note": 76,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 240,
+        "duration": 8,
+        "phone": 28,
+        "note": 79,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 248,
+        "duration": 80,
+        "phone": 13,
+        "note": 79,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 328,
+        "duration": 8,
+        "phone": 23,
+        "note": 79,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 360,
+        "duration": 8,
+        "phone": 7,
+        "note": 81,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 368,
+        "duration": 8,
+        "phone": 28,
+        "note": 81,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 376,
+        "duration": 120,
+        "phone": 18,
+        "note": 81,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 496,
+        "duration": 8,
+        "phone": 10,
+        "note": 81,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 528,
+        "duration": 8,
+        "phone": 29,
+        "note": 79,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 536,
+        "duration": 8,
+        "phone": 21,
+        "note": 79,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 544,
+        "duration": 80,
+        "phone": 25,
+        "note": 79,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 648,
+        "duration": 8,
+        "phone": 21,
+        "note": 76,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 656,
+        "duration": 80,
+        "phone": 11,
+        "note": 76,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 736,
+        "duration": 8,
+        "phone": 31,
+        "note": 76,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 768,
+        "duration": 88,
+        "phone": 4,
+        "note": 74,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 856,
+        "duration": 8,
+        "phone": 21,
+        "note": 74,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 888,
+        "duration": 8,
+        "phone": 29,
+        "note": 72,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 896,
+        "duration": 64,
+        "phone": 1,
+        "note": 72,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 960,
+        "duration": 8,
+        "phone": 28,
+        "note": 72,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 968,
+        "duration": 64,
+        "phone": 25,
+        "note": 72,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1056,
+        "duration": 8,
+        "phone": 15,
+        "note": 72,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1064,
+        "duration": 88,
+        "phone": 25,
+        "note": 72,
+        "velocity": 90,
+        "stress": 1
+      }
+    ]
+  },
+  {
+    "name": "Circuit Bloom",
+    "style": "house",
+    "bpm": 124,
+    "lyrics": "circuit bloom\nmove with this beat\nfeel the warm light\nunder my feet",
+    "ticks": 1704,
+    "events": [
+      {
+        "tick": 0,
+        "duration": 8,
+        "phone": 29,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 8,
+        "duration": 36,
+        "phone": 12,
+        "note": 60,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 44,
+        "duration": 8,
+        "phone": 20,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 52,
+        "duration": 36,
+        "phone": 3,
+        "note": 60,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 88,
+        "duration": 8,
+        "phone": 31,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 120,
+        "duration": 8,
+        "phone": 7,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 128,
+        "duration": 8,
+        "phone": 21,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 136,
+        "duration": 72,
+        "phone": 34,
+        "note": 64,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 208,
+        "duration": 8,
+        "phone": 22,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 240,
+        "duration": 8,
+        "phone": 22,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 248,
+        "duration": 80,
+        "phone": 34,
+        "note": 67,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 328,
+        "duration": 8,
+        "phone": 35,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 360,
+        "duration": 8,
+        "phone": 36,
+        "note": 69,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 368,
+        "duration": 128,
+        "phone": 17,
+        "note": 69,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 496,
+        "duration": 8,
+        "phone": 10,
+        "note": 69,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 528,
+        "duration": 8,
+        "phone": 10,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 536,
+        "duration": 80,
+        "phone": 17,
+        "note": 67,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 616,
+        "duration": 8,
+        "phone": 29,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 648,
+        "duration": 8,
+        "phone": 7,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 656,
+        "duration": 80,
+        "phone": 18,
+        "note": 64,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 736,
+        "duration": 8,
+        "phone": 31,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 768,
+        "duration": 8,
+        "phone": 14,
+        "note": 62,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 776,
+        "duration": 80,
+        "phone": 18,
+        "note": 62,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 856,
+        "duration": 8,
+        "phone": 21,
+        "note": 62,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 888,
+        "duration": 8,
+        "phone": 10,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 896,
+        "duration": 136,
+        "phone": 3,
+        "note": 60,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1056,
+        "duration": 8,
+        "phone": 36,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1064,
+        "duration": 72,
+        "phone": 4,
+        "note": 60,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1136,
+        "duration": 8,
+        "phone": 28,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1144,
+        "duration": 8,
+        "phone": 22,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1176,
+        "duration": 8,
+        "phone": 21,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1184,
+        "duration": 80,
+        "phone": 6,
+        "note": 64,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1264,
+        "duration": 8,
+        "phone": 31,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1296,
+        "duration": 40,
+        "phone": 3,
+        "note": 67,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1336,
+        "duration": 8,
+        "phone": 23,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1344,
+        "duration": 8,
+        "phone": 9,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1352,
+        "duration": 40,
+        "phone": 12,
+        "note": 67,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1416,
+        "duration": 8,
+        "phone": 22,
+        "note": 69,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1424,
+        "duration": 136,
+        "phone": 6,
+        "note": 69,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1584,
+        "duration": 8,
+        "phone": 14,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1592,
+        "duration": 80,
+        "phone": 18,
+        "note": 67,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1672,
+        "duration": 8,
+        "phone": 31,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      }
+    ]
+  },
+  {
+    "name": "Electric Lullaby",
+    "style": "ambient",
+    "bpm": 60,
+    "lyrics": "electric lullaby\nclose your eyes\nsleep in the light\nunder the sky",
+    "ticks": 1582,
+    "events": [
+      {
+        "tick": 0,
+        "duration": 18,
+        "phone": 17,
+        "note": 60,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 18,
+        "duration": 8,
+        "phone": 21,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 26,
+        "duration": 18,
+        "phone": 11,
+        "note": 60,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 44,
+        "duration": 8,
+        "phone": 20,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 52,
+        "duration": 8,
+        "phone": 31,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 60,
+        "duration": 8,
+        "phone": 28,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 68,
+        "duration": 18,
+        "phone": 17,
+        "note": 60,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 86,
+        "duration": 8,
+        "phone": 20,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 118,
+        "duration": 8,
+        "phone": 21,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 126,
+        "duration": 24,
+        "phone": 3,
+        "note": 64,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 150,
+        "duration": 8,
+        "phone": 21,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 158,
+        "duration": 24,
+        "phone": 3,
+        "note": 64,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 182,
+        "duration": 8,
+        "phone": 7,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 190,
+        "duration": 24,
+        "phone": 6,
+        "note": 64,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 238,
+        "duration": 8,
+        "phone": 20,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 246,
+        "duration": 8,
+        "phone": 21,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 254,
+        "duration": 72,
+        "phone": 25,
+        "note": 67,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 326,
+        "duration": 8,
+        "phone": 38,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 358,
+        "duration": 8,
+        "phone": 37,
+        "note": 69,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 366,
+        "duration": 128,
+        "phone": 33,
+        "note": 69,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 494,
+        "duration": 8,
+        "phone": 28,
+        "note": 69,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 526,
+        "duration": 88,
+        "phone": 6,
+        "note": 67,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 614,
+        "duration": 8,
+        "phone": 38,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 646,
+        "duration": 8,
+        "phone": 29,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 654,
+        "duration": 8,
+        "phone": 21,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 662,
+        "duration": 72,
+        "phone": 18,
+        "note": 64,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 734,
+        "duration": 8,
+        "phone": 27,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 766,
+        "duration": 88,
+        "phone": 17,
+        "note": 62,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 854,
+        "duration": 8,
+        "phone": 23,
+        "note": 62,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 886,
+        "duration": 8,
+        "phone": 10,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 894,
+        "duration": 136,
+        "phone": 3,
+        "note": 60,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1054,
+        "duration": 8,
+        "phone": 21,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1062,
+        "duration": 80,
+        "phone": 6,
+        "note": 60,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1142,
+        "duration": 8,
+        "phone": 31,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1174,
+        "duration": 40,
+        "phone": 3,
+        "note": 64,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1214,
+        "duration": 8,
+        "phone": 23,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1222,
+        "duration": 8,
+        "phone": 9,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1230,
+        "duration": 40,
+        "phone": 12,
+        "note": 64,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1294,
+        "duration": 8,
+        "phone": 10,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1302,
+        "duration": 88,
+        "phone": 3,
+        "note": 67,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1414,
+        "duration": 8,
+        "phone": 29,
+        "note": 69,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1422,
+        "duration": 8,
+        "phone": 20,
+        "note": 69,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1430,
+        "duration": 128,
+        "phone": 6,
+        "note": 69,
+        "velocity": 90,
+        "stress": 1
+      }
+    ]
+  },
+  {
+    "name": "No Gravity",
+    "style": "soul",
+    "bpm": 84,
+    "lyrics": "no gravity\nwe are free\nfly above\nthe sea",
+    "ticks": 1175,
+    "events": [
+      {
+        "tick": 0,
+        "duration": 8,
+        "phone": 23,
+        "note": 72,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 8,
+        "duration": 88,
+        "phone": 25,
+        "note": 72,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 120,
+        "duration": 8,
+        "phone": 15,
+        "note": 76,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 128,
+        "duration": 8,
+        "phone": 28,
+        "note": 76,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 136,
+        "duration": 21,
+        "phone": 2,
+        "note": 76,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 157,
+        "duration": 8,
+        "phone": 35,
+        "note": 76,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 165,
+        "duration": 21,
+        "phone": 3,
+        "note": 76,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 186,
+        "duration": 8,
+        "phone": 31,
+        "note": 76,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 194,
+        "duration": 21,
+        "phone": 18,
+        "note": 76,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 239,
+        "duration": 8,
+        "phone": 36,
+        "note": 79,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 247,
+        "duration": 88,
+        "phone": 18,
+        "note": 79,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 359,
+        "duration": 136,
+        "phone": 1,
+        "note": 81,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 495,
+        "duration": 8,
+        "phone": 28,
+        "note": 81,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 527,
+        "duration": 8,
+        "phone": 14,
+        "note": 79,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 535,
+        "duration": 8,
+        "phone": 28,
+        "note": 79,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 543,
+        "duration": 80,
+        "phone": 18,
+        "note": 79,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 647,
+        "duration": 8,
+        "phone": 14,
+        "note": 76,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 655,
+        "duration": 8,
+        "phone": 21,
+        "note": 76,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 663,
+        "duration": 80,
+        "phone": 6,
+        "note": 76,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 767,
+        "duration": 40,
+        "phone": 3,
+        "note": 74,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 807,
+        "duration": 8,
+        "phone": 7,
+        "note": 74,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 815,
+        "duration": 40,
+        "phone": 3,
+        "note": 74,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 855,
+        "duration": 8,
+        "phone": 35,
+        "note": 74,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 887,
+        "duration": 8,
+        "phone": 10,
+        "note": 72,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 895,
+        "duration": 136,
+        "phone": 3,
+        "note": 72,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1055,
+        "duration": 8,
+        "phone": 29,
+        "note": 72,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1063,
+        "duration": 88,
+        "phone": 18,
+        "note": 72,
+        "velocity": 90,
+        "stress": 1
+      }
+    ]
+  },
+  {
+    "name": "Machine Dreams",
+    "style": "robotic",
+    "bpm": 108,
+    "lyrics": "machine dreams\nremember our song\ncarry me home\nwe belong",
+    "ticks": 1295,
+    "events": [
+      {
+        "tick": 0,
+        "duration": 8,
+        "phone": 22,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 8,
+        "duration": 36,
+        "phone": 3,
+        "note": 60,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 44,
+        "duration": 8,
+        "phone": 30,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 52,
+        "duration": 36,
+        "phone": 18,
+        "note": 60,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 88,
+        "duration": 8,
+        "phone": 23,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 120,
+        "duration": 8,
+        "phone": 9,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 128,
+        "duration": 8,
+        "phone": 28,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 136,
+        "duration": 64,
+        "phone": 18,
+        "note": 64,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 200,
+        "duration": 8,
+        "phone": 22,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 208,
+        "duration": 8,
+        "phone": 38,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 240,
+        "duration": 8,
+        "phone": 28,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 248,
+        "duration": 21,
+        "phone": 17,
+        "note": 67,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 269,
+        "duration": 8,
+        "phone": 22,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 277,
+        "duration": 21,
+        "phone": 11,
+        "note": 67,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 298,
+        "duration": 8,
+        "phone": 22,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 306,
+        "duration": 8,
+        "phone": 7,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 314,
+        "duration": 21,
+        "phone": 12,
+        "note": 67,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 359,
+        "duration": 72,
+        "phone": 5,
+        "note": 69,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 431,
+        "duration": 72,
+        "phone": 12,
+        "note": 69,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 527,
+        "duration": 8,
+        "phone": 29,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 535,
+        "duration": 80,
+        "phone": 4,
+        "note": 67,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 615,
+        "duration": 8,
+        "phone": 24,
+        "note": 67,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 647,
+        "duration": 8,
+        "phone": 20,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 655,
+        "duration": 40,
+        "phone": 2,
+        "note": 64,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 695,
+        "duration": 8,
+        "phone": 28,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 703,
+        "duration": 40,
+        "phone": 18,
+        "note": 64,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 767,
+        "duration": 8,
+        "phone": 22,
+        "note": 62,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 775,
+        "duration": 88,
+        "phone": 18,
+        "note": 62,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 887,
+        "duration": 8,
+        "phone": 16,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 895,
+        "duration": 128,
+        "phone": 25,
+        "note": 60,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1023,
+        "duration": 8,
+        "phone": 22,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1055,
+        "duration": 8,
+        "phone": 36,
+        "note": 60,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1063,
+        "duration": 88,
+        "phone": 18,
+        "note": 60,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1175,
+        "duration": 8,
+        "phone": 7,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1183,
+        "duration": 36,
+        "phone": 17,
+        "note": 64,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1219,
+        "duration": 8,
+        "phone": 21,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      },
+      {
+        "tick": 1227,
+        "duration": 36,
+        "phone": 4,
+        "note": 64,
+        "velocity": 90,
+        "stress": 1
+      },
+      {
+        "tick": 1263,
+        "duration": 8,
+        "phone": 24,
+        "note": 64,
+        "velocity": 90,
+        "stress": 0
+      }
+    ]
+  }
+]

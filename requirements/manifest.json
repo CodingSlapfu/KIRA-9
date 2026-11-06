@@ -17,9 +17,12 @@
       "title": "Standalone KIRA-9 repository and reproducible platform",
       "area": "platform",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "Verified source checkpoint, legal SDK, linker map, safe firmware identity and native package",
-      "implementation_files": [],
+      "implementation_files": [
+        "app/fm1.toml",
+        "app/app.h"
+      ],
       "source_commit": "",
       "test_refs": [],
       "artifact_refs": [],
@@ -37,9 +40,11 @@
       "title": "Document and enforce actual FM-1 RAM/flash/audio/LCD budgets",
       "area": "platform",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "Actual build map and bounded 44.1 kHz audio callback, fallback and benchmarking",
-      "implementation_files": [],
+      "implementation_files": [
+        "validation/PLATFORM.md"
+      ],
       "source_commit": "",
       "test_refs": [],
       "artifact_refs": [],
@@ -57,9 +62,12 @@
       "title": "Real-time English phoneme and articulatory vocal synthesis",
       "area": "vocal",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "Intelligible diverse words/phrases and exact phoneme-note alignment in rendered PCM",
-      "implementation_files": [],
+      "implementation_files": [
+        "core/engine.c",
+        "core/tables.c"
+      ],
       "source_commit": "",
       "test_refs": [],
       "artifact_refs": [],
@@ -77,9 +85,11 @@
       "title": "Multiple original voice identities, genres, styles, expressive controls",
       "area": "vocal",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "Distinct audibly validated PCM performances and configurable controls",
-      "implementation_files": [],
+      "implementation_files": [
+        "core/engine.c"
+      ],
       "source_commit": "",
       "test_refs": [],
       "artifact_refs": [],
@@ -97,9 +107,11 @@
       "title": "Highly expressive anime cyborg face synced to real visemes",
       "area": "face",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "Actual 240x240 dynamic animation with eyes, lids, brows, mouth, jaws and actuators",
-      "implementation_files": [],
+      "implementation_files": [
+        "app/app.c"
+      ],
       "source_commit": "",
       "test_refs": [],
       "artifact_refs": [],
@@ -117,9 +129,11 @@
       "title": "Rare physical servo twitches isolated from voice and MIDI",
       "area": "face",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "Physical-neural-looking events only; no screen glitches or changed audio buffers",
-      "implementation_files": [],
+      "implementation_files": [
+        "core/engine.c"
+      ],
       "source_commit": "",
       "test_refs": [],
       "artifact_refs": [],
@@ -137,9 +151,11 @@
       "title": "Full offline standalone song and transport sequencer",
       "area": "standalone",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "Standalone boot and full-song playback without BLE, USB or network",
-      "implementation_files": [],
+      "implementation_files": [
+        "core/engine.c"
+      ],
       "source_commit": "",
       "test_refs": [],
       "artifact_refs": [],
@@ -157,9 +173,11 @@
       "title": "Live keyboard, phrase, word, adlib and solo singing modes",
       "area": "standalone",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "Playable keys, phrase cues, note-off and Stop for each mode",
-      "implementation_files": [],
+      "implementation_files": [
+        "app/app.c"
+      ],
       "source_commit": "",
       "test_refs": [],
       "artifact_refs": [],
@@ -177,9 +195,11 @@
       "title": "Diverse factory demo songs",
       "area": "standalone",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "Original demos, factory restore, meaningful genre range within verified capacity",
-      "implementation_files": [],
+      "implementation_files": [
+        "factory/songs.json"
+      ],
       "source_commit": "",
       "test_refs": [],
       "artifact_refs": [],
@@ -197,9 +217,12 @@
       "title": "Persistent custom songs, phrases, words, pronunciation and capacity",
       "area": "library",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "CRC/versioned library, safe writes, reboot, corruption recovery and capacity UI",
-      "implementation_files": [],
+      "implementation_files": [
+        "app/app.c",
+        "core/codec.c"
+      ],
       "source_commit": "",
       "test_refs": [],
       "artifact_refs": [],
@@ -277,9 +300,12 @@
       "title": "Universal BLE MIDI pairing and bidirectional performance",
       "area": "midi",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "Standards peer and two-node fixtures incl GATT/timestamps, central/peripheral as supported",
-      "implementation_files": [],
+      "implementation_files": [
+        "platform/bt",
+        "app/fm1.toml"
+      ],
       "source_commit": "",
       "test_refs": [],
       "artifact_refs": [],
@@ -297,9 +323,12 @@
       "title": "Class-compliant USB MIDI IN/OUT via iPad powered hub",
       "area": "midi",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "Two independent FM-1 USB devices identifiable and routed through CoreMIDI/midimittr",
-      "implementation_files": [],
+      "implementation_files": [
+        "platform/device",
+        "app/fm1.toml"
+      ],
       "source_commit": "",
       "test_refs": [],
       "artifact_refs": [],
@@ -317,9 +346,11 @@
       "title": "Transport-neutral versioned MIDI core and optional lyric phrase profile",
       "area": "midi",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "24 PPQN, clock/transport, notes/velocity/CC/bend/program, generic compatible peers",
-      "implementation_files": [],
+      "implementation_files": [
+        "core/engine.c"
+      ],
       "source_commit": "",
       "test_refs": [],
       "artifact_refs": [],
@@ -337,9 +368,11 @@
       "title": "Solo/Follow/Auto transition and clock/disconnect recovery",
       "area": "midi",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "One clock master, no stuck notes, panic, no feedback loops or interrupted standalone songs",
-      "implementation_files": [],
+      "implementation_files": [
+        "core/engine.c"
+      ],
       "source_commit": "",
       "test_refs": [],
       "artifact_refs": [],
@@ -377,9 +410,11 @@
       "title": "Discoverable FM-1 controls, labels, bank/save semantics",
       "area": "ui",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "Every setting reachable with truthful knob values, SEL/SAVE and 240x240 legibility",
-      "implementation_files": [],
+      "implementation_files": [
+        "app/app.c"
+      ],
       "source_commit": "",
       "test_refs": [],
       "artifact_refs": [],
@@ -397,9 +432,11 @@
       "title": "Audio-first performance and resource-bounded animation/radio",
       "area": "quality",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "Host/native/single-core/pressure benchmark with no unbounded ISR or rendering",
-      "implementation_files": [],
+      "implementation_files": [
+        "app/app.c"
+      ],
       "source_commit": "",
       "test_refs": [],
       "artifact_refs": [],
@@ -417,9 +454,11 @@
       "title": "Flash-safe library migration, updater and long-session reliability",
       "area": "quality",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "Powercut/fault/CRC tests, long transport stress and direct update acceptance",
-      "implementation_files": [],
+      "implementation_files": [
+        "core/codec.c"
+      ],
       "source_commit": "",
       "test_refs": [],
       "artifact_refs": [],
@@ -457,9 +496,11 @@
       "title": "No missing scope: requirements and comment-to-release evidence gate",
       "area": "process",
       "priority": "P0",
-      "status": "new",
+      "status": "partial",
       "acceptance": "23 granular IDs tracked; negative tests reject omitted tasks and false completion",
-      "implementation_files": [],
+      "implementation_files": [
+        "tools/requirement_gate.py"
+      ],
       "source_commit": "",
       "test_refs": [],
       "artifact_refs": [],
@@ -474,10 +515,10 @@
     }
   ],
   "review": {
-    "source_comments_reviewed": false,
-    "issue_snapshot_date": "",
+    "source_comments_reviewed": true,
+    "issue_snapshot_date": "2026-11-05",
     "unmapped_owner_requests": [],
     "approved_deferrals": [],
-    "review_evidence": ""
+    "review_evidence": "validation/OWNER_AUDIT.md"
   }
 }

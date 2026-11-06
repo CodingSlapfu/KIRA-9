@@ -1,0 +1,34 @@
+wait 150
+shot face.png
+expect playing 0
+tap PLAY
+wait 500
+expect playing 1
+wav song.wav
+wait 1000
+shot singing.png
+wait 2000
+wavstop
+tap PLAY
+wait 200
+expect playing 0
+turn SELECT 2
+expect voice 0
+turn K1 2
+expect voice 2
+tap SAVE
+expect dirty 0
+reboot
+expect voice 2
+turn SELECT 3
+turn K1 1
+expect sync 1
+midi USB FA 00 00
+wait 50
+expect playing 0
+midi BLE FA 00 00
+wait 20
+expect playing 1
+midi BLE FC 00 00
+wait 100
+expect playing 0

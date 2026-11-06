@@ -1,6 +1,6 @@
 /* SPDX-License-Identifier: MIT */
 #include "kira.h"
-#include <string.h>
+#include "memory.h"
 uint32_t k9_crc(const uint8_t *p,size_t n){uint32_t c=~0u;size_t i;for(i=0;i<n;i++){unsigned j;c^=p[i];for(j=0;j<8;j++)c=(c>>1)^(0xEDB88320u & (0u-(c&1u)));}return ~c;}
 static void put16(uint8_t *p,uint16_t v){p[0]=(uint8_t)v;p[1]=(uint8_t)(v>>8);}
 static void put32(uint8_t *p,uint32_t v){put16(p,(uint16_t)v);put16(p+2,(uint16_t)(v>>16));}

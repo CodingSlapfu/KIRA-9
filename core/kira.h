@@ -17,6 +17,7 @@ extern const float k9_pitch[128];
 /* One owner (audio thread) mutates engine. UI uses bounded command handoff. */
 typedef struct {
  const k9_song *song; uint32_t sample,tick,clock_phase,rng,event_end;
+ uint32_t phone_start,phone_end,lfo; float bend;
  uint16_t next; uint8_t playing,phone,note,velocity,voice,style,viseme,source,external;
  float phase,level,freq,z1[3],z2[3],a[3],r[3],gain[3],noise,breath,vibrato,glide;
  uint32_t clocks,last_clock,late_clocks;

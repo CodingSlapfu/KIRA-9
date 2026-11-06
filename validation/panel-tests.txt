@@ -1,0 +1,12 @@
+  ok playing == 0
+  ok playing == 1
+  ok playing == 0
+  ok voice == 0
+  ok voice == 2
+  ok dirty == 0
+  ok voice == 2
+  ok sync == 1
+  ok playing == 0
+  ok playing == 1
+  ok playing == 0
+host: 4906 ms simulated, 456 blits, render 0.1% of real time (host CPU)
