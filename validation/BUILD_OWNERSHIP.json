@@ -1,8 +1,10 @@
 {
   "project": "KIRA-9",
   "owner": "work-160cc0e6fa30",
-  "state": "active",
-  "baseline": "3d7c4c2b272df0decd42c11b8c990e7c0fb4baa7",
-  "scope": "first release; sole writer and publisher",
-  "resume": "Check owner state before editing; never bypass an active owner."
+  "state": "paused",
+  "build_running": false,
+  "publisher_running": false,
+  "verified_source": "8d9226d5501c41c862291dd7bf0185a7494eda78",
+  "ci_run": 42164648668,
+  "resume": "Read CHECKPOINT.md and NEXT_BUILD_ACTIVE.md; acquire new exclusive ownership before editing. No release accepted."
 }
