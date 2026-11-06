@@ -1,0 +1,1 @@
+Transition sweep: 53673984 samples, 562 limiter hits, peak 0.940000; stop tails pass

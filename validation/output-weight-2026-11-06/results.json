@@ -1,0 +1,194 @@
+{
+  "baseline": "d40d558 / production DSP 1641726b",
+  "candidate": "output weights smoothed at existing .003 rate, 3 additional floats; no other DSP changes",
+  "production_changed": false,
+  "feedback_checks": 288,
+  "feedback_hashes_identical": true,
+  "baseline_recordings_regenerated": false,
+  "recognition_run": false,
+  "recognition_skip_reason": "Full-velocity headroom guard failed: 562 limiter hits in 53673984 samples; recorded baseline 746.",
+  "guard": {
+    "samples": 53673984,
+    "limiter_hits": 562,
+    "baseline_recorded_hits": 746,
+    "peak": 0.94,
+    "stop_tails": "pass"
+  },
+  "clips": [
+    {
+      "id": "transitions-48",
+      "peak": 0.16770786046981812,
+      "sample_frames": 173056
+    },
+    {
+      "id": "transitions-60",
+      "peak": 0.1859673410654068,
+      "sample_frames": 173056
+    },
+    {
+      "id": "transitions-72",
+      "peak": 0.23628057539463043,
+      "sample_frames": 173056
+    }
+  ],
+  "transitions": [
+    {
+      "note": 48,
+      "transition": "P\u2192IY",
+      "baseline_exact_edge": 0.009613037109375,
+      "candidate_exact_edge": 0.004150390625,
+      "baseline_3ms_max": 0.0347900390625,
+      "candidate_3ms_max": 0.016448974609375
+    },
+    {
+      "note": 48,
+      "transition": "T\u2192IY",
+      "baseline_exact_edge": 0.0045166015625,
+      "candidate_exact_edge": 0.001434326171875,
+      "baseline_3ms_max": 0.0045166015625,
+      "candidate_3ms_max": 0.001617431640625
+    },
+    {
+      "note": 48,
+      "transition": "K\u2192IY",
+      "baseline_exact_edge": 0.005828857421875,
+      "candidate_exact_edge": 0.001953125,
+      "baseline_3ms_max": 0.0284423828125,
+      "candidate_3ms_max": 0.0164794921875
+    },
+    {
+      "note": 48,
+      "transition": "S\u2192IY",
+      "baseline_exact_edge": 0.002410888671875,
+      "candidate_exact_edge": 0.001312255859375,
+      "baseline_3ms_max": 0.013397216796875,
+      "candidate_3ms_max": 0.013397216796875
+    },
+    {
+      "note": 48,
+      "transition": "SH\u2192IY",
+      "baseline_exact_edge": 0.0174560546875,
+      "candidate_exact_edge": 0.009246826171875,
+      "baseline_3ms_max": 0.0174560546875,
+      "candidate_3ms_max": 0.010498046875
+    },
+    {
+      "note": 48,
+      "transition": "M\u2192IY",
+      "baseline_exact_edge": 0.0384521484375,
+      "candidate_exact_edge": 0.000732421875,
+      "baseline_3ms_max": 0.0384521484375,
+      "candidate_3ms_max": 0.00823974609375
+    },
+    {
+      "note": 60,
+      "transition": "P\u2192IY",
+      "baseline_exact_edge": 0.0008544921875,
+      "candidate_exact_edge": 0.000274658203125,
+      "baseline_3ms_max": 0.066009521484375,
+      "candidate_3ms_max": 0.033355712890625
+    },
+    {
+      "note": 60,
+      "transition": "T\u2192IY",
+      "baseline_exact_edge": 0.0045166015625,
+      "candidate_exact_edge": 0.001434326171875,
+      "baseline_3ms_max": 0.033843994140625,
+      "candidate_3ms_max": 0.023223876953125
+    },
+    {
+      "note": 60,
+      "transition": "K\u2192IY",
+      "baseline_exact_edge": 0.00262451171875,
+      "candidate_exact_edge": 0.000885009765625,
+      "baseline_3ms_max": 0.049346923828125,
+      "candidate_3ms_max": 0.0308837890625
+    },
+    {
+      "note": 60,
+      "transition": "S\u2192IY",
+      "baseline_exact_edge": 0.002410888671875,
+      "candidate_exact_edge": 0.001312255859375,
+      "baseline_3ms_max": 0.029266357421875,
+      "candidate_3ms_max": 0.018524169921875
+    },
+    {
+      "note": 60,
+      "transition": "SH\u2192IY",
+      "baseline_exact_edge": 0.018585205078125,
+      "candidate_exact_edge": 0.00970458984375,
+      "baseline_3ms_max": 0.049163818359375,
+      "candidate_3ms_max": 0.02691650390625
+    },
+    {
+      "note": 60,
+      "transition": "M\u2192IY",
+      "baseline_exact_edge": 0.00823974609375,
+      "candidate_exact_edge": 0.003814697265625,
+      "baseline_3ms_max": 0.015533447265625,
+      "candidate_3ms_max": 0.00762939453125
+    },
+    {
+      "note": 72,
+      "transition": "P\u2192IY",
+      "baseline_exact_edge": 0.0008544921875,
+      "candidate_exact_edge": 0.000274658203125,
+      "baseline_3ms_max": 0.123565673828125,
+      "candidate_3ms_max": 0.049896240234375
+    },
+    {
+      "note": 72,
+      "transition": "T\u2192IY",
+      "baseline_exact_edge": 0.0592041015625,
+      "candidate_exact_edge": 0.02508544921875,
+      "baseline_3ms_max": 0.069549560546875,
+      "candidate_3ms_max": 0.02886962890625
+    },
+    {
+      "note": 72,
+      "transition": "K\u2192IY",
+      "baseline_exact_edge": 0.039794921875,
+      "candidate_exact_edge": 0.015228271484375,
+      "baseline_3ms_max": 0.119659423828125,
+      "candidate_3ms_max": 0.048248291015625
+    },
+    {
+      "note": 72,
+      "transition": "S\u2192IY",
+      "baseline_exact_edge": 0.002410888671875,
+      "candidate_exact_edge": 0.001312255859375,
+      "baseline_3ms_max": 0.052490234375,
+      "candidate_3ms_max": 0.033721923828125
+    },
+    {
+      "note": 72,
+      "transition": "SH\u2192IY",
+      "baseline_exact_edge": 0.00225830078125,
+      "candidate_exact_edge": 0.00103759765625,
+      "baseline_3ms_max": 0.092529296875,
+      "candidate_3ms_max": 0.053924560546875
+    },
+    {
+      "note": 72,
+      "transition": "M\u2192IY",
+      "baseline_exact_edge": 0.1702880859375,
+      "candidate_exact_edge": 0.002288818359375,
+      "baseline_3ms_max": 0.1702880859375,
+      "candidate_3ms_max": 0.0150146484375
+    }
+  ],
+  "files": {
+    "transitions-48-output.wav": {
+      "sha256": "ccce528d153c091b87516e3f3a06ffe281ccda6c73be1d5daa26d3bde8372e6e",
+      "baseline_sha256": "ddac0e8188ab585a81fcbe5e9b30caaf4bff6fcd4982afc36c0d010e4dffb6fc"
+    },
+    "transitions-60-output.wav": {
+      "sha256": "b2f242742d360db9b42e5d3a7de1a2ce97254b8d6065075089491368788326a2",
+      "baseline_sha256": "c929f46fa812090f2d905d485a4b666e07902ef99b1e4322dd466027edfbd829"
+    },
+    "transitions-72-output.wav": {
+      "sha256": "ff86355021300972d14b40dd3b73aff198ecc326f8b4b4abaa8f7b2a32c9de34",
+      "baseline_sha256": "ce53f9d4213f53afbec16ebc8b3d8648ab73cdaae6eb648ec270777bd1342965"
+    }
+  }
+}
