@@ -1,0 +1,32 @@
+wait 150
+turn SELECT 4
+tap SAVE
+expect slot_bytes >24
+tap SAVE
+expect save_confirm 1
+turn K1 1
+expect save_confirm 0
+expect slot_bytes <1
+tap SAVE
+expect slot_bytes >24
+turn K3 1
+tap SEL
+expect delete_confirm 1
+turn K1 -1
+expect delete_confirm 0
+tap SEL
+expect delete_confirm 1
+tap SEL
+expect delete_confirm 0
+expect slot_bytes <1
+turn K1 1
+expect slot_bytes >24
+flash_fail 1
+tap SEL
+tap SEL
+expect slot_bytes >24
+flash_fail 0
+reboot
+turn SELECT 4
+turn K1 1
+expect slot_bytes >24

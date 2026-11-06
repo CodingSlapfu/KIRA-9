@@ -1,0 +1,38 @@
+wait 150
+midi USB B0 0B 00
+wait 20
+expect expression 0
+wait 300
+expect expression 0
+midi USB B0 0B 7F
+midi USB B0 01 7F
+midi USB B0 02 7F
+wait 20
+expect expression 127
+expect vibrato 100
+expect breath 100
+turn SELECT 3
+turn K1 2
+midi USB 90 3C 64
+wait 30
+expect note 60
+usb unplug
+wait 50
+expect note -1
+usb plug
+wait 50
+midi USB 90 40 64
+wait 30
+expect note 64
+midi USB 80 40 00
+wait 30
+expect note -1
+# USB cable loss must leave internally clocked standalone singing running.
+turn K1 2
+tap PLAY
+wait 100
+expect playing 1
+usb unplug
+wait 50
+expect playing 1
+tap PLAY

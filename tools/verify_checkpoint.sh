@@ -9,6 +9,8 @@ flock -n 9 || { echo 'Another verification owns this checkout'; exit 75; }
 python3 platform/tools/build.py app --host
 mkdir -p build/panel
 app/build/host/kira-9_host tests/panel.txt build/panel
+app/build/host/kira-9_host tests/midi_recovery.txt build/panel
+app/build/host/kira-9_host tests/library_safety.txt build/panel
 cc -O2 -std=c99 -Wno-unused-function -Iplatform/include tests/storage.c -o build/storage-app
 build/storage-app
 cc -shared -fPIC -Wl,--no-undefined -O2 -ffp-contract=off -Icore core/engine.c core/codec.c core/library.c core/tables.c core/face.c studio/bridge.c -o build/libkira.so

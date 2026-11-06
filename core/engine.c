@@ -54,6 +54,7 @@ void k9_init(k9_engine *e) {
   e->breath = .03f;
   e->source = 255;
   e->live_note = 255;
+  e->live_source = 255;
   e->bend = 1;
   e->expression = 1;
   e->clock_interval = 918.75f;
@@ -64,6 +65,7 @@ void k9_stop(k9_engine *e) {
   e->phone = K9_SIL;
   e->viseme = 0;
   e->live_note = 255;
+  e->live_source = 255;
   e->live_velocity = 0;
   e->external_melody = 0;
 }
@@ -77,7 +79,7 @@ static void seek(k9_engine *e, uint32_t tick) {
              tick)
     e->next++;
 }
-static void begin_song(k9_engine *e,const k9_song *s) {
+static void begin_song(k9_engine *e, const k9_song *s) {
   k9_stop(e);
   if (!k9_song_validate(s))
     return;
@@ -96,8 +98,24 @@ static void begin_song(k9_engine *e,const k9_song *s) {
       (float)((e->tempo_override ? e->tempo_override : s->bpm) * 24u);
   e->playing = 1;
 }
-void k9_start(k9_engine *e,const k9_song *s){e->playlist_count=0;e->playlist_index=0;begin_song(e,s);}
-int k9_playlist(k9_engine *e,const k9_song *const *songs,unsigned count){unsigned i;if(!count||count>8)return 0;for(i=0;i<count;i++)if(!k9_song_validate(songs[i]))return 0;k9_start(e,songs[0]);for(i=0;i<count;i++)e->playlist[i]=songs[i];e->playlist_count=(uint8_t)count;return 1;}
+void k9_start(k9_engine *e, const k9_song *s) {
+  e->playlist_count = 0;
+  e->playlist_index = 0;
+  begin_song(e, s);
+}
+int k9_playlist(k9_engine *e, const k9_song *const *songs, unsigned count) {
+  unsigned i;
+  if (!count || count > 8)
+    return 0;
+  for (i = 0; i < count; i++)
+    if (!k9_song_validate(songs[i]))
+      return 0;
+  k9_start(e, songs[0]);
+  for (i = 0; i < count; i++)
+    e->playlist[i] = songs[i];
+  e->playlist_count = (uint8_t)count;
+  return 1;
+}
 void k9_note(k9_engine *e, uint8_t p, uint8_t note, uint8_t velocity) {
   if (p >= K9_NPHONE || note > 127 || velocity > 127)
     return;
@@ -166,6 +184,7 @@ void k9_midi(k9_engine *e, uint8_t src, uint8_t status, uint8_t d1,
   }
   if (kind == 0x90 && d2) {
     e->live_note = d1;
+    e->live_source = src;
     e->live_velocity = d2;
     e->external_melody = e->playing && e->external;
     if (!e->playing)
@@ -175,8 +194,12 @@ void k9_midi(k9_engine *e, uint8_t src, uint8_t status, uint8_t d1,
       e->velocity = d2;
     }
   } else if (kind == 0x80 || (kind == 0x90 && !d2)) {
-    if (e->live_note == d1)
+    if (src != e->live_source)
+      return;
+    if (e->live_note == d1) {
       e->live_note = 255;
+      e->live_source = 255;
+    }
     if (e->note == d1)
       e->velocity = 0;
   } else if (kind == 0xb0) {
@@ -214,8 +237,18 @@ void k9_render(k9_engine *e, float *out, uint32_t frames) {
           partial = 3u;
         e->tick = e->clock_tick + partial;
       }
-      if(e->tick>=e->song->ticks){if(!e->external&&e->playlist_count&&e->playlist_index+1u<e->playlist_count){e->playlist_index++;begin_song(e,e->playlist[e->playlist_index]);}else if(!e->external&&e->loop){e->playlist_index=0;begin_song(e,e->playlist_count?e->playlist[0]:e->song);}else k9_stop(e);}
-      if (e->playing&&e->next < e->song->count &&
+      if (e->tick >= e->song->ticks) {
+        if (!e->external && e->playlist_count &&
+            e->playlist_index + 1u < e->playlist_count) {
+          e->playlist_index++;
+          begin_song(e, e->playlist[e->playlist_index]);
+        } else if (!e->external && e->loop) {
+          e->playlist_index = 0;
+          begin_song(e, e->playlist_count ? e->playlist[0] : e->song);
+        } else
+          k9_stop(e);
+      }
+      if (e->playing && e->next < e->song->count &&
           e->tick >= e->song->events[e->next].tick) {
         const k9_event *v = &e->song->events[e->next++];
         uint8_t note =

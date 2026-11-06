@@ -69,7 +69,7 @@ typedef struct {
 static k9_settings prefs;
 static uint32_t btn_last, keys_last, draw_at, block_max, blocks, overruns;
 static uint8_t peer_pick, ble_was, backup_hold;
-static uint32_t retry_at;
+static uint32_t retry_at, usb_session_seen;
 static uint8_t page, dirty, save_pending, load_pending, playing_cmd, stop_cmd,
     note_cmd, note_vel;
 static char message[40];
@@ -184,7 +184,12 @@ static int xsave(void *ctx, uint8_t kind, uint8_t slot, const uint8_t *p,
   int rc;
   (void)ctx;
   rc = plat_store_save(library_object(kind, slot), p, n);
-  if(!rc){int got=plat_store_load(library_object(kind,slot),song_wire,sizeof song_wire);if(got!=(int)n||memcmp(song_wire,p,n))return -1;}
+  if (!rc) {
+    int got = plat_store_load(library_object(kind, slot), song_wire,
+                              sizeof song_wire);
+    if (got != (int)n || memcmp(song_wire, p, n))
+      return -1;
+  }
   if (!rc) {
     if (kind < 3) {
       memcpy(&custom, &validation_song, sizeof custom);
@@ -348,6 +353,7 @@ void app_init(void) {
     }
   }
   k9_transfer_init(&transfer_state);
+  usb_session_seen = plat_usb_session();
   custom_length = 0;
 }
 void app_panic(void) {
@@ -394,6 +400,12 @@ void app_render(int32_t *lr, uint32_t n, uint32_t master) {
       prefs.voice = d1 % 7u;
     if ((st & 0xf0u) == 0xb0u &&
         (!engine.external || engine.source == 255 || engine.source == source)) {
+      if (d1 == 1u)
+        prefs.vibrato = (uint8_t)((unsigned)d2 * 100u / 127u);
+      if (d1 == 2u)
+        prefs.breath = (uint8_t)((unsigned)d2 * 100u / 127u);
+      if (d1 == 11u)
+        prefs.expression = d2;
       if (d1 == 20u && d2 < 8u && phrase_cache[d2].count) {
         if (phrase_profile_valid[d2])
           preset_to_prefs(&phrase_profiles[d2]);
@@ -454,13 +466,19 @@ static void input(void) {
   unsigned i;
   btn_last = buttons;
   keys_last = keys;
-  if (press & (1u << B_HOME))
+  if (press & (1u << B_HOME)) {
     page = 0;
+    save_confirm = delete_confirm = 0;
+  }
   d = plat_enc(EN_SELECT);
-  if (d)
+  if (d) {
     page = (uint8_t)((page + 8 + d % 8) % 8);
-  if (press & (1u << B_EDIT))
+    save_confirm = delete_confirm = 0;
+  }
+  if (press & (1u << B_EDIT)) {
     page = (page + 1) % 8;
+    save_confirm = delete_confirm = 0;
+  }
   if (press & (1u << B_PLAY)) {
     if (transfer_state.active) {
       app_say("FINISH TRANSFER FIRST", "");
@@ -505,6 +523,9 @@ static void input(void) {
           load_pending = 1;
           custom_length = (uint16_t)len;
           memcpy(custom_wire, song_wire, (uint32_t)len);
+          k9_preset profile;
+          if (k9_score_preset(custom_wire, custom_length, &profile))
+            preset_to_prefs(&profile);
           app_say("LOADED", "");
         } else
           app_say("EMPTY OR INVALID", "");
@@ -538,6 +559,7 @@ static void input(void) {
     if (!d)
       continue;
     dirty = 1;
+    save_confirm = delete_confirm = 0;
     if (page == 1) {
       if (i == EN_K1) {
         stop_cmd = 1;
@@ -875,7 +897,9 @@ static void draw_menu(void) {
       cv_text(8, 17, &FONT_XS,
               prefs.reconnect ? "K3 RECONNECT: ON" : "K3 RECONNECT: OFF",
               C_WHITE);
-    }else if(row==2&&page==5){cv_text(8,0,&FONT_XS,APP_NAME " " APP_VERSION,C_WHITE);cv_text(8,17,&FONT_XS,"AUDIO FIRST / 1 CORE",C_WHITE);
+    } else if (row == 2 && page == 5) {
+      cv_text(8, 0, &FONT_XS, APP_NAME " " APP_VERSION, C_WHITE);
+      cv_text(8, 17, &FONT_XS, "AUDIO FIRST / 1 CORE", C_WHITE);
     } else if (row == 2 && page == 4) {
       cv_text(8, 0, &FONT_XS, message, C_WHITE);
       cv_text(8, 17, &FONT_XS,
@@ -983,12 +1007,32 @@ void app_frame(void) {
   uint32_t now = plat_ms();
   transfer_poll();
   input();
-  if(plat_usb_lost()){k9_transfer_init(&transfer_state);if(engine.external&&engine.source==TO_USB)stop_cmd=1;}
   {
-    static uint8_t host_was,device_was;uint8_t host=(uint8_t)plat_ble_connected(),device=(uint8_t)(plat_ble_device()==BLE_DEV_READY);
-    if((host_was&&!host&&engine.source==TO_BLE_HOST)||(device_was&&!device&&engine.source==TO_BLE_DEV))stop_cmd=1;
-    host_was=host;device_was=device;uint8_t linked=host||device;
-    ble_was=linked;
+    uint32_t session = plat_usb_session();
+    int lost =
+        plat_usb_lost() || (usb_session_seen && session != usb_session_seen);
+    usb_session_seen = session;
+    if (lost) {
+      k9_transfer_init(&transfer_state);
+      tx_length = tx_position = 0;
+      if ((engine.external && engine.source == TO_USB) ||
+          engine.live_source == TO_USB)
+        stop_cmd = 1;
+    }
+  }
+  {
+    static uint8_t host_was, device_was;
+    uint8_t host = (uint8_t)plat_ble_connected(),
+            device = (uint8_t)(plat_ble_device() == BLE_DEV_READY);
+    if ((host_was && !host &&
+         (engine.source == TO_BLE_HOST || engine.live_source == TO_BLE_HOST)) ||
+        (device_was && !device &&
+         (engine.source == TO_BLE_DEV || engine.live_source == TO_BLE_DEV)))
+      stop_cmd = 1;
+    host_was = host;
+    device_was = device;
+    uint8_t linked = host || device;
+    ble_was = linked;
     plat_ble_scan(prefs.ble && !linked && (page == 3 || prefs.reconnect));
     if (prefs.ble && prefs.reconnect && prefs.peer[0] && !linked &&
         now - retry_at > 5000u) {
@@ -1028,6 +1072,22 @@ int app_expect(const char *what, int *got) {
     *got = prefs.sync;
   else if (!strcmp(what, "note"))
     *got = engine.velocity ? engine.note : -1;
+  else if (!strcmp(what, "expression"))
+    *got = (int)(engine.expression * 127.0f + .5f);
+  else if (!strcmp(what, "vibrato"))
+    *got = prefs.vibrato;
+  else if (!strcmp(what, "breath"))
+    *got = prefs.breath;
+  else if (!strcmp(what, "slot_bytes"))
+    *got = plat_store_size(library_object(prefs.kind, prefs.slot));
+  else if (!strcmp(what, "save_confirm"))
+    *got = save_confirm;
+  else if (!strcmp(what, "delete_confirm"))
+    *got = delete_confirm;
+  else if (!strcmp(what, "parts"))
+    *got = prefs.parts;
+  else if (!strcmp(what, "chain"))
+    *got = prefs.chain;
   else if (!strcmp(what, "dirty"))
     *got = dirty;
   else

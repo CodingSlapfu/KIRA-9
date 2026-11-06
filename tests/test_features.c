@@ -13,6 +13,7 @@ int main(void){
  assert(k9_playlist(&e,list,3));e.loop=1;for(steps=0;steps<100;steps++)k9_render(&e,audio,256);assert(e.playing);k9_stop(&e);assert(!e.playing&&!e.velocity);
  e.loop=0;e.tempo_override=240;k9_start(&e,&song);steps=0;while(e.playing&&steps++<100)k9_render(&e,audio,256);assert(steps<9);
  for(unsigned emotion=0;emotion<4;emotion++)for(unsigned mouth=0;mouth<6;mouth++){k9_face f={0};f.mouth=mouth;f.open=20;f.cheek=emotion;f.blink=75;f.neck=2;k9_face_render(full,0,240,&f);for(unsigned y=0;y<240;y+=40)k9_face_render(bands+y*240,y,40,&f);assert(!memcmp(full,bands,sizeof full));}
+ k9_init(&e);k9_midi(&e,1,0x90,60,100);k9_midi(&e,2,0x80,60,0);assert(e.velocity==100);k9_midi(&e,1,0x80,61,0);assert(e.velocity==100&&e.live_source==1);k9_midi(&e,1,0x80,60,0);assert(!e.velocity);
  k9_arrangement a={113,3,1,1,{2,0,1,3,4,5,6,7}},out;uint8_t bytes[29];assert(k9_arrangement_write(bytes,&a)==29);assert(k9_arrangement_read(bytes,29,&out));assert(out.tempo==113&&out.slots[0]==2);bytes[19]=2;assert(!k9_arrangement_read(bytes,29,&out));a.slots[4]=8;assert(!k9_arrangement_write(bytes,&a));
  puts("PASS standalone chain/end/loop/tempo/stop, shared full/banded face across expressions and mouths, arrangement bounds/corruption");return 0;
 }
