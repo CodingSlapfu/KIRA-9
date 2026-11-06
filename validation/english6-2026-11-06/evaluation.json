@@ -1,0 +1,226 @@
+{
+  "scope": "Dry monophonic research prototype, MIDI 48/60/72; no word/listening pass inferred from spectra. MIDI84 fails stricter .90 peak margin; not promoted.",
+  "model": "same cached tiny.en offline, beam5, no expected text prompt",
+  "cpu_note": "Host microseconds are NOT FM-1 CPU. One calling thread; physical 5.8ms deadline unverified.",
+  "host_callback": {
+    "baseline": {
+      "host_thread_cpu": {
+        "p50_us": 13.069,
+        "p95_us": 84.434,
+        "p99_us": 335.488,
+        "max_us": 1140.853
+      },
+      "host_wall": {
+        "p50_us": 12.629,
+        "p95_us": 76.977,
+        "p99_us": 328.206,
+        "max_us": 807.438
+      }
+    },
+    "prototype": {
+      "host_thread_cpu": {
+        "p50_us": 29.635,
+        "p95_us": 115.229,
+        "p99_us": 311.687,
+        "max_us": 526.306
+      },
+      "host_wall": {
+        "p50_us": 29.22,
+        "p95_us": 114.081,
+        "p99_us": 310.499,
+        "max_us": 524.654
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "vowels-48",
+      "engine": "baseline",
+      "expected": "heed hid head had",
+      "note": 48,
+      "group": "vowels",
+      "unclamped_peak": 0.2558158338069916,
+      "over94": 0,
+      "rms": 0.021150631830096245,
+      "sha256": "d286a4958a6ec0fd9b3340cc0c03fc0adf332b23e40ba26b238e0f94ccd2d146",
+      "text": " See you soon!",
+      "wer": 1.0,
+      "recognized_vowels": [
+        "IY",
+        "UW",
+        "UW"
+      ],
+      "vowel_sequence_error": 0.75
+    },
+    {
+      "id": "consonants-48",
+      "engine": "baseline",
+      "expected": "see she pea bee",
+      "note": 48,
+      "group": "consonants",
+      "unclamped_peak": 0.1936049908399582,
+      "over94": 0,
+      "rms": 0.02663097158074379,
+      "sha256": "2ec49fea1f1e41199b485d1587734b42d60340c8eaa0f47c59038a8bb2882be4",
+      "text": "",
+      "wer": 1.0
+    },
+    {
+      "id": "vowels-60",
+      "engine": "baseline",
+      "expected": "heed hid head had",
+      "note": 60,
+      "group": "vowels",
+      "unclamped_peak": 0.41655752062797546,
+      "over94": 0,
+      "rms": 0.030423196032643318,
+      "sha256": "174614818f9cdfd97e1273c0377fad1c09a2d770811b2a9211d846af5681e93d",
+      "text": " See you soon!",
+      "wer": 1.0,
+      "recognized_vowels": [
+        "IY",
+        "UW",
+        "UW"
+      ],
+      "vowel_sequence_error": 0.75
+    },
+    {
+      "id": "consonants-60",
+      "engine": "baseline",
+      "expected": "see she pea bee",
+      "note": 60,
+      "group": "consonants",
+      "unclamped_peak": 0.2837679088115692,
+      "over94": 0,
+      "rms": 0.03189363330602646,
+      "sha256": "89f96e390ee466af64ef023cfc4cf7a6011d217262d3cc9563e170135bb4f5ee",
+      "text": "",
+      "wer": 1.0
+    },
+    {
+      "id": "vowels-72",
+      "engine": "baseline",
+      "expected": "heed hid head had",
+      "note": 72,
+      "group": "vowels",
+      "unclamped_peak": 0.545096218585968,
+      "over94": 0,
+      "rms": 0.061650097370147705,
+      "sha256": "a69430065466e9fc88a1f149afa7d1ba1bbc7186891c9a3f85e526b18dd7bbb8",
+      "text": " Thanks for watching!",
+      "wer": 1.0,
+      "recognized_vowels": [
+        "AE",
+        "AO",
+        "AA"
+      ],
+      "vowel_sequence_error": 1.0
+    },
+    {
+      "id": "consonants-72",
+      "engine": "baseline",
+      "expected": "see she pea bee",
+      "note": 72,
+      "group": "consonants",
+      "unclamped_peak": 0.44696417450904846,
+      "over94": 0,
+      "rms": 0.04185044765472412,
+      "sha256": "f92c3e299b0d1a31a9c17b95bf939be07a19369e204485348673ea5817441b4e",
+      "text": "",
+      "wer": 1.0
+    },
+    {
+      "id": "vowels-48",
+      "engine": "prototype",
+      "expected": "heed hid head had",
+      "note": 48,
+      "group": "vowels",
+      "unclamped_peak": 0.23353850841522217,
+      "over94": 0,
+      "rms": 0.05846802145242691,
+      "sha256": "aa8570f00c2130803f585fcebfb2ea6ed28a38a9a8d6bdc76b528b05d6efd938",
+      "text": " Thank you.",
+      "wer": 1.0,
+      "recognized_vowels": [
+        "AE",
+        "UW"
+      ],
+      "vowel_sequence_error": 1.0
+    },
+    {
+      "id": "consonants-48",
+      "engine": "prototype",
+      "expected": "see she pea bee",
+      "note": 48,
+      "group": "consonants",
+      "unclamped_peak": 0.22836834192276,
+      "over94": 0,
+      "rms": 0.06198258325457573,
+      "sha256": "2dded074532ef90f66d5503459a26da9d138ed7aec4793fa0da7910a5c5fbb13",
+      "text": "",
+      "wer": 1.0
+    },
+    {
+      "id": "vowels-60",
+      "engine": "prototype",
+      "expected": "heed hid head had",
+      "note": 60,
+      "group": "vowels",
+      "unclamped_peak": 0.22213299572467804,
+      "over94": 0,
+      "rms": 0.059715211391448975,
+      "sha256": "9391baac3432bc60b8d6d2bf2e7614a268c32decedca2edf6d62d2aad96f9065",
+      "text": " ee ee ee ee ee",
+      "wer": 1.25,
+      "recognized_vowels": [
+        "IY",
+        "IY",
+        "IY",
+        "IY",
+        "IY"
+      ],
+      "vowel_sequence_error": 1.0
+    },
+    {
+      "id": "consonants-60",
+      "engine": "prototype",
+      "expected": "see she pea bee",
+      "note": 60,
+      "group": "consonants",
+      "unclamped_peak": 0.2013501226902008,
+      "over94": 0,
+      "rms": 0.062277644872665405,
+      "sha256": "99a396de9d6ca088329000dd20f3fecdd91d639aeefe1fd71a3b3d3c4c454b7d",
+      "text": "",
+      "wer": 1.0
+    },
+    {
+      "id": "vowels-72",
+      "engine": "prototype",
+      "expected": "heed hid head had",
+      "note": 72,
+      "group": "vowels",
+      "unclamped_peak": 0.21363873779773712,
+      "over94": 0,
+      "rms": 0.0586925633251667,
+      "sha256": "637b3cc37edff1340e07e7562ea3fab53d7dba8192321bc05304bf69d3b27686",
+      "text": "",
+      "wer": 1.0,
+      "recognized_vowels": [],
+      "vowel_sequence_error": 1.0
+    },
+    {
+      "id": "consonants-72",
+      "engine": "prototype",
+      "expected": "see she pea bee",
+      "note": 72,
+      "group": "consonants",
+      "unclamped_peak": 0.1795870065689087,
+      "over94": 0,
+      "rms": 0.062438223510980606,
+      "sha256": "b8f060cfbceebc2302cabf70686e0db70a7fdf5177882dfa937c49cb59b3cc85",
+      "text": "",
+      "wer": 1.0
+    }
+  ]
+}

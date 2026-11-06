@@ -1,0 +1,8 @@
+{
+  "prepared_trials": 48,
+  "default_trials_per_register": 16,
+  "human_participants": 0,
+  "human_results": "NOT PERFORMED",
+  "blinding": "Targets and engine only in separate answer key; random audio IDs; fixed balanced register blocks.",
+  "normalization": "Listening only: RMS .08 with .7 peak bound; no firmware/headroom modification."
+}

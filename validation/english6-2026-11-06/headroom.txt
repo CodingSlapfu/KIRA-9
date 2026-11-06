@@ -1,0 +1,1 @@
+frames=6709248 raw_peak=0.928018570 band_peak=0.255652070 over94=0 invalid_or_stop_failure=0 state_bytes=352 engine_bytes=656

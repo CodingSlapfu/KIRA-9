@@ -1,0 +1,15 @@
+{
+  "object_size_output": "   text\t   data\t    bss\t    dec\t    hex\tfilename\n   7276\t      0\t      0\t   7276\t   1c6c\t/workspace/scratch/160cc0e6fa30/KIRA-9/build/english6/proto6-native.o\n",
+  "native_sizes": {
+    "prototype_engine_size": 604,
+    "prototype_state_size": 336
+  },
+  "object_hashes": {
+    "proto6-native": "10d3ef116dfec9d379cc67145f84e99dbd9800b12fbabc85730e71bbbaac61d6",
+    "proto6-single-core": "10d3ef116dfec9d379cc67145f84e99dbd9800b12fbabc85730e71bbbaac61d6"
+  },
+  "forced_single_core": "Kernel has no workers/CPU2; forced-single-core define produces identical object. Not a whole firmware test.",
+  "stack": "R3 p6_process prologue saves rets+r15..r4 (52 bytes) then reserves 92 bytes = 144-byte kernel frame; no nested calls in object. Wrapper/interrupt stack unmeasured.",
+  "device_cpu": "UNVERIFIED: native object is not an on-device timing measurement; 256/44100 = 5.805ms callback requirement must be measured on FM-1.",
+  "heap_allocation": false
+}

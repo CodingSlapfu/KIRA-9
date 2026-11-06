@@ -1,24 +1,16 @@
-# Exact intelligibility resume — November 6, 2026
+# Exact English intelligibility resume — November 6, 2026
 
-Sole owner: work-160cc0e6fa30-resume-2. Preserve owner/lock and check for active writers. No competing builds, no AQUORA edits, no publication.
+Sole owner work-160cc0e6fa30-resume-2. Check existing owner/lock and active writers before any changes. Preserve production baseline 1641726b / checkpoint 3a407ec. AQUORA untouched; no publication.
 
-Production core/app/studio remain UNCHANGED at verified vocal DSP 1641726b / checkpoint 3a407ec. The d40d558 isolated-study results and old 36 recordings were preserved; no old CI, MIDI/storage acceptance or old backup validation was replayed.
+## Completed bounded architecture experiment — do not replay
+Source and full decision: validation/english6-2026-11-06/README.md. Original isolated English6 kernel, independent English references, six calibrated bands, differentiated glottal excitation, separate consonant noise, pitch-aware F1 hypothesis. No GPL source/voice data imported. Existing product interfaces preserved; dry monophonic prototype is not full expressive compatibility.
 
-## Latest experiment completed — do not rerun
-Canonical evidence: validation/output-weight-2026-11-06/README.md, results.json and guard.txt. Candidate smooths OUTPUT band weights at existing .003 rate with three isolated float states; raw resonator feedback remains unweighted. Original glide, score, pitch, excitation and output level stay unchanged. tools/output_weight_build.py constructs it outside production files.
+Safety: 6,709,248 frames, zero nonfinite/stop failures or >.94 samples. MIDI 48–72 peak .423475623; extended MIDI 84 peak .928018570 FAILS predeclared .90 margin. Recognition on six NEW matched controls at 48/60/72: no improvement, all vowel-sequence scores worse/equal. No recognition-model installation. Host median callback ~2.27x baseline; native kernel 7276 bytes, state336 bytes; FM-1 CPU unverified. Candidate NOT PROMOTED.
 
-288 feedback-state hash comparisons match. Only three NEW candidate transition clips (MIDI 48/60/72) were rendered, reusing the preserved baseline WAVs. M→IY exact-edge step at MIDI 72 falls .170288→.002289, but the full-velocity guard still has **562 limiter hits / 53,673,984 samples**, peak .940000. Recorded baseline 746; previous input-smoothing candidate 506. Earlier guards/recordings were not rerun.
+## Next action
+Use the frozen 48-stimulus blinded listening kit from the new backup archive (listening/index.html, separate answers.json, tools/english6_grade.py). Human results NOT PERFORMED. Collect and grade human responses before further synthesis changes; distinguish vowel and consonant confusions by register. If still poor, reassess source/filter suitability and independently licensed English diphone/residual feasibility with an explicit memory/CPU budget. Do not endlessly adjust parameters, repeat smoothing/late-glide, reinstall models or broadly rewrite completed systems. No integration until intelligibility AND headroom improve.
 
-**Recognition NOT RUN** because headroom prerequisite failed. No model/runtime installation or load. Candidate NOT PROMOTED; production DSP unchanged. No new native/WASM or release acceptance claim.
+## Preserve existing successful evidence
+Do not rerun previous 36 recordings, input/output smoothing guards, successful CI/797-file backups, MIDI/storage or unrelated acceptance. Their immutable receipts remain in validation/output-weight-2026-11-06 and earlier documents. All original 23 release requirements remain mandatory. No release/installer/website publication; physical FM-1 tests belong to the user.
 
-## Stop local parameter tuning; reassess synthesis approach
-Do not queue another smoothing rate, weight multiplier, global output reduction or rejected late glide. The isolated input/output smoothing trials improve mechanical artifacts but do not solve safety or English word recovery. Read the reassessment in validation/output-weight-2026-11-06/README.md.
-
-Next bounded work: establish a credible English phonetic reference/listening control across registers; instrument unclamped transition energy/state/pole trajectories; then decide whether the current vocal backend can meet requirements versus a small original reference-driven English source/filter prototype. Preserve score/phoneme/viseme APIs and all completed platform/editor/MIDI/storage systems. No broad product restart, copied GPL/Japanese voicebank/art, or new recognition-model loop. Spectral proxies and current ASR failures are not listening acceptance.
-
-## Existing verified evidence (do not replay)
-Previous 36-recording experiment: source 0177d914, workflow 42205571438; permanent backup commit a999d415609c3d458b0b4a3c39016c6718d5198c; experiments/0177d9142c70d323da451785067fab8082f0a7ac.zip; SHA256 de9ec59fa471af6507ba2a505e50eeec10cd9b620543a7e1be3fa68bcb836a31. Old native/WASM/797-member and earlier CI repair receipts stay valid and untouched.
-
-New output-weight-only source/evidence backup receipt: Source: 889f674514e0bd0ad594f003bf48b50b85fe89c0. Permanent backup commit: 61ca84fe38dbf3b27bbfa9cab4f1fd720121d0b5. Archive: experiments/889f674514e0bd0ad594f003bf48b50b85fe89c0-output-weights.zip. ZIP SHA256: 167b589a9d8dd7680fa593fabcfce695225644c99896dfb904b5696794238c3c. Independently downloaded this NEW archive and checked source identity and all 17 members; no previous archives were reverified. Recognition was not run, candidate not promoted, production DSP unchanged. It contains only new candidate/code/metrics/audio and references the established baseline; it does not replace old firmware archives.
-
-Intelligibility and all original 23 release gates remain OPEN. Physical FM-1 quality/CPU remain owner-unverified. No firmware/website/installer publication.
+New source/archive receipts will be appended after independent download verification.

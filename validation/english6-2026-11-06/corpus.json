@@ -1,0 +1,794 @@
+[
+  {
+    "id": "vowels-48",
+    "group": "vowels",
+    "note": 48,
+    "text": "heed hid head had",
+    "segments": [
+      {
+        "word": "heed",
+        "start": 0,
+        "end": 78,
+        "phones": [
+          "HH",
+          "IY",
+          "D"
+        ]
+      },
+      {
+        "word": "hid",
+        "start": 102,
+        "end": 180,
+        "phones": [
+          "HH",
+          "IH",
+          "D"
+        ]
+      },
+      {
+        "word": "head",
+        "start": 204,
+        "end": 282,
+        "phones": [
+          "HH",
+          "EH",
+          "D"
+        ]
+      },
+      {
+        "word": "had",
+        "start": 306,
+        "end": 384,
+        "phones": [
+          "HH",
+          "AE",
+          "D"
+        ]
+      }
+    ],
+    "score": {
+      "bpm": 120,
+      "ticks": 408,
+      "events": [
+        {
+          "tick": 0,
+          "duration": 9,
+          "phone": 16,
+          "note": 48,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 9,
+          "duration": 60,
+          "phone": 18,
+          "note": 48,
+          "velocity": 100,
+          "stress": 1
+        },
+        {
+          "tick": 69,
+          "duration": 9,
+          "phone": 9,
+          "note": 48,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 102,
+          "duration": 9,
+          "phone": 16,
+          "note": 48,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 111,
+          "duration": 60,
+          "phone": 17,
+          "note": 48,
+          "velocity": 100,
+          "stress": 1
+        },
+        {
+          "tick": 171,
+          "duration": 9,
+          "phone": 9,
+          "note": 48,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 204,
+          "duration": 9,
+          "phone": 16,
+          "note": 48,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 213,
+          "duration": 60,
+          "phone": 11,
+          "note": 48,
+          "velocity": 100,
+          "stress": 1
+        },
+        {
+          "tick": 273,
+          "duration": 9,
+          "phone": 9,
+          "note": 48,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 306,
+          "duration": 9,
+          "phone": 16,
+          "note": 48,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 315,
+          "duration": 60,
+          "phone": 2,
+          "note": 48,
+          "velocity": 100,
+          "stress": 1
+        },
+        {
+          "tick": 375,
+          "duration": 9,
+          "phone": 9,
+          "note": 48,
+          "velocity": 100,
+          "stress": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "consonants-48",
+    "group": "consonants",
+    "note": 48,
+    "text": "see she pea bee",
+    "segments": [
+      {
+        "word": "see",
+        "start": 0,
+        "end": 74,
+        "phones": [
+          "S",
+          "IY"
+        ]
+      },
+      {
+        "word": "she",
+        "start": 98,
+        "end": 172,
+        "phones": [
+          "SH",
+          "IY"
+        ]
+      },
+      {
+        "word": "pea",
+        "start": 196,
+        "end": 265,
+        "phones": [
+          "P",
+          "IY"
+        ]
+      },
+      {
+        "word": "bee",
+        "start": 289,
+        "end": 358,
+        "phones": [
+          "B",
+          "IY"
+        ]
+      }
+    ],
+    "score": {
+      "bpm": 120,
+      "ticks": 382,
+      "events": [
+        {
+          "tick": 0,
+          "duration": 14,
+          "phone": 29,
+          "note": 48,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 14,
+          "duration": 60,
+          "phone": 18,
+          "note": 48,
+          "velocity": 100,
+          "stress": 1
+        },
+        {
+          "tick": 98,
+          "duration": 14,
+          "phone": 30,
+          "note": 48,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 112,
+          "duration": 60,
+          "phone": 18,
+          "note": 48,
+          "velocity": 100,
+          "stress": 1
+        },
+        {
+          "tick": 196,
+          "duration": 9,
+          "phone": 27,
+          "note": 48,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 205,
+          "duration": 60,
+          "phone": 18,
+          "note": 48,
+          "velocity": 100,
+          "stress": 1
+        },
+        {
+          "tick": 289,
+          "duration": 9,
+          "phone": 7,
+          "note": 48,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 298,
+          "duration": 60,
+          "phone": 18,
+          "note": 48,
+          "velocity": 100,
+          "stress": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "vowels-60",
+    "group": "vowels",
+    "note": 60,
+    "text": "heed hid head had",
+    "segments": [
+      {
+        "word": "heed",
+        "start": 0,
+        "end": 78,
+        "phones": [
+          "HH",
+          "IY",
+          "D"
+        ]
+      },
+      {
+        "word": "hid",
+        "start": 102,
+        "end": 180,
+        "phones": [
+          "HH",
+          "IH",
+          "D"
+        ]
+      },
+      {
+        "word": "head",
+        "start": 204,
+        "end": 282,
+        "phones": [
+          "HH",
+          "EH",
+          "D"
+        ]
+      },
+      {
+        "word": "had",
+        "start": 306,
+        "end": 384,
+        "phones": [
+          "HH",
+          "AE",
+          "D"
+        ]
+      }
+    ],
+    "score": {
+      "bpm": 120,
+      "ticks": 408,
+      "events": [
+        {
+          "tick": 0,
+          "duration": 9,
+          "phone": 16,
+          "note": 60,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 9,
+          "duration": 60,
+          "phone": 18,
+          "note": 60,
+          "velocity": 100,
+          "stress": 1
+        },
+        {
+          "tick": 69,
+          "duration": 9,
+          "phone": 9,
+          "note": 60,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 102,
+          "duration": 9,
+          "phone": 16,
+          "note": 60,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 111,
+          "duration": 60,
+          "phone": 17,
+          "note": 60,
+          "velocity": 100,
+          "stress": 1
+        },
+        {
+          "tick": 171,
+          "duration": 9,
+          "phone": 9,
+          "note": 60,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 204,
+          "duration": 9,
+          "phone": 16,
+          "note": 60,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 213,
+          "duration": 60,
+          "phone": 11,
+          "note": 60,
+          "velocity": 100,
+          "stress": 1
+        },
+        {
+          "tick": 273,
+          "duration": 9,
+          "phone": 9,
+          "note": 60,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 306,
+          "duration": 9,
+          "phone": 16,
+          "note": 60,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 315,
+          "duration": 60,
+          "phone": 2,
+          "note": 60,
+          "velocity": 100,
+          "stress": 1
+        },
+        {
+          "tick": 375,
+          "duration": 9,
+          "phone": 9,
+          "note": 60,
+          "velocity": 100,
+          "stress": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "consonants-60",
+    "group": "consonants",
+    "note": 60,
+    "text": "see she pea bee",
+    "segments": [
+      {
+        "word": "see",
+        "start": 0,
+        "end": 74,
+        "phones": [
+          "S",
+          "IY"
+        ]
+      },
+      {
+        "word": "she",
+        "start": 98,
+        "end": 172,
+        "phones": [
+          "SH",
+          "IY"
+        ]
+      },
+      {
+        "word": "pea",
+        "start": 196,
+        "end": 265,
+        "phones": [
+          "P",
+          "IY"
+        ]
+      },
+      {
+        "word": "bee",
+        "start": 289,
+        "end": 358,
+        "phones": [
+          "B",
+          "IY"
+        ]
+      }
+    ],
+    "score": {
+      "bpm": 120,
+      "ticks": 382,
+      "events": [
+        {
+          "tick": 0,
+          "duration": 14,
+          "phone": 29,
+          "note": 60,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 14,
+          "duration": 60,
+          "phone": 18,
+          "note": 60,
+          "velocity": 100,
+          "stress": 1
+        },
+        {
+          "tick": 98,
+          "duration": 14,
+          "phone": 30,
+          "note": 60,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 112,
+          "duration": 60,
+          "phone": 18,
+          "note": 60,
+          "velocity": 100,
+          "stress": 1
+        },
+        {
+          "tick": 196,
+          "duration": 9,
+          "phone": 27,
+          "note": 60,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 205,
+          "duration": 60,
+          "phone": 18,
+          "note": 60,
+          "velocity": 100,
+          "stress": 1
+        },
+        {
+          "tick": 289,
+          "duration": 9,
+          "phone": 7,
+          "note": 60,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 298,
+          "duration": 60,
+          "phone": 18,
+          "note": 60,
+          "velocity": 100,
+          "stress": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "vowels-72",
+    "group": "vowels",
+    "note": 72,
+    "text": "heed hid head had",
+    "segments": [
+      {
+        "word": "heed",
+        "start": 0,
+        "end": 78,
+        "phones": [
+          "HH",
+          "IY",
+          "D"
+        ]
+      },
+      {
+        "word": "hid",
+        "start": 102,
+        "end": 180,
+        "phones": [
+          "HH",
+          "IH",
+          "D"
+        ]
+      },
+      {
+        "word": "head",
+        "start": 204,
+        "end": 282,
+        "phones": [
+          "HH",
+          "EH",
+          "D"
+        ]
+      },
+      {
+        "word": "had",
+        "start": 306,
+        "end": 384,
+        "phones": [
+          "HH",
+          "AE",
+          "D"
+        ]
+      }
+    ],
+    "score": {
+      "bpm": 120,
+      "ticks": 408,
+      "events": [
+        {
+          "tick": 0,
+          "duration": 9,
+          "phone": 16,
+          "note": 72,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 9,
+          "duration": 60,
+          "phone": 18,
+          "note": 72,
+          "velocity": 100,
+          "stress": 1
+        },
+        {
+          "tick": 69,
+          "duration": 9,
+          "phone": 9,
+          "note": 72,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 102,
+          "duration": 9,
+          "phone": 16,
+          "note": 72,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 111,
+          "duration": 60,
+          "phone": 17,
+          "note": 72,
+          "velocity": 100,
+          "stress": 1
+        },
+        {
+          "tick": 171,
+          "duration": 9,
+          "phone": 9,
+          "note": 72,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 204,
+          "duration": 9,
+          "phone": 16,
+          "note": 72,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 213,
+          "duration": 60,
+          "phone": 11,
+          "note": 72,
+          "velocity": 100,
+          "stress": 1
+        },
+        {
+          "tick": 273,
+          "duration": 9,
+          "phone": 9,
+          "note": 72,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 306,
+          "duration": 9,
+          "phone": 16,
+          "note": 72,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 315,
+          "duration": 60,
+          "phone": 2,
+          "note": 72,
+          "velocity": 100,
+          "stress": 1
+        },
+        {
+          "tick": 375,
+          "duration": 9,
+          "phone": 9,
+          "note": 72,
+          "velocity": 100,
+          "stress": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "consonants-72",
+    "group": "consonants",
+    "note": 72,
+    "text": "see she pea bee",
+    "segments": [
+      {
+        "word": "see",
+        "start": 0,
+        "end": 74,
+        "phones": [
+          "S",
+          "IY"
+        ]
+      },
+      {
+        "word": "she",
+        "start": 98,
+        "end": 172,
+        "phones": [
+          "SH",
+          "IY"
+        ]
+      },
+      {
+        "word": "pea",
+        "start": 196,
+        "end": 265,
+        "phones": [
+          "P",
+          "IY"
+        ]
+      },
+      {
+        "word": "bee",
+        "start": 289,
+        "end": 358,
+        "phones": [
+          "B",
+          "IY"
+        ]
+      }
+    ],
+    "score": {
+      "bpm": 120,
+      "ticks": 382,
+      "events": [
+        {
+          "tick": 0,
+          "duration": 14,
+          "phone": 29,
+          "note": 72,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 14,
+          "duration": 60,
+          "phone": 18,
+          "note": 72,
+          "velocity": 100,
+          "stress": 1
+        },
+        {
+          "tick": 98,
+          "duration": 14,
+          "phone": 30,
+          "note": 72,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 112,
+          "duration": 60,
+          "phone": 18,
+          "note": 72,
+          "velocity": 100,
+          "stress": 1
+        },
+        {
+          "tick": 196,
+          "duration": 9,
+          "phone": 27,
+          "note": 72,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 205,
+          "duration": 60,
+          "phone": 18,
+          "note": 72,
+          "velocity": 100,
+          "stress": 1
+        },
+        {
+          "tick": 289,
+          "duration": 9,
+          "phone": 7,
+          "note": 72,
+          "velocity": 100,
+          "stress": 0
+        },
+        {
+          "tick": 298,
+          "duration": 60,
+          "phone": 18,
+          "note": 72,
+          "velocity": 100,
+          "stress": 1
+        }
+      ]
+    }
+  }
+]
