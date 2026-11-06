@@ -1,0 +1,9 @@
+{
+  "backup_commit": "72c670aeb4e878d2f92a63a3b3120d5de9cef7c0",
+  "archive_path": "experiments/residual-artifact-stages-2026-11-06/checkpoint.zip",
+  "bytes": 667765,
+  "sha256": "261373e0ecd57ecd174a6b5000f0c32d5560c8a1fbcc4d386a4871806de32d21",
+  "full_independent_download": true,
+  "members_verified": 53,
+  "source_checkpoint": "f1d59264d10e9ebd8fb21b762a364c3587a756b2"
+}

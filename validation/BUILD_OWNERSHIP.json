@@ -10,7 +10,7 @@
   "latest_experiment": "experiments/residual_pilot",
   "experiment_outcome": "Genuine human grade11/24 exact13/24 homophone; artificial-tone complaint, not confirmed clicks. Forty measured stage controls ready; no promoted change.",
   "resumed_from": "3391612856fe302d579db44d94570734965d4d10",
-  "latest_verified_remote": "dfef9f9b537b13670d36bbd4727868d4d95d589b",
+  "latest_verified_remote": "f1d59264d10e9ebd8fb21b762a364c3587a756b2",
   "local_checkpoint_before_record_update": "ae2b953",
-  "remote_checkpoint_status": "Human feedback frozen and backed up; latest diagnostic checkpoint to follow."
+  "remote_checkpoint_status": "Human feedback and40-stage audio archive independently downloaded and53 member hashes verified; backup72c670ae. No active build/publisher."
 }
