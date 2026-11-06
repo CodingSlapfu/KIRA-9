@@ -1,8 +1,10 @@
 {
   "project": "KIRA-9",
   "owner": "work-160cc0e6fa30-resume-2",
-  "state": "active",
+  "state": "checkpointed",
   "baseline": "ac65254f2fd76b4ed8f251f2a141f63f3508c3cf",
   "build_running": false,
-  "publisher_running": false
+  "publisher_running": false,
+  "latest_verified": "f17d09f92d123c3a8cde1859c2b948c2fe855c3a",
+  "resume": "validation/RESUME_PRIORITY.md"
 }

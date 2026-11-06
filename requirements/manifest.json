@@ -70,19 +70,25 @@
       "acceptance": "Intelligible diverse words/phrases and exact phoneme-note alignment in rendered PCM",
       "implementation_files": [
         "core/engine.c",
-        "core/tables.c"
+        "core/tables.c",
+        "core/articulation.h"
       ],
-      "source_commit": "",
+      "source_commit": "f17d09f92d123c3a8cde1859c2b948c2fe855c3a",
       "test_refs": [
         "validation/core-tests.txt",
         "validation/audio-metrics.json",
-        "validation/wasm-parity.txt"
+        "validation/wasm-parity.txt",
+        "tests/test_articulation.c",
+        "tests/vocal_timing.mjs"
       ],
-      "artifact_refs": [],
+      "artifact_refs": [
+        "validation/vocal-issue-2/README.md"
+      ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
         "NEXT_BUILD_ACTIVE.md",
-        "docs/PROJECT_BUILD_NOTES.md"
+        "docs/PROJECT_BUILD_NOTES.md",
+        "https://github.com/CodingSlapfu/KIRA-9/issues/2"
       ],
       "hardware_status": "not_applicable",
       "deferred_to": "",
@@ -96,19 +102,25 @@
       "status": "partial",
       "acceptance": "Distinct audibly validated PCM performances and configurable controls",
       "implementation_files": [
-        "core/engine.c"
+        "core/engine.c",
+        "core/articulation.h"
       ],
-      "source_commit": "",
+      "source_commit": "f17d09f92d123c3a8cde1859c2b948c2fe855c3a",
       "test_refs": [
         "validation/core-tests.txt",
         "validation/audio-metrics.json",
-        "validation/wasm-parity.txt"
+        "validation/wasm-parity.txt",
+        "tests/test_articulation.c",
+        "tests/vocal_timing.mjs"
       ],
-      "artifact_refs": [],
+      "artifact_refs": [
+        "validation/vocal-issue-2/README.md"
+      ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
         "NEXT_BUILD_ACTIVE.md",
-        "docs/PROJECT_BUILD_NOTES.md"
+        "docs/PROJECT_BUILD_NOTES.md",
+        "https://github.com/CodingSlapfu/KIRA-9/issues/2"
       ],
       "hardware_status": "not_applicable",
       "deferred_to": "",
