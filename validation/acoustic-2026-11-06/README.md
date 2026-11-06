@@ -22,3 +22,5 @@ The focused verification path runs affected audio stability/sanitizer/articulati
 Spectral contrast and headroom improvements do not establish intelligible English. Human/recognition acceptance remains open until the new recordings support it. No release publication. Physical FM-1 quality/CPU remain owner-unverified.
 
 Initial cached-model result: baseline phrase 0 returned empty text; the final produced unrelated/repeated words (“Wait for me to play…”). Held-out “see she sue shoe” returned empty text in both variants. These are failures, not recognition improvements. Default decoding/no expected-text prompt was used. Acoustic corrections are retained for their measured spectral and headroom benefits; English intelligibility remains unresolved.
+
+Maximum-velocity follow-up: a 53,673,984-sample scan over seven voices, eight styles, all phones, four pitches, harmony +7 and velocity 127 found 82 limiter hits in the first candidate. Reserve ~0.8dB of output headroom (main .44→.40, harmony .12→.109); tests/acoustic_headroom.c now requires zero limiter hits. This new failure justified the affected follow-up, not a replay of the repaired CI or storage tests.

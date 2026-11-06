@@ -405,8 +405,9 @@ void k9_render(k9_engine *e, float *out, uint32_t frames) {
         harmonic += y * k9_spectral_weights[e->phone][b];
       }
     }
-    sample *= e->level * .44f;
-    harmonic *= e->level * .12f;
+    /* Reserve output headroom for upper-formant recovery at velocity 127. */
+    sample *= e->level * .40f;
+    harmonic *= e->level * .109f;
     out[i * 2] = bounded(sample + harmonic * .65f, -.94f, .94f);
     out[i * 2 + 1] = bounded(sample + harmonic, -.94f, .94f);
     e->sample++;
