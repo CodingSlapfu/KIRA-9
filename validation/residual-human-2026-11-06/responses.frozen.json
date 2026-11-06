@@ -1,0 +1,150 @@
+{
+  "protocol": "kira-residual-free-v1",
+  "listener": "Ziao",
+  "responses": [
+    {
+      "id": "r00",
+      "response": "Beep",
+      "naturalness": 3,
+      "clicks": "no"
+    },
+    {
+      "id": "r01",
+      "response": "unclear",
+      "naturalness": 2,
+      "clicks": "yes"
+    },
+    {
+      "id": "r02",
+      "response": "Bee",
+      "naturalness": 3,
+      "clicks": "unsure"
+    },
+    {
+      "id": "r03",
+      "response": "Head",
+      "naturalness": 3,
+      "clicks": "yes"
+    },
+    {
+      "id": "r04",
+      "response": "Head",
+      "naturalness": 3,
+      "clicks": "yes"
+    },
+    {
+      "id": "r05",
+      "response": "She",
+      "naturalness": 3,
+      "clicks": "yes"
+    },
+    {
+      "id": "r06",
+      "response": "See",
+      "naturalness": 3,
+      "clicks": "yes"
+    },
+    {
+      "id": "r07",
+      "response": "unclear",
+      "naturalness": 3,
+      "clicks": "yes"
+    },
+    {
+      "id": "r08",
+      "response": "Pee",
+      "naturalness": 3,
+      "clicks": "yes"
+    },
+    {
+      "id": "r09",
+      "response": "See",
+      "naturalness": 3,
+      "clicks": "yes"
+    },
+    {
+      "id": "r10",
+      "response": "Bee",
+      "naturalness": 3,
+      "clicks": "yes"
+    },
+    {
+      "id": "r11",
+      "response": "Head",
+      "naturalness": 3,
+      "clicks": "yes"
+    },
+    {
+      "id": "r12",
+      "response": "unclear",
+      "naturalness": 3,
+      "clicks": "yes"
+    },
+    {
+      "id": "r13",
+      "response": "See",
+      "naturalness": 3,
+      "clicks": "yes"
+    },
+    {
+      "id": "r14",
+      "response": "She",
+      "naturalness": 3,
+      "clicks": "yes"
+    },
+    {
+      "id": "r15",
+      "response": "She",
+      "naturalness": 3,
+      "clicks": "yes"
+    },
+    {
+      "id": "r16",
+      "response": "unclear",
+      "naturalness": 3,
+      "clicks": "yes"
+    },
+    {
+      "id": "r17",
+      "response": "Heead",
+      "naturalness": 3,
+      "clicks": "yes"
+    },
+    {
+      "id": "r18",
+      "response": "Head",
+      "naturalness": 3,
+      "clicks": "yes"
+    },
+    {
+      "id": "r19",
+      "response": "Head",
+      "naturalness": 3,
+      "clicks": "yes"
+    },
+    {
+      "id": "r20",
+      "response": "Heed",
+      "naturalness": 3,
+      "clicks": "yes"
+    },
+    {
+      "id": "r21",
+      "response": "pee",
+      "naturalness": 3,
+      "clicks": "yes"
+    },
+    {
+      "id": "r22",
+      "response": "Head",
+      "naturalness": 3,
+      "clicks": "yes"
+    },
+    {
+      "id": "r23",
+      "response": "Head",
+      "naturalness": 3,
+      "clicks": "yes"
+    }
+  ]
+}
