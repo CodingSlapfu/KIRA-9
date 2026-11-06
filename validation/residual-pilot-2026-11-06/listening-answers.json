@@ -1,0 +1,197 @@
+{
+  "protocol": "kira-residual-free-v1",
+  "answers": {
+    "r00": {
+      "word": "bee",
+      "note": 60,
+      "group": "consonants",
+      "engine": "residual",
+      "gain_listening_only": 1.0792316103103117,
+      "sha256": "b3ef93556bc8a2d409dbc82189b1d7a945a13fe4b49b684174412e3b58c8f394"
+    },
+    "r01": {
+      "word": "had",
+      "note": 60,
+      "group": "vowels",
+      "engine": "residual",
+      "gain_listening_only": 1.684565142079696,
+      "sha256": "04086a0e38e9e5d0c614e7b6fc6f7fb0129f704b40ef93c78d78ced9ab3a1f83"
+    },
+    "r02": {
+      "word": "pea",
+      "note": 60,
+      "group": "consonants",
+      "engine": "residual",
+      "gain_listening_only": 1.1066129838817393,
+      "sha256": "2d2fd07fd6e5834e4a45b91e0a71d480834b209c5c5b485197dd46d7677c5c97"
+    },
+    "r03": {
+      "word": "head",
+      "note": 48,
+      "group": "vowels",
+      "engine": "residual",
+      "gain_listening_only": 1.4946036457803271,
+      "sha256": "5acd204995ed300eb75cf2a2e83042282a59716aab3f420fa93018b2645e1356"
+    },
+    "r04": {
+      "word": "head",
+      "note": 60,
+      "group": "vowels",
+      "engine": "residual",
+      "gain_listening_only": 1.1951171216549004,
+      "sha256": "3ba8659290496916f6d1ea45ea93aba2bbe84890286bf76df30687c9ef60b286"
+    },
+    "r05": {
+      "word": "she",
+      "note": 48,
+      "group": "consonants",
+      "engine": "residual",
+      "gain_listening_only": 1.6154394095062194,
+      "sha256": "8d3b974a0bdce4b6dc20cf265fb2a870e090ffbcb4137d7b431c41e183d41c1c"
+    },
+    "r06": {
+      "word": "see",
+      "note": 72,
+      "group": "consonants",
+      "engine": "residual",
+      "gain_listening_only": 2.423872476197232,
+      "sha256": "fbf5cb5ea5c26da4fb29c001491024b707258d531e9705a5fdb30425b8958c7a"
+    },
+    "r07": {
+      "word": "bee",
+      "note": 72,
+      "group": "consonants",
+      "engine": "residual",
+      "gain_listening_only": 2.270390644594493,
+      "sha256": "f959918b3282948287b693d7fe2a3e40434bcc1231536ddd8627c3d3d1afae56"
+    },
+    "r08": {
+      "word": "pea",
+      "note": 72,
+      "group": "consonants",
+      "engine": "residual",
+      "gain_listening_only": 2.286093260125213,
+      "sha256": "872e1ac929e0ee42b7848da3d75739415598094e086cbc2df749fd710210d840"
+    },
+    "r09": {
+      "word": "see",
+      "note": 48,
+      "group": "consonants",
+      "engine": "residual",
+      "gain_listening_only": 1.73347082024868,
+      "sha256": "2811fad867d29e04f7f887feff2c81ac1780e03567e0f91c57c3d031cb54759b"
+    },
+    "r10": {
+      "word": "bee",
+      "note": 48,
+      "group": "consonants",
+      "engine": "residual",
+      "gain_listening_only": 1.6122983408904783,
+      "sha256": "e8a7f8d516af10ef2012b2ee0852c29144c17c50b5c7243b26b886a6ade796d2"
+    },
+    "r11": {
+      "word": "head",
+      "note": 72,
+      "group": "vowels",
+      "engine": "residual",
+      "gain_listening_only": 1.23198149621738,
+      "sha256": "4a4c94fb06f3c4312c16f56399947c6ebdecf0c7845fcc4c98830666801b708d"
+    },
+    "r12": {
+      "word": "hid",
+      "note": 48,
+      "group": "vowels",
+      "engine": "residual",
+      "gain_listening_only": 2.213737083768552,
+      "sha256": "c03d3054fd6b4609a697bd5be7c77ce6b42068aa0c0a658605e2fc062f375e9f"
+    },
+    "r13": {
+      "word": "see",
+      "note": 60,
+      "group": "consonants",
+      "engine": "residual",
+      "gain_listening_only": 1.1649954681406165,
+      "sha256": "5b0816bfc6d598bfa5590bac9973e1d01f00b98d17b387ef4a7c5ec52b09dc03"
+    },
+    "r14": {
+      "word": "she",
+      "note": 72,
+      "group": "consonants",
+      "engine": "residual",
+      "gain_listening_only": 2.118719284158514,
+      "sha256": "4696cc59cd805453c5ee7adfbe451d9960ff30307b57089bb723b86d83227670"
+    },
+    "r15": {
+      "word": "she",
+      "note": 60,
+      "group": "consonants",
+      "engine": "residual",
+      "gain_listening_only": 1.1309306513627804,
+      "sha256": "ec8c9f78edea8162f85d3fcc76e27c3a02ccaa6d05af6f147ed67651f5669627"
+    },
+    "r16": {
+      "word": "heed",
+      "note": 72,
+      "group": "vowels",
+      "engine": "residual",
+      "gain_listening_only": 2.0764465900192604,
+      "sha256": "b9ae26c25602bf0f7844151b2d6357a59f3a16823557fbd31b0362fbb20a8436"
+    },
+    "r17": {
+      "word": "heed",
+      "note": 60,
+      "group": "vowels",
+      "engine": "residual",
+      "gain_listening_only": 1.1672782404337678,
+      "sha256": "b953e38aab220ebe0c2e4864e0117631090a84c3ffb94f9891a2ee26ad96b974"
+    },
+    "r18": {
+      "word": "hid",
+      "note": 72,
+      "group": "vowels",
+      "engine": "residual",
+      "gain_listening_only": 2.4622885929437044,
+      "sha256": "a261f6714ae7b3298e96bf249d30466739bef793e24626ff4677784531ccd7f0"
+    },
+    "r19": {
+      "word": "had",
+      "note": 48,
+      "group": "vowels",
+      "engine": "residual",
+      "gain_listening_only": 1.9871752463745989,
+      "sha256": "23dfd8b972b19760c57f6dc210135b4910d1237384694d88652442d2ad86f569"
+    },
+    "r20": {
+      "word": "heed",
+      "note": 48,
+      "group": "vowels",
+      "engine": "residual",
+      "gain_listening_only": 1.6308782616080326,
+      "sha256": "de3dd29d5ca1418c78cc4e2c11414352c3d4c6e2cb0e2415f158b3ce097ac9e0"
+    },
+    "r21": {
+      "word": "pea",
+      "note": 48,
+      "group": "consonants",
+      "engine": "residual",
+      "gain_listening_only": 1.642317060519358,
+      "sha256": "948e61ba303911459767b9f85c3ff544cc8707aac81f3d2d0df72b74aeb7e502"
+    },
+    "r22": {
+      "word": "had",
+      "note": 72,
+      "group": "vowels",
+      "engine": "residual",
+      "gain_listening_only": 2.3163217828444913,
+      "sha256": "508f230a4217bc72db1f5f4255e96c0fae250ce01bc6e131a0a1277b68e0d14e"
+    },
+    "r23": {
+      "word": "hid",
+      "note": 60,
+      "group": "vowels",
+      "engine": "residual",
+      "gain_listening_only": 2.1206151791896772,
+      "sha256": "cadb9bdbdd55945b9bba6b871a3cf7f47607172760419433462adf0638d2ce14"
+    }
+  }
+}

@@ -14,3 +14,5 @@ Production DSP remains at verified 1641726b / checkpoint 3a407ec. The isolated E
 Immediate P0: Completed genuine48-trial grading: original8/24,English6 7/24; one listener only. New isolated consonant-cue prototype improves acoustic cue separation but inherits failing MIDI84 headroom; NOT PROMOTED. Next eligible research is the license+capacity-gated small English transition/residual pilot in experiments/consonant_cues/ARCHITECTURE_NEXT.md. See validation/RESUME_PRIORITY.md for exact evidence and blocked remote-checkpoint backup. Do not repeat the trials/failed experiments or unrelated successful work.
 
 Owner PAUSED: isolated recorded residual pilot has limited host safety/pitch/budget evidence; frozen data and exact resume in validation/RESUME_PRIORITY.md. Native/recognition/human quality and new raw-source artifact backup remain outstanding. No promotion.
+
+Current immediate gate: NEW24 recorded-residual free-text/naturalness trials awaiting genuine human export; native/ASR and full new backup now recorded. Read latest RESUME_PRIORITY section; do not replay completed gates.

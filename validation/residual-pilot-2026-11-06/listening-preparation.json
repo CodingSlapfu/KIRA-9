@@ -1,0 +1,8 @@
+{
+  "protocol": "kira-residual-free-v1",
+  "trials": 24,
+  "human_results": "NOT PERFORMED",
+  "html_sha256": "a356bbdbe229719fa6f8f42086a0376dc51547f9462e6f6d950dbd4184029940",
+  "answer_key_sha256": "efc8fd79700bb8f37c531a95ec2c43a412211b4c2cbe4b9c0b84b81cf6ac9c56",
+  "validation": "24 unique IDs; source WAV SHA256 verified before segmentation; JavaScript syntax checked; offline audio embedded; candidate only, no repeated old trials"
+}

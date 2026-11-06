@@ -1,0 +1,67 @@
+{
+  "model": "Existing cached tiny.en, offline int8, beam5; no vocabulary/text prompt or installs",
+  "comparison": "Original frozen baseline ASR scores reused; candidate only newly transcribed. Candidate natural-time units differ in duration from baseline, so diagnostic comparison is not a controlled equal-duration speech study.",
+  "human_acceptance": false,
+  "results": [
+    {
+      "file": "vowels-48-residual.wav",
+      "note": 48,
+      "group": "vowels",
+      "expected": "heed hid head had",
+      "text": " He had had...",
+      "wer": 0.75,
+      "preserved_baseline_text": " See you soon!",
+      "preserved_baseline_wer": 1.0
+    },
+    {
+      "file": "consonants-48-residual.wav",
+      "note": 48,
+      "group": "consonants",
+      "expected": "see she pea bee",
+      "text": " C-C-P-V",
+      "wer": 1.0,
+      "preserved_baseline_text": "",
+      "preserved_baseline_wer": 1.0
+    },
+    {
+      "file": "vowels-60-residual.wav",
+      "note": 60,
+      "group": "vowels",
+      "expected": "heed hid head had",
+      "text": " He'd head, head, head.",
+      "wer": 0.75,
+      "preserved_baseline_text": " See you soon!",
+      "preserved_baseline_wer": 1.0
+    },
+    {
+      "file": "consonants-60-residual.wav",
+      "note": 60,
+      "group": "consonants",
+      "expected": "see she pea bee",
+      "text": " C-C-P-V",
+      "wer": 1.0,
+      "preserved_baseline_text": "",
+      "preserved_baseline_wer": 1.0
+    },
+    {
+      "file": "vowels-72-residual.wav",
+      "note": 72,
+      "group": "vowels",
+      "expected": "heed hid head had",
+      "text": " He did, he did, he did, he did, he did, he did.",
+      "wer": 3.0,
+      "preserved_baseline_text": " Thanks for watching!",
+      "preserved_baseline_wer": 1.0
+    },
+    {
+      "file": "consonants-72-residual.wav",
+      "note": 72,
+      "group": "consonants",
+      "expected": "see she pea bee",
+      "text": " C-C-P-V",
+      "wer": 1.0,
+      "preserved_baseline_text": "",
+      "preserved_baseline_wer": 1.0
+    }
+  ]
+}
