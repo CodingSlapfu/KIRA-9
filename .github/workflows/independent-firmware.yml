@@ -1,0 +1,40 @@
+name: KIRA-9 independent firmware gaps
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/independent-firmware.yml', 'tests/independent_wasm.mjs']
+permissions:
+  contents: read
+concurrency:
+  group: kira-9-independent-firmware-gaps
+  cancel-in-progress: false
+jobs:
+  targeted-web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: mymindstorm/setup-emsdk@v14
+        with:
+          version: '4.0.19'
+      - name: Compile matching production engine for web; test only new gaps
+        run: |
+          set -eu
+          mkdir -p build
+          ./tools/build_web.sh
+          node tests/independent_wasm.mjs | tee build/independent-wasm.txt
+          node tests/library_quota.mjs
+          cc -O2 -std=c99 -Icore tests/transfer_device.c core/transfer.c core/library.c core/codec.c -o build/transfer-device
+          node tests/transfer_ack_metadata.mjs
+          sha256sum studio/kira.wasm > build/independent-wasm.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: KIRA-9-independent-web-${{ github.sha }}
+          path: |
+            studio/kira.wasm
+            build/independent-wasm.txt
+            build/independent-wasm.sha256
+          if-no-files-found: error
