@@ -435,7 +435,16 @@ void app_render(int32_t *lr, uint32_t n, uint32_t master) {
         continue;
       }
     }
-    k9_midi(&engine, source, st, d1, d2);
+    if (st == 0xf8u) {
+      uint32_t age = plat_ticks24() - plat_midi_in_t24();
+      /* Platform timestamps undo BLE packet bunching. Bound invalid/future
+       * timestamps and use only single-precision arithmetic in the callback. */
+      uint32_t delay = age < 12000000u
+                           ? (uint32_t)((float)age * (44100.0f / 24000000.0f))
+                           : 0u;
+      k9_clock_at(&engine, source, engine.sample - delay);
+    } else
+      k9_midi(&engine, source, st, d1, d2);
   }
   prefs_apply();
   if (n > 256)
@@ -1190,4 +1199,33 @@ void app_tick(void) {
 }
 
 /* Enable native USB session tracking; protocol commands use app_usb_cmd. */
-int app_sysex(const uint8_t *p, uint32_t n) { (void)p; (void)n; return 0; }
+int app_sysex(const uint8_t *p, uint32_t n) {
+#ifdef PLAT_HOST
+  /* Native main_fm1 already dispatches update-framed commands. The host
+   * simulator offers only raw packed bytes here: mirror that dispatcher so
+   * actual app save/load handlers can be exercised without a fake device. */
+  uint8_t raw[640];
+  uint32_t acc = 0, bits = 0, got = 0, len, sum = 0;
+  if (n > sizeof raw || n < 8u) return 0;
+  for (uint32_t i = 0; i < n; i++) {
+    if (p[i] > 127u) return 0;
+    acc |= (uint32_t)p[i] << bits;
+    bits += 7u;
+    if (bits >= 8u) {
+      raw[got++] = (uint8_t)acc;
+      acc >>= 8u;
+      bits -= 8u;
+    }
+  }
+  if (got < 7u || raw[0] || raw[1] != 89u) return 0;
+  len = raw[3] | (uint32_t)raw[4] << 8 | (uint32_t)raw[5] << 16;
+  if (len + 7u != got || raw[2] < 0x61u || raw[2] > 0x66u) return 0;
+  for (uint32_t i = 6; i < got - 1u; i++) sum += raw[i];
+  if ((uint8_t)~sum != raw[got - 1u]) return 0;
+  app_usb_cmd(raw, got);
+  return 1;
+#else
+  (void)p; (void)n;
+  return 0;
+#endif
+}

@@ -1,0 +1,137 @@
+wait 200
+shot idle-current.png
+tap PLAY
+wait 50
+shot live-00.png
+wait 50
+shot live-01.png
+wait 50
+shot live-02.png
+wait 50
+shot live-03.png
+wait 50
+shot live-04.png
+wait 50
+shot live-05.png
+wait 50
+shot live-06.png
+wait 50
+shot live-07.png
+wait 50
+shot live-08.png
+wait 50
+shot live-09.png
+wait 50
+shot live-10.png
+wait 50
+shot live-11.png
+wait 50
+shot live-12.png
+wait 50
+shot live-13.png
+wait 50
+shot live-14.png
+wait 50
+shot live-15.png
+wait 50
+shot live-16.png
+wait 50
+shot live-17.png
+wait 50
+shot live-18.png
+wait 50
+shot live-19.png
+wait 50
+shot live-20.png
+wait 50
+shot live-21.png
+wait 50
+shot live-22.png
+wait 50
+shot live-23.png
+wait 50
+shot live-24.png
+wait 50
+shot live-25.png
+wait 50
+shot live-26.png
+wait 50
+shot live-27.png
+wait 50
+shot live-28.png
+wait 50
+shot live-29.png
+wait 50
+shot live-30.png
+wait 50
+shot live-31.png
+wait 50
+shot live-32.png
+wait 50
+shot live-33.png
+wait 50
+shot live-34.png
+wait 50
+shot live-35.png
+wait 50
+shot live-36.png
+wait 50
+shot live-37.png
+wait 50
+shot live-38.png
+wait 50
+shot live-39.png
+wait 50
+shot live-40.png
+wait 50
+shot live-41.png
+wait 50
+shot live-42.png
+wait 50
+shot live-43.png
+wait 50
+shot live-44.png
+wait 50
+shot live-45.png
+wait 50
+shot live-46.png
+wait 50
+shot live-47.png
+tap PLAY
+wait 200
+shot stopped-current.png
+turn SELECT 2
+wait 70
+shot emotion-0.png
+turn K2 1
+wait 70
+shot emotion-1.png
+turn K2 1
+wait 70
+shot emotion-2.png
+turn K2 1
+wait 70
+shot emotion-3.png
+turn K2 1
+turn SELECT -2
+turn SELECT 1
+wait 60
+shot page-1.png
+turn SELECT 1
+wait 60
+shot page-2.png
+turn SELECT 1
+wait 60
+shot page-3.png
+turn SELECT 1
+wait 60
+shot page-4.png
+turn SELECT 1
+wait 60
+shot page-5.png
+turn SELECT 1
+wait 60
+shot page-6.png
+turn SELECT 1
+wait 60
+shot page-7.png

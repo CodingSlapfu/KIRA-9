@@ -130,6 +130,23 @@ void k9_note(k9_engine *e, uint8_t p, uint8_t note, uint8_t velocity) {
   e->phone_sample = e->sample;
   e->phone_frames = K9_RATE / 5u;
 }
+void k9_clock_at(k9_engine *e, uint8_t src, uint32_t sample) {
+  if (!e->external || src != e->source)
+    return;
+  if (e->sense_armed && src == e->sense_source)
+    e->last_message = e->sample;
+  /* Unsigned epoch subtraction tolerates the audio sample counter wrapping.
+   * Old reordered timestamps never move the authoritative transport backwards. */
+  uint32_t delta = sample - e->last_clock;
+  if (e->clocks && (int32_t)delta < 0)
+    return;
+  if (e->clocks && delta > 44u && delta < 22050u)
+    e->clock_interval += ((float)delta - e->clock_interval) * .125f;
+  e->clock_tick += 4u;
+  e->tick = e->clock_tick;
+  e->clocks++;
+  e->last_clock = sample;
+}
 void k9_midi(k9_engine *e, uint8_t src, uint8_t status, uint8_t d1,
              uint8_t d2) {
   uint8_t kind = status & 0xf0u;
@@ -148,15 +165,7 @@ void k9_midi(k9_engine *e, uint8_t src, uint8_t status, uint8_t d1,
   if (e->sense_armed && src == e->sense_source)
     e->last_message = e->sample;
   if (status == 0xf8) {
-    if (e->external) {
-      uint32_t delta = e->sample - e->last_clock;
-      if (e->clocks && delta > 44u && delta < 22050u)
-        e->clock_interval += ((float)delta - e->clock_interval) * .125f;
-      e->clock_tick += 4u;
-      e->tick = e->clock_tick;
-      e->clocks++;
-      e->last_clock = e->sample;
-    }
+    k9_clock_at(e, src, e->sample);
     return;
   }
   if (status == 0xfa) {

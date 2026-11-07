@@ -105,6 +105,8 @@ void k9_note(k9_engine *e, uint8_t phone, uint8_t note, uint8_t velocity);
 void k9_render(k9_engine *e, float *stereo, uint32_t n);
 void k9_midi(k9_engine *e, uint8_t source, uint8_t status, uint8_t d1,
              uint8_t d2);
+/* Clock timestamp is in engine sample units; delivery delay must not change tempo. */
+void k9_clock_at(k9_engine *e, uint8_t source, uint32_t sample);
 /* UI animation snapshot. Does not mutate audio state. */
 typedef struct {
   uint8_t mouth, blink;

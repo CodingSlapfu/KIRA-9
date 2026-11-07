@@ -1,0 +1,25 @@
+wait 150
+turn SELECT 3
+turn K1 3
+expect sync 3
+midi BLE FA
+wait 50
+expect playing 1
+wait 2200
+expect playing 0
+midi BLE-DEV FA
+wait 50
+expect playing 1
+midi BLE FC
+expect playing 1
+midi BLE-DEV FC
+expect playing 0
+midi BLE FA
+midi BLE FE
+wait 400
+expect playing 0
+midi BLE-DEV FA
+wait 400
+expect playing 1
+midi BLE-DEV FC
+expect playing 0

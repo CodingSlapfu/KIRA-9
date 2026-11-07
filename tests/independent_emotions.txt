@@ -1,0 +1,20 @@
+wait 200
+turn SELECT 2
+tap HOME
+wait 80
+shot emotion-0.png
+turn SELECT 2
+turn K2 1
+tap HOME
+wait 80
+shot emotion-1.png
+turn SELECT 2
+turn K2 1
+tap HOME
+wait 80
+shot emotion-2.png
+turn SELECT 2
+turn K2 1
+tap HOME
+wait 80
+shot emotion-3.png
