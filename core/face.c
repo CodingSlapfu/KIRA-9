@@ -235,7 +235,7 @@ void k9_face_render(uint16_t *pixels, unsigned y0, unsigned height,
     if (f->mouth == 4)
       h = 0;
     if (f->mouth == 5)
-      h = 3;
+      h = f->open ? 3 : 0;
     if (h < 1) {
       line(&c, 120 - w, mouth_y - smile, 120, mouth_y + 1, RGB(128, 61, 82));
       line(&c, 120, mouth_y + 1, 120 + w, mouth_y - smile, RGB(128, 61, 82));

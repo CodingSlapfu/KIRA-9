@@ -70,6 +70,7 @@ void k9_stop(k9_engine *e) {
   e->live_source = 255;
   e->live_velocity = 0;
   e->external_melody = 0;
+  e->sense_armed = 0;
 }
 static void seek(k9_engine *e, uint32_t tick) {
   e->tick = tick;
@@ -289,10 +290,14 @@ void k9_render(k9_engine *e, float *out, uint32_t frames) {
     if (e->external && e->playing && e->sample - e->last_clock > K9_RATE * 2u) {
       e->late_clocks++;
       k9_stop(e);
+      if (e->external == 2)
+        e->source = 255;
     }
     if (e->sense_armed && e->sample - e->last_message > K9_RATE / 3u) {
       k9_stop(e);
       e->sense_armed = 0;
+      if (e->external == 2)
+        e->source = 255;
     }
     phone = &bank[e->phone];
     age = (float)(e->sample - e->phone_sample);
@@ -431,8 +436,10 @@ k9_face k9_face_at(const k9_engine *e, uint32_t ms, uint8_t emotion,
                       : phase < 110u ? (110u - phase) * 255u / 55u
                                      : 0u);
   f.gaze = (int8_t)((ms / 2700u) % 5u) - 2;
-  if (e->phone == K9_SIL)
+  if (e->phone == K9_SIL || e->level <= .0001f) {
     f.open = 0;
+    f.mouth = 0;
+  }
   if (plosive(e->phone) && e->phone_frames &&
       !k9_articulate(e->phone,e->sample-e->phone_sample,e->phone_frames).closure) {
     f.mouth = 1;
