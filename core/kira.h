@@ -70,6 +70,11 @@ extern const k9_phone k9_phones[K9_NPHONE];
 extern const k9_phone k9_voice_phones[7][K9_NPHONE];
 extern const char *const k9_phone_names[K9_NPHONE];
 extern const float k9_pitch[128];
+typedef struct {
+  uint8_t voice, style, emotion, morph, breath, vibrato, glide;
+  int8_t harmony;
+  uint8_t expression, reserved[7];
+} k9_preset;
 /* One owner (audio thread) mutates engine. UI uses bounded command handoff. */
 typedef struct {
   const k9_song *song;
@@ -82,9 +87,12 @@ typedef struct {
   int8_t harmony;
   uint8_t vocal_mode, vocal_family, vocal_step, live_vowel;
   uint32_t live_transition;
+  uint8_t sustain, sustain_source, deferred_off;
+  uint32_t vibrato_start;
   uint8_t emotion, external_melody, live_note, live_velocity, live_source,
       sense_armed, sense_source;
   const k9_song *playlist[8];
+  const k9_preset *playlist_profiles[8];
   uint8_t playlist_count, playlist_index;
   uint16_t tempo_override;
   uint8_t loop;
@@ -104,6 +112,7 @@ void k9_init(k9_engine *e);
 void k9_start(k9_engine *e, const k9_song *s);
 void k9_stop(k9_engine *e);
 int k9_playlist(k9_engine *, const k9_song *const *, unsigned);
+void k9_apply_preset(k9_engine *, const k9_preset *);
 void k9_perform(k9_engine *, uint8_t note, uint8_t velocity);
 void k9_note(k9_engine *e, uint8_t phone, uint8_t note, uint8_t velocity);
 void k9_render(k9_engine *e, float *stereo, uint32_t n);
@@ -114,7 +123,8 @@ void k9_clock_at(k9_engine *e, uint8_t source, uint32_t sample);
 /* UI animation snapshot. Does not mutate audio state. */
 typedef struct {
   uint8_t mouth, blink;
-  int8_t gaze, jaw, cheek, neck;
+  int8_t gaze, jaw, cheek, neck, brow;
+  uint8_t lid;
   uint16_t open;
 } k9_face;
 k9_face k9_face_at(const k9_engine *e, uint32_t ms, uint8_t emotion,

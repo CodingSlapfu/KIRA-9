@@ -1,5 +1,5 @@
-# 0.2.0-dev — testing candidate in progress
+# 0.2.0-dev — testing package verified
 Owner resumed development 2026-11-09. Baseline 8d83be2 independently matched GitHub main.
 Issue #3 partial: editor compiles all five categories through existing phoneme scores, mixed sections, patterned swing/accent/rests, editable metadata. Live keyboard/MIDI mode selector on VOICE ALGO; K3 chooses vowel/family in wordless modes. Production DSP retained. No sample/experiment promotion.
 Core, sanitizer, articulation, existing feature and studio timing regressions pass after engine changes. New tests cover mixed score roundtrip/bounds, live MIDI consonant sustain, closed humming face and STOP.
-Native/WASM/integrated map/package gates pending. Naturalness, English intelligibility, BLE pairing/jitter and physical performance remain owner-unverified. All 23 requirements remain mandatory. No official release or public installer authorized.
+Native/WASM/integrated map/package software checks passed; receipts retained in this directory. Recovered unchanged testing ZIP independently checked against all 58 SHA256SUMS entries. Naturalness, English intelligibility, BLE pairing/jitter and physical performance remain owner-unverified. All 23 requirements remain mandatory. No official release or public installer authorized.

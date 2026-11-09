@@ -1,0 +1,7 @@
+PASS five live/MIDI categories, consonant-to-sustain, closed hum face, note-off/STOP (tests/test_wordless.c)
+PASS mixed lyric/wordless sections, swing, bounds, editable roundtrip (tests/wordless.mjs)
+PASS native/WASM 1,024,000 PCM samples, max error 0; 2,000 exact facial poses; all five categories (tests/wordless_parity.mjs)
+PASS timestamped burst clocks, delayed/stale/wrong-source handling, wrap and 10,000 jittered timestamps (tests/test_clock_timestamps.c); host protocol evidence only
+PASS auto clock/active-sensing recovery, source isolation and silent lip closure (tests/test_independent_firmware.c)
+PASS actual FWSC JS corruption/truncation/loader validation and Python native-map/package fixtures
+Native, host and browser-emulator builds passed. Physical CPU, radio, audio and flashing remain owner-unverified.

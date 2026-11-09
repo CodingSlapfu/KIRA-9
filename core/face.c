@@ -177,11 +177,8 @@ void k9_face_render(uint16_t *pixels, unsigned y0, unsigned height,
    */
   for (side = -1; side <= 1; side += 2) {
     int x = 120 + side * 38, gaze = f->gaze,
-        eyeh = 11 - (int)f->blink * 10 / 255,
-        brow = f->cheek == 1   ? -3
-               : f->cheek == 2 ? 3
-               : f->cheek == 3 ? 1
-                               : 0;
+        eyeh = 11 - (int)f->blink * 10 / 255 - f->lid,
+        brow = f->brow;
     uint16_t iris = side < 0 ? cyan : copper;
     if (eyeh < 1)
       eyeh = 1;
@@ -210,7 +207,7 @@ void k9_face_render(uint16_t *pixels, unsigned y0, unsigned height,
          80 + brow + side * f->cheek, hair);
     line(&c, x - 18, 83 + brow - side * f->cheek, x + 16,
          81 + brow + side * f->cheek, hair);
-    piston(&c, x + side * 29, 86, x + side * 25, 98 + (int)f->blink / 32, iris);
+    piston(&c, x + side * 29, 86, x + side * 25, 98 + (int)(f->blink / 32 + f->lid), iris);
     piston(&c, 120 + side * 57, 125 + f->cheek, 120 + side * 40, 168 + f->jaw,
            iris);
     joint(&c, 120 + side * 50, 143 + f->cheek, 5, iris);

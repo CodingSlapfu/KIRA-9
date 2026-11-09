@@ -75,7 +75,7 @@
         "core/articulation.h",
         "core/clarity.h"
       ],
-      "source_commit": "1641726b2ea3aabfde8afbf3c04f76dbdf074fc9",
+      "source_commit": "0f36eb06e4560a6425cadf55dd352296b249a2a8",
       "test_refs": [
         "validation/core-tests.txt",
         "validation/audio-metrics.json",
@@ -85,11 +85,23 @@
         "tests/acoustic_probe.c",
         "tests/acoustic_headroom.c",
         "tests/test_wordless.c",
-        "tests/wordless.mjs"
+        "tests/wordless.mjs",
+        "tests/section_performance.mjs",
+        "tests/performance_timeline.mjs",
+        "tests/test_section_profiles.c",
+        "tests/wordless_controls.txt",
+        "tests/studio_controls.mjs",
+        "tests/worklet_profiles.mjs",
+        "tools/verify_settings021.py",
+        "tests/test_performance022.c",
+        "validation/development-022/targeted.txt",
+        "validation/development-022/parity.txt"
       ],
       "artifact_refs": [
         "validation/vocal-issue-2/README.md",
-        "validation/acoustic-2026-11-06/README.md"
+        "validation/acoustic-2026-11-06/README.md",
+        "validation/development-021/STATUS.md",
+        "validation/development-022/STATUS.md"
       ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -114,7 +126,7 @@
         "core/articulation.h",
         "core/clarity.h"
       ],
-      "source_commit": "1641726b2ea3aabfde8afbf3c04f76dbdf074fc9",
+      "source_commit": "0f36eb06e4560a6425cadf55dd352296b249a2a8",
       "test_refs": [
         "validation/core-tests.txt",
         "validation/audio-metrics.json",
@@ -124,11 +136,23 @@
         "tests/acoustic_probe.c",
         "tests/acoustic_headroom.c",
         "tests/test_wordless.c",
-        "tests/wordless.mjs"
+        "tests/wordless.mjs",
+        "tests/section_performance.mjs",
+        "tests/performance_timeline.mjs",
+        "tests/test_section_profiles.c",
+        "tests/wordless_controls.txt",
+        "tests/studio_controls.mjs",
+        "tests/worklet_profiles.mjs",
+        "tools/verify_settings021.py",
+        "tests/test_performance022.c",
+        "validation/development-022/targeted.txt",
+        "validation/development-022/parity.txt"
       ],
       "artifact_refs": [
         "validation/vocal-issue-2/README.md",
-        "validation/acoustic-2026-11-06/README.md"
+        "validation/acoustic-2026-11-06/README.md",
+        "validation/development-021/STATUS.md",
+        "validation/development-022/STATUS.md"
       ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -151,12 +175,17 @@
       "implementation_files": [
         "app/app.c"
       ],
-      "source_commit": "",
+      "source_commit": "0f36eb06e4560a6425cadf55dd352296b249a2a8",
       "test_refs": [
         "validation/animation.gif",
-        "validation/animation-tests.txt"
+        "validation/animation-tests.txt",
+        "tests/test_performance022.c",
+        "validation/development-022/targeted.txt",
+        "validation/development-022/parity.txt"
       ],
-      "artifact_refs": [],
+      "artifact_refs": [
+        "validation/development-022/STATUS.md"
+      ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
         "NEXT_BUILD_ACTIVE.md",
@@ -176,12 +205,17 @@
       "implementation_files": [
         "core/engine.c"
       ],
-      "source_commit": "",
+      "source_commit": "0f36eb06e4560a6425cadf55dd352296b249a2a8",
       "test_refs": [
         "validation/animation.gif",
-        "validation/animation-tests.txt"
+        "validation/animation-tests.txt",
+        "tests/test_performance022.c",
+        "validation/development-022/targeted.txt",
+        "validation/development-022/parity.txt"
       ],
-      "artifact_refs": [],
+      "artifact_refs": [
+        "validation/development-022/STATUS.md"
+      ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
         "NEXT_BUILD_ACTIVE.md",
@@ -225,13 +259,26 @@
       "implementation_files": [
         "app/app.c"
       ],
-      "source_commit": "",
+      "source_commit": "0f36eb06e4560a6425cadf55dd352296b249a2a8",
       "test_refs": [
         "validation/core-tests.txt",
         "tests/test_wordless.c",
-        "tests/wordless.mjs"
+        "tests/wordless.mjs",
+        "tests/section_performance.mjs",
+        "tests/performance_timeline.mjs",
+        "tests/test_section_profiles.c",
+        "tests/wordless_controls.txt",
+        "tests/studio_controls.mjs",
+        "tests/worklet_profiles.mjs",
+        "tools/verify_settings021.py",
+        "tests/test_performance022.c",
+        "validation/development-022/targeted.txt",
+        "validation/development-022/parity.txt"
       ],
-      "artifact_refs": [],
+      "artifact_refs": [
+        "validation/development-021/STATUS.md",
+        "validation/development-022/STATUS.md"
+      ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
         "NEXT_BUILD_ACTIVE.md",
@@ -277,13 +324,22 @@
         "app/app.c",
         "core/codec.c"
       ],
-      "source_commit": "",
+      "source_commit": "c86cf524ad62639b88ce64f0d35b19ae76849235",
       "test_refs": [
         "validation/app-storage-tests.txt",
         "tests/test_wordless.c",
-        "tests/wordless.mjs"
+        "tests/wordless.mjs",
+        "tests/section_performance.mjs",
+        "tests/performance_timeline.mjs",
+        "tests/test_section_profiles.c",
+        "tests/wordless_controls.txt",
+        "tests/studio_controls.mjs",
+        "tests/worklet_profiles.mjs",
+        "tools/verify_settings021.py"
       ],
-      "artifact_refs": [],
+      "artifact_refs": [
+        "validation/development-021/STATUS.md"
+      ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
         "NEXT_BUILD_ACTIVE.md",
@@ -363,14 +419,27 @@
         "studio/model.mjs",
         "studio/bridge.c"
       ],
-      "source_commit": "",
+      "source_commit": "0f36eb06e4560a6425cadf55dd352296b249a2a8",
       "test_refs": [
         "validation/web-model-tests.txt",
         "validation/BROWSER_QA.md",
         "tests/test_wordless.c",
-        "tests/wordless.mjs"
+        "tests/wordless.mjs",
+        "tests/section_performance.mjs",
+        "tests/performance_timeline.mjs",
+        "tests/test_section_profiles.c",
+        "tests/wordless_controls.txt",
+        "tests/studio_controls.mjs",
+        "tests/worklet_profiles.mjs",
+        "tools/verify_settings021.py",
+        "tests/test_performance022.c",
+        "validation/development-022/targeted.txt",
+        "validation/development-022/parity.txt"
       ],
-      "artifact_refs": [],
+      "artifact_refs": [
+        "validation/development-021/STATUS.md",
+        "validation/development-022/STATUS.md"
+      ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
         "NEXT_BUILD_ACTIVE.md",
@@ -392,13 +461,18 @@
         "platform/bt",
         "app/fm1.toml"
       ],
-      "source_commit": "",
+      "source_commit": "0f36eb06e4560a6425cadf55dd352296b249a2a8",
       "test_refs": [
         "validation/panel-tests.txt",
         "validation/ble-central-tests.txt",
-        "validation/ble-time-tests.txt"
+        "validation/ble-time-tests.txt",
+        "tests/test_performance022.c",
+        "validation/development-022/targeted.txt",
+        "validation/development-022/parity.txt"
       ],
-      "artifact_refs": [],
+      "artifact_refs": [
+        "validation/development-022/STATUS.md"
+      ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
         "NEXT_BUILD_ACTIVE.md",
@@ -445,13 +519,18 @@
       "implementation_files": [
         "core/engine.c"
       ],
-      "source_commit": "",
+      "source_commit": "0f36eb06e4560a6425cadf55dd352296b249a2a8",
       "test_refs": [
         "validation/panel-tests.txt",
         "validation/ble-central-tests.txt",
-        "validation/ble-time-tests.txt"
+        "validation/ble-time-tests.txt",
+        "tests/test_performance022.c",
+        "validation/development-022/targeted.txt",
+        "validation/development-022/parity.txt"
       ],
-      "artifact_refs": [],
+      "artifact_refs": [
+        "validation/development-022/STATUS.md"
+      ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
         "NEXT_BUILD_ACTIVE.md",
@@ -471,13 +550,18 @@
       "implementation_files": [
         "core/engine.c"
       ],
-      "source_commit": "",
+      "source_commit": "0f36eb06e4560a6425cadf55dd352296b249a2a8",
       "test_refs": [
         "validation/panel-tests.txt",
         "validation/ble-central-tests.txt",
-        "validation/ble-time-tests.txt"
+        "validation/ble-time-tests.txt",
+        "tests/test_performance022.c",
+        "validation/development-022/targeted.txt",
+        "validation/development-022/parity.txt"
       ],
-      "artifact_refs": [],
+      "artifact_refs": [
+        "validation/development-022/STATUS.md"
+      ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
         "NEXT_BUILD_ACTIVE.md",
@@ -525,13 +609,26 @@
       "implementation_files": [
         "app/app.c"
       ],
-      "source_commit": "",
+      "source_commit": "0f36eb06e4560a6425cadf55dd352296b249a2a8",
       "test_refs": [
         "validation/core-tests.txt",
         "tests/test_wordless.c",
-        "tests/wordless.mjs"
+        "tests/wordless.mjs",
+        "tests/section_performance.mjs",
+        "tests/performance_timeline.mjs",
+        "tests/test_section_profiles.c",
+        "tests/wordless_controls.txt",
+        "tests/studio_controls.mjs",
+        "tests/worklet_profiles.mjs",
+        "tools/verify_settings021.py",
+        "tests/test_performance022.c",
+        "validation/development-022/targeted.txt",
+        "validation/development-022/parity.txt"
       ],
-      "artifact_refs": [],
+      "artifact_refs": [
+        "validation/development-021/STATUS.md",
+        "validation/development-022/STATUS.md"
+      ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
         "NEXT_BUILD_ACTIVE.md",
@@ -552,11 +649,16 @@
       "implementation_files": [
         "app/app.c"
       ],
-      "source_commit": "",
+      "source_commit": "0f36eb06e4560a6425cadf55dd352296b249a2a8",
       "test_refs": [
-        "validation/core-tests.txt"
+        "validation/core-tests.txt",
+        "tests/test_performance022.c",
+        "validation/development-022/targeted.txt",
+        "validation/development-022/parity.txt"
       ],
-      "artifact_refs": [],
+      "artifact_refs": [
+        "validation/development-022/STATUS.md"
+      ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
         "NEXT_BUILD_ACTIVE.md",
@@ -576,11 +678,16 @@
       "implementation_files": [
         "core/codec.c"
       ],
-      "source_commit": "",
+      "source_commit": "0f36eb06e4560a6425cadf55dd352296b249a2a8",
       "test_refs": [
-        "validation/core-tests.txt"
+        "validation/core-tests.txt",
+        "tests/test_performance022.c",
+        "validation/development-022/targeted.txt",
+        "validation/development-022/parity.txt"
       ],
-      "artifact_refs": [],
+      "artifact_refs": [
+        "validation/development-022/STATUS.md"
+      ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
         "NEXT_BUILD_ACTIVE.md",
@@ -601,13 +708,26 @@
         "app/app.c",
         "studio/transfer.mjs"
       ],
-      "source_commit": "",
+      "source_commit": "0f36eb06e4560a6425cadf55dd352296b249a2a8",
       "test_refs": [
         "validation/app-storage-tests.txt",
         "tests/test_wordless.c",
-        "tests/wordless.mjs"
+        "tests/wordless.mjs",
+        "tests/section_performance.mjs",
+        "tests/performance_timeline.mjs",
+        "tests/test_section_profiles.c",
+        "tests/wordless_controls.txt",
+        "tests/studio_controls.mjs",
+        "tests/worklet_profiles.mjs",
+        "tools/verify_settings021.py",
+        "tests/test_performance022.c",
+        "validation/development-022/targeted.txt",
+        "validation/development-022/parity.txt"
       ],
-      "artifact_refs": [],
+      "artifact_refs": [
+        "validation/development-021/STATUS.md",
+        "validation/development-022/STATUS.md"
+      ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
         "NEXT_BUILD_ACTIVE.md",
@@ -647,9 +767,9 @@
   ],
   "review": {
     "source_comments_reviewed": true,
-    "issue_snapshot_date": "2026-11-05",
+    "issue_snapshot_date": "2026-11-09",
     "unmapped_owner_requests": [],
     "approved_deferrals": [],
-    "review_evidence": "validation/OWNER_AUDIT.md"
+    "review_evidence": "validation/development-022/STATUS.md"
   }
 }

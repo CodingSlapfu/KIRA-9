@@ -1,0 +1,1 @@
+PASS web lyric preservation, headings, pronunciations, bounds, shared-WASM song decode/render/stop, all eight factory demos, MIDI 7-bit framing

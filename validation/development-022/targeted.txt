@@ -1,0 +1,2 @@
+PASS first-note tuning, legato vibrato continuity, source-owned sustain/panic, cancelled scat onset, closed hum expression, duplicate/future/stale clock rejection, late diphthong/viseme timing and bounded PCM
+PASS first-note tuning, legato vibrato continuity, source-owned sustain/panic, cancelled scat onset, closed hum expression, duplicate/future/stale clock rejection, late diphthong/viseme timing and bounded PCM

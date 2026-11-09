@@ -3,6 +3,7 @@
 #include "memory.h"
 #include "articulation.h"
 #include "clarity.h"
+#include "phrasing.h"
 
 typedef struct {
   float attack, release, breath, vibrato, glide, rasp, articulation, open;
@@ -63,6 +64,8 @@ void k9_init(k9_engine *e) {
 }
 void k9_stop(k9_engine *e) {
   e->live_transition = 0;
+  e->sustain = e->deferred_off = 0;
+  e->sustain_source = 255;
   e->playing = 0;
   e->velocity = 0;
   e->phone = K9_SIL;
@@ -83,11 +86,19 @@ static void seek(k9_engine *e, uint32_t tick) {
              tick)
     e->next++;
 }
+void k9_apply_preset(k9_engine *e, const k9_preset *p) {
+  if (!p) return;
+  e->voice=p->voice; e->style=p->style; e->emotion=p->emotion;
+  e->morph=(float)p->morph*.01f; e->breath=(float)p->breath*.005f;
+  e->vibrato=(float)p->vibrato*.01f; e->glide=.0002f+(float)p->glide*.00005f;
+  e->harmony=p->harmony; e->expression=(float)p->expression/127.0f;
+}
 static void begin_song(k9_engine *e, const k9_song *s) {
   k9_stop(e);
   if (!k9_song_validate(s))
     return;
   e->song = s;
+  if (e->playlist_count) k9_apply_preset(e,e->playlist_profiles[e->playlist_index]);
   e->sample = 0;
   e->tick = 0;
   e->clock_tick = 0;
@@ -104,6 +115,7 @@ static void begin_song(k9_engine *e, const k9_song *s) {
 }
 void k9_start(k9_engine *e, const k9_song *s) {
   e->playlist_count = 0;
+  for (unsigned i=0;i<8;i++) e->playlist_profiles[i]=0;
   e->playlist_index = 0;
   begin_song(e, s);
 }
@@ -123,6 +135,11 @@ int k9_playlist(k9_engine *e, const k9_song *const *songs, unsigned count) {
 void k9_note(k9_engine *e, uint8_t p, uint8_t note, uint8_t velocity) {
   if (p >= K9_NPHONE || note > 127 || velocity > 127)
     return;
+  /* Adjacent held vowels and nasals share vibrato onset across legato notes.
+   * Articulation age remains per phoneme, so consonants are never skipped. */
+  if (!e->velocity || !velocity || !((vowel(e->phone) && vowel(p)) ||
+      (e->phone == K9_M && p == K9_M))) e->vibrato_start=e->sample;
+  if (!e->velocity && velocity) e->freq=k9_pitch[note]*e->bend;
   e->phone = p;
   e->note = note;
   e->velocity = velocity;
@@ -136,30 +153,31 @@ void k9_note(k9_engine *e, uint8_t p, uint8_t note, uint8_t velocity) {
 void k9_perform(k9_engine *e, uint8_t note, uint8_t velocity) {
   static const uint8_t vowels[] = {K9_AA,K9_UW,K9_IY,K9_AH};
   static const uint8_t scat[] = {K9_AA,K9_UW,K9_AA,K9_AH,K9_UW,K9_AA,K9_IY,K9_UW};
-  static const uint8_t vocables[] = {K9_UW,K9_AA,K9_AA,K9_UW};
+  static const uint8_t vocables[] = {K9_UW,K9_AA,K9_AA,K9_AA};
   uint8_t p = K9_AH;
   if (e->vocal_mode == K9_VOCALISE) p = vowels[e->vocal_family % 4];
   else if (e->vocal_mode == K9_HUM) p = K9_M;
-  else if (e->vocal_mode == K9_SCAT) p = scat[e->vocal_step++ % 8];
+  else if (e->vocal_mode == K9_SCAT) p = scat[(e->vocal_step++ + 2u*(e->vocal_family%4u)) % 8];
   else if (e->vocal_mode == K9_VOCABLES) p = vocables[e->vocal_family % 4];
   e->live_transition = 0;
   if (velocity && (e->vocal_mode == K9_SCAT || (e->vocal_mode == K9_VOCABLES && e->vocal_family >= 2))) {
     static const uint8_t onset[] = {K9_B,K9_D,K9_D,K9_B,K9_SH,K9_D,K9_B,K9_M};
     e->live_vowel = p;
-    p = e->vocal_mode == K9_SCAT ? onset[(e->vocal_step-1u)%8] : e->vocal_family == 2 ? K9_N : K9_L;
+    p = e->vocal_mode == K9_SCAT ? onset[(e->vocal_step-1u+2u*(e->vocal_family%4u))%8] : e->vocal_family == 2 ? K9_N : K9_L;
     e->live_transition = e->sample + K9_RATE/25u;
   }
   k9_note(e,p,note,velocity);
 }
 void k9_clock_at(k9_engine *e, uint8_t src, uint32_t sample) {
-  if (!e->external || src != e->source)
+  if (!e->external || src != e->source ||
+      (int32_t)(sample-e->sample)>0 || e->sample-sample>K9_RATE*2u)
     return;
   if (e->sense_armed && src == e->sense_source)
     e->last_message = e->sample;
   /* Unsigned epoch subtraction tolerates the audio sample counter wrapping.
    * Old reordered timestamps never move the authoritative transport backwards. */
   uint32_t delta = sample - e->last_clock;
-  if (e->clocks && (int32_t)delta < 0)
+  if (e->clocks && (int32_t)delta <= 0)
     return;
   if (e->clocks && delta > 44u && delta < 22050u)
     e->clock_interval += ((float)delta - e->clock_interval) * .125f;
@@ -216,6 +234,7 @@ void k9_midi(k9_engine *e, uint8_t src, uint8_t status, uint8_t d1,
     return;
   }
   if (kind == 0x90 && d2) {
+    e->deferred_off = 0;
     e->live_note = d1;
     e->live_source = src;
     e->live_velocity = d2;
@@ -229,14 +248,30 @@ void k9_midi(k9_engine *e, uint8_t src, uint8_t status, uint8_t d1,
   } else if (kind == 0x80 || (kind == 0x90 && !d2)) {
     if (src != e->live_source)
       return;
-    if (e->live_note == d1) {
-      e->live_note = 255;
-      e->live_source = 255;
+    if (e->live_note != d1) return;
+    if (e->sustain && e->sustain_source==src) {
+      e->deferred_off=1;
+      return;
     }
-    if (e->note == d1)
-      e->velocity = 0;
+    e->live_note = 255;
+    e->live_source = 255;
+    e->velocity = 0;
+    e->live_transition=0;
   } else if (kind == 0xb0) {
-    if (d1 == 120 || d1 == 123)
+    if (d1 == 64) {
+      if (d2>=64) {
+        if (e->live_source==255 || e->live_source==src) {
+          e->sustain=1; e->sustain_source=src;
+        }
+      } else if (e->sustain && e->sustain_source==src) {
+        e->sustain=0; e->sustain_source=255;
+        if (e->deferred_off && e->live_source==src) {
+          e->velocity=0; e->live_note=255; e->live_source=255;
+          e->live_transition=0;
+        }
+        e->deferred_off=0;
+      }
+    } else if (d1 == 120 || d1 == 123)
       k9_stop(e);
     else if (d1 == 1)
       e->vibrato = (float)d2 / 127.0f;
@@ -337,6 +372,11 @@ void k9_render(k9_engine *e, float *out, uint32_t frames) {
     age = (float)(e->sample - e->phone_sample);
     progress =
         e->phone_frames ? bounded(age / (float)e->phone_frames, 0, 1) : 0;
+    /* A section can change identity at this exact sample. */
+    style = &styles[e->style % 8u];
+    bank = k9_voice_phones[e->voice % 7u];
+    other = k9_voice_phones[(e->voice + 1u) % 7u];
+    morph = bounded(e->morph, 0, 1);
     from = to = e->phone;
     if (from == K9_AW) {
       from = K9_AA;
@@ -354,17 +394,19 @@ void k9_render(k9_engine *e, float *out, uint32_t frames) {
       from = K9_AO;
       to = K9_IY;
     }
+    float vowel_progress = k9_diphthong_progress(age,e->phone_frames);
+    if (from!=to) e->viseme=k9_phones[vowel_progress<.5f?from:to].viseme;
     for (b = 0; b < 3; b++) {
-      float a = bank[from].a[b] + (bank[to].a[b] - bank[from].a[b]) * progress;
-      float r = bank[from].r[b] + (bank[to].r[b] - bank[from].r[b]) * progress;
+      float a = bank[from].a[b] + (bank[to].a[b] - bank[from].a[b]) * vowel_progress;
+      float r = bank[from].r[b] + (bank[to].r[b] - bank[from].r[b]) * vowel_progress;
       float g = bank[from].gain[b] +
-                (bank[to].gain[b] - bank[from].gain[b]) * progress;
+                (bank[to].gain[b] - bank[from].gain[b]) * vowel_progress;
       float aa =
-          other[from].a[b] + (other[to].a[b] - other[from].a[b]) * progress;
+          other[from].a[b] + (other[to].a[b] - other[from].a[b]) * vowel_progress;
       float rr =
-          other[from].r[b] + (other[to].r[b] - other[from].r[b]) * progress;
+          other[from].r[b] + (other[to].r[b] - other[from].r[b]) * vowel_progress;
       float gg = other[from].gain[b] +
-                 (other[to].gain[b] - other[from].gain[b]) * progress;
+                 (other[to].gain[b] - other[from].gain[b]) * vowel_progress;
       a += (aa - a) * morph;
       r += (rr - r) * morph;
       g += (gg - g) * morph;
@@ -373,7 +415,14 @@ void k9_render(k9_engine *e, float *out, uint32_t frames) {
       e->gain[b] += (g - e->gain[b]) * .003f;
     }
     k9_articulation articulation=k9_articulate(e->phone,e->sample-e->phone_sample,e->phone_frames);
-    if (vowel(e->phone) && e->playing && progress > style->articulation)
+    int connected=0;
+    if (e->playing && e->song && e->next<e->song->count) {
+      const k9_event *next=&e->song->events[e->next];
+      connected=next->tick==e->event_end &&
+        ((vowel(e->phone)&&vowel(next->phone)) ||
+         (e->phone==K9_M&&next->phone==K9_M));
+    }
+    if (!connected && vowel(e->phone) && e->playing && progress > style->articulation)
       gate = bounded((1.0f - progress) / (1.001f - style->articulation), 0, 1);
     level_target =
         (float)e->velocity * (1.0f / 127.0f) * bounded(e->expression, 0, 1.2f);
@@ -386,7 +435,7 @@ void k9_render(k9_engine *e, float *out, uint32_t frames) {
     e->lfo++;
     {
       float triangle = (float)(e->lfo % 8820u) * (1.0f / 4410.0f) - 1.0f;
-      float delay = bounded((age - 4410.0f) * (1.0f / 6615.0f), 0, 1),
+      float delay = bounded(((float)(e->sample-e->vibrato_start) - 4410.0f) * (1.0f / 6615.0f), 0, 1),
             vibrato = (style->vibrato + e->vibrato) * .004f * delay;
       float wobble = 1.0f + vibrato * (1.0f - 2.0f * absolute(triangle));
       float slew = style->glide * bounded(e->glide * 500.0f, .05f, 4.0f);
@@ -481,6 +530,12 @@ k9_face k9_face_at(const k9_engine *e, uint32_t ms, uint8_t emotion,
   }
   f.jaw = (int8_t)(f.open / 4u);
   f.cheek = (int8_t)(emotion % 4u);
+  f.brow = emotion==1 ? -2 : emotion==2 ? 2 : emotion==3 ? -1 : 0;
+  f.lid = emotion==2 ? 3 : emotion==3 ? 1 : 0;
+  if (e->velocity && e->phone!=K9_SIL) {
+    /* Bounded emphasis follows the real voice envelope, including closed hum. */
+    f.brow -= (int8_t)(bounded(e->level,0,1)*2.0f);
+  }
   phase = ms % gap;
   if (twitch && ms > gap && phase < 120u) {
     f.cheek += (phase < 60u ? 3 : 1);

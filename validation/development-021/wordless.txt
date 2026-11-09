@@ -1,0 +1,5 @@
+PASS wordless modes, deterministic swing, mixed sections, editable roundtrip and bounds
+PASS independent section identity/expression/defaults, legacy modes, editable roundtrip, mixed compile and preserved lyrics
+PASS vowel sustain before final scat consonants, editable long notes/vowels and duration bounds
+PASS full mixed preview profile boundaries, distinct expression and safe arrangement-only device profile export
+PASS full mixed preview profile boundaries, distinct expression and safe arrangement-only device profile export

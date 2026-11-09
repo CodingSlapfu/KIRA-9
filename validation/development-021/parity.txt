@@ -1,0 +1,2 @@
+Native five-mode PCM and pose fixture ready (temporary)
+PASS all five modes native/WASM 1,024,000 PCM samples and 2,000 exact poses; max error 0

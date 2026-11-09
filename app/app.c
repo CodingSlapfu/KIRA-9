@@ -44,12 +44,18 @@ static k9_song phrase_cache[8] PLAT_POOL, word_cache[8] PLAT_POOL,
 static uint8_t library_busy;
 static k9_transfer transfer_state;
 static k9_preset presets[8], phrase_profiles[8], word_profiles[8];
-static uint8_t phrase_profile_valid[8], word_profile_valid[8];
+static uint8_t phrase_profile_valid[8], word_profile_valid[8], song_profile_valid[8];
+static k9_preset song_profiles[8], chain_profiles[8];
 static uint8_t voice_wire[3840], custom_wire[3840];
 static uint16_t voice_length, custom_length;
 static uint8_t tx_reply[160];
 static uint16_t tx_length, tx_position;
-static uint8_t vocal_mode, vocal_family;
+static const char *const family_names[5][4] = {
+    {"TWITCH OFF", "TWITCH LOW", "TWITCH HIGH", "TWITCH OFF"},
+    {"AH", "OOH", "EE", "UH"},
+    {"BA / DOO", "DA / BOP", "SHA / DOO", "BA / MM"},
+    {"CLOSED M", "CLOSED M", "CLOSED M", "CLOSED M"},
+    {"OOH", "AH", "NA", "LA"}};
 static const char *const vocal_names[] = {"LYRICS", "VOCALISE", "SCAT", "HUM", "VOCABLES"};
 static uint8_t preset_pick, delete_confirm, library_action, save_confirm,
     arrange_step;
@@ -67,6 +73,7 @@ typedef struct {
   uint8_t loop;
   uint16_t tempo;
   uint8_t order[8], parts, chain;
+  uint8_t vocal_mode, vocal_family;
 } k9_settings;
 static k9_settings prefs;
 static uint32_t btn_last, keys_last, draw_at, block_max, blocks, overruns;
@@ -128,8 +135,9 @@ static void library_cache_load(void) {
     song_cache[i].count = 0;
     n = plat_store_load(library_object(0, (uint8_t)i), song_wire,
                         sizeof song_wire);
-    if (n > 0)
-      k9_decode(&song_cache[i], song_wire, (size_t)n);
+    song_profile_valid[i] = 0;
+    if (n > 0 && k9_decode(&song_cache[i], song_wire, (size_t)n))
+      song_profile_valid[i] = (uint8_t)k9_score_preset(song_wire, (uint16_t)n, &song_profiles[i]);
     phrase_cache[i].count = word_cache[i].count = 0;
     n = plat_store_load(OBJ_PHRASE0 + i, song_wire, sizeof song_wire);
     phrase_profile_valid[i] = 0;
@@ -274,6 +282,14 @@ static void restart_song(void) {
       list[i] = &song_cache[prefs.order[i]];
     if (!k9_playlist(&engine, list, prefs.parts))
       app_say("ARRANGER HAS EMPTY PART", "");
+    else {
+      for (i=0;i<prefs.parts;i++) {
+        unsigned slot=prefs.order[i];
+        chain_profiles[i]=song_profile_valid[slot]?song_profiles[slot]:prefs_to_preset();
+        engine.playlist_profiles[i]=&chain_profiles[i];
+      }
+      k9_apply_preset(&engine,engine.playlist_profiles[0]);
+    }
   } else
     k9_start(&engine, load_pending ? &custom : &factory_songs[prefs.song]);
 }
@@ -309,6 +325,8 @@ void app_init(void) {
   got = plat_store_load(OBJ_SETTINGS, raw, sizeof raw);
   if (got == (int)sizeof prefs) {
     memcpy(&prefs, raw, sizeof prefs);
+  } else if (got == (int)offsetof(k9_settings, vocal_mode)) {
+    memcpy(&prefs, raw, (size_t)got);
   } else if (got == 40u && raw[0] == 0x31 && raw[1] == 0x50 && raw[2] == 0x39 &&
              raw[3] == 0x4b) {
     memcpy(&prefs, raw, offsetof(k9_settings, morph));
@@ -321,6 +339,7 @@ void app_init(void) {
       prefs.reconnect >= 2 || prefs.morph > 100 || prefs.breath > 100 ||
       prefs.vibrato > 100 || prefs.glide > 100 || prefs.expression > 127 ||
       prefs.harmony < -12 || prefs.harmony > 12 || prefs.loop > 1 ||
+      prefs.vocal_mode >= K9_NMODES || prefs.vocal_family >= 4 ||
       prefs.parts < 1 || prefs.parts > 8 || prefs.chain > 1 ||
       (prefs.tempo && (prefs.tempo < 30 || prefs.tempo > 300)))
     prefs_defaults();
@@ -366,8 +385,8 @@ void app_render(int32_t *lr, uint32_t n, uint32_t master) {
   uint32_t t = plat_ticks24(), i, pkt;
   int port;
   unsigned budget = 32;
-  engine.vocal_mode = vocal_mode;
-  engine.vocal_family = vocal_family;
+  engine.vocal_mode = prefs.vocal_mode;
+  engine.vocal_family = prefs.vocal_family;
   if (stop_cmd) {
     k9_stop(&engine);
     if (engine.external == 2)
@@ -451,6 +470,8 @@ void app_render(int32_t *lr, uint32_t n, uint32_t master) {
       k9_midi(&engine, source, st, d1, d2);
   }
   prefs_apply();
+  if (engine.playing && engine.playlist_count)
+    k9_apply_preset(&engine,engine.playlist_profiles[engine.playlist_index]);
   if (n > 256)
     n = 256;
   k9_render(&engine, audio_lr, n);
@@ -616,8 +637,8 @@ static void input(void) {
         prefs.expression = (uint8_t)clamp(prefs.expression + d, 0, 127);
     }
     if (page == 2) {
-      if (i == EN_K3 && vocal_mode != K9_LYRICS) vocal_family = (uint8_t)((vocal_family+4+d%4)%4);
-      if (i == EN_ALGO) { vocal_mode = (uint8_t)((vocal_mode + 5 + d % 5) % 5); stop_cmd = 1; }
+      if (i == EN_K3 && prefs.vocal_mode != K9_LYRICS) prefs.vocal_family = (uint8_t)((prefs.vocal_family+4+d%4)%4);
+      if (i == EN_ALGO) { prefs.vocal_mode = (uint8_t)((prefs.vocal_mode + 5 + d % 5) % 5); stop_cmd = 1; }
       if (i == EN_PRESET)
         preset_pick = (uint8_t)((preset_pick + 8 + d % 8) % 8);
       if (i == EN_K4)
@@ -626,7 +647,7 @@ static void input(void) {
         prefs.voice = (uint8_t)((prefs.voice + 7 + d % 7) % 7);
       if (i == EN_K2)
         prefs.emotion = (uint8_t)((prefs.emotion + 4 + d % 4) % 4);
-      if (i == EN_K3 && vocal_mode == K9_LYRICS)
+      if (i == EN_K3 && prefs.vocal_mode == K9_LYRICS)
         prefs.twitch = (uint8_t)((prefs.twitch + 3 + d % 3) % 3);
     }
     if (page == 3 && i == EN_K1) {
@@ -940,9 +961,10 @@ static void draw_menu(void) {
                 C_WHITE);
       } else if (page == 2) {
         cv_text(8, 0, &FONT_XS, "ALGO: VOCAL MODE", C_WHITE);
-        int_text(prefs.twitch, t);
-        cv_text(8, 17, &FONT_XS, vocal_names[vocal_mode], C_WHITE);
-        cv_text(90, 17, &FONT_XS, t, C_WHITE);
+        cv_text(8, 17, &FONT_XS, vocal_names[prefs.vocal_mode], C_HI);
+        cv_text(94, 17, &FONT_XS, "K3", C_WHITE);
+        cv_text(114, 17, &FONT_XS,
+                family_names[prefs.vocal_mode][prefs.vocal_mode == K9_LYRICS ? prefs.twitch : prefs.vocal_family], C_HI);
       } else if (page == 4) {
         int_text(prefs.slot + 1, t);
         if (prefs.kind >= 3)
@@ -1067,7 +1089,7 @@ void app_frame(void) {
   if (!page) {
     k9_face f;
     uint32_t lock = plat_lock();
-    f = k9_face_at(&engine, now, prefs.emotion, prefs.twitch);
+    f = k9_face_at(&engine, now, engine.emotion, prefs.twitch);
     plat_unlock(lock);
     draw_face(f);
   } else
@@ -1079,6 +1101,12 @@ int app_expect(const char *what, int *got) {
     *got = engine.playing;
   else if (!strcmp(what, "song"))
     *got = prefs.song;
+  else if (!strcmp(what, "vocal_mode"))
+    *got = prefs.vocal_mode;
+  else if (!strcmp(what, "vocal_family"))
+    *got = prefs.vocal_family;
+  else if (!strcmp(what, "phone"))
+    *got = engine.phone;
   else if (!strcmp(what, "voice"))
     *got = prefs.voice;
   else if (!strcmp(what, "mode"))

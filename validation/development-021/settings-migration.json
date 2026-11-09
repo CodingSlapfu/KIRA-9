@@ -1,0 +1,10 @@
+[
+  {
+    "case": "legacy020",
+    "passed": true
+  },
+  {
+    "case": "invalid-new-selector",
+    "passed": true
+  }
+]

@@ -1,7 +1,7 @@
 {
   "project": "KIRA-9",
-  "owner": "work-4286ea3b064e",
-  "state": "active-development-0.2.0",
+  "owner": "work-150f0b212635-restored-022",
+  "state": "software-gates-passed-packaging",
   "baseline": "8d83be275384dd4bfe3ec686b3483371f6f1bb7b",
   "build_running": false,
   "publisher_running": false,
@@ -9,9 +9,15 @@
   "resume": "validation/RESUME_PRIORITY.md",
   "latest_experiment": "experiments/multigrain_sustain",
   "experiment_outcome": "New five-grain correction has limited technical passes; original transitions byte-identical;4new blinded pairs human verdict pending. NOT PROMOTED",
-  "resumed_from": "3391612856fe302d579db44d94570734965d4d10",
-  "latest_verified_remote": "7d695a4c8394b913d1f0b4e68eba7adc3d08733d",
+  "resumed_from": "verified021 ZIP/source.zip; original checkout absent",
+  "latest_verified_remote": "54f9d9ad1d74dad67a59973507145b32d1b96044",
   "local_checkpoint_before_record_update": "ae2b953",
   "remote_checkpoint_status": "New multigrain backupcd6e71dc independently downloaded/all38members/original494byte export verified. No active build/publisher.",
-  "scope": "Issue #3 independent firmware; frozen multigrain unchanged; AQUORA untouched"
+  "scope": "Issue #3 independent firmware; frozen multigrain unchanged; AQUORA untouched",
+  "package_identity": "FM-1_74000202",
+  "recovery_evidence": "validation/development-020/RECOVERY_INTEGRITY.json",
+  "lock_protocol": "OS flock build/verify.lock; released at completed handoff",
+  "latest_source_checkpoint": "c86cf524ad62639b88ce64f0d35b19ae76849235",
+  "ci_run": 42635509598,
+  "ci_workflow_commit": "0f36eb06e4560a6425cadf55dd352296b249a2a8"
 }

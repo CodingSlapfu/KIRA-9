@@ -1,0 +1,5 @@
+import assert from 'node:assert/strict';
+import {timeline,ProfileTimeline} from '../studio/performance.mjs';
+import {compile,encodeEditable} from '../studio/model.mjs';
+const p={format:'KIRA9-PROJECT-1',lyrics:'[Verse]\nhello\n[Bridge]\nmmm',bpm:120,voice:0,sectionSettings:{1:{vocalMode:'Hum',voice:3,emotion:2,expression:75}}};
+const t=timeline(p,{hello:['HH','EH','L','OW']});assert.equal(t.length,2);assert.equal(t[1].tick,102);let calls=[];const e={web_voice:(...args)=>calls.push(['voice',...args]),web_parameters:(...args)=>calls.push(['params',...args])};const run=new ProfileTimeline(e,t);assert.equal(calls.length,2);run.advance(101);assert.equal(calls.length,2);assert.equal(run.advance(102),2);assert.equal(calls[2][1],3);assert.equal(calls[3][6],75);run.advance(500);assert.equal(calls.length,4);assert.throws(()=>encodeEditable(compile(p,{hello:['HH','EH','L','OW']}),p),/arrangement/);console.log('PASS full mixed preview profile boundaries, distinct expression and safe arrangement-only device profile export');

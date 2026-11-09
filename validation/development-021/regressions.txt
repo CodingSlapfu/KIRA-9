@@ -1,0 +1,16 @@
+PASS codec corruption/truncation, transactional decode, stop tails, clock authority, panic, animation/audio parity, all-phoneme stability; host 4000 blocks 0.069s (not device timing)
+PASS codec corruption/truncation, transactional decode, stop tails, clock authority, panic, animation/audio parity, all-phoneme stability; host 4000 blocks 0.691s (not device timing)
+PASS standalone chain/end/loop/tempo/stop, shared full/banded face across expressions and mouths, arrangement bounds/corruption
+PASS fixed-time consonant windows, short-event bounds, real PCM closure/burst, duration invariance at four pitches and peak safety
+PASS lexical syllable stress, explicit override, vowel sustain and bounded consonant timing at 60/120/180 BPM
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.002s
+
+OK
+PASS: requirement register and plan gate
+PASS wordless modes, deterministic swing, mixed sections, editable roundtrip and bounds
+PASS independent section identity/expression/defaults, legacy modes, editable roundtrip, mixed compile and preserved lyrics
+PASS full mixed preview profile boundaries, distinct expression and safe arrangement-only device profile export
+PASS five live/MIDI modes, scat consonant sustain, closed hum face, note-off/STOP
+PASS sample-boundary section presets, expression/emotion, loop restore, STOP and playlist profile isolation

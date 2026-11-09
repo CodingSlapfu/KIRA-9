@@ -1,0 +1,17 @@
+  ok vocal_mode == 1
+  ok vocal_family == 2
+  ok dirty == 0
+  ok vocal_mode == 1
+  ok vocal_family == 2
+  ok phone == 18
+  ok note == -1
+  ok vocal_mode == 3
+  ok vocal_mode == 3
+  ok vocal_family == 2
+  ok phone == 22
+  ok note == -1
+  ok vocal_mode == 4
+  ok vocal_family == 3
+  ok phone == 1
+  ok note == -1
+host: 2942 ms simulated, 276 blits, render 0.3% of real time (host CPU)

@@ -1,0 +1,8 @@
+  ok   flash_load out:legacy020.flash: the data windows and 1 store objects
+  ok voice == 3
+  ok vocal_mode == 0
+  ok vocal_family == 0
+  ok voice == 3
+  ok vocal_mode == 0
+  ok vocal_family == 0
+host: 280 ms simulated, 24 blits, render 0.2% of real time (host CPU)

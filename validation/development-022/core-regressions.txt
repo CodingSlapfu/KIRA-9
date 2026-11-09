@@ -1,0 +1,11 @@
+PASS codec corruption/truncation, transactional decode, stop tails, clock authority, panic, animation/audio parity, all-phoneme stability; host 4000 blocks 0.058s (not device timing)
+PASS codec corruption/truncation, transactional decode, stop tails, clock authority, panic, animation/audio parity, all-phoneme stability; host 4000 blocks 0.770s (not device timing)
+PASS standalone chain/end/loop/tempo/stop, shared full/banded face across expressions and mouths, arrangement bounds/corruption
+PASS fixed-time consonant windows, short-event bounds, real PCM closure/burst, duration invariance at four pitches and peak safety
+PASS lexical syllable stress, explicit override, vowel sustain and bounded consonant timing at 60/120/180 BPM
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.003s
+
+OK
+PASS: requirement register and plan gate

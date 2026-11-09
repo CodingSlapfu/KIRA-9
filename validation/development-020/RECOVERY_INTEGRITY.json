@@ -1,0 +1,22 @@
+{
+  "date_utc": "2026-11-09T10:57:16.574193+00:00",
+  "recovery": "Single bounded nonblocking flock attempt succeeded; no kernel holder; prior ownership record stopped. No process terminated or lock removed.",
+  "original_owner": "work-4286ea3b064e",
+  "original_checkout": "/workspace/scratch/4286ea3b064e/KIRA-9",
+  "source_local": "9c625e2b007ea7624a62b85aca0f0d8e7223fd92",
+  "source_remote": "54f9d9ad1d74dad67a59973507145b32d1b96044",
+  "identical_source_trees": true,
+  "identity": "FM-1_74000200",
+  "build_id": "433FCA0B",
+  "zip_sha256": "8c99b882531d8231716e8e1bea063ceb7332c2074d5fae1e37547a8db15d02c7",
+  "zip_bytes": 4768301,
+  "manifest_members_verified": 57,
+  "sha256sums_members_verified": 58,
+  "native_artifacts_verified": 5,
+  "rollback_sha256": "e6dc406d58552e5b570506adb729b40967e8e2cfdcc7a38d89f5a8b6ecf950e6",
+  "prior_software_checks": "Reused existing successful evidence; no rebuild or tests repeated.",
+  "physical_acceptance": "UNVERIFIED",
+  "official_release": false,
+  "public_installer": false,
+  "aquora_modified": false
+}

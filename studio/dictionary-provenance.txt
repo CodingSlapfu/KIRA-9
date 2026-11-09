@@ -1,1 +1,8 @@
-cmusphinx/cmudict commit 74790861f652b15e4ac49015a90074ad62a27690; pronunciations reduced to first entry; stress digits removed; retains BSD notice. Unknown words require explicit override.
+CMU Pronouncing Dictionary
+Repository: https://github.com/cmusphinx/cmudict
+Commit: 74790861f652b15e4ac49015a90074ad62a27690
+Source cmudict.dict git blob: 2c0411740cce3e2026a80b90b650d5f6a7258164
+Derived dictionary.json: first pronunciation per word, lexical stress retained.
+Entries: 126051
+SHA256: 186af4ad413c37283fd30892958efaa7d2c60e9b4116854789a54e58b44d04c2
+License: CMUDICT-LICENSE.txt

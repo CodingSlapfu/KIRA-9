@@ -1,0 +1,10 @@
+{
+  "run_id": 42635509598,
+  "workflow_commit": "0f36eb06e4560a6425cadf55dd352296b249a2a8",
+  "result": "success",
+  "artifact_id": 13682442773,
+  "artifact_sha256": "93077c5f40aac93b2514d36977dbc06a67c88d8631be10d6ed78c6be7040f93c",
+  "compiled_input_members": 37,
+  "all_inputs_match": true,
+  "official_release": false
+}

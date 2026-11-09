@@ -1,0 +1,7 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {compile,encode} from '../studio/model.mjs';import {timeline} from '../studio/performance.mjs';
+let Processor;globalThis.sampleRate=48000;globalThis.AudioWorkletProcessor=class{constructor(){this.port={postMessage:()=>{}};}};globalThis.registerProcessor=(_,p)=>Processor=p;
+await import('../studio/voice-worklet.js');
+const project={format:'KIRA9-PROJECT-1',bpm:120,lyrics:'[Verse]\nhello\n[Bridge]\nmmm',sectionSettings:{1:{vocalMode:'Hum',density:1,voice:3,emotion:2,expression:75}}};const dictionary={hello:['HH','EH','L','OW']},song=compile(project,dictionary),profiles=timeline(project,dictionary),m=new WebAssembly.Module(fs.readFileSync('studio/kira.wasm'));
+const p=new Processor({processorOptions:{module:m}});p.port.onmessage({data:{command:'load',bytes:encode(song),profiles}});let hum=false,energy=0;
+for(let block=0;block<450;block++){const a=[new Float32Array(128),new Float32Array(128)];assert(p.process([], [a]));for(const v of a[0]){assert(Number.isFinite(v)&&Math.abs(v)<1);energy+=v*v;}if(p.engine.web_tick()>profiles[1].tick+8&&p.engine.web_playing()){assert.equal(p.emotion,2);assert.equal(p.engine.web_pose()>>>8,0);hum=true;}}
+assert(hum&&energy>1);p.port.onmessage({data:{command:'stop'}});assert(!p.engine.web_playing());assert.equal(p.engine.web_pose(),0);console.log('PASS actual WASM AudioWorklet mixed profiles at 48 kHz, closed-lip hum, finite PCM, distinct emotion and STOP');

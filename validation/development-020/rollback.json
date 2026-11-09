@@ -1,0 +1,9 @@
+{
+  "prior_firmware_sha256": "e6dc406d58552e5b570506adb729b40967e8e2cfdcc7a38d89f5a8b6ecf950e6",
+  "store_map_header_unchanged": true,
+  "new_to_old_classic_protocol_fixture": {
+    "exit_code": 0,
+    "wrong_bytes": 0
+  },
+  "physical_rollback": "UNVERIFIED"
+}
