@@ -49,6 +49,8 @@ static uint8_t voice_wire[3840], custom_wire[3840];
 static uint16_t voice_length, custom_length;
 static uint8_t tx_reply[160];
 static uint16_t tx_length, tx_position;
+static uint8_t vocal_mode, vocal_family;
+static const char *const vocal_names[] = {"LYRICS", "VOCALISE", "SCAT", "HUM", "VOCABLES"};
 static uint8_t preset_pick, delete_confirm, library_action, save_confirm,
     arrange_step;
 static uint32_t delete_until;
@@ -364,6 +366,8 @@ void app_render(int32_t *lr, uint32_t n, uint32_t master) {
   uint32_t t = plat_ticks24(), i, pkt;
   int port;
   unsigned budget = 32;
+  engine.vocal_mode = vocal_mode;
+  engine.vocal_family = vocal_family;
   if (stop_cmd) {
     k9_stop(&engine);
     if (engine.external == 2)
@@ -382,7 +386,7 @@ void app_render(int32_t *lr, uint32_t n, uint32_t master) {
     playing_cmd = 0;
   }
   if (note_cmd) {
-    k9_note(&engine, K9_AH, note_cmd - 2, note_vel);
+    k9_perform(&engine, note_cmd - 2, note_vel);
     note_cmd = 0;
   }
   while (budget-- && plat_midi_in(&pkt, &port)) {
@@ -612,6 +616,8 @@ static void input(void) {
         prefs.expression = (uint8_t)clamp(prefs.expression + d, 0, 127);
     }
     if (page == 2) {
+      if (i == EN_K3 && vocal_mode != K9_LYRICS) vocal_family = (uint8_t)((vocal_family+4+d%4)%4);
+      if (i == EN_ALGO) { vocal_mode = (uint8_t)((vocal_mode + 5 + d % 5) % 5); stop_cmd = 1; }
       if (i == EN_PRESET)
         preset_pick = (uint8_t)((preset_pick + 8 + d % 8) % 8);
       if (i == EN_K4)
@@ -620,7 +626,7 @@ static void input(void) {
         prefs.voice = (uint8_t)((prefs.voice + 7 + d % 7) % 7);
       if (i == EN_K2)
         prefs.emotion = (uint8_t)((prefs.emotion + 4 + d % 4) % 4);
-      if (i == EN_K3)
+      if (i == EN_K3 && vocal_mode == K9_LYRICS)
         prefs.twitch = (uint8_t)((prefs.twitch + 3 + d % 3) % 3);
     }
     if (page == 3 && i == EN_K1) {
@@ -933,9 +939,9 @@ static void draw_menu(void) {
                                 : "K4 BLE: OFF",
                 C_WHITE);
       } else if (page == 2) {
-        cv_text(8, 0, &FONT_XS, "K1 VOICE  K2 EMOTION", C_WHITE);
+        cv_text(8, 0, &FONT_XS, "ALGO: VOCAL MODE", C_WHITE);
         int_text(prefs.twitch, t);
-        cv_text(8, 17, &FONT_XS, "K3 TWITCH", C_WHITE);
+        cv_text(8, 17, &FONT_XS, vocal_names[vocal_mode], C_WHITE);
         cv_text(90, 17, &FONT_XS, t, C_WHITE);
       } else if (page == 4) {
         int_text(prefs.slot + 1, t);

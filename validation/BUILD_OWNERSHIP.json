@@ -1,8 +1,8 @@
 {
   "project": "KIRA-9",
-  "owner": "work-244e7d42fd6f",
-  "state": "active-independent-firmware",
-  "baseline": "ac65254f2fd76b4ed8f251f2a141f63f3508c3cf",
+  "owner": "work-4286ea3b064e",
+  "state": "active-development-0.2.0",
+  "baseline": "8d83be275384dd4bfe3ec686b3483371f6f1bb7b",
   "build_running": false,
   "publisher_running": false,
   "latest_verified": "1641726b2ea3aabfde8afbf3c04f76dbdf074fc9",
@@ -13,5 +13,5 @@
   "latest_verified_remote": "7d695a4c8394b913d1f0b4e68eba7adc3d08733d",
   "local_checkpoint_before_record_update": "ae2b953",
   "remote_checkpoint_status": "New multigrain backupcd6e71dc independently downloaded/all38members/original494byte export verified. No active build/publisher.",
-  "scope": "Independent firmware systems with preserved production DSP; multigrain frozen pending genuine owner results"
+  "scope": "Issue #3 independent firmware; frozen multigrain unchanged; AQUORA untouched"
 }

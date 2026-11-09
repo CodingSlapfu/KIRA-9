@@ -9,7 +9,8 @@
     "docs/VOCAL_AND_FACE.md",
     "docs/WEB_EDITOR_AND_LIBRARY.md",
     "docs/MIDI_SPEC.md",
-    "docs/ACCEPTANCE.md"
+    "docs/ACCEPTANCE.md",
+    "https://github.com/CodingSlapfu/KIRA-9/issues/3"
   ],
   "requirements": [
     {
@@ -82,7 +83,9 @@
         "tests/test_articulation.c",
         "tests/vocal_timing.mjs",
         "tests/acoustic_probe.c",
-        "tests/acoustic_headroom.c"
+        "tests/acoustic_headroom.c",
+        "tests/test_wordless.c",
+        "tests/wordless.mjs"
       ],
       "artifact_refs": [
         "validation/vocal-issue-2/README.md",
@@ -92,7 +95,8 @@
         "ACTIVE_SCOPE.md",
         "NEXT_BUILD_ACTIVE.md",
         "docs/PROJECT_BUILD_NOTES.md",
-        "https://github.com/CodingSlapfu/KIRA-9/issues/2"
+        "https://github.com/CodingSlapfu/KIRA-9/issues/2",
+        "https://github.com/CodingSlapfu/KIRA-9/issues/3"
       ],
       "hardware_status": "not_applicable",
       "deferred_to": "",
@@ -118,7 +122,9 @@
         "tests/test_articulation.c",
         "tests/vocal_timing.mjs",
         "tests/acoustic_probe.c",
-        "tests/acoustic_headroom.c"
+        "tests/acoustic_headroom.c",
+        "tests/test_wordless.c",
+        "tests/wordless.mjs"
       ],
       "artifact_refs": [
         "validation/vocal-issue-2/README.md",
@@ -128,7 +134,8 @@
         "ACTIVE_SCOPE.md",
         "NEXT_BUILD_ACTIVE.md",
         "docs/PROJECT_BUILD_NOTES.md",
-        "https://github.com/CodingSlapfu/KIRA-9/issues/2"
+        "https://github.com/CodingSlapfu/KIRA-9/issues/2",
+        "https://github.com/CodingSlapfu/KIRA-9/issues/3"
       ],
       "hardware_status": "not_applicable",
       "deferred_to": "",
@@ -220,13 +227,16 @@
       ],
       "source_commit": "",
       "test_refs": [
-        "validation/core-tests.txt"
+        "validation/core-tests.txt",
+        "tests/test_wordless.c",
+        "tests/wordless.mjs"
       ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
         "NEXT_BUILD_ACTIVE.md",
-        "docs/PROJECT_BUILD_NOTES.md"
+        "docs/PROJECT_BUILD_NOTES.md",
+        "https://github.com/CodingSlapfu/KIRA-9/issues/3"
       ],
       "hardware_status": "owner_unverified",
       "deferred_to": "",
@@ -269,13 +279,16 @@
       ],
       "source_commit": "",
       "test_refs": [
-        "validation/app-storage-tests.txt"
+        "validation/app-storage-tests.txt",
+        "tests/test_wordless.c",
+        "tests/wordless.mjs"
       ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
         "NEXT_BUILD_ACTIVE.md",
-        "docs/PROJECT_BUILD_NOTES.md"
+        "docs/PROJECT_BUILD_NOTES.md",
+        "https://github.com/CodingSlapfu/KIRA-9/issues/3"
       ],
       "hardware_status": "not_applicable",
       "deferred_to": "",
@@ -353,13 +366,16 @@
       "source_commit": "",
       "test_refs": [
         "validation/web-model-tests.txt",
-        "validation/BROWSER_QA.md"
+        "validation/BROWSER_QA.md",
+        "tests/test_wordless.c",
+        "tests/wordless.mjs"
       ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
         "NEXT_BUILD_ACTIVE.md",
-        "docs/PROJECT_BUILD_NOTES.md"
+        "docs/PROJECT_BUILD_NOTES.md",
+        "https://github.com/CodingSlapfu/KIRA-9/issues/3"
       ],
       "hardware_status": "not_applicable",
       "deferred_to": "",
@@ -511,13 +527,16 @@
       ],
       "source_commit": "",
       "test_refs": [
-        "validation/core-tests.txt"
+        "validation/core-tests.txt",
+        "tests/test_wordless.c",
+        "tests/wordless.mjs"
       ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
         "NEXT_BUILD_ACTIVE.md",
-        "docs/PROJECT_BUILD_NOTES.md"
+        "docs/PROJECT_BUILD_NOTES.md",
+        "https://github.com/CodingSlapfu/KIRA-9/issues/3"
       ],
       "hardware_status": "not_applicable",
       "deferred_to": "",
@@ -584,13 +603,16 @@
       ],
       "source_commit": "",
       "test_refs": [
-        "validation/app-storage-tests.txt"
+        "validation/app-storage-tests.txt",
+        "tests/test_wordless.c",
+        "tests/wordless.mjs"
       ],
       "artifact_refs": [],
       "source_refs": [
         "ACTIVE_SCOPE.md",
         "NEXT_BUILD_ACTIVE.md",
-        "docs/PROJECT_BUILD_NOTES.md"
+        "docs/PROJECT_BUILD_NOTES.md",
+        "https://github.com/CodingSlapfu/KIRA-9/issues/3"
       ],
       "hardware_status": "not_applicable",
       "deferred_to": "",

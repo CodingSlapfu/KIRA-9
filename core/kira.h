@@ -50,6 +50,7 @@ enum {
   K9_ZH,
   K9_NPHONE
 };
+enum { K9_LYRICS, K9_VOCALISE, K9_SCAT, K9_HUM, K9_VOCABLES, K9_NMODES };
 typedef struct {
   uint32_t tick;
   uint16_t duration;
@@ -79,6 +80,8 @@ typedef struct {
   float flow_last, noise_last, hphase, hflow_last, hz1[3], hz2[3], morph,
       expression;
   int8_t harmony;
+  uint8_t vocal_mode, vocal_family, vocal_step, live_vowel;
+  uint32_t live_transition;
   uint8_t emotion, external_melody, live_note, live_velocity, live_source,
       sense_armed, sense_source;
   const k9_song *playlist[8];
@@ -101,6 +104,7 @@ void k9_init(k9_engine *e);
 void k9_start(k9_engine *e, const k9_song *s);
 void k9_stop(k9_engine *e);
 int k9_playlist(k9_engine *, const k9_song *const *, unsigned);
+void k9_perform(k9_engine *, uint8_t note, uint8_t velocity);
 void k9_note(k9_engine *e, uint8_t phone, uint8_t note, uint8_t velocity);
 void k9_render(k9_engine *e, float *stereo, uint32_t n);
 void k9_midi(k9_engine *e, uint8_t source, uint8_t status, uint8_t d1,

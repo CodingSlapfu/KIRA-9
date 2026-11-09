@@ -62,6 +62,7 @@ void k9_init(k9_engine *e) {
   e->clock_interval = 918.75f;
 }
 void k9_stop(k9_engine *e) {
+  e->live_transition = 0;
   e->playing = 0;
   e->velocity = 0;
   e->phone = K9_SIL;
@@ -129,6 +130,26 @@ void k9_note(k9_engine *e, uint8_t p, uint8_t note, uint8_t velocity) {
   e->phone_start = e->tick;
   e->phone_sample = e->sample;
   e->phone_frames = K9_RATE / 5u;
+}
+/* Live keys and MIDI share the same phoneme renderer as compiled sections.
+ * Stable phrase patterns, deliberately independent of the audio noise RNG. */
+void k9_perform(k9_engine *e, uint8_t note, uint8_t velocity) {
+  static const uint8_t vowels[] = {K9_AA,K9_UW,K9_IY,K9_AH};
+  static const uint8_t scat[] = {K9_AA,K9_UW,K9_AA,K9_AH,K9_UW,K9_AA,K9_IY,K9_UW};
+  static const uint8_t vocables[] = {K9_UW,K9_AA,K9_AA,K9_UW};
+  uint8_t p = K9_AH;
+  if (e->vocal_mode == K9_VOCALISE) p = vowels[e->vocal_family % 4];
+  else if (e->vocal_mode == K9_HUM) p = K9_M;
+  else if (e->vocal_mode == K9_SCAT) p = scat[e->vocal_step++ % 8];
+  else if (e->vocal_mode == K9_VOCABLES) p = vocables[e->vocal_family % 4];
+  e->live_transition = 0;
+  if (velocity && (e->vocal_mode == K9_SCAT || (e->vocal_mode == K9_VOCABLES && e->vocal_family >= 2))) {
+    static const uint8_t onset[] = {K9_B,K9_D,K9_D,K9_B,K9_SH,K9_D,K9_B,K9_M};
+    e->live_vowel = p;
+    p = e->vocal_mode == K9_SCAT ? onset[(e->vocal_step-1u)%8] : e->vocal_family == 2 ? K9_N : K9_L;
+    e->live_transition = e->sample + K9_RATE/25u;
+  }
+  k9_note(e,p,note,velocity);
 }
 void k9_clock_at(k9_engine *e, uint8_t src, uint32_t sample) {
   if (!e->external || src != e->source)
@@ -200,7 +221,7 @@ void k9_midi(k9_engine *e, uint8_t src, uint8_t status, uint8_t d1,
     e->live_velocity = d2;
     e->external_melody = e->playing && e->external;
     if (!e->playing)
-      k9_note(e, K9_AH, d1, d2);
+      k9_perform(e, d1, d2);
     else {
       e->note = d1;
       e->velocity = d2;
@@ -241,6 +262,10 @@ void k9_render(k9_engine *e, float *out, uint32_t frames) {
         sample = 0, harmonic = 0, aspiration, gate = 1,
         morph = bounded(e->morph, 0, 1);
     unsigned b, from, to;
+    if (e->live_transition && (int32_t)(e->sample-e->live_transition)>=0) {
+      e->live_transition=0;
+      if(e->velocity) k9_note(e,e->live_vowel,e->note,e->velocity);
+    }
     if (e->playing && e->song) {
       if (e->external && e->clocks) {
         unsigned partial = (unsigned)((float)(e->sample - e->last_clock) *
