@@ -1,0 +1,22 @@
+{
+  "site_url": "https://kira-9-testing.jminie66.chatgpt.site",
+  "site_project_id": "appgprj_6af215a734f8819181698ce8fdc9bcc8",
+  "site_version_id": "appgprj_6af215a734f8819181698ce8fdc9bcc8~appgver_dcb3097307608191a77c2e6c951e894d",
+  "site_source_commit": "3aa9edb9981d1a6f3665ea08e7cf4fa1f4183bb4",
+  "site_deployment": "succeeded",
+  "firmware_version": "0.2.2-dev",
+  "firmware_identity": "FM-1_74000202",
+  "firmware_build": "05A90D68",
+  "firmware_rebuilt": false,
+  "asset_checks": {
+    "html_pages": 11,
+    "internal_links_assets": 174,
+    "installer_identity_sha256_pins": 4,
+    "explicit_confirmation_flows": 4,
+    "unchanged_firmware_wasm_rollback_source": true
+  },
+  "access": "owner-only; ChatGPT sign-in required",
+  "live_browser_verification": "authentication in progress",
+  "physical_flashing": "OWNER_UNVERIFIED",
+  "aquora_modified": false
+}
