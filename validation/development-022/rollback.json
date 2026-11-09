@@ -1,0 +1,12 @@
+{
+  "case": "022-to-exact-021-rollback",
+  "passed": true,
+  "served_reads": 11,
+  "wrong_bytes": 0,
+  "rollback_sha256": "a263633c857a792e6fce456792d8a9e551671599b79891484ab5d559a1cc8f2a",
+  "preferences_compatible": true,
+  "settings_bytes": 60,
+  "storage_map_unchanged": true,
+  "physical_restore": "OWNER_UNVERIFIED",
+  "scope": "Actual old package and installer protocol simulation; no hardware writes"
+}

@@ -1,0 +1,9 @@
+{
+  "source_commit": "2afb96f2c8dbc80cf6521b77ed014a32cac1eb0f",
+  "files_independently_verified": 187,
+  "platform_commit": "698e2cba46b33bf14d9bf756675036053535638e",
+  "method": "Remote branch ref and recursive Git blob SHA-1s independently compared with all staged UTF-8 source/evidence contents; native 37-file SHA-256 input manifest separately checked.",
+  "ci_run": 42635509598,
+  "queried_tree_ref": "2afb96f2c8dbc80cf6521b77ed014a32cac1eb0f",
+  "created_tree_sha": "5689985d4c05c6e39ec779b9dab878932cc12cdd"
+}

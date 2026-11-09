@@ -1,0 +1,1 @@
+PASS current and all rollback installer identities, local paths, exact SHA-256 pins, tamper mismatch and offline dictionary/profile assets
