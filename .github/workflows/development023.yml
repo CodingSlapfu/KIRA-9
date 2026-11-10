@@ -29,6 +29,7 @@ jobs:
           version: '4.0.19'
       - run: |
           mkdir -p build
+          python3 -m pip install pillow
           python3 tools/setup_native.py > build/native-env.json
           python3 -c "import json,os; d=json.load(open('build/native-env.json')); open(os.environ['GITHUB_ENV'],'a').write(''.join(k+'='+v+'\n' for k,v in d.items()))"
       - name: Compile exact source and check changed inputs
