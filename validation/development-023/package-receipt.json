@@ -1,0 +1,16 @@
+{
+  "version": "0.2.3-dev",
+  "identity": "FM-1_74000203",
+  "native_build_id": "DA116E4F",
+  "development_testing": true,
+  "official_release": false,
+  "owner_acceptance": "OPEN",
+  "source_checkpoint": "feecf11e35d924c13a2b6c465b1496b590e1ef68",
+  "firmware_sha256": "1babd73b71a26b2a796934f4d75317e7740fca765c370349e89b94fae1002f3e",
+  "rollback_022_sha256": "33510a9eb964f04d266b1499c3a0592eef9a9386590172700c15d85a00aa9f57",
+  "source_files": 973,
+  "package": "/workspace/scratch/04f576474361/kira9/build/KIRA-9-0.2.3-dev-testing.zip",
+  "package_sha256": "9779e9bd62ad0c14071be7efb3c7cd11eab067773ad302d16c25e7d33e65c1d5",
+  "bytes": 17879208,
+  "verified_members": 115
+}

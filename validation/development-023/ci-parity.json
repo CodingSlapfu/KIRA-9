@@ -1,0 +1,18 @@
+{
+  "app/build/kira-9-0.2.3-dev.fwsc": {
+    "sha256": "1babd73b71a26b2a796934f4d75317e7740fca765c370349e89b94fae1002f3e",
+    "byte_identical": true
+  },
+  "app/build/kira-9.bin": {
+    "sha256": "5c9d02e5ad024f27b405299525c2e931e35888d4d314d1dcbb82d11e36752f40",
+    "byte_identical": true
+  },
+  "app/build/loader/ota.bin": {
+    "sha256": "ee908462c79c11794ebb1992cdc2f6e5079edd99435826e768374ad7fc52661b",
+    "byte_identical": true
+  },
+  "studio/kira.wasm": {
+    "sha256": "eb7a30c66af467309aa9bd43cbf65518545184f1f4d2c0a8e33eb8b42eaa05a1",
+    "byte_identical": true
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "metrics": {
+    "before-style0": {
+      "render_seconds": 0.026252962999933516,
+      "frames": 153600,
+      "peak": 0.2770349681377411,
+      "rms": 0.056014091166881746,
+      "clipped_samples": 0
+    },
+    "before-style1": {
+      "render_seconds": 0.026319931000216457,
+      "frames": 153600,
+      "peak": 0.3070030212402344,
+      "rms": 0.05393397777854011,
+      "clipped_samples": 0
+    },
+    "before-style2": {
+      "render_seconds": 0.026380139000139025,
+      "frames": 153600,
+      "peak": 0.30464842915534973,
+      "rms": 0.048572168958677005,
+      "clipped_samples": 0
+    },
+    "before-style3": {
+      "render_seconds": 0.026193504999810102,
+      "frames": 153600,
+      "peak": 0.2623920142650604,
+      "rms": 0.046434321815494346,
+      "clipped_samples": 0
+    },
+    "before-style4": {
+      "render_seconds": 0.02693205500008844,
+      "frames": 153600,
+      "peak": 0.2590146064758301,
+      "rms": 0.04672161562258235,
+      "clipped_samples": 0
+    },
+    "before-style5": {
+      "render_seconds": 0.02559889500025747,
+      "frames": 153600,
+      "peak": 0.28170639276504517,
+      "rms": 0.05311771382076114,
+      "clipped_samples": 0
+    },
+    "after-style0": {
+      "render_seconds": 0.02533149000009871,
+      "frames": 153600,
+      "peak": 0.2859177589416504,
+      "rms": 0.05701609799071914,
+      "clipped_samples": 0
+    },
+    "after-style1": {
+      "render_seconds": 0.028641089999837277,
+      "frames": 153600,
+      "peak": 0.30793511867523193,
+      "rms": 0.05521246812005229,
+      "clipped_samples": 0
+    },
+    "after-style2": {
+      "render_seconds": 0.02851707699983308,
+      "frames": 153600,
+      "peak": 0.3054722249507904,
+      "rms": 0.050322508853877845,
+      "clipped_samples": 0
+    },
+    "after-style3": {
+      "render_seconds": 0.027825254000163113,
+      "frames": 153600,
+      "peak": 0.26734083890914917,
+      "rms": 0.04710352293750792,
+      "clipped_samples": 0
+    },
+    "after-style4": {
+      "render_seconds": 0.027275863000340905,
+      "frames": 153600,
+      "peak": 0.2600246071815491,
+      "rms": 0.047320934070720536,
+      "clipped_samples": 0
+    },
+    "after-style5": {
+      "render_seconds": 0.026847790999909193,
+      "frames": 153600,
+      "peak": 0.2918735146522522,
+      "rms": 0.05444692558194119,
+      "clipped_samples": 0
+    }
+  },
+  "style_segments": [
+    {
+      "style": "Pop",
+      "start_seconds": 0.0
+    },
+    {
+      "style": "House",
+      "start_seconds": 3.7329931972789114
+    },
+    {
+      "style": "IDM",
+      "start_seconds": 7.465986394557823
+    },
+    {
+      "style": "Trip-hop",
+      "start_seconds": 11.198979591836734
+    },
+    {
+      "style": "Ethereal",
+      "start_seconds": 14.931972789115646
+    },
+    {
+      "style": "Soul",
+      "start_seconds": 18.66496598639456
+    }
+  ],
+  "original_lyric": "we rise again",
+  "limits": "Host render time is not physical CPU; no subjective acceptance inferred. Identical phrase/voice/style inputs in before and after."
+}
