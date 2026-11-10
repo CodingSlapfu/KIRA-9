@@ -1,0 +1,21 @@
+{
+  "frames": 140,
+  "size": [
+    240,
+    240
+  ],
+  "fps": 20,
+  "closed_hum_frames": 28,
+  "distinct_poses_per_mode": [
+    6,
+    4,
+    12,
+    1,
+    6
+  ],
+  "real_C_audio_and_face_engine": true,
+  "PCM_discarded": true,
+  "audio_files_created": false,
+  "gif_sha256": "6bbffac042d16e15db832c9a37f9ff423b19da7155c3da295d2a408392d783e1",
+  "limitation": "Technical sequence, not owner visual acceptance; browser compact pose carries mouth/open and emotion, native envelope-driven brow emphasis is not separately encoded."
+}

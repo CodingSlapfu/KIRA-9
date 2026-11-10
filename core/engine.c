@@ -4,6 +4,7 @@
 #include "articulation.h"
 #include "clarity.h"
 #include "phrasing.h"
+#include "expression.h"
 
 typedef struct {
   float attack, release, breath, vibrato, glide, rasp, articulation, open;
@@ -424,20 +425,23 @@ void k9_render(k9_engine *e, float *out, uint32_t frames) {
     }
     if (!connected && vowel(e->phone) && e->playing && progress > style->articulation)
       gate = bounded((1.0f - progress) / (1.001f - style->articulation), 0, 1);
+    k9_expression performance=k9_expression_at(e->style,age,progress,
+        e->playing,connected,vowel(e->phone)||e->phone==K9_M);
     level_target =
         (float)e->velocity * (1.0f / 127.0f) * bounded(e->expression, 0, 1.2f);
     if (e->playing && e->next) {
       uint8_t stress = e->song->events[e->next - 1u].stress;
       level_target *= stress == 1 ? 1.0f : stress == 2 ? .91f : .82f;
     }
+    level_target *= performance.level;
     e->level += (level_target - e->level) *
                 (level_target > e->level ? style->attack : style->release);
     e->lfo++;
     {
-      float triangle = (float)(e->lfo % 8820u) * (1.0f / 4410.0f) - 1.0f;
+      float wave = k9_vibrato_wave(e->lfo,performance.period);
       float delay = bounded(((float)(e->sample-e->vibrato_start) - 4410.0f) * (1.0f / 6615.0f), 0, 1),
-            vibrato = (style->vibrato + e->vibrato) * .004f * delay;
-      float wobble = 1.0f + vibrato * (1.0f - 2.0f * absolute(triangle));
+            vibrato = (style->vibrato + e->vibrato) * .004f * delay * performance.vibrato;
+      float wobble = 1.0f + vibrato * wave;
       float slew = style->glide * bounded(e->glide * 500.0f, .05f, 4.0f);
       if (slew > 1)
         slew = 1;
@@ -453,11 +457,11 @@ void k9_render(k9_engine *e, float *out, uint32_t frames) {
     aspiration = noise - e->noise_last;
     e->noise_last = noise;
     excitation =
-        glottis(e->phase, style->open + .015f * (float)e->voice, &e->flow_last);
+        glottis(e->phase, style->open + .015f * (float)e->voice + performance.openness, &e->flow_last);
     if (style->rasp)
       excitation *= 1.0f - style->rasp + style->rasp * noise;
     excitation = excitation * articulation.voiced * (phone->voiced ? 1.0f - phone->noise : 0) +
-                 aspiration * articulation.noise * (phone->noise + style->breath +
+                 aspiration * articulation.noise * (phone->noise + style->breath + performance.air +
                                bounded(e->breath, 0, .7f));
     excitation *= gate;
     for (b = 0; b < 3; b++) {

@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: MIT; original KIRA-9 procedural portrait. */
+/* SPDX-License-Identifier: MIT; original KIRA-9 cel portrait. */
 #ifndef K9_FACE_H
 #define K9_FACE_H
 #include "kira.h"
