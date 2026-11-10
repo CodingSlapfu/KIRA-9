@@ -13,6 +13,16 @@ static void layer(uint16_t *p,unsigned y0,unsigned height,unsigned region,int dx
   }
  }
 }
+/* Extract a moving servo plate from the same registered artwork. Only the
+ * tiny metal region moves; lips, skin planes and the head remain stable. */
+static void plate(uint16_t *p,unsigned y0,unsigned height,int left,int top,int width,int rows,int dx,int dy){
+ for(int row=top;row<top+rows;row++){
+  int y=row+dy;if(y<(int)y0||y>=(int)(y0+height)||y<0||y>=240)continue;
+  unsigned pos=k9_art_rows[row],used=0;
+  while(used<240){unsigned n=k9_art_data[pos++];uint16_t color=k9_art_data[pos++];color|=(uint16_t)k9_art_data[pos++]<<8;
+   for(unsigned j=0;j<n;j++){int x=(int)(used+j);if(x>=left&&x<left+width&&x+dx>=0&&x+dx<240)p[(y-y0)*240+x+dx]=color;}used+=n;}
+ }
+}
 void k9_face_render(uint16_t *pixels,unsigned y0,unsigned height,const k9_face *f){
  if(y0>=240||!height)return;if(height>240-y0)height=240-y0;
  layer(pixels,y0,height,0,0,0);
@@ -29,4 +39,6 @@ void k9_face_render(uint16_t *pixels,unsigned y0,unsigned height,const k9_face *
   mouth=f->mouth==3?7:f->mouth==2?6:f->mouth==5?8:5;
  }else if(f->cheek==1)mouth=9;
  layer(pixels,y0,height,mouth,0,0);
+ if(f->jaw>2)plate(pixels,y0,height,52,96,8,28,0,1);
+ if(f->neck)plate(pixels,y0,height,109,195,24,29,f->neck>0?1:-1,0);
 }

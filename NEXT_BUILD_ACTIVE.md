@@ -1,4 +1,4 @@
-# KIRA-9 — remaining work after v0.2.2-dev
+# KIRA-9 — v0.2.3-dev testing and acceptance
 
 Testing identity FM-1_74000202/build05A90D68. CI42635509598 passed native/WASM/emulator/parity/package gates; exact37-file input manifest matched locally. Full source, installer, exact021 rollback, older rollback options and SHA256 evidence are packaged. See validation/development-022/STATUS.md and OWNER_TESTS.md. No official release/public deployment; AQUORA untouched.
 
@@ -17,4 +17,7 @@ Owner rejected current website character art as unattractive and not faithful to
 - Original, beautiful, elegant, memorable cyborg vocalist; *Ghost in the Shell* / *Akira* era style inspiration **without copying existing characters**. Distinctive close-up face, expressive anime eyes, refined proportions, iconic hair silhouette and integrated tasteful cybernetics.
 - Premium cel-shaded linework, cinematic controlled palette; no generic/chibi/western-cartoon/uncanny/vector-placeholder results.
 - Smooth blink/gaze/micro-expression and precise attractive singing visemes/lip sync; correct across website, emulator and resource-limited 240×240 FM-1 firmware.
-- **Acceptance required:** before/after website + firmware previews and singing-animation frames, targeted resource/performance checks, owner's review of actual visual quality; no false claims of completion from deployment alone. Preserve installer, rollback, audio/BLE, existing technical passes and AQUORA. **Status: NOT IMPLEMENTED / OWNER ACCEPTANCE OPEN.**
+- **Acceptance required:** before/after website + firmware previews and singing-animation frames, targeted resource/performance checks, owner's review of actual visual quality; no false claims of completion from deployment alone. Preserve installer, rollback, audio/BLE, existing technical passes and AQUORA. **Status: v0.2.3 implementation and technical validation in progress / OWNER ACCEPTANCE OPEN.**
+
+## v0.2.3 development correction
+Original cel portrait/registered lid-viseme rig and expressive performance contours implemented. See validation/development-023/STATUS.md. Native/WASM/installer evidence and package receipts are recorded there; hardware/visual/listening acceptance remains OPEN. Preserve v0.2.2 rollback and all 23 IDs. No official production release.

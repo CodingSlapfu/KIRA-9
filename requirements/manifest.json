@@ -95,13 +95,16 @@
         "tools/verify_settings021.py",
         "tests/test_performance022.c",
         "validation/development-022/targeted.txt",
-        "validation/development-022/parity.txt"
+        "validation/development-022/parity.txt",
+        "validation/development-023/parity.txt",
+        "validation/development-023/visual-sequence.json"
       ],
       "artifact_refs": [
         "validation/vocal-issue-2/README.md",
         "validation/acoustic-2026-11-06/README.md",
         "validation/development-021/STATUS.md",
-        "validation/development-022/STATUS.md"
+        "validation/development-022/STATUS.md",
+        "validation/development-023/STATUS.md"
       ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -110,7 +113,7 @@
         "https://github.com/CodingSlapfu/KIRA-9/issues/2",
         "https://github.com/CodingSlapfu/KIRA-9/issues/3"
       ],
-      "hardware_status": "not_applicable",
+      "hardware_status": "owner_unverified",
       "deferred_to": "",
       "deferral_approval": ""
     },
@@ -146,13 +149,16 @@
         "tools/verify_settings021.py",
         "tests/test_performance022.c",
         "validation/development-022/targeted.txt",
-        "validation/development-022/parity.txt"
+        "validation/development-022/parity.txt",
+        "validation/development-023/parity.txt",
+        "validation/development-023/visual-sequence.json"
       ],
       "artifact_refs": [
         "validation/vocal-issue-2/README.md",
         "validation/acoustic-2026-11-06/README.md",
         "validation/development-021/STATUS.md",
-        "validation/development-022/STATUS.md"
+        "validation/development-022/STATUS.md",
+        "validation/development-023/STATUS.md"
       ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -161,7 +167,7 @@
         "https://github.com/CodingSlapfu/KIRA-9/issues/2",
         "https://github.com/CodingSlapfu/KIRA-9/issues/3"
       ],
-      "hardware_status": "not_applicable",
+      "hardware_status": "owner_unverified",
       "deferred_to": "",
       "deferral_approval": ""
     },
@@ -181,10 +187,13 @@
         "validation/animation-tests.txt",
         "tests/test_performance022.c",
         "validation/development-022/targeted.txt",
-        "validation/development-022/parity.txt"
+        "validation/development-022/parity.txt",
+        "validation/development-023/parity.txt",
+        "validation/development-023/visual-sequence.json"
       ],
       "artifact_refs": [
-        "validation/development-022/STATUS.md"
+        "validation/development-022/STATUS.md",
+        "validation/development-023/STATUS.md"
       ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -211,10 +220,13 @@
         "validation/animation-tests.txt",
         "tests/test_performance022.c",
         "validation/development-022/targeted.txt",
-        "validation/development-022/parity.txt"
+        "validation/development-022/parity.txt",
+        "validation/development-023/parity.txt",
+        "validation/development-023/visual-sequence.json"
       ],
       "artifact_refs": [
-        "validation/development-022/STATUS.md"
+        "validation/development-022/STATUS.md",
+        "validation/development-023/STATUS.md"
       ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -434,11 +446,14 @@
         "tools/verify_settings021.py",
         "tests/test_performance022.c",
         "validation/development-022/targeted.txt",
-        "validation/development-022/parity.txt"
+        "validation/development-022/parity.txt",
+        "validation/development-023/parity.txt",
+        "validation/development-023/visual-sequence.json"
       ],
       "artifact_refs": [
         "validation/development-021/STATUS.md",
-        "validation/development-022/STATUS.md"
+        "validation/development-022/STATUS.md",
+        "validation/development-023/STATUS.md"
       ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -587,9 +602,13 @@
       "source_commit": "",
       "test_refs": [
         "validation/web-model-tests.txt",
-        "validation/BROWSER_QA.md"
+        "validation/BROWSER_QA.md",
+        "validation/development-023/parity.txt",
+        "validation/development-023/visual-sequence.json"
       ],
-      "artifact_refs": [],
+      "artifact_refs": [
+        "validation/development-023/STATUS.md"
+      ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
         "NEXT_BUILD_ACTIVE.md",
@@ -654,10 +673,13 @@
         "validation/core-tests.txt",
         "tests/test_performance022.c",
         "validation/development-022/targeted.txt",
-        "validation/development-022/parity.txt"
+        "validation/development-022/parity.txt",
+        "validation/development-023/parity.txt",
+        "validation/development-023/visual-sequence.json"
       ],
       "artifact_refs": [
-        "validation/development-022/STATUS.md"
+        "validation/development-022/STATUS.md",
+        "validation/development-023/STATUS.md"
       ],
       "source_refs": [
         "ACTIVE_SCOPE.md",
@@ -767,9 +789,9 @@
   ],
   "review": {
     "source_comments_reviewed": true,
-    "issue_snapshot_date": "2026-11-09",
+    "issue_snapshot_date": "2026-11-10",
     "unmapped_owner_requests": [],
     "approved_deferrals": [],
-    "review_evidence": "validation/development-022/STATUS.md"
+    "review_evidence": "validation/development-023/STATUS.md"
   }
 }

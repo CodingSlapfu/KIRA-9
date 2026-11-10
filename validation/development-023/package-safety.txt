@@ -1,0 +1,65 @@
+{
+  "identity": "FM-1_74000203",
+  "release_accepted": false,
+  "published": false,
+  "checks": "Python and JS actual-package validation; decrypted app bytes and loader exact;30store pairs outside package flash; experimental voice absent; classic direct/recovery/loss/final-ID fixtures",
+  "memory": {
+    "app_bytes": 334892,
+    "app_slot_bytes": 581564,
+    "app_spare": 246672,
+    "data_bss_bytes": 78264,
+    "data_bss_spare": 20040,
+    "pool_bytes": 176844,
+    "pool_spare": 167220,
+    "ram_code_bytes": 5444,
+    "ram_code_spare": 27324,
+    "conservative_future_voice_reserve_flash": 73728,
+    "conservative_future_voice_reserve_ram": 8192,
+    "flash_after_reserve": 172944,
+    "data_bss_after_reserve": 11848,
+    "experimental_voice_linked": false,
+    "physical_cpu": "UNVERIFIED; no host measurement claimed as FM-1 timing"
+  },
+  "installer_cases": [
+    {
+      "case": "direct-development-update",
+      "exit_code": 0,
+      "expected": 0,
+      "served_reads": 11,
+      "wrong_bytes": 0,
+      "scope": "Host installer protocol simulation with actual package; not real flash writes/power loss."
+    },
+    {
+      "case": "loader-recovery",
+      "exit_code": 0,
+      "expected": 0,
+      "served_reads": 7,
+      "wrong_bytes": 0,
+      "scope": "Host installer protocol simulation with actual package; not real flash writes/power loss."
+    },
+    {
+      "case": "connection-loss",
+      "exit_code": 4,
+      "expected": 4,
+      "served_reads": 2,
+      "wrong_bytes": 0,
+      "scope": "Host installer protocol simulation with actual package; not real flash writes/power loss."
+    },
+    {
+      "case": "wrong-final-identity",
+      "exit_code": 6,
+      "expected": 6,
+      "served_reads": 11,
+      "wrong_bytes": 0,
+      "scope": "Host installer protocol simulation with actual package; not real flash writes/power loss."
+    }
+  ],
+  "artifacts_sha256": {
+    "app/build/kira-9.bin": "418ad7be3223a04162bb29dc5211f7675ecd1ebf891df7de8766d6bfd38608b0",
+    "app/build/kira-9.elf": "3994d783058cdfe5700d3675a129666616d0dd9851f4761ca8e4e1d5b8d638e0",
+    "app/build/kira-9-0.2.3-dev.fwsc": "d701cd7e2e7311b420807e8347c77aea8a903bd04f11ea04c0a02abf9e968984",
+    "app/build/loader/ota.bin": "ee908462c79c11794ebb1992cdc2f6e5079edd99435826e768374ad7fc52661b",
+    "studio/kira.wasm": "077efc1c375818ce4d4e505fea814e3c5988bc1872bd3f4734d02981c4a6bc29"
+  },
+  "limitations": "Fast real-loader interrupted flash/rollback physical acceptance remains unverified; existing generic fixtures retained, not replayed. Same development identity cannot identify source revision on a physical unit: use matching manifest/build ID; release identity/version gated."
+}

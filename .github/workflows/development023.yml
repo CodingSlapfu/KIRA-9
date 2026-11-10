@@ -1,0 +1,70 @@
+name: KIRA-9 0.2.3 development compile and artifact backup
+on:
+  push:
+    branches: [kira-0.2.3-development]
+    paths: [.github/workflows/development023.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: kira-9-development-checkpoint
+  cancel-in-progress: false
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: mymindstorm/setup-emsdk@v14
+        with:
+          version: '4.0.19'
+      - run: |
+          mkdir -p build
+          python3 tools/setup_native.py > build/native-env.json
+          python3 -c "import json,os; d=json.load(open('build/native-env.json')); open(os.environ['GITHUB_ENV'],'a').write(''.join(k+'='+v+'\n' for k,v in d.items()))"
+      - name: Compile exact source and check changed inputs
+        run: |
+          python3 tools/requirement_gate.py --phase plan
+          python3 platform/tools/build.py app --release 0.2.3-dev > build/native-build-023.txt 2>&1
+          sh tools/build_web.sh > build/wasm-build-023.txt 2>&1
+          python3 platform/tools/build.py app --web --release 0.2.3-dev > build/emulator-build-023.txt 2>&1
+          cc -shared -fPIC -O2 -ffp-contract=off -Icore core/engine.c core/codec.c core/library.c core/tables.c core/face.c studio/bridge.c -o build/libkira.so
+          python3 tools/wordless_parity.py > validation/development-023/parity.txt
+          node tests/wordless_parity.mjs >> validation/development-023/parity.txt
+          node tests/worklet_profiles.mjs > validation/development-023/worklet.txt
+          python3 tools/verify_development023.py > validation/development-023/package-safety.txt
+          python3 - <<'PY'
+          import pathlib,zipfile,hashlib,json
+          r=pathlib.Path('.'); files={}
+          with zipfile.ZipFile('build/KIRA-9-023-complete-source.zip','w',zipfile.ZIP_DEFLATED) as z:
+           for top in ['app','core','docs','factory','platform','requirements','studio','tests','tools','validation']:
+            for p in (r/top).rglob('*'):
+             if p.is_file() and not any(t in p.parts for t in ['.git','build','__pycache__']) and p.suffix not in ['.wav','.flac','.mp3','.ogg']:
+              z.write(p,str(p));files[str(p)]=hashlib.sha256(p.read_bytes()).hexdigest()
+           for p in r.glob('*.md'):z.write(p,str(p));files[str(p)]=hashlib.sha256(p.read_bytes()).hexdigest()
+           z.writestr('SOURCE_SHA256.json',json.dumps(files,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: KIRA-9-0.2.3-dev-compiled
+          retention-days: 90
+          if-no-files-found: error
+          path: |
+            app/build/kira-9*
+            app/build/firmware.json
+            app/build/loader/ota.bin
+            app/build/emu
+            studio/kira.wasm
+            build/*build-023.txt
+            build/KIRA-9-023-complete-source.zip
+            validation/development-023
