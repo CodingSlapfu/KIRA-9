@@ -1,0 +1,12 @@
+{
+  "status": "succeeded",
+  "site": "https://kira-9-testing.jminie66.chatgpt.site",
+  "site_source_commit": "2ddf8c42d378812f1785846f1114c7631253193a",
+  "deployment_id": "appgdep_6af2ce5ec9ac8191aea7a19c2ce31a6f",
+  "package_library_file_id": "libfile_faadd84744d08191a79af4a9977564b6",
+  "package_sha256": "9779e9bd62ad0c14071be7efb3c7cd11eab067773ad302d16c25e7d33e65c1d5",
+  "source_checkpoint": "d1d02f1cf6946cc83a3c51a6e515212d83679e60",
+  "ci_run": 42778211749,
+  "development_testing": true,
+  "owner_acceptance": "OPEN"
+}
