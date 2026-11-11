@@ -1,0 +1,14 @@
+{
+  "version": "0.2.4-dev",
+  "identity": "FM-1_74000204",
+  "build": "C28EF2EF",
+  "source_commit": "dc02a9678c3ce4d749b6828d069323b09486a8b9",
+  "verified_binary_commit": "136bd88855f9a83696273bb44c285116ec48a6bc",
+  "testing_zip_sha256": "6452728badfa09d12e6a7e450d75fe363b6e2a60ad0492033190e81794fd34ca",
+  "verified_zip_members": 154,
+  "site": "https://kira-9-testing.jminie66.chatgpt.site",
+  "site_source": "9e7d4848dc3d3d4d69199498d9f8e901577b031b",
+  "site_deployment": "appgdep_6af40e859240819181c2e56b30854ef3",
+  "hardware_acceptance": "open",
+  "stable_release": false
+}
