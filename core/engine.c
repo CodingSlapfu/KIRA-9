@@ -24,6 +24,8 @@ static float absolute(float x) { return x < 0 ? -x : x; }
 static float bounded(float x, float lo, float hi) {
   return x < lo ? lo : x > hi ? hi : x;
 }
+#include "performance.h"
+
 static int vowel(uint8_t p) {
   return p == K9_AA || p == K9_AE || p == K9_AH || p == K9_AO || p == K9_AW ||
          p == K9_AY || p == K9_EH || p == K9_ER || p == K9_EY || p == K9_IH ||
@@ -62,8 +64,13 @@ void k9_init(k9_engine *e) {
   e->bend = 1;
   e->expression = 1;
   e->clock_interval = 918.75f;
+  e->vocal_level = 1.0f;
+  e->music_level = 1.0f;
 }
 void k9_stop(k9_engine *e) {
+  e->fx_valid = 0;
+  e->fx_input = e->fx_left = e->fx_right = 0;
+  e->fx_target_l = e->fx_target_r = 0;
   e->live_transition = 0;
   e->sustain = e->deferred_off = 0;
   e->sustain_source = 255;
@@ -115,11 +122,39 @@ static void begin_song(k9_engine *e, const k9_song *s) {
   e->playing = 1;
 }
 void k9_start(k9_engine *e, const k9_song *s) {
+  e->demo = 0;
   e->playlist_count = 0;
   for (unsigned i=0;i<8;i++) e->playlist_profiles[i]=0;
   e->playlist_index = 0;
   begin_song(e, s);
 }
+void k9_start_demo(k9_engine *e, const k9_song *song, unsigned index) {
+  k9_start(e, song);
+  if (!e->playing || index >= sizeof demo_arrangements / sizeof demo_arrangements[0])
+    return;
+  e->demo = (uint8_t)(index + 1u);
+  e->backing_tick = UINT32_MAX;
+  e->demo_clock_origin = 0;
+  e->bass_env = e->kick_env = e->snare_env = e->hat_env = 0;
+  memset(e->backing_phase, 0, sizeof e->backing_phase);
+}
+
+uint8_t k9_key_note(const k9_engine *e, uint8_t note) {
+  static const uint16_t masks[] = {0x0ab5, 0x05ad, 0x0295};
+  if (!e->perfect_key || note > 127)
+    return note;
+  unsigned mask = masks[e->scale % 3u];
+  int key = e->key % 12u;
+  for (int distance = 0; distance <= 2; distance++) {
+    int down = note - distance, up = note + distance;
+    if (down >= 0 && ((mask >> ((down + 12 - key) % 12)) & 1u))
+      return (uint8_t)down;
+    if (up <= 127 && ((mask >> ((up + 12 - key) % 12)) & 1u))
+      return (uint8_t)up;
+  }
+  return note;
+}
+
 int k9_playlist(k9_engine *e, const k9_song *const *songs, unsigned count) {
   unsigned i;
   if (!count || count > 8)
@@ -167,7 +202,7 @@ void k9_perform(k9_engine *e, uint8_t note, uint8_t velocity) {
     p = e->vocal_mode == K9_SCAT ? onset[(e->vocal_step-1u+2u*(e->vocal_family%4u))%8] : e->vocal_family == 2 ? K9_N : K9_L;
     e->live_transition = e->sample + K9_RATE/25u;
   }
-  k9_note(e,p,note,velocity);
+  k9_note(e,p,k9_key_note(e,note),velocity);
 }
 void k9_clock_at(k9_engine *e, uint8_t src, uint32_t sample) {
   if (!e->external || src != e->source ||
@@ -209,13 +244,19 @@ void k9_midi(k9_engine *e, uint8_t src, uint8_t status, uint8_t d1,
     return;
   }
   if (status == 0xfa) {
-    if (e->external && e->song)
-      k9_start(e, e->song);
+    if (e->external && e->song) {
+      if (e->demo)
+        k9_start_demo(e, e->song, e->demo - 1u);
+      else
+        k9_start(e, e->song);
+    }
     return;
   }
   if (status == 0xfb) {
     if (e->external && e->song) {
       seek(e, e->tick);
+      e->demo_clock_origin = 0;
+      e->backing_tick = UINT32_MAX;
       e->last_clock = e->sample;
       e->playing = 1;
     }
@@ -230,8 +271,11 @@ void k9_midi(k9_engine *e, uint8_t src, uint8_t status, uint8_t d1,
     return;
   }
   if (status == 0xf2) {
-    if (e->external && e->song)
+    if (e->external && e->song) {
       seek(e, ((uint32_t)d1 | ((uint32_t)d2 << 7)) * 24u);
+      e->demo_clock_origin = 0;
+      e->backing_tick = UINT32_MAX;
+    }
     return;
   }
   if (kind == 0x90 && d2) {
@@ -243,7 +287,7 @@ void k9_midi(k9_engine *e, uint8_t src, uint8_t status, uint8_t d1,
     if (!e->playing)
       k9_perform(e, d1, d2);
     else {
-      e->note = d1;
+      e->note = k9_key_note(e, d1);
       e->velocity = d2;
     }
   } else if (kind == 0x80 || (kind == 0x90 && !d2)) {
@@ -298,6 +342,7 @@ void k9_render(k9_engine *e, float *out, uint32_t frames) {
         sample = 0, harmonic = 0, aspiration, gate = 1,
         morph = bounded(e->morph, 0, 1);
     unsigned b, from, to;
+    uint32_t backing_tick = e->tick;
     if (e->live_transition && (int32_t)(e->sample-e->live_transition)>=0) {
       e->live_transition=0;
       if(e->velocity) k9_note(e,e->live_vowel,e->note,e->velocity);
@@ -308,9 +353,19 @@ void k9_render(k9_engine *e, float *out, uint32_t frames) {
                                       4.0f / e->clock_interval);
         if (partial > 3u)
           partial = 3u;
-        e->tick = e->clock_tick + partial;
+        e->tick = e->clock_tick + partial - e->demo_clock_origin;
       }
-      if (e->tick >= e->song->ticks) {
+      uint32_t end = e->demo ? ((e->song->ticks + 383u) / 384u) * 384u
+                             : e->song->ticks;
+      if (e->tick >= end && e->demo) {
+        uint32_t clock_tick = e->clock_tick;
+        seek(e, e->tick % end);
+        if (e->external) {
+          e->clock_tick = clock_tick;
+          e->demo_clock_origin += end;
+        }
+        e->backing_tick = UINT32_MAX;
+      } else if (e->tick >= end) {
         if (!e->external && e->playlist_count &&
             e->playlist_index + 1u < e->playlist_count) {
           e->playlist_index++;
@@ -325,7 +380,7 @@ void k9_render(k9_engine *e, float *out, uint32_t frames) {
           e->tick >= e->song->events[e->next].tick) {
         const k9_event *v = &e->song->events[e->next++];
         uint8_t note =
-            e->external_melody && e->live_note != 255 ? e->live_note : v->note;
+            e->external_melody && e->live_note != 255 ? k9_key_note(e, e->live_note) : v->note;
         uint8_t velocity = e->external_melody
                                ? (e->live_note == 255 ? 0 : e->live_velocity)
                                : v->velocity;
@@ -347,6 +402,7 @@ void k9_render(k9_engine *e, float *out, uint32_t frames) {
       if (e->tick >= e->event_end)
         e->velocity = 0;
 
+      backing_tick = e->tick;
       if (!e->external) {
         e->clock_phase +=
             (uint32_t)(e->tempo_override ? e->tempo_override : e->song->bpm) *
@@ -446,7 +502,18 @@ void k9_render(k9_engine *e, float *out, uint32_t frames) {
       if (slew > 1)
         slew = 1;
       e->freq += (k9_pitch[e->note] * e->bend - e->freq) * slew;
-      e->phase += e->freq * wobble * (1.0f / 44100.0f);
+      float pitch = e->freq * wobble;
+      if (e->tuning && (vowel(e->phone) || e->phone == K9_M)) {
+        static const float strength[] = {0, .30f, .72f, 1.0f};
+        static const float vibrato_keep[] = {1, .95f, .62f, 0};
+        unsigned mode = e->tuning > 3 ? 3 : e->tuning;
+        float amount = strength[mode] * (float)e->tune_strength * .01f;
+        float attack = bounded(age * (float)(e->tune_speed + 1u) * .00001f, 0, 1);
+        float target = k9_pitch[e->note] * (mode == 3 ? 1.0f : e->bend) *
+                       (1.0f + (wobble - 1.0f) * vibrato_keep[mode]);
+        pitch += (target - pitch) * amount * attack;
+      }
+      e->phase += pitch * (1.0f / 44100.0f);
       if (e->phase >= 1)
         e->phase -= 1;
     }
@@ -500,8 +567,11 @@ void k9_render(k9_engine *e, float *out, uint32_t frames) {
     /* Reserve output headroom for upper-formant recovery at velocity 127. */
     sample *= e->level * .40f;
     harmonic *= e->level * .109f;
-    out[i * 2] = bounded(sample + harmonic * .65f, -.94f, .94f);
-    out[i * 2 + 1] = bounded(sample + harmonic, -.94f, .94f);
+    float left = sample + harmonic * .65f, right = sample + harmonic;
+    vocal_fx(e, sample, &left, &right);
+    float backing = demo_backing(e, backing_tick, noise);
+    out[i * 2] = bounded(left * e->vocal_level + backing, -.94f, .94f);
+    out[i * 2 + 1] = bounded(right * e->vocal_level + backing, -.94f, .94f);
     e->sample++;
   }
 }

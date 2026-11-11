@@ -3,6 +3,7 @@
 #define KIRA_H
 #include <stddef.h>
 #include <stdint.h>
+#define K9_FX_LENGTH 4096u
 #define K9_RATE 44100u
 #define K9_MAX_EVENTS 512u
 #define K9_WIRE_MAX (24u + 12u * K9_MAX_EVENTS)
@@ -102,6 +103,15 @@ typedef struct {
   float phase, level, freq, z1[3], z2[3], a[3], r[3], gain[3], noise, breath,
       vibrato, glide;
   uint32_t clocks, last_clock, late_clocks;
+  uint8_t demo, perfect_key, key, scale, tuning, tune_strength, tune_speed;
+  uint8_t fx_mix[4];
+  float music_level, vocal_level, music_gain;
+  uint32_t backing_tick, demo_clock_origin;
+  float backing_hz[3], backing_phase[4], bass_env, kick_env, snare_env, hat_env;
+  int16_t fx_history[K9_FX_LENGTH];
+  uint32_t fx_phase;
+  uint16_t fx_write, fx_valid;
+  float fx_amount[4], fx_input, fx_left, fx_right, fx_target_l, fx_target_r;
 } k9_engine;
 uint32_t k9_crc(const uint8_t *p, size_t n);
 int k9_song_validate(const k9_song *s);
@@ -110,6 +120,8 @@ int k9_decode(k9_song *dst, const uint8_t *in, size_t len);
 int k9_document_valid(const uint8_t *p, size_t n, uint8_t kind);
 void k9_init(k9_engine *e);
 void k9_start(k9_engine *e, const k9_song *s);
+void k9_start_demo(k9_engine *, const k9_song *, unsigned);
+uint8_t k9_key_note(const k9_engine *, uint8_t);
 void k9_stop(k9_engine *e);
 int k9_playlist(k9_engine *, const k9_song *const *, unsigned);
 void k9_apply_preset(k9_engine *, const k9_preset *);

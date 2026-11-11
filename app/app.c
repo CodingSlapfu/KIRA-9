@@ -74,17 +74,21 @@ typedef struct {
   uint16_t tempo;
   uint8_t order[8], parts, chain;
   uint8_t vocal_mode, vocal_family;
+  uint8_t legacy_padding[2];
+  uint8_t music, music_level, vocal_level, perfect_key, key, scale;
+  uint8_t tuning, tune_strength, tune_speed, fx_mix[4];
 } k9_settings;
 static k9_settings prefs;
 static uint32_t btn_last, keys_last, draw_at, block_max, blocks, overruns;
-static uint8_t peer_pick, ble_was, backup_hold;
+static uint8_t peer_pick, backup_hold, live_key = 255;
 static uint32_t retry_at, usb_session_seen;
 static uint8_t page, dirty, save_pending, load_pending, playing_cmd, stop_cmd,
     note_cmd, note_vel;
 static char message[40];
 static const char *const pages[] = {"PLAY",       "SONG",    "VOICE",
                                     "MIDI",       "LIBRARY", "PERFORMANCE",
-                                    "EXPRESSION", "ARRANGER"};
+                                    "EXPRESSION", "ARRANGER", "VOCAL FX"};
+static const char *const tuning_names[] = {"OFF", "NATURAL", "POP", "HARD"};
 static const char *const modes[] = {"SOLO SONG", "LIVE", "PHRASE", "WORD"};
 static const char *const voices[] = {"BRIGHT", "DEEP",   "AIRY", "SMOKY",
                                      "YOUTH",  "MATURE", "SYNTH"};
@@ -290,8 +294,10 @@ static void restart_song(void) {
       }
       k9_apply_preset(&engine,engine.playlist_profiles[0]);
     }
-  } else
-    k9_start(&engine, load_pending ? &custom : &factory_songs[prefs.song]);
+  } else if (load_pending)
+    k9_start(&engine, &custom);
+  else
+    k9_start_demo(&engine, &factory_songs[prefs.song], prefs.song);
 }
 static void prefs_defaults(void) {
   memset(&prefs, 0, sizeof prefs);
@@ -302,6 +308,13 @@ static void prefs_defaults(void) {
   prefs.glide = 50;
   prefs.expression = 110;
   prefs.parts = 1;
+  prefs.music = 1;
+  prefs.music_level = 70;
+  prefs.vocal_level = 100;
+  prefs.perfect_key = 1;
+  prefs.tuning = 1;
+  prefs.tune_strength = 100;
+  prefs.tune_speed = 55;
   for (unsigned i = 0; i < 8; i++)
     prefs.order[i] = (uint8_t)i;
 }
@@ -317,6 +330,15 @@ static void prefs_apply(void) {
   engine.expression = (float)prefs.expression / 127.0f;
   engine.tempo_override = prefs.tempo;
   engine.loop = prefs.loop;
+  engine.music_level = prefs.music ? (float)prefs.music_level * .01f : 0;
+  engine.vocal_level = (float)prefs.vocal_level * .01f;
+  engine.perfect_key = prefs.perfect_key;
+  engine.key = prefs.key;
+  engine.scale = prefs.scale;
+  engine.tuning = prefs.tuning;
+  engine.tune_strength = prefs.tune_strength;
+  engine.tune_speed = prefs.tune_speed;
+  memcpy(engine.fx_mix, prefs.fx_mix, sizeof engine.fx_mix);
 }
 void app_init(void) {
   uint8_t raw[sizeof prefs];
@@ -325,6 +347,8 @@ void app_init(void) {
   got = plat_store_load(OBJ_SETTINGS, raw, sizeof raw);
   if (got == (int)sizeof prefs) {
     memcpy(&prefs, raw, sizeof prefs);
+  } else if (got == (int)offsetof(k9_settings, music)) {
+    memcpy(&prefs, raw, (size_t)got);
   } else if (got == (int)offsetof(k9_settings, vocal_mode)) {
     memcpy(&prefs, raw, (size_t)got);
   } else if (got == 40u && raw[0] == 0x31 && raw[1] == 0x50 && raw[2] == 0x39 &&
@@ -341,6 +365,11 @@ void app_init(void) {
       prefs.harmony < -12 || prefs.harmony > 12 || prefs.loop > 1 ||
       prefs.vocal_mode >= K9_NMODES || prefs.vocal_family >= 4 ||
       prefs.parts < 1 || prefs.parts > 8 || prefs.chain > 1 ||
+      prefs.music > 1 || prefs.music_level > 100 || prefs.vocal_level > 100 ||
+      prefs.perfect_key > 1 || prefs.key >= 12 || prefs.scale >= 3 ||
+      prefs.tuning > 3 || prefs.tune_strength > 100 || prefs.tune_speed > 100 ||
+      prefs.fx_mix[0] > 100 || prefs.fx_mix[1] > 100 ||
+      prefs.fx_mix[2] > 100 || prefs.fx_mix[3] > 100 ||
       (prefs.tempo && (prefs.tempo < 30 || prefs.tempo > 300)))
     prefs_defaults();
   for (unsigned i = 0; i < 8; i++)
@@ -350,6 +379,7 @@ void app_init(void) {
   k9_init(&engine);
   prefs_apply();
   engine.song = &factory_songs[prefs.song];
+  engine.demo = prefs.song + 1u;
   engine.external = (prefs.sync == 1 || prefs.sync == 3) ? 2 : prefs.sync != 0;
   engine.source = (prefs.sync == 1 || prefs.sync == 3) ? 255 : TO_USB;
   plat_ble_enable(prefs.ble);
@@ -387,6 +417,7 @@ void app_render(int32_t *lr, uint32_t n, uint32_t master) {
   unsigned budget = 32;
   engine.vocal_mode = prefs.vocal_mode;
   engine.vocal_family = prefs.vocal_family;
+  prefs_apply();
   if (stop_cmd) {
     k9_stop(&engine);
     if (engine.external == 2)
@@ -442,7 +473,7 @@ void app_render(int32_t *lr, uint32_t n, uint32_t master) {
         continue;
       }
       if (d1 == 22u && d2 < 8u) {
-        k9_start(&engine, &factory_songs[d2]);
+        k9_start_demo(&engine, &factory_songs[d2], d2);
         continue;
       }
       if (d1 == 23u) {
@@ -506,11 +537,11 @@ static void input(void) {
   }
   d = plat_enc(EN_SELECT);
   if (d) {
-    page = (uint8_t)((page + 8 + d % 8) % 8);
+    page = (uint8_t)((page + 9 + d % 9) % 9);
     save_confirm = delete_confirm = 0;
   }
   if (press & (1u << B_EDIT)) {
-    page = (page + 1) % 8;
+    page = (page + 1) % 9;
     save_confirm = delete_confirm = 0;
   }
   if (press & (1u << B_PLAY)) {
@@ -524,7 +555,13 @@ static void input(void) {
   if (press & (1u << B_SAVE))
     save_pending = 1;
   if (press & (1u << B_SEL)) {
-    if (page == 4) {
+    if (page == 0) {
+      prefs.music = !prefs.music;
+      dirty = 1;
+    } else if (page == 8) {
+      prefs.perfect_key = !prefs.perfect_key;
+      dirty = 1;
+    } else if (page == 4) {
       if (xbusy(0) || transfer_state.active) {
         app_say("STOP BEFORE LIBRARY EDIT", "");
       } else if (save_confirm == 1) {
@@ -594,6 +631,27 @@ static void input(void) {
       continue;
     dirty = 1;
     save_confirm = delete_confirm = 0;
+    if (page == 0) {
+      if (i == EN_K1)
+        prefs.vocal_level = (uint8_t)clamp(prefs.vocal_level + d, 0, 100);
+      if (i == EN_K2)
+        prefs.music_level = (uint8_t)clamp(prefs.music_level + d, 0, 100);
+      if (i == EN_K3)
+        prefs.key = (uint8_t)((prefs.key + 12 + d % 12) % 12);
+      if (i == EN_K4)
+        prefs.scale = (uint8_t)((prefs.scale + 3 + d % 3) % 3);
+    }
+    if (page == 8) {
+      if (i >= EN_K1 && i <= EN_K4)
+        prefs.fx_mix[i - EN_K1] = (uint8_t)clamp(prefs.fx_mix[i - EN_K1] + d, 0, 100);
+      if (i == EN_ALGO)
+        prefs.tuning = (uint8_t)((prefs.tuning + 4 + d % 4) % 4);
+      if (i == EN_PRESET) {
+        uint8_t *parameter = buttons & (1u << B_SEL) ?
+            &prefs.tune_speed : &prefs.tune_strength;
+        *parameter = (uint8_t)clamp(*parameter + d, 0, 100);
+      }
+    }
     if (page == 1) {
       if (i == EN_K1) {
         stop_cmd = 1;
@@ -684,6 +742,7 @@ static void input(void) {
       if (down & (1u << i)) {
         if (prefs.mode == 1) {
           f = plat_lock();
+          live_key = (uint8_t)i;
           note_cmd = (uint8_t)(55 + i);
           note_vel = 100;
           plat_unlock(f);
@@ -737,10 +796,18 @@ static void input(void) {
                        TO_USB | TO_BLE);
       }
       if (up & (1u << i)) {
-        if (prefs.mode == 1 && engine.note == 53 + i) {
+        if (prefs.mode == 1 && live_key == i) {
           f = plat_lock();
           note_cmd = (uint8_t)(55 + i);
           note_vel = 0;
+          live_key = 255;
+          for (unsigned held = 0; held < 27; held++) {
+            if (keys & (1u << held)) {
+              live_key = (uint8_t)held;
+              note_cmd = (uint8_t)(55 + held);
+              note_vel = 100;
+            }
+          }
           plat_unlock(f);
         }
         plat_midi_send(0x08u | 0x80u << 8 | (53u + i) << 16, TO_USB | TO_BLE);
@@ -851,7 +918,8 @@ static void draw_face(k9_face f) {
     }
     if (band == 5) {
       cv_rect(0, 26, 240, 14, RGB(14, 18, 31));
-      cv_text(5, 25, &FONT_T, "EDIT / SELECT: PAGES   PLAY: SING", C_WHITE);
+      cv_text(5, 25, &FONT_T, prefs.music ? "SEL: MUSIC ON   PLAY: SING" :
+                                           "SEL: VOCALS ONLY   PLAY: SING", C_WHITE);
     }
     cv_blit(0, band * 40u);
   }
@@ -861,7 +929,29 @@ static void draw_menu(void) {
   unsigned row;
   for (row = 0; row < 6; row++) {
     cv_begin(240, 40, RGB(13, 16, 30));
-    if (page == 7 && row > 0 && row < 5) {
+    if (page == 8 && row) {
+      static const char *const labels[] = {"K1 CHORUS", "K2 ECHO", "K3 DELAY", "K4 REVERB"};
+      if (row < 5) {
+        cv_text(8, 0, &FONT_XS, labels[row - 1], C_WHITE);
+        int_text(prefs.fx_mix[row - 1], t);
+        cv_text(164, 0, &FONT_XS, t, C_HI);
+        if (row == 1) {
+          cv_text(8, 17, &FONT_XS, "ALGO: AUTO-TUNE", C_WHITE);
+          cv_text(148, 17, &FONT_XS, tuning_names[prefs.tuning], C_HI);
+        } else if (row == 2) {
+          cv_text(8, 17, &FONT_XS, "PRESET: STRENGTH", C_WHITE);
+          int_text(prefs.tune_strength, t);
+          cv_text(164, 17, &FONT_XS, t, C_HI);
+        } else if (row == 3) {
+          cv_text(8, 17, &FONT_XS, "HOLD SEL + PRESET: SPEED", C_WHITE);
+          int_text(prefs.tune_speed, t);
+          cv_text(204, 17, &FONT_XS, t, C_HI);
+        } else {
+          cv_text(8, 17, &FONT_XS, prefs.perfect_key ? "SEL: PERFECT KEY ON" :
+                                                    "SEL: PERFECT KEY OFF", C_WHITE);
+        }
+      }
+    } else if (page == 7 && row > 0 && row < 5) {
       const char *label = row == 1   ? "K1 PART"
                           : row == 2 ? "K2 SONG SLOT"
                           : row == 3 ? "K3 PART COUNT"
@@ -1068,10 +1158,9 @@ void app_frame(void) {
       stop_cmd = 1;
     host_was = host;
     device_was = device;
-    uint8_t linked = host || device;
-    ble_was = linked;
-    plat_ble_scan(prefs.ble && !linked && (page == 3 || prefs.reconnect));
-    if (prefs.ble && prefs.reconnect && prefs.peer[0] && !linked &&
+    uint8_t central_idle = !host && plat_ble_device() < BLE_DEV_CONNECTING;
+    plat_ble_scan(prefs.ble && central_idle && (page == 3 || prefs.reconnect));
+    if (prefs.ble && prefs.reconnect && prefs.peer[0] && central_idle &&
         now - retry_at > 5000u) {
       int j, rssi;
       char name[21];
