@@ -96,10 +96,13 @@ static void vocal_fx(k9_engine *e, float sample, float *left, float *right) {
     float chorus_l = fx_tap(e, (unsigned)(155.0f + 43.0f * mod));
     float chorus_r = fx_tap(e, (unsigned)(190.0f - 49.0f * mod));
     float echo = fx_tap(e, 1060u) + .35f * fx_tap(e, 2120u);
-    float quarter = e->external && e->clocks ? e->clock_interval * 3.0f :
+    float eighth = e->external && e->clocks ? e->clock_interval * 3.0f :
         (float)(K9_RATE * 60u) / (8.0f * (float)(e->tempo_override ?
             e->tempo_override : e->song ? e->song->bpm : 120u));
-    unsigned delay_samples = (unsigned)bounded(quarter, 1, K9_FX_LENGTH - 1);
+    /* Drop to a sixteenth note at low tempos to fit the same bounded buffer. */
+    if (eighth >= K9_FX_LENGTH)
+      eighth *= .5f;
+    unsigned delay_samples = (unsigned)bounded(eighth, 1, K9_FX_LENGTH - 1);
     float delay = fx_tap(e, delay_samples);
     float reverb = (fx_tap(e, 449u) + fx_tap(e, 683u) +
                     fx_tap(e, 953u) + fx_tap(e, 1321u)) * .25f;

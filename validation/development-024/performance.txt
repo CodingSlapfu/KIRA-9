@@ -1,0 +1,9 @@
+Neon Awakening | 120 BPM | 5 bars | 2 loops | backing/vocal energy 0.17
+Glass Heart | 90 BPM | 4 bars | 2 loops | backing/vocal energy 0.42
+Ghost Frequency | 132 BPM | 4 bars | 2 loops | backing/vocal energy 0.16
+After the Rain | 76 BPM | 4 bars | 2 loops | backing/vocal energy 0.20
+Circuit Bloom | 124 BPM | 5 bars | 2 loops | backing/vocal energy 0.26
+Electric Lullaby | 60 BPM | 5 bars | 2 loops | backing/vocal energy 0.22
+No Gravity | 84 BPM | 4 bars | 2 loops | backing/vocal energy 0.16
+Machine Dreams | 108 BPM | 4 bars | 2 loops | backing/vocal energy 0.15
+PASS raw MIDI key ownership, BLE source loss, external demo looping, FX routing and bounded output

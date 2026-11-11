@@ -20,8 +20,24 @@ __attribute__((visibility("default"))) int web_load(unsigned n) {
   return 1;
 }
 __attribute__((visibility("default"))) void web_demo(unsigned n) {
-  if (n < 8)
-    k9_start(&web_engine, &factory_songs[n]);
+  static const uint8_t styles[] = {0, 5, 2, 3, 1, 4, 4, 7};
+  if (n < 8) {
+    web_engine.style = styles[n];
+    k9_start_demo(&web_engine, &factory_songs[n], n);
+  }
+}
+__attribute__((visibility("default"))) void
+web_effects(unsigned tuning, unsigned strength, unsigned speed, unsigned chorus,
+            unsigned echo, unsigned delay, unsigned reverb, unsigned music,
+            unsigned vocal) {
+  web_engine.tuning = tuning > 3 ? 3 : tuning;
+  web_engine.tune_strength = strength > 100 ? 100 : strength;
+  web_engine.tune_speed = speed > 100 ? 100 : speed;
+  const unsigned effects[] = {chorus, echo, delay, reverb};
+  for (unsigned i = 0; i < 4; i++)
+    web_engine.fx_mix[i] = effects[i] > 100 ? 100 : effects[i];
+  web_engine.music_level = (float)(music > 100 ? 100 : music) * .01f;
+  web_engine.vocal_level = (float)(vocal > 100 ? 100 : vocal) * .01f;
 }
 __attribute__((visibility("default"))) void web_stop(void) {
   k9_stop(&web_engine);

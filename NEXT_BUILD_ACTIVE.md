@@ -41,3 +41,18 @@ Original cel portrait/registered lid-viseme rig and expressive performance conto
 **Licensing constraint:** JAZZY/Rhythmer host files are marked GPL-3.0-only, while KIRA-9 top-level LICENSE is MIT and BLE builds may link licensed JieLi SDK components. Do NOT paste JAZZY host source blindly into KIRA-9. Investigate the separately MPL-2.0-authorized port https://github.com/hugelton/felucca-bsp/pull/7 and its original authors' explicit permissions documented at https://github.com/ignis32/midimonitor_fm1/blob/main/LICENSING.md, or write original code, with license review before integration.
 
 **Completion gate:** Research is recorded; no claim that new BLE Central, USB Host, or hardware sync features are implemented by this documentation change. Implement only in a safely owned, separately authorized next firmware build and retain official release gates.
+
+## v0.2.4-dev testing branch
+
+Resume from `kira-0.2.4-development` for the latest testing candidate. This pass
+adds original beat-grid backing to all eight factory vocal scores, whole-bar
+looping, an independent backing mute, live Perfect Key, synthesis-integrated
+pitch correction and chorus/echo/delay/reverb. The voice remains formant-based.
+Human-singer naturalness and English intelligibility still require listening
+acceptance and further source-engine work. Preserve the accepted 0.2.3 portrait.
+
+FM-1 BLE scan no longer clears discovery results on every UI poll, and
+disconnect handling releases the affected link's notes and clock ownership.
+Real controller pairing, reconnect, jitter, simultaneous links and CPU/XRUNs
+remain physical acceptance work. Keep all 23 requirements open for release.
+See `validation/development-024/OWNER_TESTS.md` for controls and hardware checks.

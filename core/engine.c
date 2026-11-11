@@ -110,6 +110,7 @@ static void begin_song(k9_engine *e, const k9_song *s) {
   e->sample = 0;
   e->tick = 0;
   e->clock_tick = 0;
+  e->demo_clock_origin = 0;
   e->clock_phase = 0;
   e->next = 0;
   e->event_end = 0;
@@ -218,9 +219,29 @@ void k9_clock_at(k9_engine *e, uint8_t src, uint32_t sample) {
   if (e->clocks && delta > 44u && delta < 22050u)
     e->clock_interval += ((float)delta - e->clock_interval) * .125f;
   e->clock_tick += 4u;
-  e->tick = e->clock_tick;
+  e->tick = e->clock_tick - e->demo_clock_origin;
   e->clocks++;
   e->last_clock = sample;
+}
+void k9_disconnect(k9_engine *e, uint8_t source) {
+  if (e->external && e->source == source) {
+    k9_stop(e);
+    if (e->external == 2)
+      e->source = 255;
+    return;
+  }
+  if (e->sustain_source == source) {
+    e->sustain = e->deferred_off = 0;
+    e->sustain_source = 255;
+  }
+  if (e->sense_source == source)
+    e->sense_armed = 0;
+  if (e->live_source == source) {
+    e->live_source = e->live_note = 255;
+    e->external_melody = e->velocity = 0;
+    e->live_transition = 0;
+    e->bend = 1.0f;
+  }
 }
 void k9_midi(k9_engine *e, uint8_t src, uint8_t status, uint8_t d1,
              uint8_t d2) {
@@ -229,7 +250,8 @@ void k9_midi(k9_engine *e, uint8_t src, uint8_t status, uint8_t d1,
     return;
   if (e->external == 2 && e->source == 255 && status == 0xfa)
     e->source = src;
-  if (e->external && src != e->source)
+  if (e->external && src != e->source &&
+      !(e->external == 2 && e->source == 255 && status < 0xf0u))
     return;
   if (status == 0xfe) {
     e->sense_armed = 1;
@@ -358,11 +380,11 @@ void k9_render(k9_engine *e, float *out, uint32_t frames) {
       uint32_t end = e->demo ? ((e->song->ticks + 383u) / 384u) * 384u
                              : e->song->ticks;
       if (e->tick >= end && e->demo) {
-        uint32_t clock_tick = e->clock_tick;
-        seek(e, e->tick % end);
+        uint32_t clock_tick = e->clock_tick, elapsed = e->tick;
+        seek(e, elapsed % end);
         if (e->external) {
           e->clock_tick = clock_tick;
-          e->demo_clock_origin += end;
+          e->demo_clock_origin += elapsed / end * end;
         }
         e->backing_tick = UINT32_MAX;
       } else if (e->tick >= end) {
@@ -503,6 +525,12 @@ void k9_render(k9_engine *e, float *out, uint32_t frames) {
         slew = 1;
       e->freq += (k9_pitch[e->note] * e->bend - e->freq) * slew;
       float pitch = e->freq * wobble;
+      if (e->tuning && e->tuning < 3 && vowel(e->phone) && !connected) {
+        /* A short, velocity-shaped approach falls away before the vowel settles. */
+        float approach = bounded(1.0f - age * (1.0f / 1874.25f), 0, 1);
+        pitch *= 1.0f - approach * approach *
+            (.004f + (float)(127u - e->velocity) * .000025f);
+      }
       if (e->tuning && (vowel(e->phone) || e->phone == K9_M)) {
         static const float strength[] = {0, .30f, .72f, 1.0f};
         static const float vibrato_keep[] = {1, .95f, .62f, 0};
@@ -597,7 +625,7 @@ k9_face k9_face_at(const k9_engine *e, uint32_t ms, uint8_t emotion,
     f.open = 0;
     f.mouth = 0;
   }
-  if (plosive(e->phone) && e->phone_frames &&
+  if (f.mouth && plosive(e->phone) && e->phone_frames &&
       !k9_articulate(e->phone,e->sample-e->phone_sample,e->phone_frames).closure) {
     f.mouth = 1;
     f.open = (uint16_t)(bounded(e->level, 0, 1) * 10.0f);

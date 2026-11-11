@@ -80,7 +80,7 @@ typedef struct {
 } k9_settings;
 static k9_settings prefs;
 static uint32_t btn_last, keys_last, draw_at, block_max, blocks, overruns;
-static uint8_t peer_pick, backup_hold, live_key = 255;
+static uint8_t peer_pick, backup_hold, live_key = 255, lost_ble_sources;
 static uint32_t retry_at, usb_session_seen;
 static uint8_t page, dirty, save_pending, load_pending, playing_cmd, stop_cmd,
     note_cmd, note_vel;
@@ -418,6 +418,13 @@ void app_render(int32_t *lr, uint32_t n, uint32_t master) {
   engine.vocal_mode = prefs.vocal_mode;
   engine.vocal_family = prefs.vocal_family;
   prefs_apply();
+  if (lost_ble_sources) {
+    if (lost_ble_sources & TO_BLE_HOST)
+      k9_disconnect(&engine, TO_BLE_HOST);
+    if (lost_ble_sources & TO_BLE_DEV)
+      k9_disconnect(&engine, TO_BLE_DEV);
+    lost_ble_sources = 0;
+  }
   if (stop_cmd) {
     k9_stop(&engine);
     if (engine.external == 2)
@@ -448,8 +455,7 @@ void app_render(int32_t *lr, uint32_t n, uint32_t master) {
       continue;
     if (st < 0xf0u && prefs.channel && ((st & 15u) + 1u) != prefs.channel)
       continue;
-    if (prefs.sync == 1 && engine.source == 255 && st < 0xf0u)
-      engine.source = source;
+
     if ((st & 0xf0u) == 0xc0u && (!engine.external || engine.source == source))
       prefs.voice = d1 % 7u;
     if ((st & 0xf0u) == 0xb0u &&
@@ -1151,15 +1157,21 @@ void app_frame(void) {
     static uint8_t host_was, device_was;
     uint8_t host = (uint8_t)plat_ble_connected(),
             device = (uint8_t)(plat_ble_device() == BLE_DEV_READY);
-    if ((host_was && !host &&
-         (engine.source == TO_BLE_HOST || engine.live_source == TO_BLE_HOST)) ||
-        (device_was && !device &&
-         (engine.source == TO_BLE_DEV || engine.live_source == TO_BLE_DEV)))
-      stop_cmd = 1;
+    if ((host_was && !host) || (device_was && !device)) {
+      uint32_t lock = plat_lock();
+      if (host_was && !host)
+        lost_ble_sources |= TO_BLE_HOST;
+      if (device_was && !device)
+        lost_ble_sources |= TO_BLE_DEV;
+      plat_unlock(lock);
+    }
     host_was = host;
     device_was = device;
-    uint8_t central_idle = !host && plat_ble_device() < BLE_DEV_CONNECTING;
-    plat_ble_scan(prefs.ble && central_idle && (page == 3 || prefs.reconnect));
+    int device_state = plat_ble_device();
+    uint8_t central_idle = device_state < BLE_DEV_CONNECTING;
+    int want_scan = prefs.ble && central_idle && (page == 3 || prefs.reconnect);
+    if (central_idle && want_scan != (device_state == BLE_DEV_SCANNING))
+      plat_ble_scan(want_scan);
     if (prefs.ble && prefs.reconnect && prefs.peer[0] && central_idle &&
         now - retry_at > 5000u) {
       int j, rssi;

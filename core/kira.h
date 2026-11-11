@@ -128,6 +128,7 @@ void k9_apply_preset(k9_engine *, const k9_preset *);
 void k9_perform(k9_engine *, uint8_t note, uint8_t velocity);
 void k9_note(k9_engine *e, uint8_t phone, uint8_t note, uint8_t velocity);
 void k9_render(k9_engine *e, float *stereo, uint32_t n);
+void k9_disconnect(k9_engine *, uint8_t source);
 void k9_midi(k9_engine *e, uint8_t source, uint8_t status, uint8_t d1,
              uint8_t d2);
 /* Clock timestamp is in engine sample units; delivery delay must not change tempo. */

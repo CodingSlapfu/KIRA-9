@@ -28,7 +28,36 @@ async function audio(){
  await ctx.resume();
 }
 function stop(){previewSerial++;portraitPose=0;previewEmotion=0;node?.port.postMessage({command:'stop'});if(bufferSource){try{bufferSource.stop();}catch{}bufferSource=null;}playing=false;$('playstate').textContent='STANDBY';}
-async function preview(){try{stop();const serial=previewSerial,{song,bytes,source}=performance();await audio();if(serial!==previewSerial)return;
+const effectFields=['tuning','tuneStrength','tuneSpeed','chorus','echo','delay','reverb','musicLevel','vocalLevel'];
+let demoMusic=true;
+function applyEffects(){
+ const values=effectFields.map(id=>Number($(id).value));
+ if(!demoMusic)values[7]=0;
+ node?.port.postMessage({command:'effects',values});
+ fallback?.web_effects(...values);
+}
+for(const id of effectFields)$(id).addEventListener('input',applyEffects);
+$('demoMusic').onclick=()=>{
+ demoMusic=!demoMusic;
+ $('demoMusic').setAttribute('aria-pressed',String(demoMusic));
+ $('demoMusic').textContent=demoMusic?'Music on':'Vocals only';
+ applyEffects();
+};
+async function playDemo(index){
+ stop();
+ const serial=previewSerial;
+ try{
+  await audio();
+  if(serial!==previewSerial)return;
+  if(!node)throw new Error('Live looping demos require browser AudioWorklet support.');
+  applyEffects();
+  const demo=demos[index];
+  total=Math.ceil(demo.ticks/384)*384;
+  node.port.postMessage({command:'demo',index});
+  status('Looping '+demo.name+'.');
+ }catch(error){status(error.message);}
+}
+async function preview(){try{stop();const serial=previewSerial,{song,bytes,source}=performance();await audio();if(serial!==previewSerial)return;applyEffects();
  if(node){node.port.postMessage({command:'voice',voice:source.voice||0,style:source.style||0,parameters:parameters(source)});node.port.postMessage({command:'load',bytes,profiles:timeline(source,{...dictionary,...userPronunciations})});status('Playing the shared C vocal engine.');}
  else{const e=fallback;new Uint8Array(e.memory.buffer,e.web_input(),bytes.length).set(bytes);e.web_load(bytes.length);e.web_voice(source.voice||0,source.style||0);applyParameters(e);const frames=Math.min(44100*120,Math.ceil(song.ticks*60/song.bpm/96*44100)+4410),buffer=ctx.createBuffer(2,frames,44100),left=buffer.getChannelData(0),right=buffer.getChannelData(1);fallbackFrames=[];const profiles=new ProfileTimeline(e,timeline(source,{...dictionary,...userPronunciations}));status('Rendering shared C vocal preview…');
   for(let i=0;i<frames;){if(serial!==previewSerial)return;const next=profiles.profiles[profiles.index+1],boundary=next?Math.ceil(next.tick*60/song.bpm/96*44100):frames;profiles.advance(e.web_tick());const n=Math.min(512,frames-i,Math.max(1,boundary-i)),p=e.web_render(n),pcm=new Float32Array(e.memory.buffer,p,n*2);for(let j=0;j<n;j++){left[i+j]=pcm[j*2];right[i+j]=pcm[j*2+1];}fallbackFrames.push({time:i/44100,viseme:e.web_viseme(),pose:e.web_pose(),tick:e.web_tick(),emotion:profiles.profiles[profiles.index]?.parameters.emotion||0});i+=n;if(i%32768===0)await new Promise(r=>setTimeout(r,0));}
@@ -57,7 +86,7 @@ function face(ms){
 (async()=>{try{module=await WebAssembly.compileStreaming(fetch('kira.wasm'));portrait=new WebAssembly.Instance(module,{}).exports;portrait._initialize?.();portrait.web_init();}catch(e){status('Portrait engine could not load: '+e.message);}})();
 try{const saved=localStorage.getItem('kira9-project-v1');if(saved)project=validateProject(JSON.parse(saved));}catch{}fill();
 setupLibrary({status,project:()=>{read();return project;},openProject:newProject,setPronunciations:p=>{userPronunciations=p;},applyPreset:p=>{remember();for(const key of expressionKeys)if(p[key]!==undefined)setPerformance(project,$('section').value,key,p[key]);fill();status('Preset applied to the selected scope. Preview to audition.');},ports:()=>({input:midi?.inputs.get($('midiIn').value),output:midi?.outputs.get($('midiOut').value)})});
-try{[dictionary,demos]=await Promise.all([fetch('dictionary.json').then(r=>r.json()),fetch('songs.json').then(r=>r.json())]);for(const [i,d]of demos.entries()){const button=document.createElement('button');button.className='demo';const b=document.createElement('b');b.textContent=String(i+1).padStart(2,'0');const title=document.createElement('span');title.textContent=d.name;const small=document.createElement('small');small.textContent=d.style+' · '+d.bpm+' BPM';button.append(b,title,small);button.onclick=()=>{if(project.lyrics&&!confirm('Open this demo? Your current draft stays in Undo.'))return;newProject({...project,title:d.name,lyrics:d.lyrics,bpm:d.bpm,align:[],overrides:{}});status('Original factory demo opened.');};$('demos').append(button);}alignment();status('Ready. Edit lyrics, check pronunciation, then preview.');}catch(e){status('Pronunciation data could not load. Reload when the local files are available.');}
+try{[dictionary,demos]=await Promise.all([fetch('dictionary.json').then(r=>r.json()),fetch('songs.json').then(r=>r.json())]);for(const [i,d]of demos.entries()){const button=document.createElement('button');button.className='demo';const b=document.createElement('b');b.textContent=String(i+1).padStart(2,'0');const title=document.createElement('span');title.textContent=d.name;const small=document.createElement('small');small.textContent=d.style+' · '+d.bpm+' BPM';button.append(b,title,small);button.onclick=()=>playDemo(i);const edit=document.createElement('button');edit.textContent='Edit lyrics';edit.setAttribute('aria-label','Edit lyrics for '+d.name);edit.onclick=()=>{if(project.lyrics&&!confirm('Open this demo? Your current draft stays in Undo.'))return;newProject({...project,title:d.name,lyrics:d.lyrics,bpm:d.bpm,align:[],overrides:{}});status('Original factory demo opened.');};const item=document.createElement('div');item.append(button,edit);$('demos').append(item);}alignment();status('Ready. Edit lyrics, check pronunciation, then preview.');}catch(e){status('Pronunciation data could not load. Reload when the local files are available.');}
 window.addEventListener('pagehide',()=>{read();stop();});
 
 function fillVocal(){const p=performanceProject(project,$('section').value),defaults={voice:0,style:0,emotion:0,morph:0,breath:6,vibrato:20,glide:50,harmony:0,expression:110,vocalMode:'Lyrics',syllables:'',density:8,swing:0,wordlessNotes:[60,64,67,69,67,64,62,60],noteTicks:p.vocalMode==='Scat'?48:96,seed:0};for(const key of expressionKeys)$(key).value=key==='wordlessNotes'?(p[key]??defaults[key]).join(' '):(p[key]??defaults[key]);}
